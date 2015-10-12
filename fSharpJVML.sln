@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fSharpJVML", "fSharpJVML\fSharpJVML.csproj", "{86869AAE-C7B0-4EF5-88D5-D4E685FE42DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test_fSharpJVML_ConsoleApp", "test_fSharpJVML_ConsoleApp\test_fSharpJVML_ConsoleApp.csproj", "{02028D6B-E922-4523-B2D7-CCC5B3842F0C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{86869AAE-C7B0-4EF5-88D5-D4E685FE42DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86869AAE-C7B0-4EF5-88D5-D4E685FE42DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86869AAE-C7B0-4EF5-88D5-D4E685FE42DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02028D6B-E922-4523-B2D7-CCC5B3842F0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02028D6B-E922-4523-B2D7-CCC5B3842F0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02028D6B-E922-4523-B2D7-CCC5B3842F0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02028D6B-E922-4523-B2D7-CCC5B3842F0C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
