@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fSharpJVML", "fSharpJVML\fS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test_fSharpJVML_ConsoleApp", "test_fSharpJVML_ConsoleApp\test_fSharpJVML_ConsoleApp.csproj", "{02028D6B-E922-4523-B2D7-CCC5B3842F0C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "grammar", "grammar", "{DFE35865-E67E-4CCE-8158-6E7D5B2DA8DD}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\fsharp_ss.g = ..\..\fsharp_ss.g
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
