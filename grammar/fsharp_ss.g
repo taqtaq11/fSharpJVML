@@ -22,12 +22,15 @@ tokens {
 	MUTABLE = 'mutable';
 	REC = 'rec';
 	FUN = 'fun';
+	BEGIN = 'begin';
+	END = 'end';
 	STRING_KW = 'string';
 	CHAR_KW = 'char';
 	INT_KW = 'int';
 	DOUBLE_KW = 'double';
 	BOOL_KW = 'bool';
-	PRINTF = 'printf';
+	//PRINTF = 'printf';
+	//SCANF = 'scanf';
 	ASSIGN = '<-';
 	FUN_DEF = '->';
 	PLUS = '+';
@@ -42,6 +45,11 @@ tokens {
 	GE = '>=';
 	LE = '<=';
 	PIPE = '|>';
+	TAB = '\t';
+	OPEN_BR = '(';
+	CLOSE_BR = ')';
+	
+	ENTRY_POINT = '[<EntryPoint>]';
 	
 	VALUE_DEFN = 'VALUE_DEFN';
 	FUNCTION_DEFN = 'FUNCTION_DEFN';
@@ -49,6 +57,9 @@ tokens {
 	TYPE = 'TYPE';
 	BODY = 'BODY';
 	FUNCTION_CALL = 'FUNCTION_CALL';
+	PROGRAM = 'PROGRAM';
+	EXPR = 'EXPR';
+	NAME = 'NAME';
 }
 
 @lexer::namespace { fsharp_ss }
@@ -112,13 +123,13 @@ type	:
 value_defn
 	:
 	MUTABLE? ID return_type? '=' body_expr
-		-> ^(VALUE_DEFN ID MUTABLE? ^(TYPE return_type?) body_expr)
+		-> ^(VALUE_DEFN ^(NAME ID) MUTABLE? ^(TYPE return_type?) body_expr)
 	;
 
 function_defn
 	:
-	REC? ID function_args? return_type? '=' body_expr	
-		-> ^(FUNCTION_DEFN ID REC? ^(ARGS function_args?) ^(TYPE return_type?) body_expr)
+	REC? ID function_args return_type? '=' body_expr	
+		-> ^(FUNCTION_DEFN ^(NAME ID) REC? ^(ARGS function_args) ^(TYPE return_type?) body_expr)
 	;	
 	
 function_args
@@ -135,28 +146,28 @@ return_type
 	
 body_expr
 	:
-	expr* returning_expr+
-		-> ^(BODY expr* returning_expr+)
+	expr_block
+		-> ^(BODY expr_block)
 	;
 	
 if_expr	:
-	IF^ logic_expr THEN! expr* returning_expr+ elif_expr* else_expr?
+	IF^ logic_expr THEN! expr_block elif_expr* else_expr?
 	;
 
 elif_expr
 	:
-	ELIF^ logic_expr THEN! expr* returning_expr+
+	ELIF^ logic_expr THEN! expr_block
 	;
 	
 else_expr
 	:
-	ELSE! expr* returning_expr+
+	ELSE! expr_block
 	;
 
 alg_group_expr
 	:
 	'('! add_expr ')'! |
-	ID | const | func_call_expr
+	func_call_expr | ID | const
 	;
 
 mult_expr
@@ -185,7 +196,7 @@ comp_operation
 
 comp_expr_arg
 	:
-	ID | INT | DOUBLE | alg_expr | func_call_expr
+	INT | DOUBLE | alg_expr | func_call_expr | ID
 	;
 
 eq_neq_expr
@@ -195,12 +206,12 @@ eq_neq_expr
 	
 eq_neq_expr_arg
 	:
-	ID | STRING | CHAR | INT | DOUBLE | alg_expr | func_call_expr
+	STRING | CHAR | INT | DOUBLE | alg_expr | func_call_expr | ID
 	;
 
 logic_expr_arg
 	:
-	ID | TRUE | FALSE | comp_expr | '('! or_expr ')'! | func_call_expr
+	TRUE | FALSE | comp_expr | '('! or_expr ')'! | func_call_expr | ID
 	;
 
 and_expr:
@@ -209,7 +220,7 @@ and_expr:
 
 or_expr	:
 	and_expr (OR^ and_expr)*	
-	;
+	;	
 
 logic_expr
 	:
@@ -218,30 +229,41 @@ logic_expr
 
 func_call_expr
 	:
-	ID returning_expr*
-		-> ^(FUNCTION_CALL returning_expr*)
+	ID (OPEN_BR returning_expr* CLOSE_BR)+
+		-> ^(FUNCTION_CALL ^(NAME ID) ^(ARGS returning_expr*))
+	;
+
+expr_block
+	:
+	BEGIN^ expr_list END!
 	;
 
 returning_expr
 	:
-	const |
-	ID |
 	'('! returning_expr ')'! |
-	func_call_expr |
 	FUN function_args FUN_DEF body_expr
 		-> ^(FUNCTION_DEFN ^(ARGS function_args) body_expr) |
-	logic_expr |
 	if_expr |
-	alg_expr
+	alg_expr |
+	logic_expr |
+	const |
+	ID
 	;
-
-expr	:	
-	returning_expr |
-	LET! function_defn |
+	
+expr	:
+	returning_expr ';'	
+		-> returning_expr |
+	LET! function_defn | 
 	LET! value_defn
 	;
 	
+expr_list
+	:
+	expr*
+	;
+
 public execute
 	:
-	expr*	
+	expr_list
+		-> ^(PROGRAM expr_list)
 	;
