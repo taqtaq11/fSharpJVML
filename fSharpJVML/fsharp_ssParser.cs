@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.5.1 D:\\fsharp_compiler\\fsharp_ss.g 2015-10-19 01:09:26
+// $ANTLR 3.5.1 D:\\fsharp_compiler\\fsharp_ss.g 2015-10-25 23:03:59
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -35,63 +35,70 @@ namespace  fsharp_ss
 public partial class fsharp_ssParser : Antlr.Runtime.Parser
 {
 	internal static readonly string[] tokenNames = new string[] {
-		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "AND", "ARGS", "ASSIGN", "BODY", "BOOL_KW", "CHAR", "CHAR_KW", "DIV", "DOUBLE", "DOUBLE_KW", "ELIF", "ELSE", "EQ", "ESC_SEQ", "EXPONENT", "FALSE", "FUN", "FUNCTION_CALL", "FUNCTION_DEFN", "FUN_DEF", "GE", "GT", "HEX_DIGIT", "ID", "IF", "INT", "INT_KW", "LE", "LET", "LT", "MATCH", "MINUS", "MOD", "MULT", "MUTABLE", "NEQ", "OCTAL_ESC", "OR", "PIPE", "PLUS", "PRINTF", "REC", "STRING", "STRING_KW", "THEN", "TRUE", "TYPE", "UNICODE_ESC", "UNKNOWN", "VALUE_DEFN", "WHEN", "'('", "')'", "':'"
+		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "AND", "ARGS", "ASSIGN", "BEGIN", "BODY", "BOOL_KW", "CHAR", "CHAR_KW", "CLOSE_BR", "DIV", "DOUBLE", "DOUBLE_KW", "ELIF", "ELSE", "END", "ENTRY_POINT", "EQ", "ESC_SEQ", "EXPONENT", "EXPR", "FALSE", "FUN", "FUNCTION_CALL", "FUNCTION_DEFN", "FUN_DEF", "GE", "GT", "HEX_DIGIT", "ID", "IF", "INT", "INT_KW", "LE", "LET", "LT", "MATCH", "MINUS", "MOD", "MULT", "MUTABLE", "NAME", "NEQ", "OCTAL_ESC", "OPEN_BR", "OR", "PIPE", "PLUS", "PROGRAM", "REC", "STRING", "STRING_KW", "TAB", "THEN", "TRUE", "TYPE", "UNICODE_ESC", "UNKNOWN", "VALUE_DEFN", "WHEN", "':'", "';'"
 	};
 	public const int EOF=-1;
-	public const int T__55=55;
-	public const int T__56=56;
-	public const int T__57=57;
+	public const int T__63=63;
+	public const int T__64=64;
 	public const int AND=4;
 	public const int ARGS=5;
 	public const int ASSIGN=6;
-	public const int BODY=7;
-	public const int BOOL_KW=8;
-	public const int CHAR=9;
-	public const int CHAR_KW=10;
-	public const int DIV=11;
-	public const int DOUBLE=12;
-	public const int DOUBLE_KW=13;
-	public const int ELIF=14;
-	public const int ELSE=15;
-	public const int EQ=16;
-	public const int ESC_SEQ=17;
-	public const int EXPONENT=18;
-	public const int FALSE=19;
-	public const int FUN=20;
-	public const int FUNCTION_CALL=21;
-	public const int FUNCTION_DEFN=22;
-	public const int FUN_DEF=23;
-	public const int GE=24;
-	public const int GT=25;
-	public const int HEX_DIGIT=26;
-	public const int ID=27;
-	public const int IF=28;
-	public const int INT=29;
-	public const int INT_KW=30;
-	public const int LE=31;
-	public const int LET=32;
-	public const int LT=33;
-	public const int MATCH=34;
-	public const int MINUS=35;
-	public const int MOD=36;
-	public const int MULT=37;
-	public const int MUTABLE=38;
-	public const int NEQ=39;
-	public const int OCTAL_ESC=40;
-	public const int OR=41;
-	public const int PIPE=42;
-	public const int PLUS=43;
-	public const int PRINTF=44;
-	public const int REC=45;
-	public const int STRING=46;
-	public const int STRING_KW=47;
-	public const int THEN=48;
-	public const int TRUE=49;
-	public const int TYPE=50;
-	public const int UNICODE_ESC=51;
-	public const int UNKNOWN=52;
-	public const int VALUE_DEFN=53;
-	public const int WHEN=54;
+	public const int BEGIN=7;
+	public const int BODY=8;
+	public const int BOOL_KW=9;
+	public const int CHAR=10;
+	public const int CHAR_KW=11;
+	public const int CLOSE_BR=12;
+	public const int DIV=13;
+	public const int DOUBLE=14;
+	public const int DOUBLE_KW=15;
+	public const int ELIF=16;
+	public const int ELSE=17;
+	public const int END=18;
+	public const int ENTRY_POINT=19;
+	public const int EQ=20;
+	public const int ESC_SEQ=21;
+	public const int EXPONENT=22;
+	public const int EXPR=23;
+	public const int FALSE=24;
+	public const int FUN=25;
+	public const int FUNCTION_CALL=26;
+	public const int FUNCTION_DEFN=27;
+	public const int FUN_DEF=28;
+	public const int GE=29;
+	public const int GT=30;
+	public const int HEX_DIGIT=31;
+	public const int ID=32;
+	public const int IF=33;
+	public const int INT=34;
+	public const int INT_KW=35;
+	public const int LE=36;
+	public const int LET=37;
+	public const int LT=38;
+	public const int MATCH=39;
+	public const int MINUS=40;
+	public const int MOD=41;
+	public const int MULT=42;
+	public const int MUTABLE=43;
+	public const int NAME=44;
+	public const int NEQ=45;
+	public const int OCTAL_ESC=46;
+	public const int OPEN_BR=47;
+	public const int OR=48;
+	public const int PIPE=49;
+	public const int PLUS=50;
+	public const int PROGRAM=51;
+	public const int REC=52;
+	public const int STRING=53;
+	public const int STRING_KW=54;
+	public const int TAB=55;
+	public const int THEN=56;
+	public const int TRUE=57;
+	public const int TYPE=58;
+	public const int UNICODE_ESC=59;
+	public const int UNKNOWN=60;
+	public const int VALUE_DEFN=61;
+	public const int WHEN=62;
 
 	public fsharp_ssParser(ITokenStream input)
 		: this(input, new RecognizerSharedState())
@@ -135,7 +142,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	partial void EnterRule_const();
 	partial void LeaveRule_const();
 	// $ANTLR start "const"
-	// D:\\fsharp_compiler\\fsharp_ss.g:100:1: const : ( INT | DOUBLE | STRING | CHAR | TRUE | FALSE );
+	// D:\\fsharp_compiler\\fsharp_ss.g:111:1: const : ( INT | DOUBLE | STRING | CHAR | TRUE | FALSE );
 	[GrammarRule("const")]
 	private AstParserRuleReturnScope<object, IToken> @const()
 	{
@@ -151,16 +158,16 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 
 		object set1_tree = default(object);
 		try { DebugEnterRule(GrammarFileName, "const");
-		DebugLocation(100, 1);
+		DebugLocation(111, 1);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:100:7: ( INT | DOUBLE | STRING | CHAR | TRUE | FALSE )
+			// D:\\fsharp_compiler\\fsharp_ss.g:111:7: ( INT | DOUBLE | STRING | CHAR | TRUE | FALSE )
 			DebugEnterAlt(1);
 			// D:\\fsharp_compiler\\fsharp_ss.g:
 			{
 			root_0 = (object)adaptor.Nil();
 
-			DebugLocation(100, 7);
+			DebugLocation(111, 7);
 
 			set1=(IToken)input.LT(1);
 			if (input.LA(1)==CHAR||input.LA(1)==DOUBLE||input.LA(1)==FALSE||input.LA(1)==INT||input.LA(1)==STRING||input.LA(1)==TRUE)
@@ -200,7 +207,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			LeaveRule("const", 1);
 			LeaveRule_const();
 		}
-		DebugLocation(102, 1);
+		DebugLocation(113, 1);
 		} finally { DebugExitRule(GrammarFileName, "const"); }
 		return retval;
 
@@ -210,7 +217,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	partial void EnterRule_type();
 	partial void LeaveRule_type();
 	// $ANTLR start "type"
-	// D:\\fsharp_compiler\\fsharp_ss.g:104:1: type : ( STRING_KW | CHAR_KW | INT_KW | DOUBLE_KW | BOOL_KW );
+	// D:\\fsharp_compiler\\fsharp_ss.g:115:1: type : ( STRING_KW | CHAR_KW | INT_KW | DOUBLE_KW | BOOL_KW );
 	[GrammarRule("type")]
 	private AstParserRuleReturnScope<object, IToken> type()
 	{
@@ -226,16 +233,16 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 
 		object set2_tree = default(object);
 		try { DebugEnterRule(GrammarFileName, "type");
-		DebugLocation(104, 1);
+		DebugLocation(115, 1);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:104:6: ( STRING_KW | CHAR_KW | INT_KW | DOUBLE_KW | BOOL_KW )
+			// D:\\fsharp_compiler\\fsharp_ss.g:115:6: ( STRING_KW | CHAR_KW | INT_KW | DOUBLE_KW | BOOL_KW )
 			DebugEnterAlt(1);
 			// D:\\fsharp_compiler\\fsharp_ss.g:
 			{
 			root_0 = (object)adaptor.Nil();
 
-			DebugLocation(104, 6);
+			DebugLocation(115, 6);
 
 			set2=(IToken)input.LT(1);
 			if (input.LA(1)==BOOL_KW||input.LA(1)==CHAR_KW||input.LA(1)==DOUBLE_KW||input.LA(1)==INT_KW||input.LA(1)==STRING_KW)
@@ -275,7 +282,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			LeaveRule("type", 2);
 			LeaveRule_type();
 		}
-		DebugLocation(110, 1);
+		DebugLocation(121, 1);
 		} finally { DebugExitRule(GrammarFileName, "type"); }
 		return retval;
 
@@ -285,7 +292,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	partial void EnterRule_value_defn();
 	partial void LeaveRule_value_defn();
 	// $ANTLR start "value_defn"
-	// D:\\fsharp_compiler\\fsharp_ss.g:112:1: value_defn : ( MUTABLE )? ID ( return_type )? '=' body_expr -> ^( VALUE_DEFN ID ( MUTABLE )? ^( TYPE ( return_type )? ) body_expr ) ;
+	// D:\\fsharp_compiler\\fsharp_ss.g:123:1: value_defn : ( MUTABLE )? ID ( return_type )? '=' body_expr -> ^( VALUE_DEFN ^( NAME ID ) ( MUTABLE )? ^( TYPE ( return_type )? ) body_expr ) ;
 	[GrammarRule("value_defn")]
 	private AstParserRuleReturnScope<object, IToken> value_defn()
 	{
@@ -312,15 +319,15 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 		RewriteRuleSubtreeStream stream_return_type=new RewriteRuleSubtreeStream(adaptor,"rule return_type");
 		RewriteRuleSubtreeStream stream_body_expr=new RewriteRuleSubtreeStream(adaptor,"rule body_expr");
 		try { DebugEnterRule(GrammarFileName, "value_defn");
-		DebugLocation(112, 1);
+		DebugLocation(123, 1);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:113:2: ( ( MUTABLE )? ID ( return_type )? '=' body_expr -> ^( VALUE_DEFN ID ( MUTABLE )? ^( TYPE ( return_type )? ) body_expr ) )
+			// D:\\fsharp_compiler\\fsharp_ss.g:124:2: ( ( MUTABLE )? ID ( return_type )? '=' body_expr -> ^( VALUE_DEFN ^( NAME ID ) ( MUTABLE )? ^( TYPE ( return_type )? ) body_expr ) )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:114:2: ( MUTABLE )? ID ( return_type )? '=' body_expr
+			// D:\\fsharp_compiler\\fsharp_ss.g:125:2: ( MUTABLE )? ID ( return_type )? '=' body_expr
 			{
-			DebugLocation(114, 2);
-			// D:\\fsharp_compiler\\fsharp_ss.g:114:2: ( MUTABLE )?
+			DebugLocation(125, 2);
+			// D:\\fsharp_compiler\\fsharp_ss.g:125:2: ( MUTABLE )?
 			int alt1=2;
 			try { DebugEnterSubRule(1);
 			try { DebugEnterDecision(1, false);
@@ -335,10 +342,10 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// D:\\fsharp_compiler\\fsharp_ss.g:114:2: MUTABLE
+				// D:\\fsharp_compiler\\fsharp_ss.g:125:2: MUTABLE
 				{
-				DebugLocation(114, 2);
-				MUTABLE3=(IToken)Match(input,MUTABLE,Follow._MUTABLE_in_value_defn877); if (state.failed) return retval; 
+				DebugLocation(125, 2);
+				MUTABLE3=(IToken)Match(input,MUTABLE,Follow._MUTABLE_in_value_defn947); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_MUTABLE.Add(MUTABLE3);
 
 
@@ -348,18 +355,18 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			}
 			} finally { DebugExitSubRule(1); }
 
-			DebugLocation(114, 11);
-			ID4=(IToken)Match(input,ID,Follow._ID_in_value_defn880); if (state.failed) return retval; 
+			DebugLocation(125, 11);
+			ID4=(IToken)Match(input,ID,Follow._ID_in_value_defn950); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_ID.Add(ID4);
 
-			DebugLocation(114, 14);
-			// D:\\fsharp_compiler\\fsharp_ss.g:114:14: ( return_type )?
+			DebugLocation(125, 14);
+			// D:\\fsharp_compiler\\fsharp_ss.g:125:14: ( return_type )?
 			int alt2=2;
 			try { DebugEnterSubRule(2);
 			try { DebugEnterDecision(2, false);
 			int LA2_1 = input.LA(1);
 
-			if ((LA2_1==57))
+			if ((LA2_1==63))
 			{
 				alt2 = 1;
 			}
@@ -368,10 +375,10 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// D:\\fsharp_compiler\\fsharp_ss.g:114:14: return_type
+				// D:\\fsharp_compiler\\fsharp_ss.g:125:14: return_type
 				{
-				DebugLocation(114, 14);
-				PushFollow(Follow._return_type_in_value_defn882);
+				DebugLocation(125, 14);
+				PushFollow(Follow._return_type_in_value_defn952);
 				return_type5=return_type();
 				PopFollow();
 				if (state.failed) return retval;
@@ -383,12 +390,12 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			}
 			} finally { DebugExitSubRule(2); }
 
-			DebugLocation(114, 27);
-			char_literal6=(IToken)Match(input,EQ,Follow._EQ_in_value_defn885); if (state.failed) return retval; 
+			DebugLocation(125, 27);
+			char_literal6=(IToken)Match(input,EQ,Follow._EQ_in_value_defn955); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_EQ.Add(char_literal6);
 
-			DebugLocation(114, 31);
-			PushFollow(Follow._body_expr_in_value_defn887);
+			DebugLocation(125, 31);
+			PushFollow(Follow._body_expr_in_value_defn957);
 			body_expr7=body_expr();
 			PopFollow();
 			if (state.failed) return retval;
@@ -397,7 +404,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 
 			{
 			// AST REWRITE
-			// elements: return_type, body_expr, ID, MUTABLE
+			// elements: MUTABLE, return_type, ID, body_expr
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -408,38 +415,48 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (object)adaptor.Nil();
-			// 115:3: -> ^( VALUE_DEFN ID ( MUTABLE )? ^( TYPE ( return_type )? ) body_expr )
+			// 126:3: -> ^( VALUE_DEFN ^( NAME ID ) ( MUTABLE )? ^( TYPE ( return_type )? ) body_expr )
 			{
-				DebugLocation(115, 6);
-				// D:\\fsharp_compiler\\fsharp_ss.g:115:6: ^( VALUE_DEFN ID ( MUTABLE )? ^( TYPE ( return_type )? ) body_expr )
+				DebugLocation(126, 6);
+				// D:\\fsharp_compiler\\fsharp_ss.g:126:6: ^( VALUE_DEFN ^( NAME ID ) ( MUTABLE )? ^( TYPE ( return_type )? ) body_expr )
 				{
 				object root_1 = (object)adaptor.Nil();
-				DebugLocation(115, 8);
+				DebugLocation(126, 8);
 				root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(VALUE_DEFN, "VALUE_DEFN"), root_1);
 
-				DebugLocation(115, 19);
-				adaptor.AddChild(root_1, stream_ID.NextNode());
-				DebugLocation(115, 22);
-				// D:\\fsharp_compiler\\fsharp_ss.g:115:22: ( MUTABLE )?
+				DebugLocation(126, 19);
+				// D:\\fsharp_compiler\\fsharp_ss.g:126:19: ^( NAME ID )
+				{
+				object root_2 = (object)adaptor.Nil();
+				DebugLocation(126, 21);
+				root_2 = (object)adaptor.BecomeRoot((object)adaptor.Create(NAME, "NAME"), root_2);
+
+				DebugLocation(126, 26);
+				adaptor.AddChild(root_2, stream_ID.NextNode());
+
+				adaptor.AddChild(root_1, root_2);
+				}
+				DebugLocation(126, 30);
+				// D:\\fsharp_compiler\\fsharp_ss.g:126:30: ( MUTABLE )?
 				if (stream_MUTABLE.HasNext)
 				{
-					DebugLocation(115, 22);
+					DebugLocation(126, 30);
 					adaptor.AddChild(root_1, stream_MUTABLE.NextNode());
 
 				}
 				stream_MUTABLE.Reset();
-				DebugLocation(115, 31);
-				// D:\\fsharp_compiler\\fsharp_ss.g:115:31: ^( TYPE ( return_type )? )
+				DebugLocation(126, 39);
+				// D:\\fsharp_compiler\\fsharp_ss.g:126:39: ^( TYPE ( return_type )? )
 				{
 				object root_2 = (object)adaptor.Nil();
-				DebugLocation(115, 33);
+				DebugLocation(126, 41);
 				root_2 = (object)adaptor.BecomeRoot((object)adaptor.Create(TYPE, "TYPE"), root_2);
 
-				DebugLocation(115, 38);
-				// D:\\fsharp_compiler\\fsharp_ss.g:115:38: ( return_type )?
+				DebugLocation(126, 46);
+				// D:\\fsharp_compiler\\fsharp_ss.g:126:46: ( return_type )?
 				if (stream_return_type.HasNext)
 				{
-					DebugLocation(115, 38);
+					DebugLocation(126, 46);
 					adaptor.AddChild(root_2, stream_return_type.NextTree());
 
 				}
@@ -447,7 +464,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 
 				adaptor.AddChild(root_1, root_2);
 				}
-				DebugLocation(115, 52);
+				DebugLocation(126, 60);
 				adaptor.AddChild(root_1, stream_body_expr.NextTree());
 
 				adaptor.AddChild(root_0, root_1);
@@ -481,7 +498,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			LeaveRule("value_defn", 3);
 			LeaveRule_value_defn();
 		}
-		DebugLocation(116, 1);
+		DebugLocation(127, 1);
 		} finally { DebugExitRule(GrammarFileName, "value_defn"); }
 		return retval;
 
@@ -491,7 +508,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	partial void EnterRule_function_defn();
 	partial void LeaveRule_function_defn();
 	// $ANTLR start "function_defn"
-	// D:\\fsharp_compiler\\fsharp_ss.g:118:1: function_defn : ( REC )? ID ( function_args )? ( return_type )? '=' body_expr -> ^( FUNCTION_DEFN ID ( REC )? ^( ARGS ( function_args )? ) ^( TYPE ( return_type )? ) body_expr ) ;
+	// D:\\fsharp_compiler\\fsharp_ss.g:129:1: function_defn : ( REC )? ID function_args ( return_type )? '=' body_expr -> ^( FUNCTION_DEFN ^( NAME ID ) ( REC )? ^( ARGS function_args ) ^( TYPE ( return_type )? ) body_expr ) ;
 	[GrammarRule("function_defn")]
 	private AstParserRuleReturnScope<object, IToken> function_defn()
 	{
@@ -520,15 +537,15 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 		RewriteRuleSubtreeStream stream_body_expr=new RewriteRuleSubtreeStream(adaptor,"rule body_expr");
 		RewriteRuleSubtreeStream stream_function_args=new RewriteRuleSubtreeStream(adaptor,"rule function_args");
 		try { DebugEnterRule(GrammarFileName, "function_defn");
-		DebugLocation(118, 1);
+		DebugLocation(129, 1);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:119:2: ( ( REC )? ID ( function_args )? ( return_type )? '=' body_expr -> ^( FUNCTION_DEFN ID ( REC )? ^( ARGS ( function_args )? ) ^( TYPE ( return_type )? ) body_expr ) )
+			// D:\\fsharp_compiler\\fsharp_ss.g:130:2: ( ( REC )? ID function_args ( return_type )? '=' body_expr -> ^( FUNCTION_DEFN ^( NAME ID ) ( REC )? ^( ARGS function_args ) ^( TYPE ( return_type )? ) body_expr ) )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:120:2: ( REC )? ID ( function_args )? ( return_type )? '=' body_expr
+			// D:\\fsharp_compiler\\fsharp_ss.g:131:2: ( REC )? ID function_args ( return_type )? '=' body_expr
 			{
-			DebugLocation(120, 2);
-			// D:\\fsharp_compiler\\fsharp_ss.g:120:2: ( REC )?
+			DebugLocation(131, 2);
+			// D:\\fsharp_compiler\\fsharp_ss.g:131:2: ( REC )?
 			int alt3=2;
 			try { DebugEnterSubRule(3);
 			try { DebugEnterDecision(3, false);
@@ -543,10 +560,10 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// D:\\fsharp_compiler\\fsharp_ss.g:120:2: REC
+				// D:\\fsharp_compiler\\fsharp_ss.g:131:2: REC
 				{
-				DebugLocation(120, 2);
-				REC8=(IToken)Match(input,REC,Follow._REC_in_function_defn921); if (state.failed) return retval; 
+				DebugLocation(131, 2);
+				REC8=(IToken)Match(input,REC,Follow._REC_in_function_defn995); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_REC.Add(REC8);
 
 
@@ -556,18 +573,24 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			}
 			} finally { DebugExitSubRule(3); }
 
-			DebugLocation(120, 7);
-			ID9=(IToken)Match(input,ID,Follow._ID_in_function_defn924); if (state.failed) return retval; 
+			DebugLocation(131, 7);
+			ID9=(IToken)Match(input,ID,Follow._ID_in_function_defn998); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_ID.Add(ID9);
 
-			DebugLocation(120, 10);
-			// D:\\fsharp_compiler\\fsharp_ss.g:120:10: ( function_args )?
+			DebugLocation(131, 10);
+			PushFollow(Follow._function_args_in_function_defn1000);
+			function_args10=function_args();
+			PopFollow();
+			if (state.failed) return retval;
+			if (state.backtracking == 0) stream_function_args.Add(function_args10.Tree);
+			DebugLocation(131, 24);
+			// D:\\fsharp_compiler\\fsharp_ss.g:131:24: ( return_type )?
 			int alt4=2;
 			try { DebugEnterSubRule(4);
 			try { DebugEnterDecision(4, false);
 			int LA4_1 = input.LA(1);
 
-			if ((LA4_1==ID||LA4_1==55))
+			if ((LA4_1==63))
 			{
 				alt4 = 1;
 			}
@@ -576,41 +599,10 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// D:\\fsharp_compiler\\fsharp_ss.g:120:10: function_args
+				// D:\\fsharp_compiler\\fsharp_ss.g:131:24: return_type
 				{
-				DebugLocation(120, 10);
-				PushFollow(Follow._function_args_in_function_defn926);
-				function_args10=function_args();
-				PopFollow();
-				if (state.failed) return retval;
-				if (state.backtracking == 0) stream_function_args.Add(function_args10.Tree);
-
-				}
-				break;
-
-			}
-			} finally { DebugExitSubRule(4); }
-
-			DebugLocation(120, 25);
-			// D:\\fsharp_compiler\\fsharp_ss.g:120:25: ( return_type )?
-			int alt5=2;
-			try { DebugEnterSubRule(5);
-			try { DebugEnterDecision(5, false);
-			int LA5_1 = input.LA(1);
-
-			if ((LA5_1==57))
-			{
-				alt5 = 1;
-			}
-			} finally { DebugExitDecision(5); }
-			switch (alt5)
-			{
-			case 1:
-				DebugEnterAlt(1);
-				// D:\\fsharp_compiler\\fsharp_ss.g:120:25: return_type
-				{
-				DebugLocation(120, 25);
-				PushFollow(Follow._return_type_in_function_defn929);
+				DebugLocation(131, 24);
+				PushFollow(Follow._return_type_in_function_defn1002);
 				return_type11=return_type();
 				PopFollow();
 				if (state.failed) return retval;
@@ -620,14 +612,14 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 				break;
 
 			}
-			} finally { DebugExitSubRule(5); }
+			} finally { DebugExitSubRule(4); }
 
-			DebugLocation(120, 38);
-			char_literal12=(IToken)Match(input,EQ,Follow._EQ_in_function_defn932); if (state.failed) return retval; 
+			DebugLocation(131, 37);
+			char_literal12=(IToken)Match(input,EQ,Follow._EQ_in_function_defn1005); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_EQ.Add(char_literal12);
 
-			DebugLocation(120, 42);
-			PushFollow(Follow._body_expr_in_function_defn934);
+			DebugLocation(131, 41);
+			PushFollow(Follow._body_expr_in_function_defn1007);
 			body_expr13=body_expr();
 			PopFollow();
 			if (state.failed) return retval;
@@ -636,7 +628,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 
 			{
 			// AST REWRITE
-			// elements: REC, ID, return_type, function_args, body_expr
+			// elements: REC, function_args, return_type, ID, body_expr
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -647,57 +639,60 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (object)adaptor.Nil();
-			// 121:3: -> ^( FUNCTION_DEFN ID ( REC )? ^( ARGS ( function_args )? ) ^( TYPE ( return_type )? ) body_expr )
+			// 132:3: -> ^( FUNCTION_DEFN ^( NAME ID ) ( REC )? ^( ARGS function_args ) ^( TYPE ( return_type )? ) body_expr )
 			{
-				DebugLocation(121, 6);
-				// D:\\fsharp_compiler\\fsharp_ss.g:121:6: ^( FUNCTION_DEFN ID ( REC )? ^( ARGS ( function_args )? ) ^( TYPE ( return_type )? ) body_expr )
+				DebugLocation(132, 6);
+				// D:\\fsharp_compiler\\fsharp_ss.g:132:6: ^( FUNCTION_DEFN ^( NAME ID ) ( REC )? ^( ARGS function_args ) ^( TYPE ( return_type )? ) body_expr )
 				{
 				object root_1 = (object)adaptor.Nil();
-				DebugLocation(121, 8);
+				DebugLocation(132, 8);
 				root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(FUNCTION_DEFN, "FUNCTION_DEFN"), root_1);
 
-				DebugLocation(121, 22);
-				adaptor.AddChild(root_1, stream_ID.NextNode());
-				DebugLocation(121, 25);
-				// D:\\fsharp_compiler\\fsharp_ss.g:121:25: ( REC )?
+				DebugLocation(132, 22);
+				// D:\\fsharp_compiler\\fsharp_ss.g:132:22: ^( NAME ID )
+				{
+				object root_2 = (object)adaptor.Nil();
+				DebugLocation(132, 24);
+				root_2 = (object)adaptor.BecomeRoot((object)adaptor.Create(NAME, "NAME"), root_2);
+
+				DebugLocation(132, 29);
+				adaptor.AddChild(root_2, stream_ID.NextNode());
+
+				adaptor.AddChild(root_1, root_2);
+				}
+				DebugLocation(132, 33);
+				// D:\\fsharp_compiler\\fsharp_ss.g:132:33: ( REC )?
 				if (stream_REC.HasNext)
 				{
-					DebugLocation(121, 25);
+					DebugLocation(132, 33);
 					adaptor.AddChild(root_1, stream_REC.NextNode());
 
 				}
 				stream_REC.Reset();
-				DebugLocation(121, 30);
-				// D:\\fsharp_compiler\\fsharp_ss.g:121:30: ^( ARGS ( function_args )? )
+				DebugLocation(132, 38);
+				// D:\\fsharp_compiler\\fsharp_ss.g:132:38: ^( ARGS function_args )
 				{
 				object root_2 = (object)adaptor.Nil();
-				DebugLocation(121, 32);
+				DebugLocation(132, 40);
 				root_2 = (object)adaptor.BecomeRoot((object)adaptor.Create(ARGS, "ARGS"), root_2);
 
-				DebugLocation(121, 37);
-				// D:\\fsharp_compiler\\fsharp_ss.g:121:37: ( function_args )?
-				if (stream_function_args.HasNext)
-				{
-					DebugLocation(121, 37);
-					adaptor.AddChild(root_2, stream_function_args.NextTree());
-
-				}
-				stream_function_args.Reset();
+				DebugLocation(132, 45);
+				adaptor.AddChild(root_2, stream_function_args.NextTree());
 
 				adaptor.AddChild(root_1, root_2);
 				}
-				DebugLocation(121, 53);
-				// D:\\fsharp_compiler\\fsharp_ss.g:121:53: ^( TYPE ( return_type )? )
+				DebugLocation(132, 60);
+				// D:\\fsharp_compiler\\fsharp_ss.g:132:60: ^( TYPE ( return_type )? )
 				{
 				object root_2 = (object)adaptor.Nil();
-				DebugLocation(121, 55);
+				DebugLocation(132, 62);
 				root_2 = (object)adaptor.BecomeRoot((object)adaptor.Create(TYPE, "TYPE"), root_2);
 
-				DebugLocation(121, 60);
-				// D:\\fsharp_compiler\\fsharp_ss.g:121:60: ( return_type )?
+				DebugLocation(132, 67);
+				// D:\\fsharp_compiler\\fsharp_ss.g:132:67: ( return_type )?
 				if (stream_return_type.HasNext)
 				{
-					DebugLocation(121, 60);
+					DebugLocation(132, 67);
 					adaptor.AddChild(root_2, stream_return_type.NextTree());
 
 				}
@@ -705,7 +700,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 
 				adaptor.AddChild(root_1, root_2);
 				}
-				DebugLocation(121, 74);
+				DebugLocation(132, 81);
 				adaptor.AddChild(root_1, stream_body_expr.NextTree());
 
 				adaptor.AddChild(root_0, root_1);
@@ -739,7 +734,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			LeaveRule("function_defn", 4);
 			LeaveRule_function_defn();
 		}
-		DebugLocation(122, 1);
+		DebugLocation(133, 1);
 		} finally { DebugExitRule(GrammarFileName, "function_defn"); }
 		return retval;
 
@@ -749,7 +744,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	partial void EnterRule_function_args();
 	partial void LeaveRule_function_args();
 	// $ANTLR start "function_args"
-	// D:\\fsharp_compiler\\fsharp_ss.g:124:1: function_args : ( ( ID )+ | '(' ! ')' !| ( '(' ! ID ^ ':' ! type ')' !)+ );
+	// D:\\fsharp_compiler\\fsharp_ss.g:135:1: function_args : ( ( ID )+ | '(' ! ')' !| ( '(' ! ID ^ ':' ! type ')' !)+ );
 	[GrammarRule("function_args")]
 	private AstParserRuleReturnScope<object, IToken> function_args()
 	{
@@ -778,34 +773,34 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 		object char_literal19_tree = default(object);
 		object char_literal21_tree = default(object);
 		try { DebugEnterRule(GrammarFileName, "function_args");
-		DebugLocation(124, 1);
+		DebugLocation(135, 1);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:125:2: ( ( ID )+ | '(' ! ')' !| ( '(' ! ID ^ ':' ! type ')' !)+ )
-			int alt8=3;
-			try { DebugEnterDecision(8, false);
-			int LA8_1 = input.LA(1);
+			// D:\\fsharp_compiler\\fsharp_ss.g:136:2: ( ( ID )+ | '(' ! ')' !| ( '(' ! ID ^ ':' ! type ')' !)+ )
+			int alt7=3;
+			try { DebugEnterDecision(7, false);
+			int LA7_1 = input.LA(1);
 
-			if ((LA8_1==ID))
+			if ((LA7_1==ID))
 			{
-				alt8 = 1;
+				alt7 = 1;
 			}
-			else if ((LA8_1==55))
+			else if ((LA7_1==OPEN_BR))
 			{
-				int LA8_2 = input.LA(2);
+				int LA7_2 = input.LA(2);
 
-				if ((LA8_2==56))
+				if ((LA7_2==CLOSE_BR))
 				{
-					alt8 = 2;
+					alt7 = 2;
 				}
-				else if ((LA8_2==ID))
+				else if ((LA7_2==ID))
 				{
-					alt8 = 3;
+					alt7 = 3;
 				}
 				else
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 8, 2, input, 2);
+					NoViableAltException nvae = new NoViableAltException("", 7, 2, input, 2);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
@@ -813,21 +808,92 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			else
 			{
 				if (state.backtracking>0) {state.failed=true; return retval;}
-				NoViableAltException nvae = new NoViableAltException("", 8, 0, input, 1);
+				NoViableAltException nvae = new NoViableAltException("", 7, 0, input, 1);
 				DebugRecognitionException(nvae);
 				throw nvae;
 			}
-			} finally { DebugExitDecision(8); }
-			switch (alt8)
+			} finally { DebugExitDecision(7); }
+			switch (alt7)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// D:\\fsharp_compiler\\fsharp_ss.g:126:2: ( ID )+
+				// D:\\fsharp_compiler\\fsharp_ss.g:137:2: ( ID )+
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(126, 2);
-				// D:\\fsharp_compiler\\fsharp_ss.g:126:2: ( ID )+
+				DebugLocation(137, 2);
+				// D:\\fsharp_compiler\\fsharp_ss.g:137:2: ( ID )+
+				int cnt5=0;
+				try { DebugEnterSubRule(5);
+				while (true)
+				{
+					int alt5=2;
+					try { DebugEnterDecision(5, false);
+					int LA5_1 = input.LA(1);
+
+					if ((LA5_1==ID))
+					{
+						alt5 = 1;
+					}
+
+
+					} finally { DebugExitDecision(5); }
+					switch (alt5)
+					{
+					case 1:
+						DebugEnterAlt(1);
+						// D:\\fsharp_compiler\\fsharp_ss.g:137:2: ID
+						{
+						DebugLocation(137, 2);
+						ID14=(IToken)Match(input,ID,Follow._ID_in_function_args1054); if (state.failed) return retval;
+						if (state.backtracking == 0) {
+						ID14_tree = (object)adaptor.Create(ID14);
+						adaptor.AddChild(root_0, ID14_tree);
+						}
+
+						}
+						break;
+
+					default:
+						if (cnt5 >= 1)
+							goto loop5;
+
+						if (state.backtracking>0) {state.failed=true; return retval;}
+						EarlyExitException eee5 = new EarlyExitException( 5, input );
+						DebugRecognitionException(eee5);
+						throw eee5;
+					}
+					cnt5++;
+				}
+				loop5:
+					;
+
+				} finally { DebugExitSubRule(5); }
+
+
+				}
+				break;
+			case 2:
+				DebugEnterAlt(2);
+				// D:\\fsharp_compiler\\fsharp_ss.g:138:2: '(' ! ')' !
+				{
+				root_0 = (object)adaptor.Nil();
+
+				DebugLocation(138, 5);
+				char_literal15=(IToken)Match(input,OPEN_BR,Follow._OPEN_BR_in_function_args1061); if (state.failed) return retval;
+				DebugLocation(138, 10);
+				char_literal16=(IToken)Match(input,CLOSE_BR,Follow._CLOSE_BR_in_function_args1064); if (state.failed) return retval;
+
+				}
+				break;
+			case 3:
+				DebugEnterAlt(3);
+				// D:\\fsharp_compiler\\fsharp_ss.g:139:2: ( '(' ! ID ^ ':' ! type ')' !)+
+				{
+				root_0 = (object)adaptor.Nil();
+
+				DebugLocation(139, 2);
+				// D:\\fsharp_compiler\\fsharp_ss.g:139:2: ( '(' ! ID ^ ':' ! type ')' !)+
 				int cnt6=0;
 				try { DebugEnterSubRule(6);
 				while (true)
@@ -836,7 +902,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 					try { DebugEnterDecision(6, false);
 					int LA6_1 = input.LA(1);
 
-					if ((LA6_1==ID))
+					if ((LA6_1==OPEN_BR))
 					{
 						alt6 = 1;
 					}
@@ -847,14 +913,26 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// D:\\fsharp_compiler\\fsharp_ss.g:126:2: ID
+						// D:\\fsharp_compiler\\fsharp_ss.g:139:3: '(' ! ID ^ ':' ! type ')' !
 						{
-						DebugLocation(126, 2);
-						ID14=(IToken)Match(input,ID,Follow._ID_in_function_args978); if (state.failed) return retval;
+						DebugLocation(139, 6);
+						char_literal17=(IToken)Match(input,OPEN_BR,Follow._OPEN_BR_in_function_args1071); if (state.failed) return retval;
+						DebugLocation(139, 10);
+						ID18=(IToken)Match(input,ID,Follow._ID_in_function_args1074); if (state.failed) return retval;
 						if (state.backtracking == 0) {
-						ID14_tree = (object)adaptor.Create(ID14);
-						adaptor.AddChild(root_0, ID14_tree);
+						ID18_tree = (object)adaptor.Create(ID18);
+						root_0 = (object)adaptor.BecomeRoot(ID18_tree, root_0);
 						}
+						DebugLocation(139, 15);
+						char_literal19=(IToken)Match(input,63,Follow._63_in_function_args1077); if (state.failed) return retval;
+						DebugLocation(139, 17);
+						PushFollow(Follow._type_in_function_args1080);
+						type20=type();
+						PopFollow();
+						if (state.failed) return retval;
+						if (state.backtracking == 0) adaptor.AddChild(root_0, type20.Tree);
+						DebugLocation(139, 25);
+						char_literal21=(IToken)Match(input,CLOSE_BR,Follow._CLOSE_BR_in_function_args1082); if (state.failed) return retval;
 
 						}
 						break;
@@ -874,89 +952,6 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 					;
 
 				} finally { DebugExitSubRule(6); }
-
-
-				}
-				break;
-			case 2:
-				DebugEnterAlt(2);
-				// D:\\fsharp_compiler\\fsharp_ss.g:127:2: '(' ! ')' !
-				{
-				root_0 = (object)adaptor.Nil();
-
-				DebugLocation(127, 5);
-				char_literal15=(IToken)Match(input,55,Follow._55_in_function_args985); if (state.failed) return retval;
-				DebugLocation(127, 10);
-				char_literal16=(IToken)Match(input,56,Follow._56_in_function_args988); if (state.failed) return retval;
-
-				}
-				break;
-			case 3:
-				DebugEnterAlt(3);
-				// D:\\fsharp_compiler\\fsharp_ss.g:128:2: ( '(' ! ID ^ ':' ! type ')' !)+
-				{
-				root_0 = (object)adaptor.Nil();
-
-				DebugLocation(128, 2);
-				// D:\\fsharp_compiler\\fsharp_ss.g:128:2: ( '(' ! ID ^ ':' ! type ')' !)+
-				int cnt7=0;
-				try { DebugEnterSubRule(7);
-				while (true)
-				{
-					int alt7=2;
-					try { DebugEnterDecision(7, false);
-					int LA7_1 = input.LA(1);
-
-					if ((LA7_1==55))
-					{
-						alt7 = 1;
-					}
-
-
-					} finally { DebugExitDecision(7); }
-					switch (alt7)
-					{
-					case 1:
-						DebugEnterAlt(1);
-						// D:\\fsharp_compiler\\fsharp_ss.g:128:3: '(' ! ID ^ ':' ! type ')' !
-						{
-						DebugLocation(128, 6);
-						char_literal17=(IToken)Match(input,55,Follow._55_in_function_args995); if (state.failed) return retval;
-						DebugLocation(128, 10);
-						ID18=(IToken)Match(input,ID,Follow._ID_in_function_args998); if (state.failed) return retval;
-						if (state.backtracking == 0) {
-						ID18_tree = (object)adaptor.Create(ID18);
-						root_0 = (object)adaptor.BecomeRoot(ID18_tree, root_0);
-						}
-						DebugLocation(128, 15);
-						char_literal19=(IToken)Match(input,57,Follow._57_in_function_args1001); if (state.failed) return retval;
-						DebugLocation(128, 17);
-						PushFollow(Follow._type_in_function_args1004);
-						type20=type();
-						PopFollow();
-						if (state.failed) return retval;
-						if (state.backtracking == 0) adaptor.AddChild(root_0, type20.Tree);
-						DebugLocation(128, 25);
-						char_literal21=(IToken)Match(input,56,Follow._56_in_function_args1006); if (state.failed) return retval;
-
-						}
-						break;
-
-					default:
-						if (cnt7 >= 1)
-							goto loop7;
-
-						if (state.backtracking>0) {state.failed=true; return retval;}
-						EarlyExitException eee7 = new EarlyExitException( 7, input );
-						DebugRecognitionException(eee7);
-						throw eee7;
-					}
-					cnt7++;
-				}
-				loop7:
-					;
-
-				} finally { DebugExitSubRule(7); }
 
 
 				}
@@ -983,7 +978,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			LeaveRule("function_args", 5);
 			LeaveRule_function_args();
 		}
-		DebugLocation(129, 1);
+		DebugLocation(140, 1);
 		} finally { DebugExitRule(GrammarFileName, "function_args"); }
 		return retval;
 
@@ -993,7 +988,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	partial void EnterRule_return_type();
 	partial void LeaveRule_return_type();
 	// $ANTLR start "return_type"
-	// D:\\fsharp_compiler\\fsharp_ss.g:131:1: return_type : ':' ! type ;
+	// D:\\fsharp_compiler\\fsharp_ss.g:142:1: return_type : ':' ! type ;
 	[GrammarRule("return_type")]
 	private AstParserRuleReturnScope<object, IToken> return_type()
 	{
@@ -1010,19 +1005,19 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 
 		object char_literal22_tree = default(object);
 		try { DebugEnterRule(GrammarFileName, "return_type");
-		DebugLocation(131, 1);
+		DebugLocation(142, 1);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:132:2: ( ':' ! type )
+			// D:\\fsharp_compiler\\fsharp_ss.g:143:2: ( ':' ! type )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:133:2: ':' ! type
+			// D:\\fsharp_compiler\\fsharp_ss.g:144:2: ':' ! type
 			{
 			root_0 = (object)adaptor.Nil();
 
-			DebugLocation(133, 5);
-			char_literal22=(IToken)Match(input,57,Follow._57_in_return_type1024); if (state.failed) return retval;
-			DebugLocation(133, 7);
-			PushFollow(Follow._type_in_return_type1027);
+			DebugLocation(144, 5);
+			char_literal22=(IToken)Match(input,63,Follow._63_in_return_type1100); if (state.failed) return retval;
+			DebugLocation(144, 7);
+			PushFollow(Follow._type_in_return_type1103);
 			type23=type();
 			PopFollow();
 			if (state.failed) return retval;
@@ -1050,7 +1045,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			LeaveRule("return_type", 6);
 			LeaveRule_return_type();
 		}
-		DebugLocation(134, 1);
+		DebugLocation(145, 1);
 		} finally { DebugExitRule(GrammarFileName, "return_type"); }
 		return retval;
 
@@ -1060,7 +1055,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	partial void EnterRule_body_expr();
 	partial void LeaveRule_body_expr();
 	// $ANTLR start "body_expr"
-	// D:\\fsharp_compiler\\fsharp_ss.g:136:1: body_expr : ( expr )* ( returning_expr )+ -> ^( BODY ( expr )* ( returning_expr )+ ) ;
+	// D:\\fsharp_compiler\\fsharp_ss.g:147:1: body_expr : expr_block -> ^( BODY expr_block ) ;
 	[GrammarRule("body_expr")]
 	private AstParserRuleReturnScope<object, IToken> body_expr()
 	{
@@ -1072,352 +1067,28 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 
 		object root_0 = default(object);
 
-		AstParserRuleReturnScope<object, IToken> expr24 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> returning_expr25 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> expr_block24 = default(AstParserRuleReturnScope<object, IToken>);
 
-		RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
-		RewriteRuleSubtreeStream stream_returning_expr=new RewriteRuleSubtreeStream(adaptor,"rule returning_expr");
+		RewriteRuleSubtreeStream stream_expr_block=new RewriteRuleSubtreeStream(adaptor,"rule expr_block");
 		try { DebugEnterRule(GrammarFileName, "body_expr");
-		DebugLocation(136, 1);
+		DebugLocation(147, 1);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:137:2: ( ( expr )* ( returning_expr )+ -> ^( BODY ( expr )* ( returning_expr )+ ) )
+			// D:\\fsharp_compiler\\fsharp_ss.g:148:2: ( expr_block -> ^( BODY expr_block ) )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:138:2: ( expr )* ( returning_expr )+
+			// D:\\fsharp_compiler\\fsharp_ss.g:149:2: expr_block
 			{
-			DebugLocation(138, 2);
-			// D:\\fsharp_compiler\\fsharp_ss.g:138:2: ( expr )*
-			try { DebugEnterSubRule(9);
-			while (true)
-			{
-				int alt9=2;
-				try { DebugEnterDecision(9, false);
-				switch (input.LA(1))
-				{
-				case TRUE:
-					{
-					int LA9_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred19_fsharp_ss_fragment)))
-					{
-						alt9 = 1;
-					}
-
-
-					}
-					break;
-				case ID:
-					{
-					int LA9_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred19_fsharp_ss_fragment)))
-					{
-						alt9 = 1;
-					}
-
-
-					}
-					break;
-				case 55:
-					{
-					int LA9_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred19_fsharp_ss_fragment)))
-					{
-						alt9 = 1;
-					}
-
-
-					}
-					break;
-				case FUN:
-					{
-					int LA9_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred19_fsharp_ss_fragment)))
-					{
-						alt9 = 1;
-					}
-
-
-					}
-					break;
-				case FALSE:
-					{
-					int LA9_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred19_fsharp_ss_fragment)))
-					{
-						alt9 = 1;
-					}
-
-
-					}
-					break;
-				case STRING:
-					{
-					int LA9_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred19_fsharp_ss_fragment)))
-					{
-						alt9 = 1;
-					}
-
-
-					}
-					break;
-				case CHAR:
-					{
-					int LA9_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred19_fsharp_ss_fragment)))
-					{
-						alt9 = 1;
-					}
-
-
-					}
-					break;
-				case INT:
-					{
-					int LA9_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred19_fsharp_ss_fragment)))
-					{
-						alt9 = 1;
-					}
-
-
-					}
-					break;
-				case DOUBLE:
-					{
-					int LA9_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred19_fsharp_ss_fragment)))
-					{
-						alt9 = 1;
-					}
-
-
-					}
-					break;
-				case IF:
-					{
-					int LA9_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred19_fsharp_ss_fragment)))
-					{
-						alt9 = 1;
-					}
-
-
-					}
-					break;
-				case LET:
-					{
-					alt9 = 1;
-					}
-					break;
-				}
-
-				} finally { DebugExitDecision(9); }
-				switch ( alt9 )
-				{
-				case 1:
-					DebugEnterAlt(1);
-					// D:\\fsharp_compiler\\fsharp_ss.g:138:2: expr
-					{
-					DebugLocation(138, 2);
-					PushFollow(Follow._expr_in_body_expr1041);
-					expr24=expr();
-					PopFollow();
-					if (state.failed) return retval;
-					if (state.backtracking == 0) stream_expr.Add(expr24.Tree);
-
-					}
-					break;
-
-				default:
-					goto loop9;
-				}
-			}
-
-			loop9:
-				;
-
-			} finally { DebugExitSubRule(9); }
-
-			DebugLocation(138, 8);
-			// D:\\fsharp_compiler\\fsharp_ss.g:138:8: ( returning_expr )+
-			int cnt10=0;
-			try { DebugEnterSubRule(10);
-			while (true)
-			{
-				int alt10=2;
-				try { DebugEnterDecision(10, false);
-				switch (input.LA(1))
-				{
-				case TRUE:
-					{
-					int LA10_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred20_fsharp_ss_fragment)))
-					{
-						alt10 = 1;
-					}
-
-
-					}
-					break;
-				case ID:
-					{
-					int LA10_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred20_fsharp_ss_fragment)))
-					{
-						alt10 = 1;
-					}
-
-
-					}
-					break;
-				case 55:
-					{
-					int LA10_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred20_fsharp_ss_fragment)))
-					{
-						alt10 = 1;
-					}
-
-
-					}
-					break;
-				case FUN:
-					{
-					int LA10_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred20_fsharp_ss_fragment)))
-					{
-						alt10 = 1;
-					}
-
-
-					}
-					break;
-				case FALSE:
-					{
-					int LA10_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred20_fsharp_ss_fragment)))
-					{
-						alt10 = 1;
-					}
-
-
-					}
-					break;
-				case STRING:
-					{
-					int LA10_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred20_fsharp_ss_fragment)))
-					{
-						alt10 = 1;
-					}
-
-
-					}
-					break;
-				case CHAR:
-					{
-					int LA10_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred20_fsharp_ss_fragment)))
-					{
-						alt10 = 1;
-					}
-
-
-					}
-					break;
-				case INT:
-					{
-					int LA10_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred20_fsharp_ss_fragment)))
-					{
-						alt10 = 1;
-					}
-
-
-					}
-					break;
-				case DOUBLE:
-					{
-					int LA10_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred20_fsharp_ss_fragment)))
-					{
-						alt10 = 1;
-					}
-
-
-					}
-					break;
-				case IF:
-					{
-					int LA10_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred20_fsharp_ss_fragment)))
-					{
-						alt10 = 1;
-					}
-
-
-					}
-					break;
-				}
-
-				} finally { DebugExitDecision(10); }
-				switch (alt10)
-				{
-				case 1:
-					DebugEnterAlt(1);
-					// D:\\fsharp_compiler\\fsharp_ss.g:138:8: returning_expr
-					{
-					DebugLocation(138, 8);
-					PushFollow(Follow._returning_expr_in_body_expr1044);
-					returning_expr25=returning_expr();
-					PopFollow();
-					if (state.failed) return retval;
-					if (state.backtracking == 0) stream_returning_expr.Add(returning_expr25.Tree);
-
-					}
-					break;
-
-				default:
-					if (cnt10 >= 1)
-						goto loop10;
-
-					if (state.backtracking>0) {state.failed=true; return retval;}
-					EarlyExitException eee10 = new EarlyExitException( 10, input );
-					DebugRecognitionException(eee10);
-					throw eee10;
-				}
-				cnt10++;
-			}
-			loop10:
-				;
-
-			} finally { DebugExitSubRule(10); }
-
+			DebugLocation(149, 2);
+			PushFollow(Follow._expr_block_in_body_expr1117);
+			expr_block24=expr_block();
+			PopFollow();
+			if (state.failed) return retval;
+			if (state.backtracking == 0) stream_expr_block.Add(expr_block24.Tree);
 
 
 			{
 			// AST REWRITE
-			// elements: returning_expr, expr
+			// elements: expr_block
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -1428,36 +1099,17 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (object)adaptor.Nil();
-			// 139:3: -> ^( BODY ( expr )* ( returning_expr )+ )
+			// 150:3: -> ^( BODY expr_block )
 			{
-				DebugLocation(139, 6);
-				// D:\\fsharp_compiler\\fsharp_ss.g:139:6: ^( BODY ( expr )* ( returning_expr )+ )
+				DebugLocation(150, 6);
+				// D:\\fsharp_compiler\\fsharp_ss.g:150:6: ^( BODY expr_block )
 				{
 				object root_1 = (object)adaptor.Nil();
-				DebugLocation(139, 8);
+				DebugLocation(150, 8);
 				root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(BODY, "BODY"), root_1);
 
-				DebugLocation(139, 13);
-				// D:\\fsharp_compiler\\fsharp_ss.g:139:13: ( expr )*
-				while ( stream_expr.HasNext )
-				{
-					DebugLocation(139, 13);
-					adaptor.AddChild(root_1, stream_expr.NextTree());
-
-				}
-				stream_expr.Reset();
-				DebugLocation(139, 19);
-				if (!(stream_returning_expr.HasNext))
-				{
-					throw new RewriteEarlyExitException();
-				}
-				while ( stream_returning_expr.HasNext )
-				{
-					DebugLocation(139, 19);
-					adaptor.AddChild(root_1, stream_returning_expr.NextTree());
-
-				}
-				stream_returning_expr.Reset();
+				DebugLocation(150, 13);
+				adaptor.AddChild(root_1, stream_expr_block.NextTree());
 
 				adaptor.AddChild(root_0, root_1);
 				}
@@ -1490,7 +1142,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			LeaveRule("body_expr", 7);
 			LeaveRule_body_expr();
 		}
-		DebugLocation(140, 1);
+		DebugLocation(151, 1);
 		} finally { DebugExitRule(GrammarFileName, "body_expr"); }
 		return retval;
 
@@ -1500,7 +1152,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	partial void EnterRule_if_expr();
 	partial void LeaveRule_if_expr();
 	// $ANTLR start "if_expr"
-	// D:\\fsharp_compiler\\fsharp_ss.g:142:1: if_expr : IF ^ logic_expr THEN ! ( expr )* ( returning_expr )+ ( elif_expr )* ( else_expr )? ;
+	// D:\\fsharp_compiler\\fsharp_ss.g:153:1: if_expr : IF ^ logic_expr THEN ! expr_block ( elif_expr )* ( else_expr )? ;
 	[GrammarRule("if_expr")]
 	private AstParserRuleReturnScope<object, IToken> if_expr()
 	{
@@ -1512,452 +1164,117 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 
 		object root_0 = default(object);
 
-		IToken IF26 = default(IToken);
-		IToken THEN28 = default(IToken);
-		AstParserRuleReturnScope<object, IToken> logic_expr27 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> expr29 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> returning_expr30 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> elif_expr31 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> else_expr32 = default(AstParserRuleReturnScope<object, IToken>);
+		IToken IF25 = default(IToken);
+		IToken THEN27 = default(IToken);
+		AstParserRuleReturnScope<object, IToken> logic_expr26 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> expr_block28 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> elif_expr29 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> else_expr30 = default(AstParserRuleReturnScope<object, IToken>);
 
-		object IF26_tree = default(object);
-		object THEN28_tree = default(object);
+		object IF25_tree = default(object);
+		object THEN27_tree = default(object);
 		try { DebugEnterRule(GrammarFileName, "if_expr");
-		DebugLocation(142, 1);
+		DebugLocation(153, 1);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:142:9: ( IF ^ logic_expr THEN ! ( expr )* ( returning_expr )+ ( elif_expr )* ( else_expr )? )
+			// D:\\fsharp_compiler\\fsharp_ss.g:153:9: ( IF ^ logic_expr THEN ! expr_block ( elif_expr )* ( else_expr )? )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:143:2: IF ^ logic_expr THEN ! ( expr )* ( returning_expr )+ ( elif_expr )* ( else_expr )?
+			// D:\\fsharp_compiler\\fsharp_ss.g:154:2: IF ^ logic_expr THEN ! expr_block ( elif_expr )* ( else_expr )?
 			{
 			root_0 = (object)adaptor.Nil();
 
-			DebugLocation(143, 4);
-			IF26=(IToken)Match(input,IF,Follow._IF_in_if_expr1071); if (state.failed) return retval;
+			DebugLocation(154, 4);
+			IF25=(IToken)Match(input,IF,Follow._IF_in_if_expr1139); if (state.failed) return retval;
 			if (state.backtracking == 0) {
-			IF26_tree = (object)adaptor.Create(IF26);
-			root_0 = (object)adaptor.BecomeRoot(IF26_tree, root_0);
+			IF25_tree = (object)adaptor.Create(IF25);
+			root_0 = (object)adaptor.BecomeRoot(IF25_tree, root_0);
 			}
-			DebugLocation(143, 6);
-			PushFollow(Follow._logic_expr_in_if_expr1074);
-			logic_expr27=logic_expr();
+			DebugLocation(154, 6);
+			PushFollow(Follow._logic_expr_in_if_expr1142);
+			logic_expr26=logic_expr();
 			PopFollow();
 			if (state.failed) return retval;
-			if (state.backtracking == 0) adaptor.AddChild(root_0, logic_expr27.Tree);
-			DebugLocation(143, 21);
-			THEN28=(IToken)Match(input,THEN,Follow._THEN_in_if_expr1076); if (state.failed) return retval;
-			DebugLocation(143, 23);
-			// D:\\fsharp_compiler\\fsharp_ss.g:143:23: ( expr )*
-			try { DebugEnterSubRule(11);
+			if (state.backtracking == 0) adaptor.AddChild(root_0, logic_expr26.Tree);
+			DebugLocation(154, 21);
+			THEN27=(IToken)Match(input,THEN,Follow._THEN_in_if_expr1144); if (state.failed) return retval;
+			DebugLocation(154, 23);
+			PushFollow(Follow._expr_block_in_if_expr1147);
+			expr_block28=expr_block();
+			PopFollow();
+			if (state.failed) return retval;
+			if (state.backtracking == 0) adaptor.AddChild(root_0, expr_block28.Tree);
+			DebugLocation(154, 34);
+			// D:\\fsharp_compiler\\fsharp_ss.g:154:34: ( elif_expr )*
+			try { DebugEnterSubRule(8);
 			while (true)
 			{
-				int alt11=2;
-				try { DebugEnterDecision(11, false);
-				switch (input.LA(1))
+				int alt8=2;
+				try { DebugEnterDecision(8, false);
+				int LA8_1 = input.LA(1);
+
+				if ((LA8_1==ELIF))
 				{
-				case TRUE:
-					{
-					int LA11_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred21_fsharp_ss_fragment)))
-					{
-						alt11 = 1;
-					}
-
-
-					}
-					break;
-				case ID:
-					{
-					int LA11_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred21_fsharp_ss_fragment)))
-					{
-						alt11 = 1;
-					}
-
-
-					}
-					break;
-				case 55:
-					{
-					int LA11_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred21_fsharp_ss_fragment)))
-					{
-						alt11 = 1;
-					}
-
-
-					}
-					break;
-				case FUN:
-					{
-					int LA11_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred21_fsharp_ss_fragment)))
-					{
-						alt11 = 1;
-					}
-
-
-					}
-					break;
-				case FALSE:
-					{
-					int LA11_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred21_fsharp_ss_fragment)))
-					{
-						alt11 = 1;
-					}
-
-
-					}
-					break;
-				case STRING:
-					{
-					int LA11_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred21_fsharp_ss_fragment)))
-					{
-						alt11 = 1;
-					}
-
-
-					}
-					break;
-				case CHAR:
-					{
-					int LA11_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred21_fsharp_ss_fragment)))
-					{
-						alt11 = 1;
-					}
-
-
-					}
-					break;
-				case INT:
-					{
-					int LA11_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred21_fsharp_ss_fragment)))
-					{
-						alt11 = 1;
-					}
-
-
-					}
-					break;
-				case DOUBLE:
-					{
-					int LA11_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred21_fsharp_ss_fragment)))
-					{
-						alt11 = 1;
-					}
-
-
-					}
-					break;
-				case IF:
-					{
-					int LA11_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred21_fsharp_ss_fragment)))
-					{
-						alt11 = 1;
-					}
-
-
-					}
-					break;
-				case LET:
-					{
-					alt11 = 1;
-					}
-					break;
+					alt8 = 1;
 				}
 
-				} finally { DebugExitDecision(11); }
-				switch ( alt11 )
+
+				} finally { DebugExitDecision(8); }
+				switch ( alt8 )
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// D:\\fsharp_compiler\\fsharp_ss.g:143:23: expr
+					// D:\\fsharp_compiler\\fsharp_ss.g:154:34: elif_expr
 					{
-					DebugLocation(143, 23);
-					PushFollow(Follow._expr_in_if_expr1079);
-					expr29=expr();
+					DebugLocation(154, 34);
+					PushFollow(Follow._elif_expr_in_if_expr1149);
+					elif_expr29=elif_expr();
 					PopFollow();
 					if (state.failed) return retval;
-					if (state.backtracking == 0) adaptor.AddChild(root_0, expr29.Tree);
+					if (state.backtracking == 0) adaptor.AddChild(root_0, elif_expr29.Tree);
 
 					}
 					break;
 
 				default:
-					goto loop11;
+					goto loop8;
 				}
 			}
 
-			loop11:
+			loop8:
 				;
 
-			} finally { DebugExitSubRule(11); }
+			} finally { DebugExitSubRule(8); }
 
-			DebugLocation(143, 29);
-			// D:\\fsharp_compiler\\fsharp_ss.g:143:29: ( returning_expr )+
-			int cnt12=0;
-			try { DebugEnterSubRule(12);
-			while (true)
+			DebugLocation(154, 45);
+			// D:\\fsharp_compiler\\fsharp_ss.g:154:45: ( else_expr )?
+			int alt9=2;
+			try { DebugEnterSubRule(9);
+			try { DebugEnterDecision(9, false);
+			int LA9_1 = input.LA(1);
+
+			if ((LA9_1==ELSE))
 			{
-				int alt12=2;
-				try { DebugEnterDecision(12, false);
-				switch (input.LA(1))
-				{
-				case TRUE:
-					{
-					int LA12_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred22_fsharp_ss_fragment)))
-					{
-						alt12 = 1;
-					}
-
-
-					}
-					break;
-				case ID:
-					{
-					int LA12_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred22_fsharp_ss_fragment)))
-					{
-						alt12 = 1;
-					}
-
-
-					}
-					break;
-				case 55:
-					{
-					int LA12_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred22_fsharp_ss_fragment)))
-					{
-						alt12 = 1;
-					}
-
-
-					}
-					break;
-				case FUN:
-					{
-					int LA12_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred22_fsharp_ss_fragment)))
-					{
-						alt12 = 1;
-					}
-
-
-					}
-					break;
-				case FALSE:
-					{
-					int LA12_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred22_fsharp_ss_fragment)))
-					{
-						alt12 = 1;
-					}
-
-
-					}
-					break;
-				case STRING:
-					{
-					int LA12_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred22_fsharp_ss_fragment)))
-					{
-						alt12 = 1;
-					}
-
-
-					}
-					break;
-				case CHAR:
-					{
-					int LA12_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred22_fsharp_ss_fragment)))
-					{
-						alt12 = 1;
-					}
-
-
-					}
-					break;
-				case INT:
-					{
-					int LA12_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred22_fsharp_ss_fragment)))
-					{
-						alt12 = 1;
-					}
-
-
-					}
-					break;
-				case DOUBLE:
-					{
-					int LA12_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred22_fsharp_ss_fragment)))
-					{
-						alt12 = 1;
-					}
-
-
-					}
-					break;
-				case IF:
-					{
-					int LA12_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred22_fsharp_ss_fragment)))
-					{
-						alt12 = 1;
-					}
-
-
-					}
-					break;
-				}
-
-				} finally { DebugExitDecision(12); }
-				switch (alt12)
-				{
-				case 1:
-					DebugEnterAlt(1);
-					// D:\\fsharp_compiler\\fsharp_ss.g:143:29: returning_expr
-					{
-					DebugLocation(143, 29);
-					PushFollow(Follow._returning_expr_in_if_expr1082);
-					returning_expr30=returning_expr();
-					PopFollow();
-					if (state.failed) return retval;
-					if (state.backtracking == 0) adaptor.AddChild(root_0, returning_expr30.Tree);
-
-					}
-					break;
-
-				default:
-					if (cnt12 >= 1)
-						goto loop12;
-
-					if (state.backtracking>0) {state.failed=true; return retval;}
-					EarlyExitException eee12 = new EarlyExitException( 12, input );
-					DebugRecognitionException(eee12);
-					throw eee12;
-				}
-				cnt12++;
+				alt9 = 1;
 			}
-			loop12:
-				;
-
-			} finally { DebugExitSubRule(12); }
-
-			DebugLocation(143, 45);
-			// D:\\fsharp_compiler\\fsharp_ss.g:143:45: ( elif_expr )*
-			try { DebugEnterSubRule(13);
-			while (true)
-			{
-				int alt13=2;
-				try { DebugEnterDecision(13, false);
-				int LA13_1 = input.LA(1);
-
-				if ((LA13_1==ELIF))
-				{
-					int LA13_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred23_fsharp_ss_fragment)))
-					{
-						alt13 = 1;
-					}
-
-
-				}
-
-
-				} finally { DebugExitDecision(13); }
-				switch ( alt13 )
-				{
-				case 1:
-					DebugEnterAlt(1);
-					// D:\\fsharp_compiler\\fsharp_ss.g:143:45: elif_expr
-					{
-					DebugLocation(143, 45);
-					PushFollow(Follow._elif_expr_in_if_expr1085);
-					elif_expr31=elif_expr();
-					PopFollow();
-					if (state.failed) return retval;
-					if (state.backtracking == 0) adaptor.AddChild(root_0, elif_expr31.Tree);
-
-					}
-					break;
-
-				default:
-					goto loop13;
-				}
-			}
-
-			loop13:
-				;
-
-			} finally { DebugExitSubRule(13); }
-
-			DebugLocation(143, 56);
-			// D:\\fsharp_compiler\\fsharp_ss.g:143:56: ( else_expr )?
-			int alt14=2;
-			try { DebugEnterSubRule(14);
-			try { DebugEnterDecision(14, false);
-			int LA14_1 = input.LA(1);
-
-			if ((LA14_1==ELSE))
-			{
-				int LA14_2 = input.LA(2);
-
-				if ((EvaluatePredicate(synpred24_fsharp_ss_fragment)))
-				{
-					alt14 = 1;
-				}
-			}
-			} finally { DebugExitDecision(14); }
-			switch (alt14)
+			} finally { DebugExitDecision(9); }
+			switch (alt9)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// D:\\fsharp_compiler\\fsharp_ss.g:143:56: else_expr
+				// D:\\fsharp_compiler\\fsharp_ss.g:154:45: else_expr
 				{
-				DebugLocation(143, 56);
-				PushFollow(Follow._else_expr_in_if_expr1088);
-				else_expr32=else_expr();
+				DebugLocation(154, 45);
+				PushFollow(Follow._else_expr_in_if_expr1152);
+				else_expr30=else_expr();
 				PopFollow();
 				if (state.failed) return retval;
-				if (state.backtracking == 0) adaptor.AddChild(root_0, else_expr32.Tree);
+				if (state.backtracking == 0) adaptor.AddChild(root_0, else_expr30.Tree);
 
 				}
 				break;
 
 			}
-			} finally { DebugExitSubRule(14); }
+			} finally { DebugExitSubRule(9); }
 
 
 			}
@@ -1982,7 +1299,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			LeaveRule("if_expr", 8);
 			LeaveRule_if_expr();
 		}
-		DebugLocation(144, 1);
+		DebugLocation(155, 1);
 		} finally { DebugExitRule(GrammarFileName, "if_expr"); }
 		return retval;
 
@@ -1992,7 +1309,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	partial void EnterRule_elif_expr();
 	partial void LeaveRule_elif_expr();
 	// $ANTLR start "elif_expr"
-	// D:\\fsharp_compiler\\fsharp_ss.g:146:1: elif_expr : ELIF ^ logic_expr THEN ! ( expr )* ( returning_expr )+ ;
+	// D:\\fsharp_compiler\\fsharp_ss.g:157:1: elif_expr : ELIF ^ logic_expr THEN ! expr_block ;
 	[GrammarRule("elif_expr")]
 	private AstParserRuleReturnScope<object, IToken> elif_expr()
 	{
@@ -2004,366 +1321,43 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 
 		object root_0 = default(object);
 
-		IToken ELIF33 = default(IToken);
-		IToken THEN35 = default(IToken);
-		AstParserRuleReturnScope<object, IToken> logic_expr34 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> expr36 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> returning_expr37 = default(AstParserRuleReturnScope<object, IToken>);
+		IToken ELIF31 = default(IToken);
+		IToken THEN33 = default(IToken);
+		AstParserRuleReturnScope<object, IToken> logic_expr32 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> expr_block34 = default(AstParserRuleReturnScope<object, IToken>);
 
-		object ELIF33_tree = default(object);
-		object THEN35_tree = default(object);
+		object ELIF31_tree = default(object);
+		object THEN33_tree = default(object);
 		try { DebugEnterRule(GrammarFileName, "elif_expr");
-		DebugLocation(146, 1);
+		DebugLocation(157, 1);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:147:2: ( ELIF ^ logic_expr THEN ! ( expr )* ( returning_expr )+ )
+			// D:\\fsharp_compiler\\fsharp_ss.g:158:2: ( ELIF ^ logic_expr THEN ! expr_block )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:148:2: ELIF ^ logic_expr THEN ! ( expr )* ( returning_expr )+
+			// D:\\fsharp_compiler\\fsharp_ss.g:159:2: ELIF ^ logic_expr THEN ! expr_block
 			{
 			root_0 = (object)adaptor.Nil();
 
-			DebugLocation(148, 6);
-			ELIF33=(IToken)Match(input,ELIF,Follow._ELIF_in_elif_expr1101); if (state.failed) return retval;
+			DebugLocation(159, 6);
+			ELIF31=(IToken)Match(input,ELIF,Follow._ELIF_in_elif_expr1165); if (state.failed) return retval;
 			if (state.backtracking == 0) {
-			ELIF33_tree = (object)adaptor.Create(ELIF33);
-			root_0 = (object)adaptor.BecomeRoot(ELIF33_tree, root_0);
+			ELIF31_tree = (object)adaptor.Create(ELIF31);
+			root_0 = (object)adaptor.BecomeRoot(ELIF31_tree, root_0);
 			}
-			DebugLocation(148, 8);
-			PushFollow(Follow._logic_expr_in_elif_expr1104);
-			logic_expr34=logic_expr();
+			DebugLocation(159, 8);
+			PushFollow(Follow._logic_expr_in_elif_expr1168);
+			logic_expr32=logic_expr();
 			PopFollow();
 			if (state.failed) return retval;
-			if (state.backtracking == 0) adaptor.AddChild(root_0, logic_expr34.Tree);
-			DebugLocation(148, 23);
-			THEN35=(IToken)Match(input,THEN,Follow._THEN_in_elif_expr1106); if (state.failed) return retval;
-			DebugLocation(148, 25);
-			// D:\\fsharp_compiler\\fsharp_ss.g:148:25: ( expr )*
-			try { DebugEnterSubRule(15);
-			while (true)
-			{
-				int alt15=2;
-				try { DebugEnterDecision(15, false);
-				switch (input.LA(1))
-				{
-				case TRUE:
-					{
-					int LA15_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred25_fsharp_ss_fragment)))
-					{
-						alt15 = 1;
-					}
-
-
-					}
-					break;
-				case ID:
-					{
-					int LA15_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred25_fsharp_ss_fragment)))
-					{
-						alt15 = 1;
-					}
-
-
-					}
-					break;
-				case 55:
-					{
-					int LA15_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred25_fsharp_ss_fragment)))
-					{
-						alt15 = 1;
-					}
-
-
-					}
-					break;
-				case FUN:
-					{
-					int LA15_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred25_fsharp_ss_fragment)))
-					{
-						alt15 = 1;
-					}
-
-
-					}
-					break;
-				case FALSE:
-					{
-					int LA15_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred25_fsharp_ss_fragment)))
-					{
-						alt15 = 1;
-					}
-
-
-					}
-					break;
-				case STRING:
-					{
-					int LA15_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred25_fsharp_ss_fragment)))
-					{
-						alt15 = 1;
-					}
-
-
-					}
-					break;
-				case CHAR:
-					{
-					int LA15_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred25_fsharp_ss_fragment)))
-					{
-						alt15 = 1;
-					}
-
-
-					}
-					break;
-				case INT:
-					{
-					int LA15_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred25_fsharp_ss_fragment)))
-					{
-						alt15 = 1;
-					}
-
-
-					}
-					break;
-				case DOUBLE:
-					{
-					int LA15_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred25_fsharp_ss_fragment)))
-					{
-						alt15 = 1;
-					}
-
-
-					}
-					break;
-				case IF:
-					{
-					int LA15_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred25_fsharp_ss_fragment)))
-					{
-						alt15 = 1;
-					}
-
-
-					}
-					break;
-				case LET:
-					{
-					alt15 = 1;
-					}
-					break;
-				}
-
-				} finally { DebugExitDecision(15); }
-				switch ( alt15 )
-				{
-				case 1:
-					DebugEnterAlt(1);
-					// D:\\fsharp_compiler\\fsharp_ss.g:148:25: expr
-					{
-					DebugLocation(148, 25);
-					PushFollow(Follow._expr_in_elif_expr1109);
-					expr36=expr();
-					PopFollow();
-					if (state.failed) return retval;
-					if (state.backtracking == 0) adaptor.AddChild(root_0, expr36.Tree);
-
-					}
-					break;
-
-				default:
-					goto loop15;
-				}
-			}
-
-			loop15:
-				;
-
-			} finally { DebugExitSubRule(15); }
-
-			DebugLocation(148, 31);
-			// D:\\fsharp_compiler\\fsharp_ss.g:148:31: ( returning_expr )+
-			int cnt16=0;
-			try { DebugEnterSubRule(16);
-			while (true)
-			{
-				int alt16=2;
-				try { DebugEnterDecision(16, false);
-				switch (input.LA(1))
-				{
-				case TRUE:
-					{
-					int LA16_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred26_fsharp_ss_fragment)))
-					{
-						alt16 = 1;
-					}
-
-
-					}
-					break;
-				case ID:
-					{
-					int LA16_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred26_fsharp_ss_fragment)))
-					{
-						alt16 = 1;
-					}
-
-
-					}
-					break;
-				case 55:
-					{
-					int LA16_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred26_fsharp_ss_fragment)))
-					{
-						alt16 = 1;
-					}
-
-
-					}
-					break;
-				case FUN:
-					{
-					int LA16_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred26_fsharp_ss_fragment)))
-					{
-						alt16 = 1;
-					}
-
-
-					}
-					break;
-				case FALSE:
-					{
-					int LA16_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred26_fsharp_ss_fragment)))
-					{
-						alt16 = 1;
-					}
-
-
-					}
-					break;
-				case STRING:
-					{
-					int LA16_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred26_fsharp_ss_fragment)))
-					{
-						alt16 = 1;
-					}
-
-
-					}
-					break;
-				case CHAR:
-					{
-					int LA16_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred26_fsharp_ss_fragment)))
-					{
-						alt16 = 1;
-					}
-
-
-					}
-					break;
-				case INT:
-					{
-					int LA16_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred26_fsharp_ss_fragment)))
-					{
-						alt16 = 1;
-					}
-
-
-					}
-					break;
-				case DOUBLE:
-					{
-					int LA16_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred26_fsharp_ss_fragment)))
-					{
-						alt16 = 1;
-					}
-
-
-					}
-					break;
-				case IF:
-					{
-					int LA16_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred26_fsharp_ss_fragment)))
-					{
-						alt16 = 1;
-					}
-
-
-					}
-					break;
-				}
-
-				} finally { DebugExitDecision(16); }
-				switch (alt16)
-				{
-				case 1:
-					DebugEnterAlt(1);
-					// D:\\fsharp_compiler\\fsharp_ss.g:148:31: returning_expr
-					{
-					DebugLocation(148, 31);
-					PushFollow(Follow._returning_expr_in_elif_expr1112);
-					returning_expr37=returning_expr();
-					PopFollow();
-					if (state.failed) return retval;
-					if (state.backtracking == 0) adaptor.AddChild(root_0, returning_expr37.Tree);
-
-					}
-					break;
-
-				default:
-					if (cnt16 >= 1)
-						goto loop16;
-
-					if (state.backtracking>0) {state.failed=true; return retval;}
-					EarlyExitException eee16 = new EarlyExitException( 16, input );
-					DebugRecognitionException(eee16);
-					throw eee16;
-				}
-				cnt16++;
-			}
-			loop16:
-				;
-
-			} finally { DebugExitSubRule(16); }
-
+			if (state.backtracking == 0) adaptor.AddChild(root_0, logic_expr32.Tree);
+			DebugLocation(159, 23);
+			THEN33=(IToken)Match(input,THEN,Follow._THEN_in_elif_expr1170); if (state.failed) return retval;
+			DebugLocation(159, 25);
+			PushFollow(Follow._expr_block_in_elif_expr1173);
+			expr_block34=expr_block();
+			PopFollow();
+			if (state.failed) return retval;
+			if (state.backtracking == 0) adaptor.AddChild(root_0, expr_block34.Tree);
 
 			}
 
@@ -2387,7 +1381,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			LeaveRule("elif_expr", 9);
 			LeaveRule_elif_expr();
 		}
-		DebugLocation(149, 1);
+		DebugLocation(160, 1);
 		} finally { DebugExitRule(GrammarFileName, "elif_expr"); }
 		return retval;
 
@@ -2397,7 +1391,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	partial void EnterRule_else_expr();
 	partial void LeaveRule_else_expr();
 	// $ANTLR start "else_expr"
-	// D:\\fsharp_compiler\\fsharp_ss.g:151:1: else_expr : ELSE ! ( expr )* ( returning_expr )+ ;
+	// D:\\fsharp_compiler\\fsharp_ss.g:162:1: else_expr : ELSE ! expr_block ;
 	[GrammarRule("else_expr")]
 	private AstParserRuleReturnScope<object, IToken> else_expr()
 	{
@@ -2409,351 +1403,28 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 
 		object root_0 = default(object);
 
-		IToken ELSE38 = default(IToken);
-		AstParserRuleReturnScope<object, IToken> expr39 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> returning_expr40 = default(AstParserRuleReturnScope<object, IToken>);
+		IToken ELSE35 = default(IToken);
+		AstParserRuleReturnScope<object, IToken> expr_block36 = default(AstParserRuleReturnScope<object, IToken>);
 
-		object ELSE38_tree = default(object);
+		object ELSE35_tree = default(object);
 		try { DebugEnterRule(GrammarFileName, "else_expr");
-		DebugLocation(151, 1);
+		DebugLocation(162, 1);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:152:2: ( ELSE ! ( expr )* ( returning_expr )+ )
+			// D:\\fsharp_compiler\\fsharp_ss.g:163:2: ( ELSE ! expr_block )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:153:2: ELSE ! ( expr )* ( returning_expr )+
+			// D:\\fsharp_compiler\\fsharp_ss.g:164:2: ELSE ! expr_block
 			{
 			root_0 = (object)adaptor.Nil();
 
-			DebugLocation(153, 6);
-			ELSE38=(IToken)Match(input,ELSE,Follow._ELSE_in_else_expr1126); if (state.failed) return retval;
-			DebugLocation(153, 8);
-			// D:\\fsharp_compiler\\fsharp_ss.g:153:8: ( expr )*
-			try { DebugEnterSubRule(17);
-			while (true)
-			{
-				int alt17=2;
-				try { DebugEnterDecision(17, false);
-				switch (input.LA(1))
-				{
-				case TRUE:
-					{
-					int LA17_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred27_fsharp_ss_fragment)))
-					{
-						alt17 = 1;
-					}
-
-
-					}
-					break;
-				case ID:
-					{
-					int LA17_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred27_fsharp_ss_fragment)))
-					{
-						alt17 = 1;
-					}
-
-
-					}
-					break;
-				case 55:
-					{
-					int LA17_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred27_fsharp_ss_fragment)))
-					{
-						alt17 = 1;
-					}
-
-
-					}
-					break;
-				case FUN:
-					{
-					int LA17_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred27_fsharp_ss_fragment)))
-					{
-						alt17 = 1;
-					}
-
-
-					}
-					break;
-				case FALSE:
-					{
-					int LA17_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred27_fsharp_ss_fragment)))
-					{
-						alt17 = 1;
-					}
-
-
-					}
-					break;
-				case STRING:
-					{
-					int LA17_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred27_fsharp_ss_fragment)))
-					{
-						alt17 = 1;
-					}
-
-
-					}
-					break;
-				case CHAR:
-					{
-					int LA17_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred27_fsharp_ss_fragment)))
-					{
-						alt17 = 1;
-					}
-
-
-					}
-					break;
-				case INT:
-					{
-					int LA17_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred27_fsharp_ss_fragment)))
-					{
-						alt17 = 1;
-					}
-
-
-					}
-					break;
-				case DOUBLE:
-					{
-					int LA17_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred27_fsharp_ss_fragment)))
-					{
-						alt17 = 1;
-					}
-
-
-					}
-					break;
-				case IF:
-					{
-					int LA17_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred27_fsharp_ss_fragment)))
-					{
-						alt17 = 1;
-					}
-
-
-					}
-					break;
-				case LET:
-					{
-					alt17 = 1;
-					}
-					break;
-				}
-
-				} finally { DebugExitDecision(17); }
-				switch ( alt17 )
-				{
-				case 1:
-					DebugEnterAlt(1);
-					// D:\\fsharp_compiler\\fsharp_ss.g:153:8: expr
-					{
-					DebugLocation(153, 8);
-					PushFollow(Follow._expr_in_else_expr1129);
-					expr39=expr();
-					PopFollow();
-					if (state.failed) return retval;
-					if (state.backtracking == 0) adaptor.AddChild(root_0, expr39.Tree);
-
-					}
-					break;
-
-				default:
-					goto loop17;
-				}
-			}
-
-			loop17:
-				;
-
-			} finally { DebugExitSubRule(17); }
-
-			DebugLocation(153, 14);
-			// D:\\fsharp_compiler\\fsharp_ss.g:153:14: ( returning_expr )+
-			int cnt18=0;
-			try { DebugEnterSubRule(18);
-			while (true)
-			{
-				int alt18=2;
-				try { DebugEnterDecision(18, false);
-				switch (input.LA(1))
-				{
-				case TRUE:
-					{
-					int LA18_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred28_fsharp_ss_fragment)))
-					{
-						alt18 = 1;
-					}
-
-
-					}
-					break;
-				case ID:
-					{
-					int LA18_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred28_fsharp_ss_fragment)))
-					{
-						alt18 = 1;
-					}
-
-
-					}
-					break;
-				case 55:
-					{
-					int LA18_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred28_fsharp_ss_fragment)))
-					{
-						alt18 = 1;
-					}
-
-
-					}
-					break;
-				case FUN:
-					{
-					int LA18_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred28_fsharp_ss_fragment)))
-					{
-						alt18 = 1;
-					}
-
-
-					}
-					break;
-				case FALSE:
-					{
-					int LA18_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred28_fsharp_ss_fragment)))
-					{
-						alt18 = 1;
-					}
-
-
-					}
-					break;
-				case STRING:
-					{
-					int LA18_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred28_fsharp_ss_fragment)))
-					{
-						alt18 = 1;
-					}
-
-
-					}
-					break;
-				case CHAR:
-					{
-					int LA18_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred28_fsharp_ss_fragment)))
-					{
-						alt18 = 1;
-					}
-
-
-					}
-					break;
-				case INT:
-					{
-					int LA18_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred28_fsharp_ss_fragment)))
-					{
-						alt18 = 1;
-					}
-
-
-					}
-					break;
-				case DOUBLE:
-					{
-					int LA18_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred28_fsharp_ss_fragment)))
-					{
-						alt18 = 1;
-					}
-
-
-					}
-					break;
-				case IF:
-					{
-					int LA18_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred28_fsharp_ss_fragment)))
-					{
-						alt18 = 1;
-					}
-
-
-					}
-					break;
-				}
-
-				} finally { DebugExitDecision(18); }
-				switch (alt18)
-				{
-				case 1:
-					DebugEnterAlt(1);
-					// D:\\fsharp_compiler\\fsharp_ss.g:153:14: returning_expr
-					{
-					DebugLocation(153, 14);
-					PushFollow(Follow._returning_expr_in_else_expr1132);
-					returning_expr40=returning_expr();
-					PopFollow();
-					if (state.failed) return retval;
-					if (state.backtracking == 0) adaptor.AddChild(root_0, returning_expr40.Tree);
-
-					}
-					break;
-
-				default:
-					if (cnt18 >= 1)
-						goto loop18;
-
-					if (state.backtracking>0) {state.failed=true; return retval;}
-					EarlyExitException eee18 = new EarlyExitException( 18, input );
-					DebugRecognitionException(eee18);
-					throw eee18;
-				}
-				cnt18++;
-			}
-			loop18:
-				;
-
-			} finally { DebugExitSubRule(18); }
-
+			DebugLocation(164, 6);
+			ELSE35=(IToken)Match(input,ELSE,Follow._ELSE_in_else_expr1186); if (state.failed) return retval;
+			DebugLocation(164, 8);
+			PushFollow(Follow._expr_block_in_else_expr1189);
+			expr_block36=expr_block();
+			PopFollow();
+			if (state.failed) return retval;
+			if (state.backtracking == 0) adaptor.AddChild(root_0, expr_block36.Tree);
 
 			}
 
@@ -2777,7 +1448,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			LeaveRule("else_expr", 10);
 			LeaveRule_else_expr();
 		}
-		DebugLocation(154, 1);
+		DebugLocation(165, 1);
 		} finally { DebugExitRule(GrammarFileName, "else_expr"); }
 		return retval;
 
@@ -2787,7 +1458,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	partial void EnterRule_alg_group_expr();
 	partial void LeaveRule_alg_group_expr();
 	// $ANTLR start "alg_group_expr"
-	// D:\\fsharp_compiler\\fsharp_ss.g:156:1: alg_group_expr : ( '(' ! add_expr ')' !| ID | const | func_call_expr );
+	// D:\\fsharp_compiler\\fsharp_ss.g:167:1: alg_group_expr : ( '(' ! add_expr ')' !| func_call_expr | ID | const );
 	[GrammarRule("alg_group_expr")]
 	private AstParserRuleReturnScope<object, IToken> alg_group_expr()
 	{
@@ -2799,46 +1470,46 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 
 		object root_0 = default(object);
 
-		IToken char_literal41 = default(IToken);
-		IToken char_literal43 = default(IToken);
-		IToken ID44 = default(IToken);
-		AstParserRuleReturnScope<object, IToken> add_expr42 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> const45 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> func_call_expr46 = default(AstParserRuleReturnScope<object, IToken>);
+		IToken char_literal37 = default(IToken);
+		IToken char_literal39 = default(IToken);
+		IToken ID41 = default(IToken);
+		AstParserRuleReturnScope<object, IToken> add_expr38 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> func_call_expr40 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> const42 = default(AstParserRuleReturnScope<object, IToken>);
 
-		object char_literal41_tree = default(object);
-		object char_literal43_tree = default(object);
-		object ID44_tree = default(object);
+		object char_literal37_tree = default(object);
+		object char_literal39_tree = default(object);
+		object ID41_tree = default(object);
 		try { DebugEnterRule(GrammarFileName, "alg_group_expr");
-		DebugLocation(156, 1);
+		DebugLocation(167, 1);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:157:2: ( '(' ! add_expr ')' !| ID | const | func_call_expr )
-			int alt19=4;
-			try { DebugEnterDecision(19, false);
+			// D:\\fsharp_compiler\\fsharp_ss.g:168:2: ( '(' ! add_expr ')' !| func_call_expr | ID | const )
+			int alt10=4;
+			try { DebugEnterDecision(10, false);
 			switch (input.LA(1))
 			{
-			case 55:
+			case OPEN_BR:
 				{
-				alt19 = 1;
+				alt10 = 1;
 				}
 				break;
 			case ID:
 				{
-				int LA19_2 = input.LA(2);
+				int LA10_2 = input.LA(2);
 
-				if ((EvaluatePredicate(synpred30_fsharp_ss_fragment)))
+				if ((EvaluatePredicate(synpred21_fsharp_ss_fragment)))
 				{
-					alt19 = 2;
+					alt10 = 2;
 				}
-				else if ((true))
+				else if ((EvaluatePredicate(synpred22_fsharp_ss_fragment)))
 				{
-					alt19 = 4;
+					alt10 = 3;
 				}
 				else
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 19, 2, input, 2);
+					NoViableAltException nvae = new NoViableAltException("", 10, 2, input, 2);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
@@ -2851,82 +1522,82 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			case STRING:
 			case TRUE:
 				{
-				alt19 = 3;
+				alt10 = 4;
 				}
 				break;
 			default:
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 19, 0, input, 1);
+					NoViableAltException nvae = new NoViableAltException("", 10, 0, input, 1);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
 			}
 
-			} finally { DebugExitDecision(19); }
-			switch (alt19)
+			} finally { DebugExitDecision(10); }
+			switch (alt10)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// D:\\fsharp_compiler\\fsharp_ss.g:158:2: '(' ! add_expr ')' !
+				// D:\\fsharp_compiler\\fsharp_ss.g:169:2: '(' ! add_expr ')' !
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(158, 5);
-				char_literal41=(IToken)Match(input,55,Follow._55_in_alg_group_expr1145); if (state.failed) return retval;
-				DebugLocation(158, 7);
-				PushFollow(Follow._add_expr_in_alg_group_expr1148);
-				add_expr42=add_expr();
+				DebugLocation(169, 5);
+				char_literal37=(IToken)Match(input,OPEN_BR,Follow._OPEN_BR_in_alg_group_expr1201); if (state.failed) return retval;
+				DebugLocation(169, 7);
+				PushFollow(Follow._add_expr_in_alg_group_expr1204);
+				add_expr38=add_expr();
 				PopFollow();
 				if (state.failed) return retval;
-				if (state.backtracking == 0) adaptor.AddChild(root_0, add_expr42.Tree);
-				DebugLocation(158, 19);
-				char_literal43=(IToken)Match(input,56,Follow._56_in_alg_group_expr1150); if (state.failed) return retval;
+				if (state.backtracking == 0) adaptor.AddChild(root_0, add_expr38.Tree);
+				DebugLocation(169, 19);
+				char_literal39=(IToken)Match(input,CLOSE_BR,Follow._CLOSE_BR_in_alg_group_expr1206); if (state.failed) return retval;
 
 				}
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// D:\\fsharp_compiler\\fsharp_ss.g:159:2: ID
+				// D:\\fsharp_compiler\\fsharp_ss.g:170:2: func_call_expr
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(159, 2);
-				ID44=(IToken)Match(input,ID,Follow._ID_in_alg_group_expr1156); if (state.failed) return retval;
-				if (state.backtracking == 0) {
-				ID44_tree = (object)adaptor.Create(ID44);
-				adaptor.AddChild(root_0, ID44_tree);
-				}
+				DebugLocation(170, 2);
+				PushFollow(Follow._func_call_expr_in_alg_group_expr1212);
+				func_call_expr40=func_call_expr();
+				PopFollow();
+				if (state.failed) return retval;
+				if (state.backtracking == 0) adaptor.AddChild(root_0, func_call_expr40.Tree);
 
 				}
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// D:\\fsharp_compiler\\fsharp_ss.g:159:7: const
+				// D:\\fsharp_compiler\\fsharp_ss.g:170:19: ID
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(159, 7);
-				PushFollow(Follow._const_in_alg_group_expr1160);
-				const45=@const();
-				PopFollow();
-				if (state.failed) return retval;
-				if (state.backtracking == 0) adaptor.AddChild(root_0, const45.Tree);
+				DebugLocation(170, 19);
+				ID41=(IToken)Match(input,ID,Follow._ID_in_alg_group_expr1216); if (state.failed) return retval;
+				if (state.backtracking == 0) {
+				ID41_tree = (object)adaptor.Create(ID41);
+				adaptor.AddChild(root_0, ID41_tree);
+				}
 
 				}
 				break;
 			case 4:
 				DebugEnterAlt(4);
-				// D:\\fsharp_compiler\\fsharp_ss.g:159:15: func_call_expr
+				// D:\\fsharp_compiler\\fsharp_ss.g:170:24: const
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(159, 15);
-				PushFollow(Follow._func_call_expr_in_alg_group_expr1164);
-				func_call_expr46=func_call_expr();
+				DebugLocation(170, 24);
+				PushFollow(Follow._const_in_alg_group_expr1220);
+				const42=@const();
 				PopFollow();
 				if (state.failed) return retval;
-				if (state.backtracking == 0) adaptor.AddChild(root_0, func_call_expr46.Tree);
+				if (state.backtracking == 0) adaptor.AddChild(root_0, const42.Tree);
 
 				}
 				break;
@@ -2952,7 +1623,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			LeaveRule("alg_group_expr", 11);
 			LeaveRule_alg_group_expr();
 		}
-		DebugLocation(160, 1);
+		DebugLocation(171, 1);
 		} finally { DebugExitRule(GrammarFileName, "alg_group_expr"); }
 		return retval;
 
@@ -2962,7 +1633,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	partial void EnterRule_mult_expr();
 	partial void LeaveRule_mult_expr();
 	// $ANTLR start "mult_expr"
-	// D:\\fsharp_compiler\\fsharp_ss.g:162:1: mult_expr : alg_group_expr ( ( MULT | DIV | MOD ) ^ alg_group_expr )* ;
+	// D:\\fsharp_compiler\\fsharp_ss.g:173:1: mult_expr : alg_group_expr ( ( MULT | DIV | MOD ) ^ alg_group_expr )* ;
 	[GrammarRule("mult_expr")]
 	private AstParserRuleReturnScope<object, IToken> mult_expr()
 	{
@@ -2974,64 +1645,57 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 
 		object root_0 = default(object);
 
-		IToken set48 = default(IToken);
-		AstParserRuleReturnScope<object, IToken> alg_group_expr47 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> alg_group_expr49 = default(AstParserRuleReturnScope<object, IToken>);
+		IToken set44 = default(IToken);
+		AstParserRuleReturnScope<object, IToken> alg_group_expr43 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> alg_group_expr45 = default(AstParserRuleReturnScope<object, IToken>);
 
-		object set48_tree = default(object);
+		object set44_tree = default(object);
 		try { DebugEnterRule(GrammarFileName, "mult_expr");
-		DebugLocation(162, 1);
+		DebugLocation(173, 1);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:163:2: ( alg_group_expr ( ( MULT | DIV | MOD ) ^ alg_group_expr )* )
+			// D:\\fsharp_compiler\\fsharp_ss.g:174:2: ( alg_group_expr ( ( MULT | DIV | MOD ) ^ alg_group_expr )* )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:164:2: alg_group_expr ( ( MULT | DIV | MOD ) ^ alg_group_expr )*
+			// D:\\fsharp_compiler\\fsharp_ss.g:175:2: alg_group_expr ( ( MULT | DIV | MOD ) ^ alg_group_expr )*
 			{
 			root_0 = (object)adaptor.Nil();
 
-			DebugLocation(164, 2);
-			PushFollow(Follow._alg_group_expr_in_mult_expr1176);
-			alg_group_expr47=alg_group_expr();
+			DebugLocation(175, 2);
+			PushFollow(Follow._alg_group_expr_in_mult_expr1232);
+			alg_group_expr43=alg_group_expr();
 			PopFollow();
 			if (state.failed) return retval;
-			if (state.backtracking == 0) adaptor.AddChild(root_0, alg_group_expr47.Tree);
-			DebugLocation(164, 17);
-			// D:\\fsharp_compiler\\fsharp_ss.g:164:17: ( ( MULT | DIV | MOD ) ^ alg_group_expr )*
-			try { DebugEnterSubRule(20);
+			if (state.backtracking == 0) adaptor.AddChild(root_0, alg_group_expr43.Tree);
+			DebugLocation(175, 17);
+			// D:\\fsharp_compiler\\fsharp_ss.g:175:17: ( ( MULT | DIV | MOD ) ^ alg_group_expr )*
+			try { DebugEnterSubRule(11);
 			while (true)
 			{
-				int alt20=2;
-				try { DebugEnterDecision(20, false);
-				int LA20_1 = input.LA(1);
+				int alt11=2;
+				try { DebugEnterDecision(11, false);
+				int LA11_1 = input.LA(1);
 
-				if ((LA20_1==DIV||(LA20_1>=MOD && LA20_1<=MULT)))
+				if ((LA11_1==DIV||(LA11_1>=MOD && LA11_1<=MULT)))
 				{
-					int LA20_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred34_fsharp_ss_fragment)))
-					{
-						alt20 = 1;
-					}
-
-
+					alt11 = 1;
 				}
 
 
-				} finally { DebugExitDecision(20); }
-				switch ( alt20 )
+				} finally { DebugExitDecision(11); }
+				switch ( alt11 )
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// D:\\fsharp_compiler\\fsharp_ss.g:164:18: ( MULT | DIV | MOD ) ^ alg_group_expr
+					// D:\\fsharp_compiler\\fsharp_ss.g:175:18: ( MULT | DIV | MOD ) ^ alg_group_expr
 					{
-					DebugLocation(164, 36);
+					DebugLocation(175, 36);
 
-					set48=(IToken)input.LT(1);
-					set48=(IToken)input.LT(1);
+					set44=(IToken)input.LT(1);
+					set44=(IToken)input.LT(1);
 					if (input.LA(1)==DIV||(input.LA(1)>=MOD && input.LA(1)<=MULT))
 					{
 						input.Consume();
-						if (state.backtracking == 0) root_0 = (object)adaptor.BecomeRoot((object)adaptor.Create(set48), root_0);
+						if (state.backtracking == 0) root_0 = (object)adaptor.BecomeRoot((object)adaptor.Create(set44), root_0);
 						state.errorRecovery=false;state.failed=false;
 					}
 					else
@@ -3042,25 +1706,25 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 						throw mse;
 					}
 
-					DebugLocation(164, 38);
-					PushFollow(Follow._alg_group_expr_in_mult_expr1192);
-					alg_group_expr49=alg_group_expr();
+					DebugLocation(175, 38);
+					PushFollow(Follow._alg_group_expr_in_mult_expr1248);
+					alg_group_expr45=alg_group_expr();
 					PopFollow();
 					if (state.failed) return retval;
-					if (state.backtracking == 0) adaptor.AddChild(root_0, alg_group_expr49.Tree);
+					if (state.backtracking == 0) adaptor.AddChild(root_0, alg_group_expr45.Tree);
 
 					}
 					break;
 
 				default:
-					goto loop20;
+					goto loop11;
 				}
 			}
 
-			loop20:
+			loop11:
 				;
 
-			} finally { DebugExitSubRule(20); }
+			} finally { DebugExitSubRule(11); }
 
 
 			}
@@ -3085,7 +1749,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			LeaveRule("mult_expr", 12);
 			LeaveRule_mult_expr();
 		}
-		DebugLocation(165, 1);
+		DebugLocation(176, 1);
 		} finally { DebugExitRule(GrammarFileName, "mult_expr"); }
 		return retval;
 
@@ -3095,7 +1759,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	partial void EnterRule_add_expr();
 	partial void LeaveRule_add_expr();
 	// $ANTLR start "add_expr"
-	// D:\\fsharp_compiler\\fsharp_ss.g:167:1: add_expr : mult_expr ( ( PLUS | MINUS ) ^ mult_expr )* ;
+	// D:\\fsharp_compiler\\fsharp_ss.g:178:1: add_expr : mult_expr ( ( PLUS | MINUS ) ^ mult_expr )* ;
 	[GrammarRule("add_expr")]
 	private AstParserRuleReturnScope<object, IToken> add_expr()
 	{
@@ -3107,64 +1771,57 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 
 		object root_0 = default(object);
 
-		IToken set51 = default(IToken);
-		AstParserRuleReturnScope<object, IToken> mult_expr50 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> mult_expr52 = default(AstParserRuleReturnScope<object, IToken>);
+		IToken set47 = default(IToken);
+		AstParserRuleReturnScope<object, IToken> mult_expr46 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> mult_expr48 = default(AstParserRuleReturnScope<object, IToken>);
 
-		object set51_tree = default(object);
+		object set47_tree = default(object);
 		try { DebugEnterRule(GrammarFileName, "add_expr");
-		DebugLocation(167, 1);
+		DebugLocation(178, 1);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:167:9: ( mult_expr ( ( PLUS | MINUS ) ^ mult_expr )* )
+			// D:\\fsharp_compiler\\fsharp_ss.g:178:9: ( mult_expr ( ( PLUS | MINUS ) ^ mult_expr )* )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:168:2: mult_expr ( ( PLUS | MINUS ) ^ mult_expr )*
+			// D:\\fsharp_compiler\\fsharp_ss.g:179:2: mult_expr ( ( PLUS | MINUS ) ^ mult_expr )*
 			{
 			root_0 = (object)adaptor.Nil();
 
-			DebugLocation(168, 2);
-			PushFollow(Follow._mult_expr_in_add_expr1205);
-			mult_expr50=mult_expr();
+			DebugLocation(179, 2);
+			PushFollow(Follow._mult_expr_in_add_expr1261);
+			mult_expr46=mult_expr();
 			PopFollow();
 			if (state.failed) return retval;
-			if (state.backtracking == 0) adaptor.AddChild(root_0, mult_expr50.Tree);
-			DebugLocation(168, 12);
-			// D:\\fsharp_compiler\\fsharp_ss.g:168:12: ( ( PLUS | MINUS ) ^ mult_expr )*
-			try { DebugEnterSubRule(21);
+			if (state.backtracking == 0) adaptor.AddChild(root_0, mult_expr46.Tree);
+			DebugLocation(179, 12);
+			// D:\\fsharp_compiler\\fsharp_ss.g:179:12: ( ( PLUS | MINUS ) ^ mult_expr )*
+			try { DebugEnterSubRule(12);
 			while (true)
 			{
-				int alt21=2;
-				try { DebugEnterDecision(21, false);
-				int LA21_1 = input.LA(1);
+				int alt12=2;
+				try { DebugEnterDecision(12, false);
+				int LA12_1 = input.LA(1);
 
-				if ((LA21_1==MINUS||LA21_1==PLUS))
+				if ((LA12_1==MINUS||LA12_1==PLUS))
 				{
-					int LA21_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred36_fsharp_ss_fragment)))
-					{
-						alt21 = 1;
-					}
-
-
+					alt12 = 1;
 				}
 
 
-				} finally { DebugExitDecision(21); }
-				switch ( alt21 )
+				} finally { DebugExitDecision(12); }
+				switch ( alt12 )
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// D:\\fsharp_compiler\\fsharp_ss.g:168:13: ( PLUS | MINUS ) ^ mult_expr
+					// D:\\fsharp_compiler\\fsharp_ss.g:179:13: ( PLUS | MINUS ) ^ mult_expr
 					{
-					DebugLocation(168, 27);
+					DebugLocation(179, 27);
 
-					set51=(IToken)input.LT(1);
-					set51=(IToken)input.LT(1);
+					set47=(IToken)input.LT(1);
+					set47=(IToken)input.LT(1);
 					if (input.LA(1)==MINUS||input.LA(1)==PLUS)
 					{
 						input.Consume();
-						if (state.backtracking == 0) root_0 = (object)adaptor.BecomeRoot((object)adaptor.Create(set51), root_0);
+						if (state.backtracking == 0) root_0 = (object)adaptor.BecomeRoot((object)adaptor.Create(set47), root_0);
 						state.errorRecovery=false;state.failed=false;
 					}
 					else
@@ -3175,25 +1832,25 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 						throw mse;
 					}
 
-					DebugLocation(168, 29);
-					PushFollow(Follow._mult_expr_in_add_expr1217);
-					mult_expr52=mult_expr();
+					DebugLocation(179, 29);
+					PushFollow(Follow._mult_expr_in_add_expr1273);
+					mult_expr48=mult_expr();
 					PopFollow();
 					if (state.failed) return retval;
-					if (state.backtracking == 0) adaptor.AddChild(root_0, mult_expr52.Tree);
+					if (state.backtracking == 0) adaptor.AddChild(root_0, mult_expr48.Tree);
 
 					}
 					break;
 
 				default:
-					goto loop21;
+					goto loop12;
 				}
 			}
 
-			loop21:
+			loop12:
 				;
 
-			} finally { DebugExitSubRule(21); }
+			} finally { DebugExitSubRule(12); }
 
 
 			}
@@ -3218,7 +1875,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			LeaveRule("add_expr", 13);
 			LeaveRule_add_expr();
 		}
-		DebugLocation(169, 1);
+		DebugLocation(180, 1);
 		} finally { DebugExitRule(GrammarFileName, "add_expr"); }
 		return retval;
 
@@ -3228,7 +1885,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	partial void EnterRule_alg_expr();
 	partial void LeaveRule_alg_expr();
 	// $ANTLR start "alg_expr"
-	// D:\\fsharp_compiler\\fsharp_ss.g:171:1: alg_expr : add_expr ;
+	// D:\\fsharp_compiler\\fsharp_ss.g:182:1: alg_expr : add_expr ;
 	[GrammarRule("alg_expr")]
 	private AstParserRuleReturnScope<object, IToken> alg_expr()
 	{
@@ -3240,24 +1897,24 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 
 		object root_0 = default(object);
 
-		AstParserRuleReturnScope<object, IToken> add_expr53 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> add_expr49 = default(AstParserRuleReturnScope<object, IToken>);
 
 		try { DebugEnterRule(GrammarFileName, "alg_expr");
-		DebugLocation(171, 1);
+		DebugLocation(182, 1);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:171:9: ( add_expr )
+			// D:\\fsharp_compiler\\fsharp_ss.g:182:9: ( add_expr )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:172:2: add_expr
+			// D:\\fsharp_compiler\\fsharp_ss.g:183:2: add_expr
 			{
 			root_0 = (object)adaptor.Nil();
 
-			DebugLocation(172, 2);
-			PushFollow(Follow._add_expr_in_alg_expr1229);
-			add_expr53=add_expr();
+			DebugLocation(183, 2);
+			PushFollow(Follow._add_expr_in_alg_expr1285);
+			add_expr49=add_expr();
 			PopFollow();
 			if (state.failed) return retval;
-			if (state.backtracking == 0) adaptor.AddChild(root_0, add_expr53.Tree);
+			if (state.backtracking == 0) adaptor.AddChild(root_0, add_expr49.Tree);
 
 			}
 
@@ -3281,7 +1938,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			LeaveRule("alg_expr", 14);
 			LeaveRule_alg_expr();
 		}
-		DebugLocation(173, 1);
+		DebugLocation(184, 1);
 		} finally { DebugExitRule(GrammarFileName, "alg_expr"); }
 		return retval;
 
@@ -3291,7 +1948,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	partial void EnterRule_comp_expr();
 	partial void LeaveRule_comp_expr();
 	// $ANTLR start "comp_expr"
-	// D:\\fsharp_compiler\\fsharp_ss.g:175:1: comp_expr : ( eq_neq_expr | comp_expr_arg comp_operation ^ comp_expr_arg );
+	// D:\\fsharp_compiler\\fsharp_ss.g:186:1: comp_expr : ( eq_neq_expr | comp_expr_arg comp_operation ^ comp_expr_arg );
 	[GrammarRule("comp_expr")]
 	private AstParserRuleReturnScope<object, IToken> comp_expr()
 	{
@@ -3303,57 +1960,36 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 
 		object root_0 = default(object);
 
-		AstParserRuleReturnScope<object, IToken> eq_neq_expr54 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> comp_expr_arg55 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> comp_operation56 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> comp_expr_arg57 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> eq_neq_expr50 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> comp_expr_arg51 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> comp_operation52 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> comp_expr_arg53 = default(AstParserRuleReturnScope<object, IToken>);
 
 		try { DebugEnterRule(GrammarFileName, "comp_expr");
-		DebugLocation(175, 1);
+		DebugLocation(186, 1);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:176:2: ( eq_neq_expr | comp_expr_arg comp_operation ^ comp_expr_arg )
-			int alt22=2;
-			try { DebugEnterDecision(22, false);
+			// D:\\fsharp_compiler\\fsharp_ss.g:187:2: ( eq_neq_expr | comp_expr_arg comp_operation ^ comp_expr_arg )
+			int alt13=2;
+			try { DebugEnterDecision(13, false);
 			switch (input.LA(1))
 			{
-			case ID:
-				{
-				int LA22_2 = input.LA(2);
-
-				if ((EvaluatePredicate(synpred37_fsharp_ss_fragment)))
-				{
-					alt22 = 1;
-				}
-				else if ((true))
-				{
-					alt22 = 2;
-				}
-				else
-				{
-					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 22, 1, input, 2);
-					DebugRecognitionException(nvae);
-					throw nvae;
-				}
-				}
-				break;
 			case STRING:
 				{
-				int LA22_2 = input.LA(2);
+				int LA13_2 = input.LA(2);
 
-				if ((EvaluatePredicate(synpred37_fsharp_ss_fragment)))
+				if ((EvaluatePredicate(synpred28_fsharp_ss_fragment)))
 				{
-					alt22 = 1;
+					alt13 = 1;
 				}
 				else if ((true))
 				{
-					alt22 = 2;
+					alt13 = 2;
 				}
 				else
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 22, 2, input, 2);
+					NoViableAltException nvae = new NoViableAltException("", 13, 1, input, 2);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
@@ -3361,20 +1997,20 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 				break;
 			case CHAR:
 				{
-				int LA22_2 = input.LA(2);
+				int LA13_2 = input.LA(2);
 
-				if ((EvaluatePredicate(synpred37_fsharp_ss_fragment)))
+				if ((EvaluatePredicate(synpred28_fsharp_ss_fragment)))
 				{
-					alt22 = 1;
+					alt13 = 1;
 				}
 				else if ((true))
 				{
-					alt22 = 2;
+					alt13 = 2;
 				}
 				else
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 22, 3, input, 2);
+					NoViableAltException nvae = new NoViableAltException("", 13, 2, input, 2);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
@@ -3382,20 +2018,20 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 				break;
 			case INT:
 				{
-				int LA22_2 = input.LA(2);
+				int LA13_2 = input.LA(2);
 
-				if ((EvaluatePredicate(synpred37_fsharp_ss_fragment)))
+				if ((EvaluatePredicate(synpred28_fsharp_ss_fragment)))
 				{
-					alt22 = 1;
+					alt13 = 1;
 				}
 				else if ((true))
 				{
-					alt22 = 2;
+					alt13 = 2;
 				}
 				else
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 22, 4, input, 2);
+					NoViableAltException nvae = new NoViableAltException("", 13, 3, input, 2);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
@@ -3403,41 +2039,62 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 				break;
 			case DOUBLE:
 				{
-				int LA22_2 = input.LA(2);
+				int LA13_2 = input.LA(2);
 
-				if ((EvaluatePredicate(synpred37_fsharp_ss_fragment)))
+				if ((EvaluatePredicate(synpred28_fsharp_ss_fragment)))
 				{
-					alt22 = 1;
+					alt13 = 1;
 				}
 				else if ((true))
 				{
-					alt22 = 2;
+					alt13 = 2;
 				}
 				else
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 22, 5, input, 2);
+					NoViableAltException nvae = new NoViableAltException("", 13, 4, input, 2);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
 				}
 				break;
-			case 55:
+			case OPEN_BR:
 				{
-				int LA22_2 = input.LA(2);
+				int LA13_2 = input.LA(2);
 
-				if ((EvaluatePredicate(synpred37_fsharp_ss_fragment)))
+				if ((EvaluatePredicate(synpred28_fsharp_ss_fragment)))
 				{
-					alt22 = 1;
+					alt13 = 1;
 				}
 				else if ((true))
 				{
-					alt22 = 2;
+					alt13 = 2;
 				}
 				else
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 22, 6, input, 2);
+					NoViableAltException nvae = new NoViableAltException("", 13, 5, input, 2);
+					DebugRecognitionException(nvae);
+					throw nvae;
+				}
+				}
+				break;
+			case ID:
+				{
+				int LA13_2 = input.LA(2);
+
+				if ((EvaluatePredicate(synpred28_fsharp_ss_fragment)))
+				{
+					alt13 = 1;
+				}
+				else if ((true))
+				{
+					alt13 = 2;
+				}
+				else
+				{
+					if (state.backtracking>0) {state.failed=true; return retval;}
+					NoViableAltException nvae = new NoViableAltException("", 13, 6, input, 2);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
@@ -3446,20 +2103,20 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			case FALSE:
 			case TRUE:
 				{
-				int LA22_2 = input.LA(2);
+				int LA13_2 = input.LA(2);
 
-				if ((EvaluatePredicate(synpred37_fsharp_ss_fragment)))
+				if ((EvaluatePredicate(synpred28_fsharp_ss_fragment)))
 				{
-					alt22 = 1;
+					alt13 = 1;
 				}
 				else if ((true))
 				{
-					alt22 = 2;
+					alt13 = 2;
 				}
 				else
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 22, 7, input, 2);
+					NoViableAltException nvae = new NoViableAltException("", 13, 7, input, 2);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
@@ -3468,54 +2125,54 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			default:
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 22, 0, input, 1);
+					NoViableAltException nvae = new NoViableAltException("", 13, 0, input, 1);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
 			}
 
-			} finally { DebugExitDecision(22); }
-			switch (alt22)
+			} finally { DebugExitDecision(13); }
+			switch (alt13)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// D:\\fsharp_compiler\\fsharp_ss.g:177:2: eq_neq_expr
+				// D:\\fsharp_compiler\\fsharp_ss.g:188:2: eq_neq_expr
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(177, 2);
-				PushFollow(Follow._eq_neq_expr_in_comp_expr1242);
-				eq_neq_expr54=eq_neq_expr();
+				DebugLocation(188, 2);
+				PushFollow(Follow._eq_neq_expr_in_comp_expr1298);
+				eq_neq_expr50=eq_neq_expr();
 				PopFollow();
 				if (state.failed) return retval;
-				if (state.backtracking == 0) adaptor.AddChild(root_0, eq_neq_expr54.Tree);
+				if (state.backtracking == 0) adaptor.AddChild(root_0, eq_neq_expr50.Tree);
 
 				}
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// D:\\fsharp_compiler\\fsharp_ss.g:178:2: comp_expr_arg comp_operation ^ comp_expr_arg
+				// D:\\fsharp_compiler\\fsharp_ss.g:189:2: comp_expr_arg comp_operation ^ comp_expr_arg
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(178, 2);
-				PushFollow(Follow._comp_expr_arg_in_comp_expr1247);
-				comp_expr_arg55=comp_expr_arg();
+				DebugLocation(189, 2);
+				PushFollow(Follow._comp_expr_arg_in_comp_expr1303);
+				comp_expr_arg51=comp_expr_arg();
 				PopFollow();
 				if (state.failed) return retval;
-				if (state.backtracking == 0) adaptor.AddChild(root_0, comp_expr_arg55.Tree);
-				DebugLocation(178, 30);
-				PushFollow(Follow._comp_operation_in_comp_expr1249);
-				comp_operation56=comp_operation();
+				if (state.backtracking == 0) adaptor.AddChild(root_0, comp_expr_arg51.Tree);
+				DebugLocation(189, 30);
+				PushFollow(Follow._comp_operation_in_comp_expr1305);
+				comp_operation52=comp_operation();
 				PopFollow();
 				if (state.failed) return retval;
-				if (state.backtracking == 0) root_0 = (object)adaptor.BecomeRoot(comp_operation56.Tree, root_0);
-				DebugLocation(178, 32);
-				PushFollow(Follow._comp_expr_arg_in_comp_expr1252);
-				comp_expr_arg57=comp_expr_arg();
+				if (state.backtracking == 0) root_0 = (object)adaptor.BecomeRoot(comp_operation52.Tree, root_0);
+				DebugLocation(189, 32);
+				PushFollow(Follow._comp_expr_arg_in_comp_expr1308);
+				comp_expr_arg53=comp_expr_arg();
 				PopFollow();
 				if (state.failed) return retval;
-				if (state.backtracking == 0) adaptor.AddChild(root_0, comp_expr_arg57.Tree);
+				if (state.backtracking == 0) adaptor.AddChild(root_0, comp_expr_arg53.Tree);
 
 				}
 				break;
@@ -3541,7 +2198,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			LeaveRule("comp_expr", 15);
 			LeaveRule_comp_expr();
 		}
-		DebugLocation(179, 1);
+		DebugLocation(190, 1);
 		} finally { DebugExitRule(GrammarFileName, "comp_expr"); }
 		return retval;
 
@@ -3551,7 +2208,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	partial void EnterRule_comp_operation();
 	partial void LeaveRule_comp_operation();
 	// $ANTLR start "comp_operation"
-	// D:\\fsharp_compiler\\fsharp_ss.g:181:1: comp_operation : ( GT | LT | GE | LE );
+	// D:\\fsharp_compiler\\fsharp_ss.g:192:1: comp_operation : ( GT | LT | GE | LE );
 	[GrammarRule("comp_operation")]
 	private AstParserRuleReturnScope<object, IToken> comp_operation()
 	{
@@ -3563,26 +2220,26 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 
 		object root_0 = default(object);
 
-		IToken set58 = default(IToken);
+		IToken set54 = default(IToken);
 
-		object set58_tree = default(object);
+		object set54_tree = default(object);
 		try { DebugEnterRule(GrammarFileName, "comp_operation");
-		DebugLocation(181, 1);
+		DebugLocation(192, 1);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:182:2: ( GT | LT | GE | LE )
+			// D:\\fsharp_compiler\\fsharp_ss.g:193:2: ( GT | LT | GE | LE )
 			DebugEnterAlt(1);
 			// D:\\fsharp_compiler\\fsharp_ss.g:
 			{
 			root_0 = (object)adaptor.Nil();
 
-			DebugLocation(182, 2);
+			DebugLocation(193, 2);
 
-			set58=(IToken)input.LT(1);
+			set54=(IToken)input.LT(1);
 			if ((input.LA(1)>=GE && input.LA(1)<=GT)||input.LA(1)==LE||input.LA(1)==LT)
 			{
 				input.Consume();
-				if (state.backtracking == 0) adaptor.AddChild(root_0, (object)adaptor.Create(set58));
+				if (state.backtracking == 0) adaptor.AddChild(root_0, (object)adaptor.Create(set54));
 				state.errorRecovery=false;state.failed=false;
 			}
 			else
@@ -3616,7 +2273,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			LeaveRule("comp_operation", 16);
 			LeaveRule_comp_operation();
 		}
-		DebugLocation(184, 1);
+		DebugLocation(195, 1);
 		} finally { DebugExitRule(GrammarFileName, "comp_operation"); }
 		return retval;
 
@@ -3626,7 +2283,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	partial void EnterRule_comp_expr_arg();
 	partial void LeaveRule_comp_expr_arg();
 	// $ANTLR start "comp_expr_arg"
-	// D:\\fsharp_compiler\\fsharp_ss.g:186:1: comp_expr_arg : ( ID | INT | DOUBLE | alg_expr | func_call_expr );
+	// D:\\fsharp_compiler\\fsharp_ss.g:197:1: comp_expr_arg : ( INT | DOUBLE | alg_expr | func_call_expr | ID );
 	[GrammarRule("comp_expr_arg")]
 	private AstParserRuleReturnScope<object, IToken> comp_expr_arg()
 	{
@@ -3638,65 +2295,40 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 
 		object root_0 = default(object);
 
+		IToken INT55 = default(IToken);
+		IToken DOUBLE56 = default(IToken);
 		IToken ID59 = default(IToken);
-		IToken INT60 = default(IToken);
-		IToken DOUBLE61 = default(IToken);
-		AstParserRuleReturnScope<object, IToken> alg_expr62 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> func_call_expr63 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> alg_expr57 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> func_call_expr58 = default(AstParserRuleReturnScope<object, IToken>);
 
+		object INT55_tree = default(object);
+		object DOUBLE56_tree = default(object);
 		object ID59_tree = default(object);
-		object INT60_tree = default(object);
-		object DOUBLE61_tree = default(object);
 		try { DebugEnterRule(GrammarFileName, "comp_expr_arg");
-		DebugLocation(186, 1);
+		DebugLocation(197, 1);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:187:2: ( ID | INT | DOUBLE | alg_expr | func_call_expr )
-			int alt23=5;
-			try { DebugEnterDecision(23, false);
+			// D:\\fsharp_compiler\\fsharp_ss.g:198:2: ( INT | DOUBLE | alg_expr | func_call_expr | ID )
+			int alt14=5;
+			try { DebugEnterDecision(14, false);
 			switch (input.LA(1))
 			{
-			case ID:
-				{
-				int LA23_2 = input.LA(2);
-
-				if ((EvaluatePredicate(synpred41_fsharp_ss_fragment)))
-				{
-					alt23 = 1;
-				}
-				else if ((EvaluatePredicate(synpred44_fsharp_ss_fragment)))
-				{
-					alt23 = 4;
-				}
-				else if ((true))
-				{
-					alt23 = 5;
-				}
-				else
-				{
-					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 23, 1, input, 2);
-					DebugRecognitionException(nvae);
-					throw nvae;
-				}
-				}
-				break;
 			case INT:
 				{
-				int LA23_2 = input.LA(2);
+				int LA14_2 = input.LA(2);
 
-				if ((EvaluatePredicate(synpred42_fsharp_ss_fragment)))
+				if ((EvaluatePredicate(synpred32_fsharp_ss_fragment)))
 				{
-					alt23 = 2;
+					alt14 = 1;
 				}
-				else if ((EvaluatePredicate(synpred44_fsharp_ss_fragment)))
+				else if ((EvaluatePredicate(synpred34_fsharp_ss_fragment)))
 				{
-					alt23 = 4;
+					alt14 = 3;
 				}
 				else
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 23, 2, input, 2);
+					NoViableAltException nvae = new NoViableAltException("", 14, 1, input, 2);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
@@ -3704,20 +2336,20 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 				break;
 			case DOUBLE:
 				{
-				int LA23_2 = input.LA(2);
+				int LA14_2 = input.LA(2);
 
-				if ((EvaluatePredicate(synpred43_fsharp_ss_fragment)))
+				if ((EvaluatePredicate(synpred33_fsharp_ss_fragment)))
 				{
-					alt23 = 3;
+					alt14 = 2;
 				}
-				else if ((EvaluatePredicate(synpred44_fsharp_ss_fragment)))
+				else if ((EvaluatePredicate(synpred34_fsharp_ss_fragment)))
 				{
-					alt23 = 4;
+					alt14 = 3;
 				}
 				else
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 23, 3, input, 2);
+					NoViableAltException nvae = new NoViableAltException("", 14, 2, input, 2);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
@@ -3725,97 +2357,122 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 				break;
 			case CHAR:
 			case FALSE:
+			case OPEN_BR:
 			case STRING:
 			case TRUE:
-			case 55:
 				{
-				alt23 = 4;
+				alt14 = 3;
+				}
+				break;
+			case ID:
+				{
+				int LA14_2 = input.LA(2);
+
+				if ((LA14_2==OPEN_BR))
+				{
+					alt14 = 4;
+				}
+				else if ((EvaluatePredicate(synpred34_fsharp_ss_fragment)))
+				{
+					alt14 = 3;
+				}
+				else if ((true))
+				{
+					alt14 = 5;
+				}
+				else
+				{
+					if (state.backtracking>0) {state.failed=true; return retval;}
+					NoViableAltException nvae = new NoViableAltException("", 14, 4, input, 2);
+					DebugRecognitionException(nvae);
+					throw nvae;
+				}
 				}
 				break;
 			default:
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 23, 0, input, 1);
+					NoViableAltException nvae = new NoViableAltException("", 14, 0, input, 1);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
 			}
 
-			} finally { DebugExitDecision(23); }
-			switch (alt23)
+			} finally { DebugExitDecision(14); }
+			switch (alt14)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// D:\\fsharp_compiler\\fsharp_ss.g:188:2: ID
+				// D:\\fsharp_compiler\\fsharp_ss.g:199:2: INT
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(188, 2);
-				ID59=(IToken)Match(input,ID,Follow._ID_in_comp_expr_arg1290); if (state.failed) return retval;
+				DebugLocation(199, 2);
+				INT55=(IToken)Match(input,INT,Follow._INT_in_comp_expr_arg1346); if (state.failed) return retval;
 				if (state.backtracking == 0) {
-				ID59_tree = (object)adaptor.Create(ID59);
-				adaptor.AddChild(root_0, ID59_tree);
+				INT55_tree = (object)adaptor.Create(INT55);
+				adaptor.AddChild(root_0, INT55_tree);
 				}
 
 				}
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// D:\\fsharp_compiler\\fsharp_ss.g:188:7: INT
+				// D:\\fsharp_compiler\\fsharp_ss.g:199:8: DOUBLE
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(188, 7);
-				INT60=(IToken)Match(input,INT,Follow._INT_in_comp_expr_arg1294); if (state.failed) return retval;
+				DebugLocation(199, 8);
+				DOUBLE56=(IToken)Match(input,DOUBLE,Follow._DOUBLE_in_comp_expr_arg1350); if (state.failed) return retval;
 				if (state.backtracking == 0) {
-				INT60_tree = (object)adaptor.Create(INT60);
-				adaptor.AddChild(root_0, INT60_tree);
+				DOUBLE56_tree = (object)adaptor.Create(DOUBLE56);
+				adaptor.AddChild(root_0, DOUBLE56_tree);
 				}
 
 				}
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// D:\\fsharp_compiler\\fsharp_ss.g:188:13: DOUBLE
+				// D:\\fsharp_compiler\\fsharp_ss.g:199:17: alg_expr
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(188, 13);
-				DOUBLE61=(IToken)Match(input,DOUBLE,Follow._DOUBLE_in_comp_expr_arg1298); if (state.failed) return retval;
-				if (state.backtracking == 0) {
-				DOUBLE61_tree = (object)adaptor.Create(DOUBLE61);
-				adaptor.AddChild(root_0, DOUBLE61_tree);
-				}
+				DebugLocation(199, 17);
+				PushFollow(Follow._alg_expr_in_comp_expr_arg1354);
+				alg_expr57=alg_expr();
+				PopFollow();
+				if (state.failed) return retval;
+				if (state.backtracking == 0) adaptor.AddChild(root_0, alg_expr57.Tree);
 
 				}
 				break;
 			case 4:
 				DebugEnterAlt(4);
-				// D:\\fsharp_compiler\\fsharp_ss.g:188:22: alg_expr
+				// D:\\fsharp_compiler\\fsharp_ss.g:199:28: func_call_expr
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(188, 22);
-				PushFollow(Follow._alg_expr_in_comp_expr_arg1302);
-				alg_expr62=alg_expr();
+				DebugLocation(199, 28);
+				PushFollow(Follow._func_call_expr_in_comp_expr_arg1358);
+				func_call_expr58=func_call_expr();
 				PopFollow();
 				if (state.failed) return retval;
-				if (state.backtracking == 0) adaptor.AddChild(root_0, alg_expr62.Tree);
+				if (state.backtracking == 0) adaptor.AddChild(root_0, func_call_expr58.Tree);
 
 				}
 				break;
 			case 5:
 				DebugEnterAlt(5);
-				// D:\\fsharp_compiler\\fsharp_ss.g:188:33: func_call_expr
+				// D:\\fsharp_compiler\\fsharp_ss.g:199:45: ID
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(188, 33);
-				PushFollow(Follow._func_call_expr_in_comp_expr_arg1306);
-				func_call_expr63=func_call_expr();
-				PopFollow();
-				if (state.failed) return retval;
-				if (state.backtracking == 0) adaptor.AddChild(root_0, func_call_expr63.Tree);
+				DebugLocation(199, 45);
+				ID59=(IToken)Match(input,ID,Follow._ID_in_comp_expr_arg1362); if (state.failed) return retval;
+				if (state.backtracking == 0) {
+				ID59_tree = (object)adaptor.Create(ID59);
+				adaptor.AddChild(root_0, ID59_tree);
+				}
 
 				}
 				break;
@@ -3841,7 +2498,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			LeaveRule("comp_expr_arg", 17);
 			LeaveRule_comp_expr_arg();
 		}
-		DebugLocation(189, 1);
+		DebugLocation(200, 1);
 		} finally { DebugExitRule(GrammarFileName, "comp_expr_arg"); }
 		return retval;
 
@@ -3851,7 +2508,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	partial void EnterRule_eq_neq_expr();
 	partial void LeaveRule_eq_neq_expr();
 	// $ANTLR start "eq_neq_expr"
-	// D:\\fsharp_compiler\\fsharp_ss.g:191:1: eq_neq_expr : eq_neq_expr_arg ( EQ | NEQ ) ^ eq_neq_expr_arg ;
+	// D:\\fsharp_compiler\\fsharp_ss.g:202:1: eq_neq_expr : eq_neq_expr_arg ( EQ | NEQ ) ^ eq_neq_expr_arg ;
 	[GrammarRule("eq_neq_expr")]
 	private AstParserRuleReturnScope<object, IToken> eq_neq_expr()
 	{
@@ -3863,35 +2520,35 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 
 		object root_0 = default(object);
 
-		IToken set65 = default(IToken);
-		AstParserRuleReturnScope<object, IToken> eq_neq_expr_arg64 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> eq_neq_expr_arg66 = default(AstParserRuleReturnScope<object, IToken>);
+		IToken set61 = default(IToken);
+		AstParserRuleReturnScope<object, IToken> eq_neq_expr_arg60 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> eq_neq_expr_arg62 = default(AstParserRuleReturnScope<object, IToken>);
 
-		object set65_tree = default(object);
+		object set61_tree = default(object);
 		try { DebugEnterRule(GrammarFileName, "eq_neq_expr");
-		DebugLocation(191, 1);
+		DebugLocation(202, 1);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:192:2: ( eq_neq_expr_arg ( EQ | NEQ ) ^ eq_neq_expr_arg )
+			// D:\\fsharp_compiler\\fsharp_ss.g:203:2: ( eq_neq_expr_arg ( EQ | NEQ ) ^ eq_neq_expr_arg )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:193:2: eq_neq_expr_arg ( EQ | NEQ ) ^ eq_neq_expr_arg
+			// D:\\fsharp_compiler\\fsharp_ss.g:204:2: eq_neq_expr_arg ( EQ | NEQ ) ^ eq_neq_expr_arg
 			{
 			root_0 = (object)adaptor.Nil();
 
-			DebugLocation(193, 2);
-			PushFollow(Follow._eq_neq_expr_arg_in_eq_neq_expr1318);
-			eq_neq_expr_arg64=eq_neq_expr_arg();
+			DebugLocation(204, 2);
+			PushFollow(Follow._eq_neq_expr_arg_in_eq_neq_expr1374);
+			eq_neq_expr_arg60=eq_neq_expr_arg();
 			PopFollow();
 			if (state.failed) return retval;
-			if (state.backtracking == 0) adaptor.AddChild(root_0, eq_neq_expr_arg64.Tree);
-			DebugLocation(193, 28);
+			if (state.backtracking == 0) adaptor.AddChild(root_0, eq_neq_expr_arg60.Tree);
+			DebugLocation(204, 28);
 
-			set65=(IToken)input.LT(1);
-			set65=(IToken)input.LT(1);
+			set61=(IToken)input.LT(1);
+			set61=(IToken)input.LT(1);
 			if (input.LA(1)==EQ||input.LA(1)==NEQ)
 			{
 				input.Consume();
-				if (state.backtracking == 0) root_0 = (object)adaptor.BecomeRoot((object)adaptor.Create(set65), root_0);
+				if (state.backtracking == 0) root_0 = (object)adaptor.BecomeRoot((object)adaptor.Create(set61), root_0);
 				state.errorRecovery=false;state.failed=false;
 			}
 			else
@@ -3902,12 +2559,12 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 				throw mse;
 			}
 
-			DebugLocation(193, 30);
-			PushFollow(Follow._eq_neq_expr_arg_in_eq_neq_expr1329);
-			eq_neq_expr_arg66=eq_neq_expr_arg();
+			DebugLocation(204, 30);
+			PushFollow(Follow._eq_neq_expr_arg_in_eq_neq_expr1385);
+			eq_neq_expr_arg62=eq_neq_expr_arg();
 			PopFollow();
 			if (state.failed) return retval;
-			if (state.backtracking == 0) adaptor.AddChild(root_0, eq_neq_expr_arg66.Tree);
+			if (state.backtracking == 0) adaptor.AddChild(root_0, eq_neq_expr_arg62.Tree);
 
 			}
 
@@ -3931,7 +2588,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			LeaveRule("eq_neq_expr", 18);
 			LeaveRule_eq_neq_expr();
 		}
-		DebugLocation(194, 1);
+		DebugLocation(205, 1);
 		} finally { DebugExitRule(GrammarFileName, "eq_neq_expr"); }
 		return retval;
 
@@ -3941,7 +2598,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	partial void EnterRule_eq_neq_expr_arg();
 	partial void LeaveRule_eq_neq_expr_arg();
 	// $ANTLR start "eq_neq_expr_arg"
-	// D:\\fsharp_compiler\\fsharp_ss.g:196:1: eq_neq_expr_arg : ( ID | STRING | CHAR | INT | DOUBLE | alg_expr | func_call_expr );
+	// D:\\fsharp_compiler\\fsharp_ss.g:207:1: eq_neq_expr_arg : ( STRING | CHAR | INT | DOUBLE | alg_expr | func_call_expr | ID );
 	[GrammarRule("eq_neq_expr_arg")]
 	private AstParserRuleReturnScope<object, IToken> eq_neq_expr_arg()
 	{
@@ -3953,69 +2610,44 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 
 		object root_0 = default(object);
 
-		IToken ID67 = default(IToken);
-		IToken STRING68 = default(IToken);
-		IToken CHAR69 = default(IToken);
-		IToken INT70 = default(IToken);
-		IToken DOUBLE71 = default(IToken);
-		AstParserRuleReturnScope<object, IToken> alg_expr72 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> func_call_expr73 = default(AstParserRuleReturnScope<object, IToken>);
+		IToken STRING63 = default(IToken);
+		IToken CHAR64 = default(IToken);
+		IToken INT65 = default(IToken);
+		IToken DOUBLE66 = default(IToken);
+		IToken ID69 = default(IToken);
+		AstParserRuleReturnScope<object, IToken> alg_expr67 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> func_call_expr68 = default(AstParserRuleReturnScope<object, IToken>);
 
-		object ID67_tree = default(object);
-		object STRING68_tree = default(object);
-		object CHAR69_tree = default(object);
-		object INT70_tree = default(object);
-		object DOUBLE71_tree = default(object);
+		object STRING63_tree = default(object);
+		object CHAR64_tree = default(object);
+		object INT65_tree = default(object);
+		object DOUBLE66_tree = default(object);
+		object ID69_tree = default(object);
 		try { DebugEnterRule(GrammarFileName, "eq_neq_expr_arg");
-		DebugLocation(196, 1);
+		DebugLocation(207, 1);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:197:2: ( ID | STRING | CHAR | INT | DOUBLE | alg_expr | func_call_expr )
-			int alt24=7;
-			try { DebugEnterDecision(24, false);
+			// D:\\fsharp_compiler\\fsharp_ss.g:208:2: ( STRING | CHAR | INT | DOUBLE | alg_expr | func_call_expr | ID )
+			int alt15=7;
+			try { DebugEnterDecision(15, false);
 			switch (input.LA(1))
 			{
-			case ID:
-				{
-				int LA24_2 = input.LA(2);
-
-				if ((EvaluatePredicate(synpred46_fsharp_ss_fragment)))
-				{
-					alt24 = 1;
-				}
-				else if ((EvaluatePredicate(synpred51_fsharp_ss_fragment)))
-				{
-					alt24 = 6;
-				}
-				else if ((true))
-				{
-					alt24 = 7;
-				}
-				else
-				{
-					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 24, 1, input, 2);
-					DebugRecognitionException(nvae);
-					throw nvae;
-				}
-				}
-				break;
 			case STRING:
 				{
-				int LA24_2 = input.LA(2);
+				int LA15_2 = input.LA(2);
 
-				if ((EvaluatePredicate(synpred47_fsharp_ss_fragment)))
+				if ((EvaluatePredicate(synpred37_fsharp_ss_fragment)))
 				{
-					alt24 = 2;
+					alt15 = 1;
 				}
-				else if ((EvaluatePredicate(synpred51_fsharp_ss_fragment)))
+				else if ((EvaluatePredicate(synpred41_fsharp_ss_fragment)))
 				{
-					alt24 = 6;
+					alt15 = 5;
 				}
 				else
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 24, 2, input, 2);
+					NoViableAltException nvae = new NoViableAltException("", 15, 1, input, 2);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
@@ -4023,20 +2655,20 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 				break;
 			case CHAR:
 				{
-				int LA24_2 = input.LA(2);
+				int LA15_2 = input.LA(2);
 
-				if ((EvaluatePredicate(synpred48_fsharp_ss_fragment)))
+				if ((EvaluatePredicate(synpred38_fsharp_ss_fragment)))
 				{
-					alt24 = 3;
+					alt15 = 2;
 				}
-				else if ((EvaluatePredicate(synpred51_fsharp_ss_fragment)))
+				else if ((EvaluatePredicate(synpred41_fsharp_ss_fragment)))
 				{
-					alt24 = 6;
+					alt15 = 5;
 				}
 				else
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 24, 3, input, 2);
+					NoViableAltException nvae = new NoViableAltException("", 15, 2, input, 2);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
@@ -4044,20 +2676,20 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 				break;
 			case INT:
 				{
-				int LA24_2 = input.LA(2);
+				int LA15_2 = input.LA(2);
 
-				if ((EvaluatePredicate(synpred49_fsharp_ss_fragment)))
+				if ((EvaluatePredicate(synpred39_fsharp_ss_fragment)))
 				{
-					alt24 = 4;
+					alt15 = 3;
 				}
-				else if ((EvaluatePredicate(synpred51_fsharp_ss_fragment)))
+				else if ((EvaluatePredicate(synpred41_fsharp_ss_fragment)))
 				{
-					alt24 = 6;
+					alt15 = 5;
 				}
 				else
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 24, 4, input, 2);
+					NoViableAltException nvae = new NoViableAltException("", 15, 3, input, 2);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
@@ -4065,146 +2697,171 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 				break;
 			case DOUBLE:
 				{
-				int LA24_2 = input.LA(2);
+				int LA15_2 = input.LA(2);
 
-				if ((EvaluatePredicate(synpred50_fsharp_ss_fragment)))
+				if ((EvaluatePredicate(synpred40_fsharp_ss_fragment)))
 				{
-					alt24 = 5;
+					alt15 = 4;
 				}
-				else if ((EvaluatePredicate(synpred51_fsharp_ss_fragment)))
+				else if ((EvaluatePredicate(synpred41_fsharp_ss_fragment)))
 				{
-					alt24 = 6;
+					alt15 = 5;
 				}
 				else
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 24, 5, input, 2);
+					NoViableAltException nvae = new NoViableAltException("", 15, 4, input, 2);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
 				}
 				break;
 			case FALSE:
+			case OPEN_BR:
 			case TRUE:
-			case 55:
 				{
-				alt24 = 6;
+				alt15 = 5;
+				}
+				break;
+			case ID:
+				{
+				int LA15_2 = input.LA(2);
+
+				if ((LA15_2==OPEN_BR))
+				{
+					alt15 = 6;
+				}
+				else if ((EvaluatePredicate(synpred41_fsharp_ss_fragment)))
+				{
+					alt15 = 5;
+				}
+				else if ((true))
+				{
+					alt15 = 7;
+				}
+				else
+				{
+					if (state.backtracking>0) {state.failed=true; return retval;}
+					NoViableAltException nvae = new NoViableAltException("", 15, 6, input, 2);
+					DebugRecognitionException(nvae);
+					throw nvae;
+				}
 				}
 				break;
 			default:
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 24, 0, input, 1);
+					NoViableAltException nvae = new NoViableAltException("", 15, 0, input, 1);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
 			}
 
-			} finally { DebugExitDecision(24); }
-			switch (alt24)
+			} finally { DebugExitDecision(15); }
+			switch (alt15)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// D:\\fsharp_compiler\\fsharp_ss.g:198:2: ID
+				// D:\\fsharp_compiler\\fsharp_ss.g:209:2: STRING
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(198, 2);
-				ID67=(IToken)Match(input,ID,Follow._ID_in_eq_neq_expr_arg1342); if (state.failed) return retval;
+				DebugLocation(209, 2);
+				STRING63=(IToken)Match(input,STRING,Follow._STRING_in_eq_neq_expr_arg1398); if (state.failed) return retval;
 				if (state.backtracking == 0) {
-				ID67_tree = (object)adaptor.Create(ID67);
-				adaptor.AddChild(root_0, ID67_tree);
+				STRING63_tree = (object)adaptor.Create(STRING63);
+				adaptor.AddChild(root_0, STRING63_tree);
 				}
 
 				}
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// D:\\fsharp_compiler\\fsharp_ss.g:198:7: STRING
+				// D:\\fsharp_compiler\\fsharp_ss.g:209:11: CHAR
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(198, 7);
-				STRING68=(IToken)Match(input,STRING,Follow._STRING_in_eq_neq_expr_arg1346); if (state.failed) return retval;
+				DebugLocation(209, 11);
+				CHAR64=(IToken)Match(input,CHAR,Follow._CHAR_in_eq_neq_expr_arg1402); if (state.failed) return retval;
 				if (state.backtracking == 0) {
-				STRING68_tree = (object)adaptor.Create(STRING68);
-				adaptor.AddChild(root_0, STRING68_tree);
+				CHAR64_tree = (object)adaptor.Create(CHAR64);
+				adaptor.AddChild(root_0, CHAR64_tree);
 				}
 
 				}
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// D:\\fsharp_compiler\\fsharp_ss.g:198:16: CHAR
+				// D:\\fsharp_compiler\\fsharp_ss.g:209:18: INT
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(198, 16);
-				CHAR69=(IToken)Match(input,CHAR,Follow._CHAR_in_eq_neq_expr_arg1350); if (state.failed) return retval;
+				DebugLocation(209, 18);
+				INT65=(IToken)Match(input,INT,Follow._INT_in_eq_neq_expr_arg1406); if (state.failed) return retval;
 				if (state.backtracking == 0) {
-				CHAR69_tree = (object)adaptor.Create(CHAR69);
-				adaptor.AddChild(root_0, CHAR69_tree);
+				INT65_tree = (object)adaptor.Create(INT65);
+				adaptor.AddChild(root_0, INT65_tree);
 				}
 
 				}
 				break;
 			case 4:
 				DebugEnterAlt(4);
-				// D:\\fsharp_compiler\\fsharp_ss.g:198:23: INT
+				// D:\\fsharp_compiler\\fsharp_ss.g:209:24: DOUBLE
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(198, 23);
-				INT70=(IToken)Match(input,INT,Follow._INT_in_eq_neq_expr_arg1354); if (state.failed) return retval;
+				DebugLocation(209, 24);
+				DOUBLE66=(IToken)Match(input,DOUBLE,Follow._DOUBLE_in_eq_neq_expr_arg1410); if (state.failed) return retval;
 				if (state.backtracking == 0) {
-				INT70_tree = (object)adaptor.Create(INT70);
-				adaptor.AddChild(root_0, INT70_tree);
+				DOUBLE66_tree = (object)adaptor.Create(DOUBLE66);
+				adaptor.AddChild(root_0, DOUBLE66_tree);
 				}
 
 				}
 				break;
 			case 5:
 				DebugEnterAlt(5);
-				// D:\\fsharp_compiler\\fsharp_ss.g:198:29: DOUBLE
+				// D:\\fsharp_compiler\\fsharp_ss.g:209:33: alg_expr
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(198, 29);
-				DOUBLE71=(IToken)Match(input,DOUBLE,Follow._DOUBLE_in_eq_neq_expr_arg1358); if (state.failed) return retval;
-				if (state.backtracking == 0) {
-				DOUBLE71_tree = (object)adaptor.Create(DOUBLE71);
-				adaptor.AddChild(root_0, DOUBLE71_tree);
-				}
+				DebugLocation(209, 33);
+				PushFollow(Follow._alg_expr_in_eq_neq_expr_arg1414);
+				alg_expr67=alg_expr();
+				PopFollow();
+				if (state.failed) return retval;
+				if (state.backtracking == 0) adaptor.AddChild(root_0, alg_expr67.Tree);
 
 				}
 				break;
 			case 6:
 				DebugEnterAlt(6);
-				// D:\\fsharp_compiler\\fsharp_ss.g:198:38: alg_expr
+				// D:\\fsharp_compiler\\fsharp_ss.g:209:44: func_call_expr
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(198, 38);
-				PushFollow(Follow._alg_expr_in_eq_neq_expr_arg1362);
-				alg_expr72=alg_expr();
+				DebugLocation(209, 44);
+				PushFollow(Follow._func_call_expr_in_eq_neq_expr_arg1418);
+				func_call_expr68=func_call_expr();
 				PopFollow();
 				if (state.failed) return retval;
-				if (state.backtracking == 0) adaptor.AddChild(root_0, alg_expr72.Tree);
+				if (state.backtracking == 0) adaptor.AddChild(root_0, func_call_expr68.Tree);
 
 				}
 				break;
 			case 7:
 				DebugEnterAlt(7);
-				// D:\\fsharp_compiler\\fsharp_ss.g:198:49: func_call_expr
+				// D:\\fsharp_compiler\\fsharp_ss.g:209:61: ID
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(198, 49);
-				PushFollow(Follow._func_call_expr_in_eq_neq_expr_arg1366);
-				func_call_expr73=func_call_expr();
-				PopFollow();
-				if (state.failed) return retval;
-				if (state.backtracking == 0) adaptor.AddChild(root_0, func_call_expr73.Tree);
+				DebugLocation(209, 61);
+				ID69=(IToken)Match(input,ID,Follow._ID_in_eq_neq_expr_arg1422); if (state.failed) return retval;
+				if (state.backtracking == 0) {
+				ID69_tree = (object)adaptor.Create(ID69);
+				adaptor.AddChild(root_0, ID69_tree);
+				}
 
 				}
 				break;
@@ -4230,7 +2887,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			LeaveRule("eq_neq_expr_arg", 19);
 			LeaveRule_eq_neq_expr_arg();
 		}
-		DebugLocation(199, 1);
+		DebugLocation(210, 1);
 		} finally { DebugExitRule(GrammarFileName, "eq_neq_expr_arg"); }
 		return retval;
 
@@ -4240,7 +2897,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	partial void EnterRule_logic_expr_arg();
 	partial void LeaveRule_logic_expr_arg();
 	// $ANTLR start "logic_expr_arg"
-	// D:\\fsharp_compiler\\fsharp_ss.g:201:1: logic_expr_arg : ( ID | TRUE | FALSE | comp_expr | '(' ! or_expr ')' !| func_call_expr );
+	// D:\\fsharp_compiler\\fsharp_ss.g:212:1: logic_expr_arg : ( TRUE | FALSE | comp_expr | '(' ! or_expr ')' !| func_call_expr | ID );
 	[GrammarRule("logic_expr_arg")]
 	private AstParserRuleReturnScope<object, IToken> logic_expr_arg()
 	{
@@ -4252,70 +2909,45 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 
 		object root_0 = default(object);
 
-		IToken ID74 = default(IToken);
-		IToken TRUE75 = default(IToken);
-		IToken FALSE76 = default(IToken);
-		IToken char_literal78 = default(IToken);
-		IToken char_literal80 = default(IToken);
-		AstParserRuleReturnScope<object, IToken> comp_expr77 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> or_expr79 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> func_call_expr81 = default(AstParserRuleReturnScope<object, IToken>);
+		IToken TRUE70 = default(IToken);
+		IToken FALSE71 = default(IToken);
+		IToken char_literal73 = default(IToken);
+		IToken char_literal75 = default(IToken);
+		IToken ID77 = default(IToken);
+		AstParserRuleReturnScope<object, IToken> comp_expr72 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> or_expr74 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> func_call_expr76 = default(AstParserRuleReturnScope<object, IToken>);
 
-		object ID74_tree = default(object);
-		object TRUE75_tree = default(object);
-		object FALSE76_tree = default(object);
-		object char_literal78_tree = default(object);
-		object char_literal80_tree = default(object);
+		object TRUE70_tree = default(object);
+		object FALSE71_tree = default(object);
+		object char_literal73_tree = default(object);
+		object char_literal75_tree = default(object);
+		object ID77_tree = default(object);
 		try { DebugEnterRule(GrammarFileName, "logic_expr_arg");
-		DebugLocation(201, 1);
+		DebugLocation(212, 1);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:202:2: ( ID | TRUE | FALSE | comp_expr | '(' ! or_expr ')' !| func_call_expr )
-			int alt25=6;
-			try { DebugEnterDecision(25, false);
+			// D:\\fsharp_compiler\\fsharp_ss.g:213:2: ( TRUE | FALSE | comp_expr | '(' ! or_expr ')' !| func_call_expr | ID )
+			int alt16=6;
+			try { DebugEnterDecision(16, false);
 			switch (input.LA(1))
 			{
-			case ID:
-				{
-				int LA25_2 = input.LA(2);
-
-				if ((EvaluatePredicate(synpred52_fsharp_ss_fragment)))
-				{
-					alt25 = 1;
-				}
-				else if ((EvaluatePredicate(synpred55_fsharp_ss_fragment)))
-				{
-					alt25 = 4;
-				}
-				else if ((true))
-				{
-					alt25 = 6;
-				}
-				else
-				{
-					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 25, 1, input, 2);
-					DebugRecognitionException(nvae);
-					throw nvae;
-				}
-				}
-				break;
 			case TRUE:
 				{
-				int LA25_2 = input.LA(2);
+				int LA16_2 = input.LA(2);
 
-				if ((EvaluatePredicate(synpred53_fsharp_ss_fragment)))
+				if ((EvaluatePredicate(synpred43_fsharp_ss_fragment)))
 				{
-					alt25 = 2;
+					alt16 = 1;
 				}
-				else if ((EvaluatePredicate(synpred55_fsharp_ss_fragment)))
+				else if ((EvaluatePredicate(synpred45_fsharp_ss_fragment)))
 				{
-					alt25 = 4;
+					alt16 = 3;
 				}
 				else
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 25, 2, input, 2);
+					NoViableAltException nvae = new NoViableAltException("", 16, 1, input, 2);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
@@ -4323,20 +2955,20 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 				break;
 			case FALSE:
 				{
-				int LA25_2 = input.LA(2);
+				int LA16_2 = input.LA(2);
 
-				if ((EvaluatePredicate(synpred54_fsharp_ss_fragment)))
+				if ((EvaluatePredicate(synpred44_fsharp_ss_fragment)))
 				{
-					alt25 = 3;
+					alt16 = 2;
 				}
-				else if ((EvaluatePredicate(synpred55_fsharp_ss_fragment)))
+				else if ((EvaluatePredicate(synpred45_fsharp_ss_fragment)))
 				{
-					alt25 = 4;
+					alt16 = 3;
 				}
 				else
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 25, 3, input, 2);
+					NoViableAltException nvae = new NoViableAltException("", 16, 2, input, 2);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
@@ -4347,25 +2979,50 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			case INT:
 			case STRING:
 				{
-				alt25 = 4;
+				alt16 = 3;
 				}
 				break;
-			case 55:
+			case OPEN_BR:
 				{
-				int LA25_2 = input.LA(2);
+				int LA16_2 = input.LA(2);
 
-				if ((EvaluatePredicate(synpred55_fsharp_ss_fragment)))
+				if ((EvaluatePredicate(synpred45_fsharp_ss_fragment)))
 				{
-					alt25 = 4;
+					alt16 = 3;
 				}
-				else if ((EvaluatePredicate(synpred56_fsharp_ss_fragment)))
+				else if ((EvaluatePredicate(synpred46_fsharp_ss_fragment)))
 				{
-					alt25 = 5;
+					alt16 = 4;
 				}
 				else
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 25, 8, input, 2);
+					NoViableAltException nvae = new NoViableAltException("", 16, 7, input, 2);
+					DebugRecognitionException(nvae);
+					throw nvae;
+				}
+				}
+				break;
+			case ID:
+				{
+				int LA16_2 = input.LA(2);
+
+				if ((EvaluatePredicate(synpred45_fsharp_ss_fragment)))
+				{
+					alt16 = 3;
+				}
+				else if ((EvaluatePredicate(synpred47_fsharp_ss_fragment)))
+				{
+					alt16 = 5;
+				}
+				else if ((true))
+				{
+					alt16 = 6;
+				}
+				else
+				{
+					if (state.backtracking>0) {state.failed=true; return retval;}
+					NoViableAltException nvae = new NoViableAltException("", 16, 8, input, 2);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
@@ -4374,106 +3031,106 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			default:
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 25, 0, input, 1);
+					NoViableAltException nvae = new NoViableAltException("", 16, 0, input, 1);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
 			}
 
-			} finally { DebugExitDecision(25); }
-			switch (alt25)
+			} finally { DebugExitDecision(16); }
+			switch (alt16)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// D:\\fsharp_compiler\\fsharp_ss.g:203:2: ID
+				// D:\\fsharp_compiler\\fsharp_ss.g:214:2: TRUE
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(203, 2);
-				ID74=(IToken)Match(input,ID,Follow._ID_in_logic_expr_arg1378); if (state.failed) return retval;
+				DebugLocation(214, 2);
+				TRUE70=(IToken)Match(input,TRUE,Follow._TRUE_in_logic_expr_arg1434); if (state.failed) return retval;
 				if (state.backtracking == 0) {
-				ID74_tree = (object)adaptor.Create(ID74);
-				adaptor.AddChild(root_0, ID74_tree);
+				TRUE70_tree = (object)adaptor.Create(TRUE70);
+				adaptor.AddChild(root_0, TRUE70_tree);
 				}
 
 				}
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// D:\\fsharp_compiler\\fsharp_ss.g:203:7: TRUE
+				// D:\\fsharp_compiler\\fsharp_ss.g:214:9: FALSE
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(203, 7);
-				TRUE75=(IToken)Match(input,TRUE,Follow._TRUE_in_logic_expr_arg1382); if (state.failed) return retval;
+				DebugLocation(214, 9);
+				FALSE71=(IToken)Match(input,FALSE,Follow._FALSE_in_logic_expr_arg1438); if (state.failed) return retval;
 				if (state.backtracking == 0) {
-				TRUE75_tree = (object)adaptor.Create(TRUE75);
-				adaptor.AddChild(root_0, TRUE75_tree);
+				FALSE71_tree = (object)adaptor.Create(FALSE71);
+				adaptor.AddChild(root_0, FALSE71_tree);
 				}
 
 				}
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// D:\\fsharp_compiler\\fsharp_ss.g:203:14: FALSE
+				// D:\\fsharp_compiler\\fsharp_ss.g:214:17: comp_expr
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(203, 14);
-				FALSE76=(IToken)Match(input,FALSE,Follow._FALSE_in_logic_expr_arg1386); if (state.failed) return retval;
-				if (state.backtracking == 0) {
-				FALSE76_tree = (object)adaptor.Create(FALSE76);
-				adaptor.AddChild(root_0, FALSE76_tree);
-				}
+				DebugLocation(214, 17);
+				PushFollow(Follow._comp_expr_in_logic_expr_arg1442);
+				comp_expr72=comp_expr();
+				PopFollow();
+				if (state.failed) return retval;
+				if (state.backtracking == 0) adaptor.AddChild(root_0, comp_expr72.Tree);
 
 				}
 				break;
 			case 4:
 				DebugEnterAlt(4);
-				// D:\\fsharp_compiler\\fsharp_ss.g:203:22: comp_expr
+				// D:\\fsharp_compiler\\fsharp_ss.g:214:29: '(' ! or_expr ')' !
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(203, 22);
-				PushFollow(Follow._comp_expr_in_logic_expr_arg1390);
-				comp_expr77=comp_expr();
+				DebugLocation(214, 32);
+				char_literal73=(IToken)Match(input,OPEN_BR,Follow._OPEN_BR_in_logic_expr_arg1446); if (state.failed) return retval;
+				DebugLocation(214, 34);
+				PushFollow(Follow._or_expr_in_logic_expr_arg1449);
+				or_expr74=or_expr();
 				PopFollow();
 				if (state.failed) return retval;
-				if (state.backtracking == 0) adaptor.AddChild(root_0, comp_expr77.Tree);
+				if (state.backtracking == 0) adaptor.AddChild(root_0, or_expr74.Tree);
+				DebugLocation(214, 45);
+				char_literal75=(IToken)Match(input,CLOSE_BR,Follow._CLOSE_BR_in_logic_expr_arg1451); if (state.failed) return retval;
 
 				}
 				break;
 			case 5:
 				DebugEnterAlt(5);
-				// D:\\fsharp_compiler\\fsharp_ss.g:203:34: '(' ! or_expr ')' !
+				// D:\\fsharp_compiler\\fsharp_ss.g:214:49: func_call_expr
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(203, 37);
-				char_literal78=(IToken)Match(input,55,Follow._55_in_logic_expr_arg1394); if (state.failed) return retval;
-				DebugLocation(203, 39);
-				PushFollow(Follow._or_expr_in_logic_expr_arg1397);
-				or_expr79=or_expr();
+				DebugLocation(214, 49);
+				PushFollow(Follow._func_call_expr_in_logic_expr_arg1456);
+				func_call_expr76=func_call_expr();
 				PopFollow();
 				if (state.failed) return retval;
-				if (state.backtracking == 0) adaptor.AddChild(root_0, or_expr79.Tree);
-				DebugLocation(203, 50);
-				char_literal80=(IToken)Match(input,56,Follow._56_in_logic_expr_arg1399); if (state.failed) return retval;
+				if (state.backtracking == 0) adaptor.AddChild(root_0, func_call_expr76.Tree);
 
 				}
 				break;
 			case 6:
 				DebugEnterAlt(6);
-				// D:\\fsharp_compiler\\fsharp_ss.g:203:54: func_call_expr
+				// D:\\fsharp_compiler\\fsharp_ss.g:214:66: ID
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(203, 54);
-				PushFollow(Follow._func_call_expr_in_logic_expr_arg1404);
-				func_call_expr81=func_call_expr();
-				PopFollow();
-				if (state.failed) return retval;
-				if (state.backtracking == 0) adaptor.AddChild(root_0, func_call_expr81.Tree);
+				DebugLocation(214, 66);
+				ID77=(IToken)Match(input,ID,Follow._ID_in_logic_expr_arg1460); if (state.failed) return retval;
+				if (state.backtracking == 0) {
+				ID77_tree = (object)adaptor.Create(ID77);
+				adaptor.AddChild(root_0, ID77_tree);
+				}
 
 				}
 				break;
@@ -4499,7 +3156,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			LeaveRule("logic_expr_arg", 20);
 			LeaveRule_logic_expr_arg();
 		}
-		DebugLocation(204, 1);
+		DebugLocation(215, 1);
 		} finally { DebugExitRule(GrammarFileName, "logic_expr_arg"); }
 		return retval;
 
@@ -4509,7 +3166,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	partial void EnterRule_and_expr();
 	partial void LeaveRule_and_expr();
 	// $ANTLR start "and_expr"
-	// D:\\fsharp_compiler\\fsharp_ss.g:206:1: and_expr : logic_expr_arg ( AND ^ logic_expr_arg )* ;
+	// D:\\fsharp_compiler\\fsharp_ss.g:217:1: and_expr : logic_expr_arg ( AND ^ logic_expr_arg )* ;
 	[GrammarRule("and_expr")]
 	private AstParserRuleReturnScope<object, IToken> and_expr()
 	{
@@ -4521,81 +3178,74 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 
 		object root_0 = default(object);
 
-		IToken AND83 = default(IToken);
-		AstParserRuleReturnScope<object, IToken> logic_expr_arg82 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> logic_expr_arg84 = default(AstParserRuleReturnScope<object, IToken>);
+		IToken AND79 = default(IToken);
+		AstParserRuleReturnScope<object, IToken> logic_expr_arg78 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> logic_expr_arg80 = default(AstParserRuleReturnScope<object, IToken>);
 
-		object AND83_tree = default(object);
+		object AND79_tree = default(object);
 		try { DebugEnterRule(GrammarFileName, "and_expr");
-		DebugLocation(206, 1);
+		DebugLocation(217, 1);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:206:9: ( logic_expr_arg ( AND ^ logic_expr_arg )* )
+			// D:\\fsharp_compiler\\fsharp_ss.g:217:9: ( logic_expr_arg ( AND ^ logic_expr_arg )* )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:207:2: logic_expr_arg ( AND ^ logic_expr_arg )*
+			// D:\\fsharp_compiler\\fsharp_ss.g:218:2: logic_expr_arg ( AND ^ logic_expr_arg )*
 			{
 			root_0 = (object)adaptor.Nil();
 
-			DebugLocation(207, 2);
-			PushFollow(Follow._logic_expr_arg_in_and_expr1414);
-			logic_expr_arg82=logic_expr_arg();
+			DebugLocation(218, 2);
+			PushFollow(Follow._logic_expr_arg_in_and_expr1470);
+			logic_expr_arg78=logic_expr_arg();
 			PopFollow();
 			if (state.failed) return retval;
-			if (state.backtracking == 0) adaptor.AddChild(root_0, logic_expr_arg82.Tree);
-			DebugLocation(207, 17);
-			// D:\\fsharp_compiler\\fsharp_ss.g:207:17: ( AND ^ logic_expr_arg )*
-			try { DebugEnterSubRule(26);
+			if (state.backtracking == 0) adaptor.AddChild(root_0, logic_expr_arg78.Tree);
+			DebugLocation(218, 17);
+			// D:\\fsharp_compiler\\fsharp_ss.g:218:17: ( AND ^ logic_expr_arg )*
+			try { DebugEnterSubRule(17);
 			while (true)
 			{
-				int alt26=2;
-				try { DebugEnterDecision(26, false);
-				int LA26_1 = input.LA(1);
+				int alt17=2;
+				try { DebugEnterDecision(17, false);
+				int LA17_1 = input.LA(1);
 
-				if ((LA26_1==AND))
+				if ((LA17_1==AND))
 				{
-					int LA26_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred57_fsharp_ss_fragment)))
-					{
-						alt26 = 1;
-					}
-
-
+					alt17 = 1;
 				}
 
 
-				} finally { DebugExitDecision(26); }
-				switch ( alt26 )
+				} finally { DebugExitDecision(17); }
+				switch ( alt17 )
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// D:\\fsharp_compiler\\fsharp_ss.g:207:18: AND ^ logic_expr_arg
+					// D:\\fsharp_compiler\\fsharp_ss.g:218:18: AND ^ logic_expr_arg
 					{
-					DebugLocation(207, 21);
-					AND83=(IToken)Match(input,AND,Follow._AND_in_and_expr1417); if (state.failed) return retval;
+					DebugLocation(218, 21);
+					AND79=(IToken)Match(input,AND,Follow._AND_in_and_expr1473); if (state.failed) return retval;
 					if (state.backtracking == 0) {
-					AND83_tree = (object)adaptor.Create(AND83);
-					root_0 = (object)adaptor.BecomeRoot(AND83_tree, root_0);
+					AND79_tree = (object)adaptor.Create(AND79);
+					root_0 = (object)adaptor.BecomeRoot(AND79_tree, root_0);
 					}
-					DebugLocation(207, 23);
-					PushFollow(Follow._logic_expr_arg_in_and_expr1420);
-					logic_expr_arg84=logic_expr_arg();
+					DebugLocation(218, 23);
+					PushFollow(Follow._logic_expr_arg_in_and_expr1476);
+					logic_expr_arg80=logic_expr_arg();
 					PopFollow();
 					if (state.failed) return retval;
-					if (state.backtracking == 0) adaptor.AddChild(root_0, logic_expr_arg84.Tree);
+					if (state.backtracking == 0) adaptor.AddChild(root_0, logic_expr_arg80.Tree);
 
 					}
 					break;
 
 				default:
-					goto loop26;
+					goto loop17;
 				}
 			}
 
-			loop26:
+			loop17:
 				;
 
-			} finally { DebugExitSubRule(26); }
+			} finally { DebugExitSubRule(17); }
 
 
 			}
@@ -4620,7 +3270,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			LeaveRule("and_expr", 21);
 			LeaveRule_and_expr();
 		}
-		DebugLocation(208, 1);
+		DebugLocation(219, 1);
 		} finally { DebugExitRule(GrammarFileName, "and_expr"); }
 		return retval;
 
@@ -4630,7 +3280,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	partial void EnterRule_or_expr();
 	partial void LeaveRule_or_expr();
 	// $ANTLR start "or_expr"
-	// D:\\fsharp_compiler\\fsharp_ss.g:210:1: or_expr : and_expr ( OR ^ and_expr )* ;
+	// D:\\fsharp_compiler\\fsharp_ss.g:221:1: or_expr : and_expr ( OR ^ and_expr )* ;
 	[GrammarRule("or_expr")]
 	private AstParserRuleReturnScope<object, IToken> or_expr()
 	{
@@ -4642,81 +3292,74 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 
 		object root_0 = default(object);
 
-		IToken OR86 = default(IToken);
-		AstParserRuleReturnScope<object, IToken> and_expr85 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> and_expr87 = default(AstParserRuleReturnScope<object, IToken>);
+		IToken OR82 = default(IToken);
+		AstParserRuleReturnScope<object, IToken> and_expr81 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> and_expr83 = default(AstParserRuleReturnScope<object, IToken>);
 
-		object OR86_tree = default(object);
+		object OR82_tree = default(object);
 		try { DebugEnterRule(GrammarFileName, "or_expr");
-		DebugLocation(210, 1);
+		DebugLocation(221, 1);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:210:9: ( and_expr ( OR ^ and_expr )* )
+			// D:\\fsharp_compiler\\fsharp_ss.g:221:9: ( and_expr ( OR ^ and_expr )* )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:211:2: and_expr ( OR ^ and_expr )*
+			// D:\\fsharp_compiler\\fsharp_ss.g:222:2: and_expr ( OR ^ and_expr )*
 			{
 			root_0 = (object)adaptor.Nil();
 
-			DebugLocation(211, 2);
-			PushFollow(Follow._and_expr_in_or_expr1433);
-			and_expr85=and_expr();
+			DebugLocation(222, 2);
+			PushFollow(Follow._and_expr_in_or_expr1489);
+			and_expr81=and_expr();
 			PopFollow();
 			if (state.failed) return retval;
-			if (state.backtracking == 0) adaptor.AddChild(root_0, and_expr85.Tree);
-			DebugLocation(211, 11);
-			// D:\\fsharp_compiler\\fsharp_ss.g:211:11: ( OR ^ and_expr )*
-			try { DebugEnterSubRule(27);
+			if (state.backtracking == 0) adaptor.AddChild(root_0, and_expr81.Tree);
+			DebugLocation(222, 11);
+			// D:\\fsharp_compiler\\fsharp_ss.g:222:11: ( OR ^ and_expr )*
+			try { DebugEnterSubRule(18);
 			while (true)
 			{
-				int alt27=2;
-				try { DebugEnterDecision(27, false);
-				int LA27_1 = input.LA(1);
+				int alt18=2;
+				try { DebugEnterDecision(18, false);
+				int LA18_1 = input.LA(1);
 
-				if ((LA27_1==OR))
+				if ((LA18_1==OR))
 				{
-					int LA27_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred58_fsharp_ss_fragment)))
-					{
-						alt27 = 1;
-					}
-
-
+					alt18 = 1;
 				}
 
 
-				} finally { DebugExitDecision(27); }
-				switch ( alt27 )
+				} finally { DebugExitDecision(18); }
+				switch ( alt18 )
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// D:\\fsharp_compiler\\fsharp_ss.g:211:12: OR ^ and_expr
+					// D:\\fsharp_compiler\\fsharp_ss.g:222:12: OR ^ and_expr
 					{
-					DebugLocation(211, 14);
-					OR86=(IToken)Match(input,OR,Follow._OR_in_or_expr1436); if (state.failed) return retval;
+					DebugLocation(222, 14);
+					OR82=(IToken)Match(input,OR,Follow._OR_in_or_expr1492); if (state.failed) return retval;
 					if (state.backtracking == 0) {
-					OR86_tree = (object)adaptor.Create(OR86);
-					root_0 = (object)adaptor.BecomeRoot(OR86_tree, root_0);
+					OR82_tree = (object)adaptor.Create(OR82);
+					root_0 = (object)adaptor.BecomeRoot(OR82_tree, root_0);
 					}
-					DebugLocation(211, 16);
-					PushFollow(Follow._and_expr_in_or_expr1439);
-					and_expr87=and_expr();
+					DebugLocation(222, 16);
+					PushFollow(Follow._and_expr_in_or_expr1495);
+					and_expr83=and_expr();
 					PopFollow();
 					if (state.failed) return retval;
-					if (state.backtracking == 0) adaptor.AddChild(root_0, and_expr87.Tree);
+					if (state.backtracking == 0) adaptor.AddChild(root_0, and_expr83.Tree);
 
 					}
 					break;
 
 				default:
-					goto loop27;
+					goto loop18;
 				}
 			}
 
-			loop27:
+			loop18:
 				;
 
-			} finally { DebugExitSubRule(27); }
+			} finally { DebugExitSubRule(18); }
 
 
 			}
@@ -4741,7 +3384,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			LeaveRule("or_expr", 22);
 			LeaveRule_or_expr();
 		}
-		DebugLocation(212, 1);
+		DebugLocation(223, 1);
 		} finally { DebugExitRule(GrammarFileName, "or_expr"); }
 		return retval;
 
@@ -4751,7 +3394,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	partial void EnterRule_logic_expr();
 	partial void LeaveRule_logic_expr();
 	// $ANTLR start "logic_expr"
-	// D:\\fsharp_compiler\\fsharp_ss.g:214:1: logic_expr : or_expr ;
+	// D:\\fsharp_compiler\\fsharp_ss.g:225:1: logic_expr : or_expr ;
 	[GrammarRule("logic_expr")]
 	private AstParserRuleReturnScope<object, IToken> logic_expr()
 	{
@@ -4763,24 +3406,24 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 
 		object root_0 = default(object);
 
-		AstParserRuleReturnScope<object, IToken> or_expr88 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> or_expr84 = default(AstParserRuleReturnScope<object, IToken>);
 
 		try { DebugEnterRule(GrammarFileName, "logic_expr");
-		DebugLocation(214, 1);
+		DebugLocation(225, 1);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:215:2: ( or_expr )
+			// D:\\fsharp_compiler\\fsharp_ss.g:226:2: ( or_expr )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:216:2: or_expr
+			// D:\\fsharp_compiler\\fsharp_ss.g:227:2: or_expr
 			{
 			root_0 = (object)adaptor.Nil();
 
-			DebugLocation(216, 2);
-			PushFollow(Follow._or_expr_in_logic_expr1454);
-			or_expr88=or_expr();
+			DebugLocation(227, 2);
+			PushFollow(Follow._or_expr_in_logic_expr1511);
+			or_expr84=or_expr();
 			PopFollow();
 			if (state.failed) return retval;
-			if (state.backtracking == 0) adaptor.AddChild(root_0, or_expr88.Tree);
+			if (state.backtracking == 0) adaptor.AddChild(root_0, or_expr84.Tree);
 
 			}
 
@@ -4804,7 +3447,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			LeaveRule("logic_expr", 23);
 			LeaveRule_logic_expr();
 		}
-		DebugLocation(217, 1);
+		DebugLocation(228, 1);
 		} finally { DebugExitRule(GrammarFileName, "logic_expr"); }
 		return retval;
 
@@ -4814,7 +3457,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	partial void EnterRule_func_call_expr();
 	partial void LeaveRule_func_call_expr();
 	// $ANTLR start "func_call_expr"
-	// D:\\fsharp_compiler\\fsharp_ss.g:219:1: func_call_expr : ID ( returning_expr )* -> ^( FUNCTION_CALL ( returning_expr )* ) ;
+	// D:\\fsharp_compiler\\fsharp_ss.g:230:1: func_call_expr : ID ( OPEN_BR ( returning_expr )* CLOSE_BR )+ -> ^( FUNCTION_CALL ^( NAME ID ) ^( ARGS ( returning_expr )* ) ) ;
 	[GrammarRule("func_call_expr")]
 	private AstParserRuleReturnScope<object, IToken> func_call_expr()
 	{
@@ -4826,187 +3469,135 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 
 		object root_0 = default(object);
 
-		IToken ID89 = default(IToken);
-		AstParserRuleReturnScope<object, IToken> returning_expr90 = default(AstParserRuleReturnScope<object, IToken>);
+		IToken ID85 = default(IToken);
+		IToken OPEN_BR86 = default(IToken);
+		IToken CLOSE_BR88 = default(IToken);
+		AstParserRuleReturnScope<object, IToken> returning_expr87 = default(AstParserRuleReturnScope<object, IToken>);
 
-		object ID89_tree = default(object);
+		object ID85_tree = default(object);
+		object OPEN_BR86_tree = default(object);
+		object CLOSE_BR88_tree = default(object);
+		RewriteRuleITokenStream stream_OPEN_BR=new RewriteRuleITokenStream(adaptor,"token OPEN_BR");
 		RewriteRuleITokenStream stream_ID=new RewriteRuleITokenStream(adaptor,"token ID");
+		RewriteRuleITokenStream stream_CLOSE_BR=new RewriteRuleITokenStream(adaptor,"token CLOSE_BR");
 		RewriteRuleSubtreeStream stream_returning_expr=new RewriteRuleSubtreeStream(adaptor,"rule returning_expr");
 		try { DebugEnterRule(GrammarFileName, "func_call_expr");
-		DebugLocation(219, 1);
+		DebugLocation(230, 1);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:220:2: ( ID ( returning_expr )* -> ^( FUNCTION_CALL ( returning_expr )* ) )
+			// D:\\fsharp_compiler\\fsharp_ss.g:231:2: ( ID ( OPEN_BR ( returning_expr )* CLOSE_BR )+ -> ^( FUNCTION_CALL ^( NAME ID ) ^( ARGS ( returning_expr )* ) ) )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:221:2: ID ( returning_expr )*
+			// D:\\fsharp_compiler\\fsharp_ss.g:232:2: ID ( OPEN_BR ( returning_expr )* CLOSE_BR )+
 			{
-			DebugLocation(221, 2);
-			ID89=(IToken)Match(input,ID,Follow._ID_in_func_call_expr1467); if (state.failed) return retval; 
-			if (state.backtracking == 0) stream_ID.Add(ID89);
+			DebugLocation(232, 2);
+			ID85=(IToken)Match(input,ID,Follow._ID_in_func_call_expr1524); if (state.failed) return retval; 
+			if (state.backtracking == 0) stream_ID.Add(ID85);
 
-			DebugLocation(221, 5);
-			// D:\\fsharp_compiler\\fsharp_ss.g:221:5: ( returning_expr )*
-			try { DebugEnterSubRule(28);
+			DebugLocation(232, 5);
+			// D:\\fsharp_compiler\\fsharp_ss.g:232:5: ( OPEN_BR ( returning_expr )* CLOSE_BR )+
+			int cnt20=0;
+			try { DebugEnterSubRule(20);
 			while (true)
 			{
-				int alt28=2;
-				try { DebugEnterDecision(28, false);
-				switch (input.LA(1))
+				int alt20=2;
+				try { DebugEnterDecision(20, false);
+				int LA20_1 = input.LA(1);
+
+				if ((LA20_1==OPEN_BR))
 				{
-				case TRUE:
-					{
-					int LA28_2 = input.LA(2);
+					int LA20_2 = input.LA(2);
 
-					if ((EvaluatePredicate(synpred59_fsharp_ss_fragment)))
+					if ((EvaluatePredicate(synpred51_fsharp_ss_fragment)))
 					{
-						alt28 = 1;
+						alt20 = 1;
 					}
 
 
-					}
-					break;
-				case ID:
-					{
-					int LA28_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred59_fsharp_ss_fragment)))
-					{
-						alt28 = 1;
-					}
-
-
-					}
-					break;
-				case 55:
-					{
-					int LA28_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred59_fsharp_ss_fragment)))
-					{
-						alt28 = 1;
-					}
-
-
-					}
-					break;
-				case FUN:
-					{
-					int LA28_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred59_fsharp_ss_fragment)))
-					{
-						alt28 = 1;
-					}
-
-
-					}
-					break;
-				case FALSE:
-					{
-					int LA28_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred59_fsharp_ss_fragment)))
-					{
-						alt28 = 1;
-					}
-
-
-					}
-					break;
-				case STRING:
-					{
-					int LA28_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred59_fsharp_ss_fragment)))
-					{
-						alt28 = 1;
-					}
-
-
-					}
-					break;
-				case CHAR:
-					{
-					int LA28_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred59_fsharp_ss_fragment)))
-					{
-						alt28 = 1;
-					}
-
-
-					}
-					break;
-				case INT:
-					{
-					int LA28_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred59_fsharp_ss_fragment)))
-					{
-						alt28 = 1;
-					}
-
-
-					}
-					break;
-				case DOUBLE:
-					{
-					int LA28_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred59_fsharp_ss_fragment)))
-					{
-						alt28 = 1;
-					}
-
-
-					}
-					break;
-				case IF:
-					{
-					int LA28_2 = input.LA(2);
-
-					if ((EvaluatePredicate(synpred59_fsharp_ss_fragment)))
-					{
-						alt28 = 1;
-					}
-
-
-					}
-					break;
 				}
 
-				} finally { DebugExitDecision(28); }
-				switch ( alt28 )
+
+				} finally { DebugExitDecision(20); }
+				switch (alt20)
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// D:\\fsharp_compiler\\fsharp_ss.g:221:5: returning_expr
+					// D:\\fsharp_compiler\\fsharp_ss.g:232:6: OPEN_BR ( returning_expr )* CLOSE_BR
 					{
-					DebugLocation(221, 5);
-					PushFollow(Follow._returning_expr_in_func_call_expr1469);
-					returning_expr90=returning_expr();
-					PopFollow();
-					if (state.failed) return retval;
-					if (state.backtracking == 0) stream_returning_expr.Add(returning_expr90.Tree);
+					DebugLocation(232, 6);
+					OPEN_BR86=(IToken)Match(input,OPEN_BR,Follow._OPEN_BR_in_func_call_expr1527); if (state.failed) return retval; 
+					if (state.backtracking == 0) stream_OPEN_BR.Add(OPEN_BR86);
+
+					DebugLocation(232, 14);
+					// D:\\fsharp_compiler\\fsharp_ss.g:232:14: ( returning_expr )*
+					try { DebugEnterSubRule(19);
+					while (true)
+					{
+						int alt19=2;
+						try { DebugEnterDecision(19, false);
+						int LA19_1 = input.LA(1);
+
+						if ((LA19_1==CHAR||LA19_1==DOUBLE||(LA19_1>=FALSE && LA19_1<=FUN)||(LA19_1>=ID && LA19_1<=INT)||LA19_1==OPEN_BR||LA19_1==STRING||LA19_1==TRUE))
+						{
+							alt19 = 1;
+						}
+
+
+						} finally { DebugExitDecision(19); }
+						switch ( alt19 )
+						{
+						case 1:
+							DebugEnterAlt(1);
+							// D:\\fsharp_compiler\\fsharp_ss.g:232:14: returning_expr
+							{
+							DebugLocation(232, 14);
+							PushFollow(Follow._returning_expr_in_func_call_expr1529);
+							returning_expr87=returning_expr();
+							PopFollow();
+							if (state.failed) return retval;
+							if (state.backtracking == 0) stream_returning_expr.Add(returning_expr87.Tree);
+
+							}
+							break;
+
+						default:
+							goto loop19;
+						}
+					}
+
+					loop19:
+						;
+
+					} finally { DebugExitSubRule(19); }
+
+					DebugLocation(232, 30);
+					CLOSE_BR88=(IToken)Match(input,CLOSE_BR,Follow._CLOSE_BR_in_func_call_expr1532); if (state.failed) return retval; 
+					if (state.backtracking == 0) stream_CLOSE_BR.Add(CLOSE_BR88);
+
 
 					}
 					break;
 
 				default:
-					goto loop28;
-				}
-			}
+					if (cnt20 >= 1)
+						goto loop20;
 
-			loop28:
+					if (state.backtracking>0) {state.failed=true; return retval;}
+					EarlyExitException eee20 = new EarlyExitException( 20, input );
+					DebugRecognitionException(eee20);
+					throw eee20;
+				}
+				cnt20++;
+			}
+			loop20:
 				;
 
-			} finally { DebugExitSubRule(28); }
+			} finally { DebugExitSubRule(20); }
 
 
 
 			{
 			// AST REWRITE
-			// elements: returning_expr
+			// elements: returning_expr, ID
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -5017,24 +3608,46 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (object)adaptor.Nil();
-			// 222:3: -> ^( FUNCTION_CALL ( returning_expr )* )
+			// 233:3: -> ^( FUNCTION_CALL ^( NAME ID ) ^( ARGS ( returning_expr )* ) )
 			{
-				DebugLocation(222, 6);
-				// D:\\fsharp_compiler\\fsharp_ss.g:222:6: ^( FUNCTION_CALL ( returning_expr )* )
+				DebugLocation(233, 6);
+				// D:\\fsharp_compiler\\fsharp_ss.g:233:6: ^( FUNCTION_CALL ^( NAME ID ) ^( ARGS ( returning_expr )* ) )
 				{
 				object root_1 = (object)adaptor.Nil();
-				DebugLocation(222, 8);
+				DebugLocation(233, 8);
 				root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(FUNCTION_CALL, "FUNCTION_CALL"), root_1);
 
-				DebugLocation(222, 22);
-				// D:\\fsharp_compiler\\fsharp_ss.g:222:22: ( returning_expr )*
+				DebugLocation(233, 22);
+				// D:\\fsharp_compiler\\fsharp_ss.g:233:22: ^( NAME ID )
+				{
+				object root_2 = (object)adaptor.Nil();
+				DebugLocation(233, 24);
+				root_2 = (object)adaptor.BecomeRoot((object)adaptor.Create(NAME, "NAME"), root_2);
+
+				DebugLocation(233, 29);
+				adaptor.AddChild(root_2, stream_ID.NextNode());
+
+				adaptor.AddChild(root_1, root_2);
+				}
+				DebugLocation(233, 33);
+				// D:\\fsharp_compiler\\fsharp_ss.g:233:33: ^( ARGS ( returning_expr )* )
+				{
+				object root_2 = (object)adaptor.Nil();
+				DebugLocation(233, 35);
+				root_2 = (object)adaptor.BecomeRoot((object)adaptor.Create(ARGS, "ARGS"), root_2);
+
+				DebugLocation(233, 40);
+				// D:\\fsharp_compiler\\fsharp_ss.g:233:40: ( returning_expr )*
 				while ( stream_returning_expr.HasNext )
 				{
-					DebugLocation(222, 22);
-					adaptor.AddChild(root_1, stream_returning_expr.NextTree());
+					DebugLocation(233, 40);
+					adaptor.AddChild(root_2, stream_returning_expr.NextTree());
 
 				}
 				stream_returning_expr.Reset();
+
+				adaptor.AddChild(root_1, root_2);
+				}
 
 				adaptor.AddChild(root_0, root_1);
 				}
@@ -5067,134 +3680,154 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 			LeaveRule("func_call_expr", 24);
 			LeaveRule_func_call_expr();
 		}
-		DebugLocation(223, 1);
+		DebugLocation(234, 1);
 		} finally { DebugExitRule(GrammarFileName, "func_call_expr"); }
 		return retval;
 
 	}
 	// $ANTLR end "func_call_expr"
 
-	partial void EnterRule_returning_expr();
-	partial void LeaveRule_returning_expr();
-	// $ANTLR start "returning_expr"
-	// D:\\fsharp_compiler\\fsharp_ss.g:225:1: returning_expr : ( const | ID | '(' ! returning_expr ')' !| func_call_expr | FUN function_args FUN_DEF body_expr -> ^( FUNCTION_DEFN ^( ARGS function_args ) body_expr ) | logic_expr | if_expr | alg_expr );
-	[GrammarRule("returning_expr")]
-	private AstParserRuleReturnScope<object, IToken> returning_expr()
+	partial void EnterRule_expr_block();
+	partial void LeaveRule_expr_block();
+	// $ANTLR start "expr_block"
+	// D:\\fsharp_compiler\\fsharp_ss.g:236:1: expr_block : BEGIN ^ expr_list END !;
+	[GrammarRule("expr_block")]
+	private AstParserRuleReturnScope<object, IToken> expr_block()
 	{
-		EnterRule_returning_expr();
-		EnterRule("returning_expr", 25);
-		TraceIn("returning_expr", 25);
+		EnterRule_expr_block();
+		EnterRule("expr_block", 25);
+		TraceIn("expr_block", 25);
 		AstParserRuleReturnScope<object, IToken> retval = new AstParserRuleReturnScope<object, IToken>();
 		retval.Start = (IToken)input.LT(1);
 
 		object root_0 = default(object);
 
-		IToken ID92 = default(IToken);
-		IToken char_literal93 = default(IToken);
-		IToken char_literal95 = default(IToken);
-		IToken FUN97 = default(IToken);
-		IToken FUN_DEF99 = default(IToken);
-		AstParserRuleReturnScope<object, IToken> const91 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> returning_expr94 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> func_call_expr96 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> function_args98 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> body_expr100 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> logic_expr101 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> if_expr102 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> alg_expr103 = default(AstParserRuleReturnScope<object, IToken>);
+		IToken BEGIN89 = default(IToken);
+		IToken END91 = default(IToken);
+		AstParserRuleReturnScope<object, IToken> expr_list90 = default(AstParserRuleReturnScope<object, IToken>);
 
-		object ID92_tree = default(object);
-		object char_literal93_tree = default(object);
-		object char_literal95_tree = default(object);
-		object FUN97_tree = default(object);
-		object FUN_DEF99_tree = default(object);
+		object BEGIN89_tree = default(object);
+		object END91_tree = default(object);
+		try { DebugEnterRule(GrammarFileName, "expr_block");
+		DebugLocation(236, 1);
+		try
+		{
+			// D:\\fsharp_compiler\\fsharp_ss.g:237:2: ( BEGIN ^ expr_list END !)
+			DebugEnterAlt(1);
+			// D:\\fsharp_compiler\\fsharp_ss.g:238:2: BEGIN ^ expr_list END !
+			{
+			root_0 = (object)adaptor.Nil();
+
+			DebugLocation(238, 7);
+			BEGIN89=(IToken)Match(input,BEGIN,Follow._BEGIN_in_expr_block1567); if (state.failed) return retval;
+			if (state.backtracking == 0) {
+			BEGIN89_tree = (object)adaptor.Create(BEGIN89);
+			root_0 = (object)adaptor.BecomeRoot(BEGIN89_tree, root_0);
+			}
+			DebugLocation(238, 9);
+			PushFollow(Follow._expr_list_in_expr_block1570);
+			expr_list90=expr_list();
+			PopFollow();
+			if (state.failed) return retval;
+			if (state.backtracking == 0) adaptor.AddChild(root_0, expr_list90.Tree);
+			DebugLocation(238, 22);
+			END91=(IToken)Match(input,END,Follow._END_in_expr_block1572); if (state.failed) return retval;
+
+			}
+
+			retval.Stop = (IToken)input.LT(-1);
+
+			if (state.backtracking == 0) {
+			retval.Tree = (object)adaptor.RulePostProcessing(root_0);
+			adaptor.SetTokenBoundaries(retval.Tree, retval.Start, retval.Stop);
+			}
+		}
+		catch (RecognitionException re)
+		{
+			ReportError(re);
+			Recover(input,re);
+			retval.Tree = (object)adaptor.ErrorNode(input, retval.Start, input.LT(-1), re);
+
+		}
+		finally
+		{
+			TraceOut("expr_block", 25);
+			LeaveRule("expr_block", 25);
+			LeaveRule_expr_block();
+		}
+		DebugLocation(239, 1);
+		} finally { DebugExitRule(GrammarFileName, "expr_block"); }
+		return retval;
+
+	}
+	// $ANTLR end "expr_block"
+
+	partial void EnterRule_returning_expr();
+	partial void LeaveRule_returning_expr();
+	// $ANTLR start "returning_expr"
+	// D:\\fsharp_compiler\\fsharp_ss.g:241:1: returning_expr : ( '(' ! returning_expr ')' !| FUN function_args FUN_DEF body_expr -> ^( FUNCTION_DEFN ^( ARGS function_args ) body_expr ) | if_expr | alg_expr | logic_expr | const | ID );
+	[GrammarRule("returning_expr")]
+	private AstParserRuleReturnScope<object, IToken> returning_expr()
+	{
+		EnterRule_returning_expr();
+		EnterRule("returning_expr", 26);
+		TraceIn("returning_expr", 26);
+		AstParserRuleReturnScope<object, IToken> retval = new AstParserRuleReturnScope<object, IToken>();
+		retval.Start = (IToken)input.LT(1);
+
+		object root_0 = default(object);
+
+		IToken char_literal92 = default(IToken);
+		IToken char_literal94 = default(IToken);
+		IToken FUN95 = default(IToken);
+		IToken FUN_DEF97 = default(IToken);
+		IToken ID103 = default(IToken);
+		AstParserRuleReturnScope<object, IToken> returning_expr93 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> function_args96 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> body_expr98 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> if_expr99 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> alg_expr100 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> logic_expr101 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> const102 = default(AstParserRuleReturnScope<object, IToken>);
+
+		object char_literal92_tree = default(object);
+		object char_literal94_tree = default(object);
+		object FUN95_tree = default(object);
+		object FUN_DEF97_tree = default(object);
+		object ID103_tree = default(object);
 		RewriteRuleITokenStream stream_FUN_DEF=new RewriteRuleITokenStream(adaptor,"token FUN_DEF");
 		RewriteRuleITokenStream stream_FUN=new RewriteRuleITokenStream(adaptor,"token FUN");
 		RewriteRuleSubtreeStream stream_body_expr=new RewriteRuleSubtreeStream(adaptor,"rule body_expr");
 		RewriteRuleSubtreeStream stream_function_args=new RewriteRuleSubtreeStream(adaptor,"rule function_args");
 		try { DebugEnterRule(GrammarFileName, "returning_expr");
-		DebugLocation(225, 1);
+		DebugLocation(241, 1);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:226:2: ( const | ID | '(' ! returning_expr ')' !| func_call_expr | FUN function_args FUN_DEF body_expr -> ^( FUNCTION_DEFN ^( ARGS function_args ) body_expr ) | logic_expr | if_expr | alg_expr )
-			int alt29=8;
-			try { DebugEnterDecision(29, false);
+			// D:\\fsharp_compiler\\fsharp_ss.g:242:2: ( '(' ! returning_expr ')' !| FUN function_args FUN_DEF body_expr -> ^( FUNCTION_DEFN ^( ARGS function_args ) body_expr ) | if_expr | alg_expr | logic_expr | const | ID )
+			int alt21=7;
+			try { DebugEnterDecision(21, false);
 			switch (input.LA(1))
 			{
-			case TRUE:
+			case OPEN_BR:
 				{
-				int LA29_2 = input.LA(2);
+				int LA21_2 = input.LA(2);
 
-				if ((EvaluatePredicate(synpred60_fsharp_ss_fragment)))
+				if ((EvaluatePredicate(synpred52_fsharp_ss_fragment)))
 				{
-					alt29 = 1;
+					alt21 = 1;
 				}
-				else if ((EvaluatePredicate(synpred65_fsharp_ss_fragment)))
+				else if ((EvaluatePredicate(synpred55_fsharp_ss_fragment)))
 				{
-					alt29 = 6;
+					alt21 = 4;
 				}
-				else if ((true))
+				else if ((EvaluatePredicate(synpred56_fsharp_ss_fragment)))
 				{
-					alt29 = 8;
+					alt21 = 5;
 				}
 				else
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 29, 1, input, 2);
-					DebugRecognitionException(nvae);
-					throw nvae;
-				}
-				}
-				break;
-			case ID:
-				{
-				int LA29_2 = input.LA(2);
-
-				if ((EvaluatePredicate(synpred61_fsharp_ss_fragment)))
-				{
-					alt29 = 2;
-				}
-				else if ((EvaluatePredicate(synpred63_fsharp_ss_fragment)))
-				{
-					alt29 = 4;
-				}
-				else if ((EvaluatePredicate(synpred65_fsharp_ss_fragment)))
-				{
-					alt29 = 6;
-				}
-				else if ((true))
-				{
-					alt29 = 8;
-				}
-				else
-				{
-					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 29, 2, input, 2);
-					DebugRecognitionException(nvae);
-					throw nvae;
-				}
-				}
-				break;
-			case 55:
-				{
-				int LA29_2 = input.LA(2);
-
-				if ((EvaluatePredicate(synpred62_fsharp_ss_fragment)))
-				{
-					alt29 = 3;
-				}
-				else if ((EvaluatePredicate(synpred65_fsharp_ss_fragment)))
-				{
-					alt29 = 6;
-				}
-				else if ((true))
-				{
-					alt29 = 8;
-				}
-				else
-				{
-					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 29, 3, input, 2);
+					NoViableAltException nvae = new NoViableAltException("", 21, 1, input, 2);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
@@ -5202,29 +3835,84 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 				break;
 			case FUN:
 				{
-				alt29 = 5;
+				alt21 = 2;
 				}
 				break;
-			case FALSE:
+			case IF:
 				{
-				int LA29_2 = input.LA(2);
-
-				if ((EvaluatePredicate(synpred60_fsharp_ss_fragment)))
-				{
-					alt29 = 1;
+				alt21 = 3;
 				}
-				else if ((EvaluatePredicate(synpred65_fsharp_ss_fragment)))
+				break;
+			case ID:
 				{
-					alt29 = 6;
+				int LA21_2 = input.LA(2);
+
+				if ((EvaluatePredicate(synpred55_fsharp_ss_fragment)))
+				{
+					alt21 = 4;
+				}
+				else if ((EvaluatePredicate(synpred56_fsharp_ss_fragment)))
+				{
+					alt21 = 5;
 				}
 				else if ((true))
 				{
-					alt29 = 8;
+					alt21 = 7;
 				}
 				else
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 29, 5, input, 2);
+					NoViableAltException nvae = new NoViableAltException("", 21, 4, input, 2);
+					DebugRecognitionException(nvae);
+					throw nvae;
+				}
+				}
+				break;
+			case TRUE:
+				{
+				int LA21_2 = input.LA(2);
+
+				if ((EvaluatePredicate(synpred55_fsharp_ss_fragment)))
+				{
+					alt21 = 4;
+				}
+				else if ((EvaluatePredicate(synpred56_fsharp_ss_fragment)))
+				{
+					alt21 = 5;
+				}
+				else if ((EvaluatePredicate(synpred57_fsharp_ss_fragment)))
+				{
+					alt21 = 6;
+				}
+				else
+				{
+					if (state.backtracking>0) {state.failed=true; return retval;}
+					NoViableAltException nvae = new NoViableAltException("", 21, 5, input, 2);
+					DebugRecognitionException(nvae);
+					throw nvae;
+				}
+				}
+				break;
+			case FALSE:
+				{
+				int LA21_2 = input.LA(2);
+
+				if ((EvaluatePredicate(synpred55_fsharp_ss_fragment)))
+				{
+					alt21 = 4;
+				}
+				else if ((EvaluatePredicate(synpred56_fsharp_ss_fragment)))
+				{
+					alt21 = 5;
+				}
+				else if ((EvaluatePredicate(synpred57_fsharp_ss_fragment)))
+				{
+					alt21 = 6;
+				}
+				else
+				{
+					if (state.backtracking>0) {state.failed=true; return retval;}
+					NoViableAltException nvae = new NoViableAltException("", 21, 6, input, 2);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
@@ -5232,24 +3920,24 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 				break;
 			case STRING:
 				{
-				int LA29_2 = input.LA(2);
+				int LA21_2 = input.LA(2);
 
-				if ((EvaluatePredicate(synpred60_fsharp_ss_fragment)))
+				if ((EvaluatePredicate(synpred55_fsharp_ss_fragment)))
 				{
-					alt29 = 1;
+					alt21 = 4;
 				}
-				else if ((EvaluatePredicate(synpred65_fsharp_ss_fragment)))
+				else if ((EvaluatePredicate(synpred56_fsharp_ss_fragment)))
 				{
-					alt29 = 6;
+					alt21 = 5;
 				}
-				else if ((true))
+				else if ((EvaluatePredicate(synpred57_fsharp_ss_fragment)))
 				{
-					alt29 = 8;
+					alt21 = 6;
 				}
 				else
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 29, 6, input, 2);
+					NoViableAltException nvae = new NoViableAltException("", 21, 7, input, 2);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
@@ -5257,24 +3945,24 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 				break;
 			case CHAR:
 				{
-				int LA29_2 = input.LA(2);
+				int LA21_2 = input.LA(2);
 
-				if ((EvaluatePredicate(synpred60_fsharp_ss_fragment)))
+				if ((EvaluatePredicate(synpred55_fsharp_ss_fragment)))
 				{
-					alt29 = 1;
+					alt21 = 4;
 				}
-				else if ((EvaluatePredicate(synpred65_fsharp_ss_fragment)))
+				else if ((EvaluatePredicate(synpred56_fsharp_ss_fragment)))
 				{
-					alt29 = 6;
+					alt21 = 5;
 				}
-				else if ((true))
+				else if ((EvaluatePredicate(synpred57_fsharp_ss_fragment)))
 				{
-					alt29 = 8;
+					alt21 = 6;
 				}
 				else
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 29, 7, input, 2);
+					NoViableAltException nvae = new NoViableAltException("", 21, 8, input, 2);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
@@ -5282,24 +3970,24 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 				break;
 			case INT:
 				{
-				int LA29_2 = input.LA(2);
+				int LA21_2 = input.LA(2);
 
-				if ((EvaluatePredicate(synpred60_fsharp_ss_fragment)))
+				if ((EvaluatePredicate(synpred55_fsharp_ss_fragment)))
 				{
-					alt29 = 1;
+					alt21 = 4;
 				}
-				else if ((EvaluatePredicate(synpred65_fsharp_ss_fragment)))
+				else if ((EvaluatePredicate(synpred56_fsharp_ss_fragment)))
 				{
-					alt29 = 6;
+					alt21 = 5;
 				}
-				else if ((true))
+				else if ((EvaluatePredicate(synpred57_fsharp_ss_fragment)))
 				{
-					alt29 = 8;
+					alt21 = 6;
 				}
 				else
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 29, 8, input, 2);
+					NoViableAltException nvae = new NoViableAltException("", 21, 9, input, 2);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
@@ -5307,139 +3995,89 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 				break;
 			case DOUBLE:
 				{
-				int LA29_2 = input.LA(2);
+				int LA21_2 = input.LA(2);
 
-				if ((EvaluatePredicate(synpred60_fsharp_ss_fragment)))
+				if ((EvaluatePredicate(synpred55_fsharp_ss_fragment)))
 				{
-					alt29 = 1;
+					alt21 = 4;
 				}
-				else if ((EvaluatePredicate(synpred65_fsharp_ss_fragment)))
+				else if ((EvaluatePredicate(synpred56_fsharp_ss_fragment)))
 				{
-					alt29 = 6;
+					alt21 = 5;
 				}
-				else if ((true))
+				else if ((EvaluatePredicate(synpred57_fsharp_ss_fragment)))
 				{
-					alt29 = 8;
+					alt21 = 6;
 				}
 				else
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 29, 9, input, 2);
+					NoViableAltException nvae = new NoViableAltException("", 21, 10, input, 2);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
-				}
-				break;
-			case IF:
-				{
-				alt29 = 7;
 				}
 				break;
 			default:
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 29, 0, input, 1);
+					NoViableAltException nvae = new NoViableAltException("", 21, 0, input, 1);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
 			}
 
-			} finally { DebugExitDecision(29); }
-			switch (alt29)
+			} finally { DebugExitDecision(21); }
+			switch (alt21)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// D:\\fsharp_compiler\\fsharp_ss.g:227:2: const
+				// D:\\fsharp_compiler\\fsharp_ss.g:243:2: '(' ! returning_expr ')' !
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(227, 2);
-				PushFollow(Follow._const_in_returning_expr1493);
-				const91=@const();
+				DebugLocation(243, 5);
+				char_literal92=(IToken)Match(input,OPEN_BR,Follow._OPEN_BR_in_returning_expr1585); if (state.failed) return retval;
+				DebugLocation(243, 7);
+				PushFollow(Follow._returning_expr_in_returning_expr1588);
+				returning_expr93=returning_expr();
 				PopFollow();
 				if (state.failed) return retval;
-				if (state.backtracking == 0) adaptor.AddChild(root_0, const91.Tree);
+				if (state.backtracking == 0) adaptor.AddChild(root_0, returning_expr93.Tree);
+				DebugLocation(243, 25);
+				char_literal94=(IToken)Match(input,CLOSE_BR,Follow._CLOSE_BR_in_returning_expr1590); if (state.failed) return retval;
 
 				}
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// D:\\fsharp_compiler\\fsharp_ss.g:228:2: ID
+				// D:\\fsharp_compiler\\fsharp_ss.g:244:2: FUN function_args FUN_DEF body_expr
 				{
-				root_0 = (object)adaptor.Nil();
+				DebugLocation(244, 2);
+				FUN95=(IToken)Match(input,FUN,Follow._FUN_in_returning_expr1596); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_FUN.Add(FUN95);
 
-				DebugLocation(228, 2);
-				ID92=(IToken)Match(input,ID,Follow._ID_in_returning_expr1498); if (state.failed) return retval;
-				if (state.backtracking == 0) {
-				ID92_tree = (object)adaptor.Create(ID92);
-				adaptor.AddChild(root_0, ID92_tree);
-				}
-
-				}
-				break;
-			case 3:
-				DebugEnterAlt(3);
-				// D:\\fsharp_compiler\\fsharp_ss.g:229:2: '(' ! returning_expr ')' !
-				{
-				root_0 = (object)adaptor.Nil();
-
-				DebugLocation(229, 5);
-				char_literal93=(IToken)Match(input,55,Follow._55_in_returning_expr1503); if (state.failed) return retval;
-				DebugLocation(229, 7);
-				PushFollow(Follow._returning_expr_in_returning_expr1506);
-				returning_expr94=returning_expr();
+				DebugLocation(244, 6);
+				PushFollow(Follow._function_args_in_returning_expr1598);
+				function_args96=function_args();
 				PopFollow();
 				if (state.failed) return retval;
-				if (state.backtracking == 0) adaptor.AddChild(root_0, returning_expr94.Tree);
-				DebugLocation(229, 25);
-				char_literal95=(IToken)Match(input,56,Follow._56_in_returning_expr1508); if (state.failed) return retval;
+				if (state.backtracking == 0) stream_function_args.Add(function_args96.Tree);
+				DebugLocation(244, 20);
+				FUN_DEF97=(IToken)Match(input,FUN_DEF,Follow._FUN_DEF_in_returning_expr1600); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_FUN_DEF.Add(FUN_DEF97);
 
-				}
-				break;
-			case 4:
-				DebugEnterAlt(4);
-				// D:\\fsharp_compiler\\fsharp_ss.g:230:2: func_call_expr
-				{
-				root_0 = (object)adaptor.Nil();
-
-				DebugLocation(230, 2);
-				PushFollow(Follow._func_call_expr_in_returning_expr1514);
-				func_call_expr96=func_call_expr();
+				DebugLocation(244, 28);
+				PushFollow(Follow._body_expr_in_returning_expr1602);
+				body_expr98=body_expr();
 				PopFollow();
 				if (state.failed) return retval;
-				if (state.backtracking == 0) adaptor.AddChild(root_0, func_call_expr96.Tree);
-
-				}
-				break;
-			case 5:
-				DebugEnterAlt(5);
-				// D:\\fsharp_compiler\\fsharp_ss.g:231:2: FUN function_args FUN_DEF body_expr
-				{
-				DebugLocation(231, 2);
-				FUN97=(IToken)Match(input,FUN,Follow._FUN_in_returning_expr1519); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_FUN.Add(FUN97);
-
-				DebugLocation(231, 6);
-				PushFollow(Follow._function_args_in_returning_expr1521);
-				function_args98=function_args();
-				PopFollow();
-				if (state.failed) return retval;
-				if (state.backtracking == 0) stream_function_args.Add(function_args98.Tree);
-				DebugLocation(231, 20);
-				FUN_DEF99=(IToken)Match(input,FUN_DEF,Follow._FUN_DEF_in_returning_expr1523); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_FUN_DEF.Add(FUN_DEF99);
-
-				DebugLocation(231, 28);
-				PushFollow(Follow._body_expr_in_returning_expr1525);
-				body_expr100=body_expr();
-				PopFollow();
-				if (state.failed) return retval;
-				if (state.backtracking == 0) stream_body_expr.Add(body_expr100.Tree);
+				if (state.backtracking == 0) stream_body_expr.Add(body_expr98.Tree);
 
 
 				{
 				// AST REWRITE
-				// elements: function_args, body_expr
+				// elements: body_expr, function_args
 				// token labels: 
 				// rule labels: retval
 				// token list labels: 
@@ -5450,28 +4088,28 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 				root_0 = (object)adaptor.Nil();
-				// 232:3: -> ^( FUNCTION_DEFN ^( ARGS function_args ) body_expr )
+				// 245:3: -> ^( FUNCTION_DEFN ^( ARGS function_args ) body_expr )
 				{
-					DebugLocation(232, 6);
-					// D:\\fsharp_compiler\\fsharp_ss.g:232:6: ^( FUNCTION_DEFN ^( ARGS function_args ) body_expr )
+					DebugLocation(245, 6);
+					// D:\\fsharp_compiler\\fsharp_ss.g:245:6: ^( FUNCTION_DEFN ^( ARGS function_args ) body_expr )
 					{
 					object root_1 = (object)adaptor.Nil();
-					DebugLocation(232, 8);
+					DebugLocation(245, 8);
 					root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(FUNCTION_DEFN, "FUNCTION_DEFN"), root_1);
 
-					DebugLocation(232, 22);
-					// D:\\fsharp_compiler\\fsharp_ss.g:232:22: ^( ARGS function_args )
+					DebugLocation(245, 22);
+					// D:\\fsharp_compiler\\fsharp_ss.g:245:22: ^( ARGS function_args )
 					{
 					object root_2 = (object)adaptor.Nil();
-					DebugLocation(232, 24);
+					DebugLocation(245, 24);
 					root_2 = (object)adaptor.BecomeRoot((object)adaptor.Create(ARGS, "ARGS"), root_2);
 
-					DebugLocation(232, 29);
+					DebugLocation(245, 29);
 					adaptor.AddChild(root_2, stream_function_args.NextTree());
 
 					adaptor.AddChild(root_1, root_2);
 					}
-					DebugLocation(232, 44);
+					DebugLocation(245, 44);
 					adaptor.AddChild(root_1, stream_body_expr.NextTree());
 
 					adaptor.AddChild(root_0, root_1);
@@ -5485,14 +4123,44 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 
 				}
 				break;
-			case 6:
-				DebugEnterAlt(6);
-				// D:\\fsharp_compiler\\fsharp_ss.g:233:2: logic_expr
+			case 3:
+				DebugEnterAlt(3);
+				// D:\\fsharp_compiler\\fsharp_ss.g:246:2: if_expr
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(233, 2);
-				PushFollow(Follow._logic_expr_in_returning_expr1546);
+				DebugLocation(246, 2);
+				PushFollow(Follow._if_expr_in_returning_expr1623);
+				if_expr99=if_expr();
+				PopFollow();
+				if (state.failed) return retval;
+				if (state.backtracking == 0) adaptor.AddChild(root_0, if_expr99.Tree);
+
+				}
+				break;
+			case 4:
+				DebugEnterAlt(4);
+				// D:\\fsharp_compiler\\fsharp_ss.g:247:2: alg_expr
+				{
+				root_0 = (object)adaptor.Nil();
+
+				DebugLocation(247, 2);
+				PushFollow(Follow._alg_expr_in_returning_expr1628);
+				alg_expr100=alg_expr();
+				PopFollow();
+				if (state.failed) return retval;
+				if (state.backtracking == 0) adaptor.AddChild(root_0, alg_expr100.Tree);
+
+				}
+				break;
+			case 5:
+				DebugEnterAlt(5);
+				// D:\\fsharp_compiler\\fsharp_ss.g:248:2: logic_expr
+				{
+				root_0 = (object)adaptor.Nil();
+
+				DebugLocation(248, 2);
+				PushFollow(Follow._logic_expr_in_returning_expr1633);
 				logic_expr101=logic_expr();
 				PopFollow();
 				if (state.failed) return retval;
@@ -5500,33 +4168,33 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 
 				}
 				break;
-			case 7:
-				DebugEnterAlt(7);
-				// D:\\fsharp_compiler\\fsharp_ss.g:234:2: if_expr
+			case 6:
+				DebugEnterAlt(6);
+				// D:\\fsharp_compiler\\fsharp_ss.g:249:2: const
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(234, 2);
-				PushFollow(Follow._if_expr_in_returning_expr1551);
-				if_expr102=if_expr();
+				DebugLocation(249, 2);
+				PushFollow(Follow._const_in_returning_expr1638);
+				const102=@const();
 				PopFollow();
 				if (state.failed) return retval;
-				if (state.backtracking == 0) adaptor.AddChild(root_0, if_expr102.Tree);
+				if (state.backtracking == 0) adaptor.AddChild(root_0, const102.Tree);
 
 				}
 				break;
-			case 8:
-				DebugEnterAlt(8);
-				// D:\\fsharp_compiler\\fsharp_ss.g:235:2: alg_expr
+			case 7:
+				DebugEnterAlt(7);
+				// D:\\fsharp_compiler\\fsharp_ss.g:250:2: ID
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(235, 2);
-				PushFollow(Follow._alg_expr_in_returning_expr1556);
-				alg_expr103=alg_expr();
-				PopFollow();
-				if (state.failed) return retval;
-				if (state.backtracking == 0) adaptor.AddChild(root_0, alg_expr103.Tree);
+				DebugLocation(250, 2);
+				ID103=(IToken)Match(input,ID,Follow._ID_in_returning_expr1643); if (state.failed) return retval;
+				if (state.backtracking == 0) {
+				ID103_tree = (object)adaptor.Create(ID103);
+				adaptor.AddChild(root_0, ID103_tree);
+				}
 
 				}
 				break;
@@ -5548,11 +4216,11 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 		}
 		finally
 		{
-			TraceOut("returning_expr", 25);
-			LeaveRule("returning_expr", 25);
+			TraceOut("returning_expr", 26);
+			LeaveRule("returning_expr", 26);
 			LeaveRule_returning_expr();
 		}
-		DebugLocation(236, 1);
+		DebugLocation(251, 1);
 		} finally { DebugExitRule(GrammarFileName, "returning_expr"); }
 		return retval;
 
@@ -5562,115 +4230,171 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	partial void EnterRule_expr();
 	partial void LeaveRule_expr();
 	// $ANTLR start "expr"
-	// D:\\fsharp_compiler\\fsharp_ss.g:238:1: expr : ( returning_expr | LET ! function_defn | LET ! value_defn );
+	// D:\\fsharp_compiler\\fsharp_ss.g:253:1: expr : ( returning_expr ';' -> returning_expr | LET ! function_defn | LET ! value_defn );
 	[GrammarRule("expr")]
 	private AstParserRuleReturnScope<object, IToken> expr()
 	{
 		EnterRule_expr();
-		EnterRule("expr", 26);
-		TraceIn("expr", 26);
+		EnterRule("expr", 27);
+		TraceIn("expr", 27);
 		AstParserRuleReturnScope<object, IToken> retval = new AstParserRuleReturnScope<object, IToken>();
 		retval.Start = (IToken)input.LT(1);
 
 		object root_0 = default(object);
 
-		IToken LET105 = default(IToken);
-		IToken LET107 = default(IToken);
+		IToken char_literal105 = default(IToken);
+		IToken LET106 = default(IToken);
+		IToken LET108 = default(IToken);
 		AstParserRuleReturnScope<object, IToken> returning_expr104 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> function_defn106 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> value_defn108 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> function_defn107 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> value_defn109 = default(AstParserRuleReturnScope<object, IToken>);
 
-		object LET105_tree = default(object);
-		object LET107_tree = default(object);
+		object char_literal105_tree = default(object);
+		object LET106_tree = default(object);
+		object LET108_tree = default(object);
+		RewriteRuleITokenStream stream_64=new RewriteRuleITokenStream(adaptor,"token 64");
+		RewriteRuleSubtreeStream stream_returning_expr=new RewriteRuleSubtreeStream(adaptor,"rule returning_expr");
 		try { DebugEnterRule(GrammarFileName, "expr");
-		DebugLocation(238, 1);
+		DebugLocation(253, 1);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:238:6: ( returning_expr | LET ! function_defn | LET ! value_defn )
-			int alt30=3;
-			try { DebugEnterDecision(30, false);
-			int LA30_1 = input.LA(1);
+			// D:\\fsharp_compiler\\fsharp_ss.g:253:6: ( returning_expr ';' -> returning_expr | LET ! function_defn | LET ! value_defn )
+			int alt22=3;
+			try { DebugEnterDecision(22, false);
+			int LA22_1 = input.LA(1);
 
-			if ((LA30_1==CHAR||LA30_1==DOUBLE||(LA30_1>=FALSE && LA30_1<=FUN)||(LA30_1>=ID && LA30_1<=INT)||LA30_1==STRING||LA30_1==TRUE||LA30_1==55))
+			if ((LA22_1==CHAR||LA22_1==DOUBLE||(LA22_1>=FALSE && LA22_1<=FUN)||(LA22_1>=ID && LA22_1<=INT)||LA22_1==OPEN_BR||LA22_1==STRING||LA22_1==TRUE))
 			{
-				alt30 = 1;
+				alt22 = 1;
 			}
-			else if ((LA30_1==LET))
+			else if ((LA22_1==LET))
 			{
-				int LA30_2 = input.LA(2);
+				switch (input.LA(2))
+				{
+				case REC:
+					{
+					alt22 = 2;
+					}
+					break;
+				case ID:
+					{
+					int LA22_3 = input.LA(3);
 
-				if ((EvaluatePredicate(synpred68_fsharp_ss_fragment)))
-				{
-					alt30 = 2;
+					if ((LA22_3==ID||LA22_3==OPEN_BR))
+					{
+						alt22 = 2;
+					}
+					else if ((LA22_3==EQ||LA22_3==63))
+					{
+						alt22 = 3;
+					}
+					else
+					{
+						if (state.backtracking>0) {state.failed=true; return retval;}
+						NoViableAltException nvae = new NoViableAltException("", 22, 4, input, 3);
+						DebugRecognitionException(nvae);
+						throw nvae;
+					}
+					}
+					break;
+				case MUTABLE:
+					{
+					alt22 = 3;
+					}
+					break;
+				default:
+					{
+						if (state.backtracking>0) {state.failed=true; return retval;}
+						NoViableAltException nvae = new NoViableAltException("", 22, 2, input, 2);
+						DebugRecognitionException(nvae);
+						throw nvae;
+					}
 				}
-				else if ((true))
-				{
-					alt30 = 3;
-				}
-				else
-				{
-					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 30, 11, input, 2);
-					DebugRecognitionException(nvae);
-					throw nvae;
-				}
+
 			}
 			else
 			{
 				if (state.backtracking>0) {state.failed=true; return retval;}
-				NoViableAltException nvae = new NoViableAltException("", 30, 0, input, 1);
+				NoViableAltException nvae = new NoViableAltException("", 22, 0, input, 1);
 				DebugRecognitionException(nvae);
 				throw nvae;
 			}
-			} finally { DebugExitDecision(30); }
-			switch (alt30)
+			} finally { DebugExitDecision(22); }
+			switch (alt22)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// D:\\fsharp_compiler\\fsharp_ss.g:239:2: returning_expr
+				// D:\\fsharp_compiler\\fsharp_ss.g:254:2: returning_expr ';'
 				{
-				root_0 = (object)adaptor.Nil();
-
-				DebugLocation(239, 2);
-				PushFollow(Follow._returning_expr_in_expr1568);
+				DebugLocation(254, 2);
+				PushFollow(Follow._returning_expr_in_expr1655);
 				returning_expr104=returning_expr();
 				PopFollow();
 				if (state.failed) return retval;
-				if (state.backtracking == 0) adaptor.AddChild(root_0, returning_expr104.Tree);
+				if (state.backtracking == 0) stream_returning_expr.Add(returning_expr104.Tree);
+				DebugLocation(254, 17);
+				char_literal105=(IToken)Match(input,64,Follow._64_in_expr1657); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_64.Add(char_literal105);
+
+
+
+				{
+				// AST REWRITE
+				// elements: returning_expr
+				// token labels: 
+				// rule labels: retval
+				// token list labels: 
+				// rule list labels: 
+				// wildcard labels: 
+				if (state.backtracking == 0) {
+				retval.Tree = root_0;
+				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
+
+				root_0 = (object)adaptor.Nil();
+				// 255:3: -> returning_expr
+				{
+					DebugLocation(255, 6);
+					adaptor.AddChild(root_0, stream_returning_expr.NextTree());
+
+				}
+
+				retval.Tree = root_0;
+				}
+				}
 
 				}
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// D:\\fsharp_compiler\\fsharp_ss.g:240:2: LET ! function_defn
+				// D:\\fsharp_compiler\\fsharp_ss.g:256:2: LET ! function_defn
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(240, 5);
-				LET105=(IToken)Match(input,LET,Follow._LET_in_expr1573); if (state.failed) return retval;
-				DebugLocation(240, 7);
-				PushFollow(Follow._function_defn_in_expr1576);
-				function_defn106=function_defn();
+				DebugLocation(256, 5);
+				LET106=(IToken)Match(input,LET,Follow._LET_in_expr1669); if (state.failed) return retval;
+				DebugLocation(256, 7);
+				PushFollow(Follow._function_defn_in_expr1672);
+				function_defn107=function_defn();
 				PopFollow();
 				if (state.failed) return retval;
-				if (state.backtracking == 0) adaptor.AddChild(root_0, function_defn106.Tree);
+				if (state.backtracking == 0) adaptor.AddChild(root_0, function_defn107.Tree);
 
 				}
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// D:\\fsharp_compiler\\fsharp_ss.g:241:2: LET ! value_defn
+				// D:\\fsharp_compiler\\fsharp_ss.g:257:2: LET ! value_defn
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(241, 5);
-				LET107=(IToken)Match(input,LET,Follow._LET_in_expr1581); if (state.failed) return retval;
-				DebugLocation(241, 7);
-				PushFollow(Follow._value_defn_in_expr1584);
-				value_defn108=value_defn();
+				DebugLocation(257, 5);
+				LET108=(IToken)Match(input,LET,Follow._LET_in_expr1678); if (state.failed) return retval;
+				DebugLocation(257, 7);
+				PushFollow(Follow._value_defn_in_expr1681);
+				value_defn109=value_defn();
 				PopFollow();
 				if (state.failed) return retval;
-				if (state.backtracking == 0) adaptor.AddChild(root_0, value_defn108.Tree);
+				if (state.backtracking == 0) adaptor.AddChild(root_0, value_defn109.Tree);
 
 				}
 				break;
@@ -5692,85 +4416,85 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 		}
 		finally
 		{
-			TraceOut("expr", 26);
-			LeaveRule("expr", 26);
+			TraceOut("expr", 27);
+			LeaveRule("expr", 27);
 			LeaveRule_expr();
 		}
-		DebugLocation(242, 1);
+		DebugLocation(258, 1);
 		} finally { DebugExitRule(GrammarFileName, "expr"); }
 		return retval;
 
 	}
 	// $ANTLR end "expr"
 
-	partial void EnterRule_execute();
-	partial void LeaveRule_execute();
-	// $ANTLR start "execute"
-	// D:\\fsharp_compiler\\fsharp_ss.g:244:8: public execute : ( expr )* ;
-	[GrammarRule("execute")]
-	public AstParserRuleReturnScope<object, IToken> execute()
+	partial void EnterRule_expr_list();
+	partial void LeaveRule_expr_list();
+	// $ANTLR start "expr_list"
+	// D:\\fsharp_compiler\\fsharp_ss.g:260:1: expr_list : ( expr )* ;
+	[GrammarRule("expr_list")]
+	private AstParserRuleReturnScope<object, IToken> expr_list()
 	{
-		EnterRule_execute();
-		EnterRule("execute", 27);
-		TraceIn("execute", 27);
+		EnterRule_expr_list();
+		EnterRule("expr_list", 28);
+		TraceIn("expr_list", 28);
 		AstParserRuleReturnScope<object, IToken> retval = new AstParserRuleReturnScope<object, IToken>();
 		retval.Start = (IToken)input.LT(1);
 
 		object root_0 = default(object);
 
-		AstParserRuleReturnScope<object, IToken> expr109 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> expr110 = default(AstParserRuleReturnScope<object, IToken>);
 
-		try { DebugEnterRule(GrammarFileName, "execute");
-		DebugLocation(244, 1);
+		try { DebugEnterRule(GrammarFileName, "expr_list");
+		DebugLocation(260, 1);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:245:2: ( ( expr )* )
+			// D:\\fsharp_compiler\\fsharp_ss.g:261:2: ( ( expr )* )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:246:2: ( expr )*
+			// D:\\fsharp_compiler\\fsharp_ss.g:262:2: ( expr )*
 			{
 			root_0 = (object)adaptor.Nil();
 
-			DebugLocation(246, 2);
-			// D:\\fsharp_compiler\\fsharp_ss.g:246:2: ( expr )*
-			try { DebugEnterSubRule(31);
+			DebugLocation(262, 2);
+			// D:\\fsharp_compiler\\fsharp_ss.g:262:2: ( expr )*
+			try { DebugEnterSubRule(23);
 			while (true)
 			{
-				int alt31=2;
-				try { DebugEnterDecision(31, false);
-				int LA31_1 = input.LA(1);
+				int alt23=2;
+				try { DebugEnterDecision(23, false);
+				int LA23_1 = input.LA(1);
 
-				if ((LA31_1==CHAR||LA31_1==DOUBLE||(LA31_1>=FALSE && LA31_1<=FUN)||(LA31_1>=ID && LA31_1<=INT)||LA31_1==LET||LA31_1==STRING||LA31_1==TRUE||LA31_1==55))
+				if ((LA23_1==CHAR||LA23_1==DOUBLE||(LA23_1>=FALSE && LA23_1<=FUN)||(LA23_1>=ID && LA23_1<=INT)||LA23_1==LET||LA23_1==OPEN_BR||LA23_1==STRING||LA23_1==TRUE))
 				{
-					alt31 = 1;
+					alt23 = 1;
 				}
 
 
-				} finally { DebugExitDecision(31); }
-				switch ( alt31 )
+				} finally { DebugExitDecision(23); }
+				switch ( alt23 )
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// D:\\fsharp_compiler\\fsharp_ss.g:246:2: expr
+					// D:\\fsharp_compiler\\fsharp_ss.g:262:2: expr
 					{
-					DebugLocation(246, 2);
-					PushFollow(Follow._expr_in_execute1599);
-					expr109=expr();
+					DebugLocation(262, 2);
+					PushFollow(Follow._expr_in_expr_list1694);
+					expr110=expr();
 					PopFollow();
 					if (state.failed) return retval;
-					if (state.backtracking == 0) adaptor.AddChild(root_0, expr109.Tree);
+					if (state.backtracking == 0) adaptor.AddChild(root_0, expr110.Tree);
 
 					}
 					break;
 
 				default:
-					goto loop31;
+					goto loop23;
 				}
 			}
 
-			loop31:
+			loop23:
 				;
 
-			} finally { DebugExitSubRule(31); }
+			} finally { DebugExitSubRule(23); }
 
 
 			}
@@ -5791,82 +4515,113 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 		}
 		finally
 		{
-			TraceOut("execute", 27);
-			LeaveRule("execute", 27);
+			TraceOut("expr_list", 28);
+			LeaveRule("expr_list", 28);
+			LeaveRule_expr_list();
+		}
+		DebugLocation(263, 1);
+		} finally { DebugExitRule(GrammarFileName, "expr_list"); }
+		return retval;
+
+	}
+	// $ANTLR end "expr_list"
+
+	partial void EnterRule_execute();
+	partial void LeaveRule_execute();
+	// $ANTLR start "execute"
+	// D:\\fsharp_compiler\\fsharp_ss.g:265:8: public execute : expr_list -> ^( PROGRAM expr_list ) ;
+	[GrammarRule("execute")]
+	public AstParserRuleReturnScope<object, IToken> execute()
+	{
+		EnterRule_execute();
+		EnterRule("execute", 29);
+		TraceIn("execute", 29);
+		AstParserRuleReturnScope<object, IToken> retval = new AstParserRuleReturnScope<object, IToken>();
+		retval.Start = (IToken)input.LT(1);
+
+		object root_0 = default(object);
+
+		AstParserRuleReturnScope<object, IToken> expr_list111 = default(AstParserRuleReturnScope<object, IToken>);
+
+		RewriteRuleSubtreeStream stream_expr_list=new RewriteRuleSubtreeStream(adaptor,"rule expr_list");
+		try { DebugEnterRule(GrammarFileName, "execute");
+		DebugLocation(265, 1);
+		try
+		{
+			// D:\\fsharp_compiler\\fsharp_ss.g:266:2: ( expr_list -> ^( PROGRAM expr_list ) )
+			DebugEnterAlt(1);
+			// D:\\fsharp_compiler\\fsharp_ss.g:267:2: expr_list
+			{
+			DebugLocation(267, 2);
+			PushFollow(Follow._expr_list_in_execute1709);
+			expr_list111=expr_list();
+			PopFollow();
+			if (state.failed) return retval;
+			if (state.backtracking == 0) stream_expr_list.Add(expr_list111.Tree);
+
+
+			{
+			// AST REWRITE
+			// elements: expr_list
+			// token labels: 
+			// rule labels: retval
+			// token list labels: 
+			// rule list labels: 
+			// wildcard labels: 
+			if (state.backtracking == 0) {
+			retval.Tree = root_0;
+			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
+
+			root_0 = (object)adaptor.Nil();
+			// 268:3: -> ^( PROGRAM expr_list )
+			{
+				DebugLocation(268, 6);
+				// D:\\fsharp_compiler\\fsharp_ss.g:268:6: ^( PROGRAM expr_list )
+				{
+				object root_1 = (object)adaptor.Nil();
+				DebugLocation(268, 8);
+				root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(PROGRAM, "PROGRAM"), root_1);
+
+				DebugLocation(268, 16);
+				adaptor.AddChild(root_1, stream_expr_list.NextTree());
+
+				adaptor.AddChild(root_0, root_1);
+				}
+
+			}
+
+			retval.Tree = root_0;
+			}
+			}
+
+			}
+
+			retval.Stop = (IToken)input.LT(-1);
+
+			if (state.backtracking == 0) {
+			retval.Tree = (object)adaptor.RulePostProcessing(root_0);
+			adaptor.SetTokenBoundaries(retval.Tree, retval.Start, retval.Stop);
+			}
+		}
+		catch (RecognitionException re)
+		{
+			ReportError(re);
+			Recover(input,re);
+			retval.Tree = (object)adaptor.ErrorNode(input, retval.Start, input.LT(-1), re);
+
+		}
+		finally
+		{
+			TraceOut("execute", 29);
+			LeaveRule("execute", 29);
 			LeaveRule_execute();
 		}
-		DebugLocation(247, 1);
+		DebugLocation(269, 1);
 		} finally { DebugExitRule(GrammarFileName, "execute"); }
 		return retval;
 
 	}
 	// $ANTLR end "execute"
-
-	partial void EnterRule_synpred19_fsharp_ss_fragment();
-	partial void LeaveRule_synpred19_fsharp_ss_fragment();
-
-	// $ANTLR start synpred19_fsharp_ss
-	private void synpred19_fsharp_ss_fragment()
-	{
-		EnterRule_synpred19_fsharp_ss_fragment();
-		EnterRule("synpred19_fsharp_ss_fragment", 46);
-		TraceIn("synpred19_fsharp_ss_fragment", 46);
-		try
-		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:138:2: ( expr )
-			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:138:2: expr
-			{
-			DebugLocation(138, 2);
-			PushFollow(Follow._expr_in_synpred19_fsharp_ss1041);
-			expr();
-			PopFollow();
-			if (state.failed) return;
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("synpred19_fsharp_ss_fragment", 46);
-			LeaveRule("synpred19_fsharp_ss_fragment", 46);
-			LeaveRule_synpred19_fsharp_ss_fragment();
-		}
-	}
-	// $ANTLR end synpred19_fsharp_ss
-
-	partial void EnterRule_synpred20_fsharp_ss_fragment();
-	partial void LeaveRule_synpred20_fsharp_ss_fragment();
-
-	// $ANTLR start synpred20_fsharp_ss
-	private void synpred20_fsharp_ss_fragment()
-	{
-		EnterRule_synpred20_fsharp_ss_fragment();
-		EnterRule("synpred20_fsharp_ss_fragment", 47);
-		TraceIn("synpred20_fsharp_ss_fragment", 47);
-		try
-		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:138:8: ( returning_expr )
-			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:138:8: returning_expr
-			{
-			DebugLocation(138, 8);
-			PushFollow(Follow._returning_expr_in_synpred20_fsharp_ss1044);
-			returning_expr();
-			PopFollow();
-			if (state.failed) return;
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("synpred20_fsharp_ss_fragment", 47);
-			LeaveRule("synpred20_fsharp_ss_fragment", 47);
-			LeaveRule_synpred20_fsharp_ss_fragment();
-		}
-	}
-	// $ANTLR end synpred20_fsharp_ss
 
 	partial void EnterRule_synpred21_fsharp_ss_fragment();
 	partial void LeaveRule_synpred21_fsharp_ss_fragment();
@@ -5875,17 +4630,17 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	private void synpred21_fsharp_ss_fragment()
 	{
 		EnterRule_synpred21_fsharp_ss_fragment();
-		EnterRule("synpred21_fsharp_ss_fragment", 48);
-		TraceIn("synpred21_fsharp_ss_fragment", 48);
+		EnterRule("synpred21_fsharp_ss_fragment", 50);
+		TraceIn("synpred21_fsharp_ss_fragment", 50);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:143:23: ( expr )
+			// D:\\fsharp_compiler\\fsharp_ss.g:170:2: ( func_call_expr )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:143:23: expr
+			// D:\\fsharp_compiler\\fsharp_ss.g:170:2: func_call_expr
 			{
-			DebugLocation(143, 23);
-			PushFollow(Follow._expr_in_synpred21_fsharp_ss1079);
-			expr();
+			DebugLocation(170, 2);
+			PushFollow(Follow._func_call_expr_in_synpred21_fsharp_ss1212);
+			func_call_expr();
 			PopFollow();
 			if (state.failed) return;
 
@@ -5894,8 +4649,8 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 		}
 		finally
 		{
-			TraceOut("synpred21_fsharp_ss_fragment", 48);
-			LeaveRule("synpred21_fsharp_ss_fragment", 48);
+			TraceOut("synpred21_fsharp_ss_fragment", 50);
+			LeaveRule("synpred21_fsharp_ss_fragment", 50);
 			LeaveRule_synpred21_fsharp_ss_fragment();
 		}
 	}
@@ -5908,196 +4663,28 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	private void synpred22_fsharp_ss_fragment()
 	{
 		EnterRule_synpred22_fsharp_ss_fragment();
-		EnterRule("synpred22_fsharp_ss_fragment", 49);
-		TraceIn("synpred22_fsharp_ss_fragment", 49);
+		EnterRule("synpred22_fsharp_ss_fragment", 51);
+		TraceIn("synpred22_fsharp_ss_fragment", 51);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:143:29: ( returning_expr )
+			// D:\\fsharp_compiler\\fsharp_ss.g:170:19: ( ID )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:143:29: returning_expr
+			// D:\\fsharp_compiler\\fsharp_ss.g:170:19: ID
 			{
-			DebugLocation(143, 29);
-			PushFollow(Follow._returning_expr_in_synpred22_fsharp_ss1082);
-			returning_expr();
-			PopFollow();
-			if (state.failed) return;
+			DebugLocation(170, 19);
+			Match(input,ID,Follow._ID_in_synpred22_fsharp_ss1216); if (state.failed) return;
 
 			}
 
 		}
 		finally
 		{
-			TraceOut("synpred22_fsharp_ss_fragment", 49);
-			LeaveRule("synpred22_fsharp_ss_fragment", 49);
+			TraceOut("synpred22_fsharp_ss_fragment", 51);
+			LeaveRule("synpred22_fsharp_ss_fragment", 51);
 			LeaveRule_synpred22_fsharp_ss_fragment();
 		}
 	}
 	// $ANTLR end synpred22_fsharp_ss
-
-	partial void EnterRule_synpred23_fsharp_ss_fragment();
-	partial void LeaveRule_synpred23_fsharp_ss_fragment();
-
-	// $ANTLR start synpred23_fsharp_ss
-	private void synpred23_fsharp_ss_fragment()
-	{
-		EnterRule_synpred23_fsharp_ss_fragment();
-		EnterRule("synpred23_fsharp_ss_fragment", 50);
-		TraceIn("synpred23_fsharp_ss_fragment", 50);
-		try
-		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:143:45: ( elif_expr )
-			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:143:45: elif_expr
-			{
-			DebugLocation(143, 45);
-			PushFollow(Follow._elif_expr_in_synpred23_fsharp_ss1085);
-			elif_expr();
-			PopFollow();
-			if (state.failed) return;
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("synpred23_fsharp_ss_fragment", 50);
-			LeaveRule("synpred23_fsharp_ss_fragment", 50);
-			LeaveRule_synpred23_fsharp_ss_fragment();
-		}
-	}
-	// $ANTLR end synpred23_fsharp_ss
-
-	partial void EnterRule_synpred24_fsharp_ss_fragment();
-	partial void LeaveRule_synpred24_fsharp_ss_fragment();
-
-	// $ANTLR start synpred24_fsharp_ss
-	private void synpred24_fsharp_ss_fragment()
-	{
-		EnterRule_synpred24_fsharp_ss_fragment();
-		EnterRule("synpred24_fsharp_ss_fragment", 51);
-		TraceIn("synpred24_fsharp_ss_fragment", 51);
-		try
-		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:143:56: ( else_expr )
-			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:143:56: else_expr
-			{
-			DebugLocation(143, 56);
-			PushFollow(Follow._else_expr_in_synpred24_fsharp_ss1088);
-			else_expr();
-			PopFollow();
-			if (state.failed) return;
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("synpred24_fsharp_ss_fragment", 51);
-			LeaveRule("synpred24_fsharp_ss_fragment", 51);
-			LeaveRule_synpred24_fsharp_ss_fragment();
-		}
-	}
-	// $ANTLR end synpred24_fsharp_ss
-
-	partial void EnterRule_synpred25_fsharp_ss_fragment();
-	partial void LeaveRule_synpred25_fsharp_ss_fragment();
-
-	// $ANTLR start synpred25_fsharp_ss
-	private void synpred25_fsharp_ss_fragment()
-	{
-		EnterRule_synpred25_fsharp_ss_fragment();
-		EnterRule("synpred25_fsharp_ss_fragment", 52);
-		TraceIn("synpred25_fsharp_ss_fragment", 52);
-		try
-		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:148:25: ( expr )
-			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:148:25: expr
-			{
-			DebugLocation(148, 25);
-			PushFollow(Follow._expr_in_synpred25_fsharp_ss1109);
-			expr();
-			PopFollow();
-			if (state.failed) return;
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("synpred25_fsharp_ss_fragment", 52);
-			LeaveRule("synpred25_fsharp_ss_fragment", 52);
-			LeaveRule_synpred25_fsharp_ss_fragment();
-		}
-	}
-	// $ANTLR end synpred25_fsharp_ss
-
-	partial void EnterRule_synpred26_fsharp_ss_fragment();
-	partial void LeaveRule_synpred26_fsharp_ss_fragment();
-
-	// $ANTLR start synpred26_fsharp_ss
-	private void synpred26_fsharp_ss_fragment()
-	{
-		EnterRule_synpred26_fsharp_ss_fragment();
-		EnterRule("synpred26_fsharp_ss_fragment", 53);
-		TraceIn("synpred26_fsharp_ss_fragment", 53);
-		try
-		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:148:31: ( returning_expr )
-			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:148:31: returning_expr
-			{
-			DebugLocation(148, 31);
-			PushFollow(Follow._returning_expr_in_synpred26_fsharp_ss1112);
-			returning_expr();
-			PopFollow();
-			if (state.failed) return;
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("synpred26_fsharp_ss_fragment", 53);
-			LeaveRule("synpred26_fsharp_ss_fragment", 53);
-			LeaveRule_synpred26_fsharp_ss_fragment();
-		}
-	}
-	// $ANTLR end synpred26_fsharp_ss
-
-	partial void EnterRule_synpred27_fsharp_ss_fragment();
-	partial void LeaveRule_synpred27_fsharp_ss_fragment();
-
-	// $ANTLR start synpred27_fsharp_ss
-	private void synpred27_fsharp_ss_fragment()
-	{
-		EnterRule_synpred27_fsharp_ss_fragment();
-		EnterRule("synpred27_fsharp_ss_fragment", 54);
-		TraceIn("synpred27_fsharp_ss_fragment", 54);
-		try
-		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:153:8: ( expr )
-			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:153:8: expr
-			{
-			DebugLocation(153, 8);
-			PushFollow(Follow._expr_in_synpred27_fsharp_ss1129);
-			expr();
-			PopFollow();
-			if (state.failed) return;
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("synpred27_fsharp_ss_fragment", 54);
-			LeaveRule("synpred27_fsharp_ss_fragment", 54);
-			LeaveRule_synpred27_fsharp_ss_fragment();
-		}
-	}
-	// $ANTLR end synpred27_fsharp_ss
 
 	partial void EnterRule_synpred28_fsharp_ss_fragment();
 	partial void LeaveRule_synpred28_fsharp_ss_fragment();
@@ -6106,173 +4693,16 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	private void synpred28_fsharp_ss_fragment()
 	{
 		EnterRule_synpred28_fsharp_ss_fragment();
-		EnterRule("synpred28_fsharp_ss_fragment", 55);
-		TraceIn("synpred28_fsharp_ss_fragment", 55);
+		EnterRule("synpred28_fsharp_ss_fragment", 57);
+		TraceIn("synpred28_fsharp_ss_fragment", 57);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:153:14: ( returning_expr )
+			// D:\\fsharp_compiler\\fsharp_ss.g:188:2: ( eq_neq_expr )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:153:14: returning_expr
+			// D:\\fsharp_compiler\\fsharp_ss.g:188:2: eq_neq_expr
 			{
-			DebugLocation(153, 14);
-			PushFollow(Follow._returning_expr_in_synpred28_fsharp_ss1132);
-			returning_expr();
-			PopFollow();
-			if (state.failed) return;
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("synpred28_fsharp_ss_fragment", 55);
-			LeaveRule("synpred28_fsharp_ss_fragment", 55);
-			LeaveRule_synpred28_fsharp_ss_fragment();
-		}
-	}
-	// $ANTLR end synpred28_fsharp_ss
-
-	partial void EnterRule_synpred30_fsharp_ss_fragment();
-	partial void LeaveRule_synpred30_fsharp_ss_fragment();
-
-	// $ANTLR start synpred30_fsharp_ss
-	private void synpred30_fsharp_ss_fragment()
-	{
-		EnterRule_synpred30_fsharp_ss_fragment();
-		EnterRule("synpred30_fsharp_ss_fragment", 57);
-		TraceIn("synpred30_fsharp_ss_fragment", 57);
-		try
-		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:159:2: ( ID )
-			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:159:2: ID
-			{
-			DebugLocation(159, 2);
-			Match(input,ID,Follow._ID_in_synpred30_fsharp_ss1156); if (state.failed) return;
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("synpred30_fsharp_ss_fragment", 57);
-			LeaveRule("synpred30_fsharp_ss_fragment", 57);
-			LeaveRule_synpred30_fsharp_ss_fragment();
-		}
-	}
-	// $ANTLR end synpred30_fsharp_ss
-
-	partial void EnterRule_synpred34_fsharp_ss_fragment();
-	partial void LeaveRule_synpred34_fsharp_ss_fragment();
-
-	// $ANTLR start synpred34_fsharp_ss
-	private void synpred34_fsharp_ss_fragment()
-	{
-		EnterRule_synpred34_fsharp_ss_fragment();
-		EnterRule("synpred34_fsharp_ss_fragment", 61);
-		TraceIn("synpred34_fsharp_ss_fragment", 61);
-		try
-		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:164:18: ( ( MULT | DIV | MOD ) alg_group_expr )
-			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:164:18: ( MULT | DIV | MOD ) alg_group_expr
-			{
-			DebugLocation(164, 18);
-			if (input.LA(1)==DIV||(input.LA(1)>=MOD && input.LA(1)<=MULT))
-			{
-				input.Consume();
-				state.errorRecovery=false;state.failed=false;
-			}
-			else
-			{
-				if (state.backtracking>0) {state.failed=true; return;}
-				MismatchedSetException mse = new MismatchedSetException(null,input);
-				DebugRecognitionException(mse);
-				throw mse;
-			}
-
-			DebugLocation(164, 38);
-			PushFollow(Follow._alg_group_expr_in_synpred34_fsharp_ss1192);
-			alg_group_expr();
-			PopFollow();
-			if (state.failed) return;
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("synpred34_fsharp_ss_fragment", 61);
-			LeaveRule("synpred34_fsharp_ss_fragment", 61);
-			LeaveRule_synpred34_fsharp_ss_fragment();
-		}
-	}
-	// $ANTLR end synpred34_fsharp_ss
-
-	partial void EnterRule_synpred36_fsharp_ss_fragment();
-	partial void LeaveRule_synpred36_fsharp_ss_fragment();
-
-	// $ANTLR start synpred36_fsharp_ss
-	private void synpred36_fsharp_ss_fragment()
-	{
-		EnterRule_synpred36_fsharp_ss_fragment();
-		EnterRule("synpred36_fsharp_ss_fragment", 63);
-		TraceIn("synpred36_fsharp_ss_fragment", 63);
-		try
-		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:168:13: ( ( PLUS | MINUS ) mult_expr )
-			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:168:13: ( PLUS | MINUS ) mult_expr
-			{
-			DebugLocation(168, 13);
-			if (input.LA(1)==MINUS||input.LA(1)==PLUS)
-			{
-				input.Consume();
-				state.errorRecovery=false;state.failed=false;
-			}
-			else
-			{
-				if (state.backtracking>0) {state.failed=true; return;}
-				MismatchedSetException mse = new MismatchedSetException(null,input);
-				DebugRecognitionException(mse);
-				throw mse;
-			}
-
-			DebugLocation(168, 29);
-			PushFollow(Follow._mult_expr_in_synpred36_fsharp_ss1217);
-			mult_expr();
-			PopFollow();
-			if (state.failed) return;
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("synpred36_fsharp_ss_fragment", 63);
-			LeaveRule("synpred36_fsharp_ss_fragment", 63);
-			LeaveRule_synpred36_fsharp_ss_fragment();
-		}
-	}
-	// $ANTLR end synpred36_fsharp_ss
-
-	partial void EnterRule_synpred37_fsharp_ss_fragment();
-	partial void LeaveRule_synpred37_fsharp_ss_fragment();
-
-	// $ANTLR start synpred37_fsharp_ss
-	private void synpred37_fsharp_ss_fragment()
-	{
-		EnterRule_synpred37_fsharp_ss_fragment();
-		EnterRule("synpred37_fsharp_ss_fragment", 64);
-		TraceIn("synpred37_fsharp_ss_fragment", 64);
-		try
-		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:177:2: ( eq_neq_expr )
-			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:177:2: eq_neq_expr
-			{
-			DebugLocation(177, 2);
-			PushFollow(Follow._eq_neq_expr_in_synpred37_fsharp_ss1242);
+			DebugLocation(188, 2);
+			PushFollow(Follow._eq_neq_expr_in_synpred28_fsharp_ss1298);
 			eq_neq_expr();
 			PopFollow();
 			if (state.failed) return;
@@ -6282,12 +4712,225 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 		}
 		finally
 		{
-			TraceOut("synpred37_fsharp_ss_fragment", 64);
-			LeaveRule("synpred37_fsharp_ss_fragment", 64);
+			TraceOut("synpred28_fsharp_ss_fragment", 57);
+			LeaveRule("synpred28_fsharp_ss_fragment", 57);
+			LeaveRule_synpred28_fsharp_ss_fragment();
+		}
+	}
+	// $ANTLR end synpred28_fsharp_ss
+
+	partial void EnterRule_synpred32_fsharp_ss_fragment();
+	partial void LeaveRule_synpred32_fsharp_ss_fragment();
+
+	// $ANTLR start synpred32_fsharp_ss
+	private void synpred32_fsharp_ss_fragment()
+	{
+		EnterRule_synpred32_fsharp_ss_fragment();
+		EnterRule("synpred32_fsharp_ss_fragment", 61);
+		TraceIn("synpred32_fsharp_ss_fragment", 61);
+		try
+		{
+			// D:\\fsharp_compiler\\fsharp_ss.g:199:2: ( INT )
+			DebugEnterAlt(1);
+			// D:\\fsharp_compiler\\fsharp_ss.g:199:2: INT
+			{
+			DebugLocation(199, 2);
+			Match(input,INT,Follow._INT_in_synpred32_fsharp_ss1346); if (state.failed) return;
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("synpred32_fsharp_ss_fragment", 61);
+			LeaveRule("synpred32_fsharp_ss_fragment", 61);
+			LeaveRule_synpred32_fsharp_ss_fragment();
+		}
+	}
+	// $ANTLR end synpred32_fsharp_ss
+
+	partial void EnterRule_synpred33_fsharp_ss_fragment();
+	partial void LeaveRule_synpred33_fsharp_ss_fragment();
+
+	// $ANTLR start synpred33_fsharp_ss
+	private void synpred33_fsharp_ss_fragment()
+	{
+		EnterRule_synpred33_fsharp_ss_fragment();
+		EnterRule("synpred33_fsharp_ss_fragment", 62);
+		TraceIn("synpred33_fsharp_ss_fragment", 62);
+		try
+		{
+			// D:\\fsharp_compiler\\fsharp_ss.g:199:8: ( DOUBLE )
+			DebugEnterAlt(1);
+			// D:\\fsharp_compiler\\fsharp_ss.g:199:8: DOUBLE
+			{
+			DebugLocation(199, 8);
+			Match(input,DOUBLE,Follow._DOUBLE_in_synpred33_fsharp_ss1350); if (state.failed) return;
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("synpred33_fsharp_ss_fragment", 62);
+			LeaveRule("synpred33_fsharp_ss_fragment", 62);
+			LeaveRule_synpred33_fsharp_ss_fragment();
+		}
+	}
+	// $ANTLR end synpred33_fsharp_ss
+
+	partial void EnterRule_synpred34_fsharp_ss_fragment();
+	partial void LeaveRule_synpred34_fsharp_ss_fragment();
+
+	// $ANTLR start synpred34_fsharp_ss
+	private void synpred34_fsharp_ss_fragment()
+	{
+		EnterRule_synpred34_fsharp_ss_fragment();
+		EnterRule("synpred34_fsharp_ss_fragment", 63);
+		TraceIn("synpred34_fsharp_ss_fragment", 63);
+		try
+		{
+			// D:\\fsharp_compiler\\fsharp_ss.g:199:17: ( alg_expr )
+			DebugEnterAlt(1);
+			// D:\\fsharp_compiler\\fsharp_ss.g:199:17: alg_expr
+			{
+			DebugLocation(199, 17);
+			PushFollow(Follow._alg_expr_in_synpred34_fsharp_ss1354);
+			alg_expr();
+			PopFollow();
+			if (state.failed) return;
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("synpred34_fsharp_ss_fragment", 63);
+			LeaveRule("synpred34_fsharp_ss_fragment", 63);
+			LeaveRule_synpred34_fsharp_ss_fragment();
+		}
+	}
+	// $ANTLR end synpred34_fsharp_ss
+
+	partial void EnterRule_synpred37_fsharp_ss_fragment();
+	partial void LeaveRule_synpred37_fsharp_ss_fragment();
+
+	// $ANTLR start synpred37_fsharp_ss
+	private void synpred37_fsharp_ss_fragment()
+	{
+		EnterRule_synpred37_fsharp_ss_fragment();
+		EnterRule("synpred37_fsharp_ss_fragment", 66);
+		TraceIn("synpred37_fsharp_ss_fragment", 66);
+		try
+		{
+			// D:\\fsharp_compiler\\fsharp_ss.g:209:2: ( STRING )
+			DebugEnterAlt(1);
+			// D:\\fsharp_compiler\\fsharp_ss.g:209:2: STRING
+			{
+			DebugLocation(209, 2);
+			Match(input,STRING,Follow._STRING_in_synpred37_fsharp_ss1398); if (state.failed) return;
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("synpred37_fsharp_ss_fragment", 66);
+			LeaveRule("synpred37_fsharp_ss_fragment", 66);
 			LeaveRule_synpred37_fsharp_ss_fragment();
 		}
 	}
 	// $ANTLR end synpred37_fsharp_ss
+
+	partial void EnterRule_synpred38_fsharp_ss_fragment();
+	partial void LeaveRule_synpred38_fsharp_ss_fragment();
+
+	// $ANTLR start synpred38_fsharp_ss
+	private void synpred38_fsharp_ss_fragment()
+	{
+		EnterRule_synpred38_fsharp_ss_fragment();
+		EnterRule("synpred38_fsharp_ss_fragment", 67);
+		TraceIn("synpred38_fsharp_ss_fragment", 67);
+		try
+		{
+			// D:\\fsharp_compiler\\fsharp_ss.g:209:11: ( CHAR )
+			DebugEnterAlt(1);
+			// D:\\fsharp_compiler\\fsharp_ss.g:209:11: CHAR
+			{
+			DebugLocation(209, 11);
+			Match(input,CHAR,Follow._CHAR_in_synpred38_fsharp_ss1402); if (state.failed) return;
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("synpred38_fsharp_ss_fragment", 67);
+			LeaveRule("synpred38_fsharp_ss_fragment", 67);
+			LeaveRule_synpred38_fsharp_ss_fragment();
+		}
+	}
+	// $ANTLR end synpred38_fsharp_ss
+
+	partial void EnterRule_synpred39_fsharp_ss_fragment();
+	partial void LeaveRule_synpred39_fsharp_ss_fragment();
+
+	// $ANTLR start synpred39_fsharp_ss
+	private void synpred39_fsharp_ss_fragment()
+	{
+		EnterRule_synpred39_fsharp_ss_fragment();
+		EnterRule("synpred39_fsharp_ss_fragment", 68);
+		TraceIn("synpred39_fsharp_ss_fragment", 68);
+		try
+		{
+			// D:\\fsharp_compiler\\fsharp_ss.g:209:18: ( INT )
+			DebugEnterAlt(1);
+			// D:\\fsharp_compiler\\fsharp_ss.g:209:18: INT
+			{
+			DebugLocation(209, 18);
+			Match(input,INT,Follow._INT_in_synpred39_fsharp_ss1406); if (state.failed) return;
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("synpred39_fsharp_ss_fragment", 68);
+			LeaveRule("synpred39_fsharp_ss_fragment", 68);
+			LeaveRule_synpred39_fsharp_ss_fragment();
+		}
+	}
+	// $ANTLR end synpred39_fsharp_ss
+
+	partial void EnterRule_synpred40_fsharp_ss_fragment();
+	partial void LeaveRule_synpred40_fsharp_ss_fragment();
+
+	// $ANTLR start synpred40_fsharp_ss
+	private void synpred40_fsharp_ss_fragment()
+	{
+		EnterRule_synpred40_fsharp_ss_fragment();
+		EnterRule("synpred40_fsharp_ss_fragment", 69);
+		TraceIn("synpred40_fsharp_ss_fragment", 69);
+		try
+		{
+			// D:\\fsharp_compiler\\fsharp_ss.g:209:24: ( DOUBLE )
+			DebugEnterAlt(1);
+			// D:\\fsharp_compiler\\fsharp_ss.g:209:24: DOUBLE
+			{
+			DebugLocation(209, 24);
+			Match(input,DOUBLE,Follow._DOUBLE_in_synpred40_fsharp_ss1410); if (state.failed) return;
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("synpred40_fsharp_ss_fragment", 69);
+			LeaveRule("synpred40_fsharp_ss_fragment", 69);
+			LeaveRule_synpred40_fsharp_ss_fragment();
+		}
+	}
+	// $ANTLR end synpred40_fsharp_ss
 
 	partial void EnterRule_synpred41_fsharp_ss_fragment();
 	partial void LeaveRule_synpred41_fsharp_ss_fragment();
@@ -6296,58 +4939,31 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	private void synpred41_fsharp_ss_fragment()
 	{
 		EnterRule_synpred41_fsharp_ss_fragment();
-		EnterRule("synpred41_fsharp_ss_fragment", 68);
-		TraceIn("synpred41_fsharp_ss_fragment", 68);
+		EnterRule("synpred41_fsharp_ss_fragment", 70);
+		TraceIn("synpred41_fsharp_ss_fragment", 70);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:188:2: ( ID )
+			// D:\\fsharp_compiler\\fsharp_ss.g:209:33: ( alg_expr )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:188:2: ID
+			// D:\\fsharp_compiler\\fsharp_ss.g:209:33: alg_expr
 			{
-			DebugLocation(188, 2);
-			Match(input,ID,Follow._ID_in_synpred41_fsharp_ss1290); if (state.failed) return;
+			DebugLocation(209, 33);
+			PushFollow(Follow._alg_expr_in_synpred41_fsharp_ss1414);
+			alg_expr();
+			PopFollow();
+			if (state.failed) return;
 
 			}
 
 		}
 		finally
 		{
-			TraceOut("synpred41_fsharp_ss_fragment", 68);
-			LeaveRule("synpred41_fsharp_ss_fragment", 68);
+			TraceOut("synpred41_fsharp_ss_fragment", 70);
+			LeaveRule("synpred41_fsharp_ss_fragment", 70);
 			LeaveRule_synpred41_fsharp_ss_fragment();
 		}
 	}
 	// $ANTLR end synpred41_fsharp_ss
-
-	partial void EnterRule_synpred42_fsharp_ss_fragment();
-	partial void LeaveRule_synpred42_fsharp_ss_fragment();
-
-	// $ANTLR start synpred42_fsharp_ss
-	private void synpred42_fsharp_ss_fragment()
-	{
-		EnterRule_synpred42_fsharp_ss_fragment();
-		EnterRule("synpred42_fsharp_ss_fragment", 69);
-		TraceIn("synpred42_fsharp_ss_fragment", 69);
-		try
-		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:188:7: ( INT )
-			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:188:7: INT
-			{
-			DebugLocation(188, 7);
-			Match(input,INT,Follow._INT_in_synpred42_fsharp_ss1294); if (state.failed) return;
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("synpred42_fsharp_ss_fragment", 69);
-			LeaveRule("synpred42_fsharp_ss_fragment", 69);
-			LeaveRule_synpred42_fsharp_ss_fragment();
-		}
-	}
-	// $ANTLR end synpred42_fsharp_ss
 
 	partial void EnterRule_synpred43_fsharp_ss_fragment();
 	partial void LeaveRule_synpred43_fsharp_ss_fragment();
@@ -6356,24 +4972,24 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	private void synpred43_fsharp_ss_fragment()
 	{
 		EnterRule_synpred43_fsharp_ss_fragment();
-		EnterRule("synpred43_fsharp_ss_fragment", 70);
-		TraceIn("synpred43_fsharp_ss_fragment", 70);
+		EnterRule("synpred43_fsharp_ss_fragment", 72);
+		TraceIn("synpred43_fsharp_ss_fragment", 72);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:188:13: ( DOUBLE )
+			// D:\\fsharp_compiler\\fsharp_ss.g:214:2: ( TRUE )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:188:13: DOUBLE
+			// D:\\fsharp_compiler\\fsharp_ss.g:214:2: TRUE
 			{
-			DebugLocation(188, 13);
-			Match(input,DOUBLE,Follow._DOUBLE_in_synpred43_fsharp_ss1298); if (state.failed) return;
+			DebugLocation(214, 2);
+			Match(input,TRUE,Follow._TRUE_in_synpred43_fsharp_ss1434); if (state.failed) return;
 
 			}
 
 		}
 		finally
 		{
-			TraceOut("synpred43_fsharp_ss_fragment", 70);
-			LeaveRule("synpred43_fsharp_ss_fragment", 70);
+			TraceOut("synpred43_fsharp_ss_fragment", 72);
+			LeaveRule("synpred43_fsharp_ss_fragment", 72);
 			LeaveRule_synpred43_fsharp_ss_fragment();
 		}
 	}
@@ -6386,17 +5002,47 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	private void synpred44_fsharp_ss_fragment()
 	{
 		EnterRule_synpred44_fsharp_ss_fragment();
-		EnterRule("synpred44_fsharp_ss_fragment", 71);
-		TraceIn("synpred44_fsharp_ss_fragment", 71);
+		EnterRule("synpred44_fsharp_ss_fragment", 73);
+		TraceIn("synpred44_fsharp_ss_fragment", 73);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:188:22: ( alg_expr )
+			// D:\\fsharp_compiler\\fsharp_ss.g:214:9: ( FALSE )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:188:22: alg_expr
+			// D:\\fsharp_compiler\\fsharp_ss.g:214:9: FALSE
 			{
-			DebugLocation(188, 22);
-			PushFollow(Follow._alg_expr_in_synpred44_fsharp_ss1302);
-			alg_expr();
+			DebugLocation(214, 9);
+			Match(input,FALSE,Follow._FALSE_in_synpred44_fsharp_ss1438); if (state.failed) return;
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("synpred44_fsharp_ss_fragment", 73);
+			LeaveRule("synpred44_fsharp_ss_fragment", 73);
+			LeaveRule_synpred44_fsharp_ss_fragment();
+		}
+	}
+	// $ANTLR end synpred44_fsharp_ss
+
+	partial void EnterRule_synpred45_fsharp_ss_fragment();
+	partial void LeaveRule_synpred45_fsharp_ss_fragment();
+
+	// $ANTLR start synpred45_fsharp_ss
+	private void synpred45_fsharp_ss_fragment()
+	{
+		EnterRule_synpred45_fsharp_ss_fragment();
+		EnterRule("synpred45_fsharp_ss_fragment", 74);
+		TraceIn("synpred45_fsharp_ss_fragment", 74);
+		try
+		{
+			// D:\\fsharp_compiler\\fsharp_ss.g:214:17: ( comp_expr )
+			DebugEnterAlt(1);
+			// D:\\fsharp_compiler\\fsharp_ss.g:214:17: comp_expr
+			{
+			DebugLocation(214, 17);
+			PushFollow(Follow._comp_expr_in_synpred45_fsharp_ss1442);
+			comp_expr();
 			PopFollow();
 			if (state.failed) return;
 
@@ -6405,12 +5051,12 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 		}
 		finally
 		{
-			TraceOut("synpred44_fsharp_ss_fragment", 71);
-			LeaveRule("synpred44_fsharp_ss_fragment", 71);
-			LeaveRule_synpred44_fsharp_ss_fragment();
+			TraceOut("synpred45_fsharp_ss_fragment", 74);
+			LeaveRule("synpred45_fsharp_ss_fragment", 74);
+			LeaveRule_synpred45_fsharp_ss_fragment();
 		}
 	}
-	// $ANTLR end synpred44_fsharp_ss
+	// $ANTLR end synpred45_fsharp_ss
 
 	partial void EnterRule_synpred46_fsharp_ss_fragment();
 	partial void LeaveRule_synpred46_fsharp_ss_fragment();
@@ -6419,24 +5065,31 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	private void synpred46_fsharp_ss_fragment()
 	{
 		EnterRule_synpred46_fsharp_ss_fragment();
-		EnterRule("synpred46_fsharp_ss_fragment", 73);
-		TraceIn("synpred46_fsharp_ss_fragment", 73);
+		EnterRule("synpred46_fsharp_ss_fragment", 75);
+		TraceIn("synpred46_fsharp_ss_fragment", 75);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:198:2: ( ID )
+			// D:\\fsharp_compiler\\fsharp_ss.g:214:29: ( '(' or_expr ')' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:198:2: ID
+			// D:\\fsharp_compiler\\fsharp_ss.g:214:29: '(' or_expr ')'
 			{
-			DebugLocation(198, 2);
-			Match(input,ID,Follow._ID_in_synpred46_fsharp_ss1342); if (state.failed) return;
+			DebugLocation(214, 29);
+			Match(input,OPEN_BR,Follow._OPEN_BR_in_synpred46_fsharp_ss1446); if (state.failed) return;
+			DebugLocation(214, 34);
+			PushFollow(Follow._or_expr_in_synpred46_fsharp_ss1449);
+			or_expr();
+			PopFollow();
+			if (state.failed) return;
+			DebugLocation(214, 42);
+			Match(input,CLOSE_BR,Follow._CLOSE_BR_in_synpred46_fsharp_ss1451); if (state.failed) return;
 
 			}
 
 		}
 		finally
 		{
-			TraceOut("synpred46_fsharp_ss_fragment", 73);
-			LeaveRule("synpred46_fsharp_ss_fragment", 73);
+			TraceOut("synpred46_fsharp_ss_fragment", 75);
+			LeaveRule("synpred46_fsharp_ss_fragment", 75);
 			LeaveRule_synpred46_fsharp_ss_fragment();
 		}
 	}
@@ -6449,137 +5102,17 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	private void synpred47_fsharp_ss_fragment()
 	{
 		EnterRule_synpred47_fsharp_ss_fragment();
-		EnterRule("synpred47_fsharp_ss_fragment", 74);
-		TraceIn("synpred47_fsharp_ss_fragment", 74);
+		EnterRule("synpred47_fsharp_ss_fragment", 76);
+		TraceIn("synpred47_fsharp_ss_fragment", 76);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:198:7: ( STRING )
+			// D:\\fsharp_compiler\\fsharp_ss.g:214:49: ( func_call_expr )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:198:7: STRING
+			// D:\\fsharp_compiler\\fsharp_ss.g:214:49: func_call_expr
 			{
-			DebugLocation(198, 7);
-			Match(input,STRING,Follow._STRING_in_synpred47_fsharp_ss1346); if (state.failed) return;
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("synpred47_fsharp_ss_fragment", 74);
-			LeaveRule("synpred47_fsharp_ss_fragment", 74);
-			LeaveRule_synpred47_fsharp_ss_fragment();
-		}
-	}
-	// $ANTLR end synpred47_fsharp_ss
-
-	partial void EnterRule_synpred48_fsharp_ss_fragment();
-	partial void LeaveRule_synpred48_fsharp_ss_fragment();
-
-	// $ANTLR start synpred48_fsharp_ss
-	private void synpred48_fsharp_ss_fragment()
-	{
-		EnterRule_synpred48_fsharp_ss_fragment();
-		EnterRule("synpred48_fsharp_ss_fragment", 75);
-		TraceIn("synpred48_fsharp_ss_fragment", 75);
-		try
-		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:198:16: ( CHAR )
-			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:198:16: CHAR
-			{
-			DebugLocation(198, 16);
-			Match(input,CHAR,Follow._CHAR_in_synpred48_fsharp_ss1350); if (state.failed) return;
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("synpred48_fsharp_ss_fragment", 75);
-			LeaveRule("synpred48_fsharp_ss_fragment", 75);
-			LeaveRule_synpred48_fsharp_ss_fragment();
-		}
-	}
-	// $ANTLR end synpred48_fsharp_ss
-
-	partial void EnterRule_synpred49_fsharp_ss_fragment();
-	partial void LeaveRule_synpred49_fsharp_ss_fragment();
-
-	// $ANTLR start synpred49_fsharp_ss
-	private void synpred49_fsharp_ss_fragment()
-	{
-		EnterRule_synpred49_fsharp_ss_fragment();
-		EnterRule("synpred49_fsharp_ss_fragment", 76);
-		TraceIn("synpred49_fsharp_ss_fragment", 76);
-		try
-		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:198:23: ( INT )
-			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:198:23: INT
-			{
-			DebugLocation(198, 23);
-			Match(input,INT,Follow._INT_in_synpred49_fsharp_ss1354); if (state.failed) return;
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("synpred49_fsharp_ss_fragment", 76);
-			LeaveRule("synpred49_fsharp_ss_fragment", 76);
-			LeaveRule_synpred49_fsharp_ss_fragment();
-		}
-	}
-	// $ANTLR end synpred49_fsharp_ss
-
-	partial void EnterRule_synpred50_fsharp_ss_fragment();
-	partial void LeaveRule_synpred50_fsharp_ss_fragment();
-
-	// $ANTLR start synpred50_fsharp_ss
-	private void synpred50_fsharp_ss_fragment()
-	{
-		EnterRule_synpred50_fsharp_ss_fragment();
-		EnterRule("synpred50_fsharp_ss_fragment", 77);
-		TraceIn("synpred50_fsharp_ss_fragment", 77);
-		try
-		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:198:29: ( DOUBLE )
-			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:198:29: DOUBLE
-			{
-			DebugLocation(198, 29);
-			Match(input,DOUBLE,Follow._DOUBLE_in_synpred50_fsharp_ss1358); if (state.failed) return;
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("synpred50_fsharp_ss_fragment", 77);
-			LeaveRule("synpred50_fsharp_ss_fragment", 77);
-			LeaveRule_synpred50_fsharp_ss_fragment();
-		}
-	}
-	// $ANTLR end synpred50_fsharp_ss
-
-	partial void EnterRule_synpred51_fsharp_ss_fragment();
-	partial void LeaveRule_synpred51_fsharp_ss_fragment();
-
-	// $ANTLR start synpred51_fsharp_ss
-	private void synpred51_fsharp_ss_fragment()
-	{
-		EnterRule_synpred51_fsharp_ss_fragment();
-		EnterRule("synpred51_fsharp_ss_fragment", 78);
-		TraceIn("synpred51_fsharp_ss_fragment", 78);
-		try
-		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:198:38: ( alg_expr )
-			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:198:38: alg_expr
-			{
-			DebugLocation(198, 38);
-			PushFollow(Follow._alg_expr_in_synpred51_fsharp_ss1362);
-			alg_expr();
+			DebugLocation(214, 49);
+			PushFollow(Follow._func_call_expr_in_synpred47_fsharp_ss1456);
+			func_call_expr();
 			PopFollow();
 			if (state.failed) return;
 
@@ -6588,8 +5121,81 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 		}
 		finally
 		{
-			TraceOut("synpred51_fsharp_ss_fragment", 78);
-			LeaveRule("synpred51_fsharp_ss_fragment", 78);
+			TraceOut("synpred47_fsharp_ss_fragment", 76);
+			LeaveRule("synpred47_fsharp_ss_fragment", 76);
+			LeaveRule_synpred47_fsharp_ss_fragment();
+		}
+	}
+	// $ANTLR end synpred47_fsharp_ss
+
+	partial void EnterRule_synpred51_fsharp_ss_fragment();
+	partial void LeaveRule_synpred51_fsharp_ss_fragment();
+
+	// $ANTLR start synpred51_fsharp_ss
+	private void synpred51_fsharp_ss_fragment()
+	{
+		EnterRule_synpred51_fsharp_ss_fragment();
+		EnterRule("synpred51_fsharp_ss_fragment", 80);
+		TraceIn("synpred51_fsharp_ss_fragment", 80);
+		try
+		{
+			// D:\\fsharp_compiler\\fsharp_ss.g:232:6: ( OPEN_BR ( returning_expr )* CLOSE_BR )
+			DebugEnterAlt(1);
+			// D:\\fsharp_compiler\\fsharp_ss.g:232:6: OPEN_BR ( returning_expr )* CLOSE_BR
+			{
+			DebugLocation(232, 6);
+			Match(input,OPEN_BR,Follow._OPEN_BR_in_synpred51_fsharp_ss1527); if (state.failed) return;
+			DebugLocation(232, 14);
+			// D:\\fsharp_compiler\\fsharp_ss.g:232:14: ( returning_expr )*
+			try { DebugEnterSubRule(25);
+			while (true)
+			{
+				int alt25=2;
+				try { DebugEnterDecision(25, false);
+				int LA25_1 = input.LA(1);
+
+				if ((LA25_1==CHAR||LA25_1==DOUBLE||(LA25_1>=FALSE && LA25_1<=FUN)||(LA25_1>=ID && LA25_1<=INT)||LA25_1==OPEN_BR||LA25_1==STRING||LA25_1==TRUE))
+				{
+					alt25 = 1;
+				}
+
+
+				} finally { DebugExitDecision(25); }
+				switch ( alt25 )
+				{
+				case 1:
+					DebugEnterAlt(1);
+					// D:\\fsharp_compiler\\fsharp_ss.g:232:14: returning_expr
+					{
+					DebugLocation(232, 14);
+					PushFollow(Follow._returning_expr_in_synpred51_fsharp_ss1529);
+					returning_expr();
+					PopFollow();
+					if (state.failed) return;
+
+					}
+					break;
+
+				default:
+					goto loop25;
+				}
+			}
+
+			loop25:
+				;
+
+			} finally { DebugExitSubRule(25); }
+
+			DebugLocation(232, 30);
+			Match(input,CLOSE_BR,Follow._CLOSE_BR_in_synpred51_fsharp_ss1532); if (state.failed) return;
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("synpred51_fsharp_ss_fragment", 80);
+			LeaveRule("synpred51_fsharp_ss_fragment", 80);
 			LeaveRule_synpred51_fsharp_ss_fragment();
 		}
 	}
@@ -6602,88 +5208,35 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	private void synpred52_fsharp_ss_fragment()
 	{
 		EnterRule_synpred52_fsharp_ss_fragment();
-		EnterRule("synpred52_fsharp_ss_fragment", 79);
-		TraceIn("synpred52_fsharp_ss_fragment", 79);
+		EnterRule("synpred52_fsharp_ss_fragment", 81);
+		TraceIn("synpred52_fsharp_ss_fragment", 81);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:203:2: ( ID )
+			// D:\\fsharp_compiler\\fsharp_ss.g:243:2: ( '(' returning_expr ')' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:203:2: ID
+			// D:\\fsharp_compiler\\fsharp_ss.g:243:2: '(' returning_expr ')'
 			{
-			DebugLocation(203, 2);
-			Match(input,ID,Follow._ID_in_synpred52_fsharp_ss1378); if (state.failed) return;
+			DebugLocation(243, 2);
+			Match(input,OPEN_BR,Follow._OPEN_BR_in_synpred52_fsharp_ss1585); if (state.failed) return;
+			DebugLocation(243, 7);
+			PushFollow(Follow._returning_expr_in_synpred52_fsharp_ss1588);
+			returning_expr();
+			PopFollow();
+			if (state.failed) return;
+			DebugLocation(243, 22);
+			Match(input,CLOSE_BR,Follow._CLOSE_BR_in_synpred52_fsharp_ss1590); if (state.failed) return;
 
 			}
 
 		}
 		finally
 		{
-			TraceOut("synpred52_fsharp_ss_fragment", 79);
-			LeaveRule("synpred52_fsharp_ss_fragment", 79);
+			TraceOut("synpred52_fsharp_ss_fragment", 81);
+			LeaveRule("synpred52_fsharp_ss_fragment", 81);
 			LeaveRule_synpred52_fsharp_ss_fragment();
 		}
 	}
 	// $ANTLR end synpred52_fsharp_ss
-
-	partial void EnterRule_synpred53_fsharp_ss_fragment();
-	partial void LeaveRule_synpred53_fsharp_ss_fragment();
-
-	// $ANTLR start synpred53_fsharp_ss
-	private void synpred53_fsharp_ss_fragment()
-	{
-		EnterRule_synpred53_fsharp_ss_fragment();
-		EnterRule("synpred53_fsharp_ss_fragment", 80);
-		TraceIn("synpred53_fsharp_ss_fragment", 80);
-		try
-		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:203:7: ( TRUE )
-			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:203:7: TRUE
-			{
-			DebugLocation(203, 7);
-			Match(input,TRUE,Follow._TRUE_in_synpred53_fsharp_ss1382); if (state.failed) return;
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("synpred53_fsharp_ss_fragment", 80);
-			LeaveRule("synpred53_fsharp_ss_fragment", 80);
-			LeaveRule_synpred53_fsharp_ss_fragment();
-		}
-	}
-	// $ANTLR end synpred53_fsharp_ss
-
-	partial void EnterRule_synpred54_fsharp_ss_fragment();
-	partial void LeaveRule_synpred54_fsharp_ss_fragment();
-
-	// $ANTLR start synpred54_fsharp_ss
-	private void synpred54_fsharp_ss_fragment()
-	{
-		EnterRule_synpred54_fsharp_ss_fragment();
-		EnterRule("synpred54_fsharp_ss_fragment", 81);
-		TraceIn("synpred54_fsharp_ss_fragment", 81);
-		try
-		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:203:14: ( FALSE )
-			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:203:14: FALSE
-			{
-			DebugLocation(203, 14);
-			Match(input,FALSE,Follow._FALSE_in_synpred54_fsharp_ss1386); if (state.failed) return;
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("synpred54_fsharp_ss_fragment", 81);
-			LeaveRule("synpred54_fsharp_ss_fragment", 81);
-			LeaveRule_synpred54_fsharp_ss_fragment();
-		}
-	}
-	// $ANTLR end synpred54_fsharp_ss
 
 	partial void EnterRule_synpred55_fsharp_ss_fragment();
 	partial void LeaveRule_synpred55_fsharp_ss_fragment();
@@ -6692,17 +5245,17 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	private void synpred55_fsharp_ss_fragment()
 	{
 		EnterRule_synpred55_fsharp_ss_fragment();
-		EnterRule("synpred55_fsharp_ss_fragment", 82);
-		TraceIn("synpred55_fsharp_ss_fragment", 82);
+		EnterRule("synpred55_fsharp_ss_fragment", 84);
+		TraceIn("synpred55_fsharp_ss_fragment", 84);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:203:22: ( comp_expr )
+			// D:\\fsharp_compiler\\fsharp_ss.g:247:2: ( alg_expr )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:203:22: comp_expr
+			// D:\\fsharp_compiler\\fsharp_ss.g:247:2: alg_expr
 			{
-			DebugLocation(203, 22);
-			PushFollow(Follow._comp_expr_in_synpred55_fsharp_ss1390);
-			comp_expr();
+			DebugLocation(247, 2);
+			PushFollow(Follow._alg_expr_in_synpred55_fsharp_ss1628);
+			alg_expr();
 			PopFollow();
 			if (state.failed) return;
 
@@ -6711,8 +5264,8 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 		}
 		finally
 		{
-			TraceOut("synpred55_fsharp_ss_fragment", 82);
-			LeaveRule("synpred55_fsharp_ss_fragment", 82);
+			TraceOut("synpred55_fsharp_ss_fragment", 84);
+			LeaveRule("synpred55_fsharp_ss_fragment", 84);
 			LeaveRule_synpred55_fsharp_ss_fragment();
 		}
 	}
@@ -6725,31 +5278,27 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	private void synpred56_fsharp_ss_fragment()
 	{
 		EnterRule_synpred56_fsharp_ss_fragment();
-		EnterRule("synpred56_fsharp_ss_fragment", 83);
-		TraceIn("synpred56_fsharp_ss_fragment", 83);
+		EnterRule("synpred56_fsharp_ss_fragment", 85);
+		TraceIn("synpred56_fsharp_ss_fragment", 85);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:203:34: ( '(' or_expr ')' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:248:2: ( logic_expr )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:203:34: '(' or_expr ')'
+			// D:\\fsharp_compiler\\fsharp_ss.g:248:2: logic_expr
 			{
-			DebugLocation(203, 34);
-			Match(input,55,Follow._55_in_synpred56_fsharp_ss1394); if (state.failed) return;
-			DebugLocation(203, 39);
-			PushFollow(Follow._or_expr_in_synpred56_fsharp_ss1397);
-			or_expr();
+			DebugLocation(248, 2);
+			PushFollow(Follow._logic_expr_in_synpred56_fsharp_ss1633);
+			logic_expr();
 			PopFollow();
 			if (state.failed) return;
-			DebugLocation(203, 47);
-			Match(input,56,Follow._56_in_synpred56_fsharp_ss1399); if (state.failed) return;
 
 			}
 
 		}
 		finally
 		{
-			TraceOut("synpred56_fsharp_ss_fragment", 83);
-			LeaveRule("synpred56_fsharp_ss_fragment", 83);
+			TraceOut("synpred56_fsharp_ss_fragment", 85);
+			LeaveRule("synpred56_fsharp_ss_fragment", 85);
 			LeaveRule_synpred56_fsharp_ss_fragment();
 		}
 	}
@@ -6762,119 +5311,16 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	private void synpred57_fsharp_ss_fragment()
 	{
 		EnterRule_synpred57_fsharp_ss_fragment();
-		EnterRule("synpred57_fsharp_ss_fragment", 84);
-		TraceIn("synpred57_fsharp_ss_fragment", 84);
+		EnterRule("synpred57_fsharp_ss_fragment", 86);
+		TraceIn("synpred57_fsharp_ss_fragment", 86);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:207:18: ( AND logic_expr_arg )
+			// D:\\fsharp_compiler\\fsharp_ss.g:249:2: ( const )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:207:18: AND logic_expr_arg
+			// D:\\fsharp_compiler\\fsharp_ss.g:249:2: const
 			{
-			DebugLocation(207, 18);
-			Match(input,AND,Follow._AND_in_synpred57_fsharp_ss1417); if (state.failed) return;
-			DebugLocation(207, 23);
-			PushFollow(Follow._logic_expr_arg_in_synpred57_fsharp_ss1420);
-			logic_expr_arg();
-			PopFollow();
-			if (state.failed) return;
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("synpred57_fsharp_ss_fragment", 84);
-			LeaveRule("synpred57_fsharp_ss_fragment", 84);
-			LeaveRule_synpred57_fsharp_ss_fragment();
-		}
-	}
-	// $ANTLR end synpred57_fsharp_ss
-
-	partial void EnterRule_synpred58_fsharp_ss_fragment();
-	partial void LeaveRule_synpred58_fsharp_ss_fragment();
-
-	// $ANTLR start synpred58_fsharp_ss
-	private void synpred58_fsharp_ss_fragment()
-	{
-		EnterRule_synpred58_fsharp_ss_fragment();
-		EnterRule("synpred58_fsharp_ss_fragment", 85);
-		TraceIn("synpred58_fsharp_ss_fragment", 85);
-		try
-		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:211:12: ( OR and_expr )
-			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:211:12: OR and_expr
-			{
-			DebugLocation(211, 12);
-			Match(input,OR,Follow._OR_in_synpred58_fsharp_ss1436); if (state.failed) return;
-			DebugLocation(211, 16);
-			PushFollow(Follow._and_expr_in_synpred58_fsharp_ss1439);
-			and_expr();
-			PopFollow();
-			if (state.failed) return;
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("synpred58_fsharp_ss_fragment", 85);
-			LeaveRule("synpred58_fsharp_ss_fragment", 85);
-			LeaveRule_synpred58_fsharp_ss_fragment();
-		}
-	}
-	// $ANTLR end synpred58_fsharp_ss
-
-	partial void EnterRule_synpred59_fsharp_ss_fragment();
-	partial void LeaveRule_synpred59_fsharp_ss_fragment();
-
-	// $ANTLR start synpred59_fsharp_ss
-	private void synpred59_fsharp_ss_fragment()
-	{
-		EnterRule_synpred59_fsharp_ss_fragment();
-		EnterRule("synpred59_fsharp_ss_fragment", 86);
-		TraceIn("synpred59_fsharp_ss_fragment", 86);
-		try
-		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:221:5: ( returning_expr )
-			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:221:5: returning_expr
-			{
-			DebugLocation(221, 5);
-			PushFollow(Follow._returning_expr_in_synpred59_fsharp_ss1469);
-			returning_expr();
-			PopFollow();
-			if (state.failed) return;
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("synpred59_fsharp_ss_fragment", 86);
-			LeaveRule("synpred59_fsharp_ss_fragment", 86);
-			LeaveRule_synpred59_fsharp_ss_fragment();
-		}
-	}
-	// $ANTLR end synpred59_fsharp_ss
-
-	partial void EnterRule_synpred60_fsharp_ss_fragment();
-	partial void LeaveRule_synpred60_fsharp_ss_fragment();
-
-	// $ANTLR start synpred60_fsharp_ss
-	private void synpred60_fsharp_ss_fragment()
-	{
-		EnterRule_synpred60_fsharp_ss_fragment();
-		EnterRule("synpred60_fsharp_ss_fragment", 87);
-		TraceIn("synpred60_fsharp_ss_fragment", 87);
-		try
-		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:227:2: ( const )
-			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:227:2: const
-			{
-			DebugLocation(227, 2);
-			PushFollow(Follow._const_in_synpred60_fsharp_ss1493);
+			DebugLocation(249, 2);
+			PushFollow(Follow._const_in_synpred57_fsharp_ss1638);
 			@const();
 			PopFollow();
 			if (state.failed) return;
@@ -6884,180 +5330,12 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 		}
 		finally
 		{
-			TraceOut("synpred60_fsharp_ss_fragment", 87);
-			LeaveRule("synpred60_fsharp_ss_fragment", 87);
-			LeaveRule_synpred60_fsharp_ss_fragment();
+			TraceOut("synpred57_fsharp_ss_fragment", 86);
+			LeaveRule("synpred57_fsharp_ss_fragment", 86);
+			LeaveRule_synpred57_fsharp_ss_fragment();
 		}
 	}
-	// $ANTLR end synpred60_fsharp_ss
-
-	partial void EnterRule_synpred61_fsharp_ss_fragment();
-	partial void LeaveRule_synpred61_fsharp_ss_fragment();
-
-	// $ANTLR start synpred61_fsharp_ss
-	private void synpred61_fsharp_ss_fragment()
-	{
-		EnterRule_synpred61_fsharp_ss_fragment();
-		EnterRule("synpred61_fsharp_ss_fragment", 88);
-		TraceIn("synpred61_fsharp_ss_fragment", 88);
-		try
-		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:228:2: ( ID )
-			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:228:2: ID
-			{
-			DebugLocation(228, 2);
-			Match(input,ID,Follow._ID_in_synpred61_fsharp_ss1498); if (state.failed) return;
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("synpred61_fsharp_ss_fragment", 88);
-			LeaveRule("synpred61_fsharp_ss_fragment", 88);
-			LeaveRule_synpred61_fsharp_ss_fragment();
-		}
-	}
-	// $ANTLR end synpred61_fsharp_ss
-
-	partial void EnterRule_synpred62_fsharp_ss_fragment();
-	partial void LeaveRule_synpred62_fsharp_ss_fragment();
-
-	// $ANTLR start synpred62_fsharp_ss
-	private void synpred62_fsharp_ss_fragment()
-	{
-		EnterRule_synpred62_fsharp_ss_fragment();
-		EnterRule("synpred62_fsharp_ss_fragment", 89);
-		TraceIn("synpred62_fsharp_ss_fragment", 89);
-		try
-		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:229:2: ( '(' returning_expr ')' )
-			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:229:2: '(' returning_expr ')'
-			{
-			DebugLocation(229, 2);
-			Match(input,55,Follow._55_in_synpred62_fsharp_ss1503); if (state.failed) return;
-			DebugLocation(229, 7);
-			PushFollow(Follow._returning_expr_in_synpred62_fsharp_ss1506);
-			returning_expr();
-			PopFollow();
-			if (state.failed) return;
-			DebugLocation(229, 22);
-			Match(input,56,Follow._56_in_synpred62_fsharp_ss1508); if (state.failed) return;
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("synpred62_fsharp_ss_fragment", 89);
-			LeaveRule("synpred62_fsharp_ss_fragment", 89);
-			LeaveRule_synpred62_fsharp_ss_fragment();
-		}
-	}
-	// $ANTLR end synpred62_fsharp_ss
-
-	partial void EnterRule_synpred63_fsharp_ss_fragment();
-	partial void LeaveRule_synpred63_fsharp_ss_fragment();
-
-	// $ANTLR start synpred63_fsharp_ss
-	private void synpred63_fsharp_ss_fragment()
-	{
-		EnterRule_synpred63_fsharp_ss_fragment();
-		EnterRule("synpred63_fsharp_ss_fragment", 90);
-		TraceIn("synpred63_fsharp_ss_fragment", 90);
-		try
-		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:230:2: ( func_call_expr )
-			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:230:2: func_call_expr
-			{
-			DebugLocation(230, 2);
-			PushFollow(Follow._func_call_expr_in_synpred63_fsharp_ss1514);
-			func_call_expr();
-			PopFollow();
-			if (state.failed) return;
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("synpred63_fsharp_ss_fragment", 90);
-			LeaveRule("synpred63_fsharp_ss_fragment", 90);
-			LeaveRule_synpred63_fsharp_ss_fragment();
-		}
-	}
-	// $ANTLR end synpred63_fsharp_ss
-
-	partial void EnterRule_synpred65_fsharp_ss_fragment();
-	partial void LeaveRule_synpred65_fsharp_ss_fragment();
-
-	// $ANTLR start synpred65_fsharp_ss
-	private void synpred65_fsharp_ss_fragment()
-	{
-		EnterRule_synpred65_fsharp_ss_fragment();
-		EnterRule("synpred65_fsharp_ss_fragment", 92);
-		TraceIn("synpred65_fsharp_ss_fragment", 92);
-		try
-		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:233:2: ( logic_expr )
-			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:233:2: logic_expr
-			{
-			DebugLocation(233, 2);
-			PushFollow(Follow._logic_expr_in_synpred65_fsharp_ss1546);
-			logic_expr();
-			PopFollow();
-			if (state.failed) return;
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("synpred65_fsharp_ss_fragment", 92);
-			LeaveRule("synpred65_fsharp_ss_fragment", 92);
-			LeaveRule_synpred65_fsharp_ss_fragment();
-		}
-	}
-	// $ANTLR end synpred65_fsharp_ss
-
-	partial void EnterRule_synpred68_fsharp_ss_fragment();
-	partial void LeaveRule_synpred68_fsharp_ss_fragment();
-
-	// $ANTLR start synpred68_fsharp_ss
-	private void synpred68_fsharp_ss_fragment()
-	{
-		EnterRule_synpred68_fsharp_ss_fragment();
-		EnterRule("synpred68_fsharp_ss_fragment", 95);
-		TraceIn("synpred68_fsharp_ss_fragment", 95);
-		try
-		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:240:2: ( LET function_defn )
-			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:240:2: LET function_defn
-			{
-			DebugLocation(240, 2);
-			Match(input,LET,Follow._LET_in_synpred68_fsharp_ss1573); if (state.failed) return;
-			DebugLocation(240, 7);
-			PushFollow(Follow._function_defn_in_synpred68_fsharp_ss1576);
-			function_defn();
-			PopFollow();
-			if (state.failed) return;
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("synpred68_fsharp_ss_fragment", 95);
-			LeaveRule("synpred68_fsharp_ss_fragment", 95);
-			LeaveRule_synpred68_fsharp_ss_fragment();
-		}
-	}
-	// $ANTLR end synpred68_fsharp_ss
+	// $ANTLR end synpred57_fsharp_ss
 	#endregion Rules
 
 	#region Synpreds
@@ -7088,159 +5366,141 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 	#region Follow sets
 	private static class Follow
 	{
-		public static readonly BitSet _MUTABLE_in_value_defn877 = new BitSet(new ulong[]{0x8000000UL});
-		public static readonly BitSet _ID_in_value_defn880 = new BitSet(new ulong[]{0x200000000010000UL});
-		public static readonly BitSet _return_type_in_value_defn882 = new BitSet(new ulong[]{0x10000UL});
-		public static readonly BitSet _EQ_in_value_defn885 = new BitSet(new ulong[]{0x82400138181200UL});
-		public static readonly BitSet _body_expr_in_value_defn887 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _REC_in_function_defn921 = new BitSet(new ulong[]{0x8000000UL});
-		public static readonly BitSet _ID_in_function_defn924 = new BitSet(new ulong[]{0x280000008010000UL});
-		public static readonly BitSet _function_args_in_function_defn926 = new BitSet(new ulong[]{0x200000000010000UL});
-		public static readonly BitSet _return_type_in_function_defn929 = new BitSet(new ulong[]{0x10000UL});
-		public static readonly BitSet _EQ_in_function_defn932 = new BitSet(new ulong[]{0x82400138181200UL});
-		public static readonly BitSet _body_expr_in_function_defn934 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _ID_in_function_args978 = new BitSet(new ulong[]{0x8000002UL});
-		public static readonly BitSet _55_in_function_args985 = new BitSet(new ulong[]{0x100000000000000UL});
-		public static readonly BitSet _56_in_function_args988 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _55_in_function_args995 = new BitSet(new ulong[]{0x8000000UL});
-		public static readonly BitSet _ID_in_function_args998 = new BitSet(new ulong[]{0x200000000000000UL});
-		public static readonly BitSet _57_in_function_args1001 = new BitSet(new ulong[]{0x800040002500UL});
-		public static readonly BitSet _type_in_function_args1004 = new BitSet(new ulong[]{0x100000000000000UL});
-		public static readonly BitSet _56_in_function_args1006 = new BitSet(new ulong[]{0x80000000000002UL});
-		public static readonly BitSet _57_in_return_type1024 = new BitSet(new ulong[]{0x800040002500UL});
-		public static readonly BitSet _type_in_return_type1027 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _expr_in_body_expr1041 = new BitSet(new ulong[]{0x82400138181200UL});
-		public static readonly BitSet _returning_expr_in_body_expr1044 = new BitSet(new ulong[]{0x82400038181202UL});
-		public static readonly BitSet _IF_in_if_expr1071 = new BitSet(new ulong[]{0x82400028081200UL});
-		public static readonly BitSet _logic_expr_in_if_expr1074 = new BitSet(new ulong[]{0x1000000000000UL});
-		public static readonly BitSet _THEN_in_if_expr1076 = new BitSet(new ulong[]{0x82400138181200UL});
-		public static readonly BitSet _expr_in_if_expr1079 = new BitSet(new ulong[]{0x82400138181200UL});
-		public static readonly BitSet _returning_expr_in_if_expr1082 = new BitSet(new ulong[]{0x8240003818D202UL});
-		public static readonly BitSet _elif_expr_in_if_expr1085 = new BitSet(new ulong[]{0xC002UL});
-		public static readonly BitSet _else_expr_in_if_expr1088 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _ELIF_in_elif_expr1101 = new BitSet(new ulong[]{0x82400028081200UL});
-		public static readonly BitSet _logic_expr_in_elif_expr1104 = new BitSet(new ulong[]{0x1000000000000UL});
-		public static readonly BitSet _THEN_in_elif_expr1106 = new BitSet(new ulong[]{0x82400138181200UL});
-		public static readonly BitSet _expr_in_elif_expr1109 = new BitSet(new ulong[]{0x82400138181200UL});
-		public static readonly BitSet _returning_expr_in_elif_expr1112 = new BitSet(new ulong[]{0x82400038181202UL});
-		public static readonly BitSet _ELSE_in_else_expr1126 = new BitSet(new ulong[]{0x82400138181200UL});
-		public static readonly BitSet _expr_in_else_expr1129 = new BitSet(new ulong[]{0x82400138181200UL});
-		public static readonly BitSet _returning_expr_in_else_expr1132 = new BitSet(new ulong[]{0x82400038181202UL});
-		public static readonly BitSet _55_in_alg_group_expr1145 = new BitSet(new ulong[]{0x82400028081200UL});
-		public static readonly BitSet _add_expr_in_alg_group_expr1148 = new BitSet(new ulong[]{0x100000000000000UL});
-		public static readonly BitSet _56_in_alg_group_expr1150 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _ID_in_alg_group_expr1156 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _const_in_alg_group_expr1160 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _func_call_expr_in_alg_group_expr1164 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _alg_group_expr_in_mult_expr1176 = new BitSet(new ulong[]{0x3000000802UL});
-		public static readonly BitSet _set_in_mult_expr1179 = new BitSet(new ulong[]{0x82400028081200UL});
-		public static readonly BitSet _alg_group_expr_in_mult_expr1192 = new BitSet(new ulong[]{0x3000000802UL});
-		public static readonly BitSet _mult_expr_in_add_expr1205 = new BitSet(new ulong[]{0x80800000002UL});
-		public static readonly BitSet _set_in_add_expr1208 = new BitSet(new ulong[]{0x82400028081200UL});
-		public static readonly BitSet _mult_expr_in_add_expr1217 = new BitSet(new ulong[]{0x80800000002UL});
-		public static readonly BitSet _add_expr_in_alg_expr1229 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _eq_neq_expr_in_comp_expr1242 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _comp_expr_arg_in_comp_expr1247 = new BitSet(new ulong[]{0x283000000UL});
-		public static readonly BitSet _comp_operation_in_comp_expr1249 = new BitSet(new ulong[]{0x82400028081200UL});
-		public static readonly BitSet _comp_expr_arg_in_comp_expr1252 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _ID_in_comp_expr_arg1290 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _INT_in_comp_expr_arg1294 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _DOUBLE_in_comp_expr_arg1298 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _alg_expr_in_comp_expr_arg1302 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _func_call_expr_in_comp_expr_arg1306 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _eq_neq_expr_arg_in_eq_neq_expr1318 = new BitSet(new ulong[]{0x8000010000UL});
-		public static readonly BitSet _set_in_eq_neq_expr1320 = new BitSet(new ulong[]{0x82400028081200UL});
-		public static readonly BitSet _eq_neq_expr_arg_in_eq_neq_expr1329 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _ID_in_eq_neq_expr_arg1342 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _STRING_in_eq_neq_expr_arg1346 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _CHAR_in_eq_neq_expr_arg1350 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _INT_in_eq_neq_expr_arg1354 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _DOUBLE_in_eq_neq_expr_arg1358 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _alg_expr_in_eq_neq_expr_arg1362 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _func_call_expr_in_eq_neq_expr_arg1366 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _ID_in_logic_expr_arg1378 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _TRUE_in_logic_expr_arg1382 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _FALSE_in_logic_expr_arg1386 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _comp_expr_in_logic_expr_arg1390 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _55_in_logic_expr_arg1394 = new BitSet(new ulong[]{0x82400028081200UL});
-		public static readonly BitSet _or_expr_in_logic_expr_arg1397 = new BitSet(new ulong[]{0x100000000000000UL});
-		public static readonly BitSet _56_in_logic_expr_arg1399 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _func_call_expr_in_logic_expr_arg1404 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _logic_expr_arg_in_and_expr1414 = new BitSet(new ulong[]{0x12UL});
-		public static readonly BitSet _AND_in_and_expr1417 = new BitSet(new ulong[]{0x82400028081200UL});
-		public static readonly BitSet _logic_expr_arg_in_and_expr1420 = new BitSet(new ulong[]{0x12UL});
-		public static readonly BitSet _and_expr_in_or_expr1433 = new BitSet(new ulong[]{0x20000000002UL});
-		public static readonly BitSet _OR_in_or_expr1436 = new BitSet(new ulong[]{0x82400028081200UL});
-		public static readonly BitSet _and_expr_in_or_expr1439 = new BitSet(new ulong[]{0x20000000002UL});
-		public static readonly BitSet _or_expr_in_logic_expr1454 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _ID_in_func_call_expr1467 = new BitSet(new ulong[]{0x82400038181202UL});
-		public static readonly BitSet _returning_expr_in_func_call_expr1469 = new BitSet(new ulong[]{0x82400038181202UL});
-		public static readonly BitSet _const_in_returning_expr1493 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _ID_in_returning_expr1498 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _55_in_returning_expr1503 = new BitSet(new ulong[]{0x82400038181200UL});
-		public static readonly BitSet _returning_expr_in_returning_expr1506 = new BitSet(new ulong[]{0x100000000000000UL});
-		public static readonly BitSet _56_in_returning_expr1508 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _func_call_expr_in_returning_expr1514 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _FUN_in_returning_expr1519 = new BitSet(new ulong[]{0x80000008000000UL});
-		public static readonly BitSet _function_args_in_returning_expr1521 = new BitSet(new ulong[]{0x800000UL});
-		public static readonly BitSet _FUN_DEF_in_returning_expr1523 = new BitSet(new ulong[]{0x82400138181200UL});
-		public static readonly BitSet _body_expr_in_returning_expr1525 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _logic_expr_in_returning_expr1546 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _if_expr_in_returning_expr1551 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _alg_expr_in_returning_expr1556 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _returning_expr_in_expr1568 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _LET_in_expr1573 = new BitSet(new ulong[]{0x200008000000UL});
-		public static readonly BitSet _function_defn_in_expr1576 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _LET_in_expr1581 = new BitSet(new ulong[]{0x4008000000UL});
-		public static readonly BitSet _value_defn_in_expr1584 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _expr_in_execute1599 = new BitSet(new ulong[]{0x82400138181202UL});
-		public static readonly BitSet _expr_in_synpred19_fsharp_ss1041 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _returning_expr_in_synpred20_fsharp_ss1044 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _expr_in_synpred21_fsharp_ss1079 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _returning_expr_in_synpred22_fsharp_ss1082 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _elif_expr_in_synpred23_fsharp_ss1085 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _else_expr_in_synpred24_fsharp_ss1088 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _expr_in_synpred25_fsharp_ss1109 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _returning_expr_in_synpred26_fsharp_ss1112 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _expr_in_synpred27_fsharp_ss1129 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _returning_expr_in_synpred28_fsharp_ss1132 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _ID_in_synpred30_fsharp_ss1156 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _set_in_synpred34_fsharp_ss1179 = new BitSet(new ulong[]{0x82400028081200UL});
-		public static readonly BitSet _alg_group_expr_in_synpred34_fsharp_ss1192 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _set_in_synpred36_fsharp_ss1208 = new BitSet(new ulong[]{0x82400028081200UL});
-		public static readonly BitSet _mult_expr_in_synpred36_fsharp_ss1217 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _eq_neq_expr_in_synpred37_fsharp_ss1242 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _ID_in_synpred41_fsharp_ss1290 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _INT_in_synpred42_fsharp_ss1294 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _DOUBLE_in_synpred43_fsharp_ss1298 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _alg_expr_in_synpred44_fsharp_ss1302 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _ID_in_synpred46_fsharp_ss1342 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _STRING_in_synpred47_fsharp_ss1346 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _CHAR_in_synpred48_fsharp_ss1350 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _INT_in_synpred49_fsharp_ss1354 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _DOUBLE_in_synpred50_fsharp_ss1358 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _alg_expr_in_synpred51_fsharp_ss1362 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _ID_in_synpred52_fsharp_ss1378 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _TRUE_in_synpred53_fsharp_ss1382 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _FALSE_in_synpred54_fsharp_ss1386 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _comp_expr_in_synpred55_fsharp_ss1390 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _55_in_synpred56_fsharp_ss1394 = new BitSet(new ulong[]{0x82400028081200UL});
-		public static readonly BitSet _or_expr_in_synpred56_fsharp_ss1397 = new BitSet(new ulong[]{0x100000000000000UL});
-		public static readonly BitSet _56_in_synpred56_fsharp_ss1399 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _AND_in_synpred57_fsharp_ss1417 = new BitSet(new ulong[]{0x82400028081200UL});
-		public static readonly BitSet _logic_expr_arg_in_synpred57_fsharp_ss1420 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _OR_in_synpred58_fsharp_ss1436 = new BitSet(new ulong[]{0x82400028081200UL});
-		public static readonly BitSet _and_expr_in_synpred58_fsharp_ss1439 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _returning_expr_in_synpred59_fsharp_ss1469 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _const_in_synpred60_fsharp_ss1493 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _ID_in_synpred61_fsharp_ss1498 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _55_in_synpred62_fsharp_ss1503 = new BitSet(new ulong[]{0x82400038181200UL});
-		public static readonly BitSet _returning_expr_in_synpred62_fsharp_ss1506 = new BitSet(new ulong[]{0x100000000000000UL});
-		public static readonly BitSet _56_in_synpred62_fsharp_ss1508 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _func_call_expr_in_synpred63_fsharp_ss1514 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _logic_expr_in_synpred65_fsharp_ss1546 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _LET_in_synpred68_fsharp_ss1573 = new BitSet(new ulong[]{0x200008000000UL});
-		public static readonly BitSet _function_defn_in_synpred68_fsharp_ss1576 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _MUTABLE_in_value_defn947 = new BitSet(new ulong[]{0x100000000UL});
+		public static readonly BitSet _ID_in_value_defn950 = new BitSet(new ulong[]{0x8000000000100000UL});
+		public static readonly BitSet _return_type_in_value_defn952 = new BitSet(new ulong[]{0x100000UL});
+		public static readonly BitSet _EQ_in_value_defn955 = new BitSet(new ulong[]{0x80UL});
+		public static readonly BitSet _body_expr_in_value_defn957 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _REC_in_function_defn995 = new BitSet(new ulong[]{0x100000000UL});
+		public static readonly BitSet _ID_in_function_defn998 = new BitSet(new ulong[]{0x800100000000UL});
+		public static readonly BitSet _function_args_in_function_defn1000 = new BitSet(new ulong[]{0x8000000000100000UL});
+		public static readonly BitSet _return_type_in_function_defn1002 = new BitSet(new ulong[]{0x100000UL});
+		public static readonly BitSet _EQ_in_function_defn1005 = new BitSet(new ulong[]{0x80UL});
+		public static readonly BitSet _body_expr_in_function_defn1007 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _ID_in_function_args1054 = new BitSet(new ulong[]{0x100000002UL});
+		public static readonly BitSet _OPEN_BR_in_function_args1061 = new BitSet(new ulong[]{0x1000UL});
+		public static readonly BitSet _CLOSE_BR_in_function_args1064 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _OPEN_BR_in_function_args1071 = new BitSet(new ulong[]{0x100000000UL});
+		public static readonly BitSet _ID_in_function_args1074 = new BitSet(new ulong[]{0x8000000000000000UL});
+		public static readonly BitSet _63_in_function_args1077 = new BitSet(new ulong[]{0x40000800008A00UL});
+		public static readonly BitSet _type_in_function_args1080 = new BitSet(new ulong[]{0x1000UL});
+		public static readonly BitSet _CLOSE_BR_in_function_args1082 = new BitSet(new ulong[]{0x800000000002UL});
+		public static readonly BitSet _63_in_return_type1100 = new BitSet(new ulong[]{0x40000800008A00UL});
+		public static readonly BitSet _type_in_return_type1103 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _expr_block_in_body_expr1117 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _IF_in_if_expr1139 = new BitSet(new ulong[]{0x220800501004400UL});
+		public static readonly BitSet _logic_expr_in_if_expr1142 = new BitSet(new ulong[]{0x100000000000000UL});
+		public static readonly BitSet _THEN_in_if_expr1144 = new BitSet(new ulong[]{0x80UL});
+		public static readonly BitSet _expr_block_in_if_expr1147 = new BitSet(new ulong[]{0x30002UL});
+		public static readonly BitSet _elif_expr_in_if_expr1149 = new BitSet(new ulong[]{0x30002UL});
+		public static readonly BitSet _else_expr_in_if_expr1152 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _ELIF_in_elif_expr1165 = new BitSet(new ulong[]{0x220800501004400UL});
+		public static readonly BitSet _logic_expr_in_elif_expr1168 = new BitSet(new ulong[]{0x100000000000000UL});
+		public static readonly BitSet _THEN_in_elif_expr1170 = new BitSet(new ulong[]{0x80UL});
+		public static readonly BitSet _expr_block_in_elif_expr1173 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _ELSE_in_else_expr1186 = new BitSet(new ulong[]{0x80UL});
+		public static readonly BitSet _expr_block_in_else_expr1189 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _OPEN_BR_in_alg_group_expr1201 = new BitSet(new ulong[]{0x220800501004400UL});
+		public static readonly BitSet _add_expr_in_alg_group_expr1204 = new BitSet(new ulong[]{0x1000UL});
+		public static readonly BitSet _CLOSE_BR_in_alg_group_expr1206 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _func_call_expr_in_alg_group_expr1212 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _ID_in_alg_group_expr1216 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _const_in_alg_group_expr1220 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _alg_group_expr_in_mult_expr1232 = new BitSet(new ulong[]{0x60000002002UL});
+		public static readonly BitSet _set_in_mult_expr1235 = new BitSet(new ulong[]{0x220800501004400UL});
+		public static readonly BitSet _alg_group_expr_in_mult_expr1248 = new BitSet(new ulong[]{0x60000002002UL});
+		public static readonly BitSet _mult_expr_in_add_expr1261 = new BitSet(new ulong[]{0x4010000000002UL});
+		public static readonly BitSet _set_in_add_expr1264 = new BitSet(new ulong[]{0x220800501004400UL});
+		public static readonly BitSet _mult_expr_in_add_expr1273 = new BitSet(new ulong[]{0x4010000000002UL});
+		public static readonly BitSet _add_expr_in_alg_expr1285 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _eq_neq_expr_in_comp_expr1298 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _comp_expr_arg_in_comp_expr1303 = new BitSet(new ulong[]{0x5060000000UL});
+		public static readonly BitSet _comp_operation_in_comp_expr1305 = new BitSet(new ulong[]{0x220800501004400UL});
+		public static readonly BitSet _comp_expr_arg_in_comp_expr1308 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _INT_in_comp_expr_arg1346 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _DOUBLE_in_comp_expr_arg1350 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _alg_expr_in_comp_expr_arg1354 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _func_call_expr_in_comp_expr_arg1358 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _ID_in_comp_expr_arg1362 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _eq_neq_expr_arg_in_eq_neq_expr1374 = new BitSet(new ulong[]{0x200000100000UL});
+		public static readonly BitSet _set_in_eq_neq_expr1376 = new BitSet(new ulong[]{0x220800501004400UL});
+		public static readonly BitSet _eq_neq_expr_arg_in_eq_neq_expr1385 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _STRING_in_eq_neq_expr_arg1398 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _CHAR_in_eq_neq_expr_arg1402 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _INT_in_eq_neq_expr_arg1406 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _DOUBLE_in_eq_neq_expr_arg1410 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _alg_expr_in_eq_neq_expr_arg1414 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _func_call_expr_in_eq_neq_expr_arg1418 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _ID_in_eq_neq_expr_arg1422 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _TRUE_in_logic_expr_arg1434 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _FALSE_in_logic_expr_arg1438 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _comp_expr_in_logic_expr_arg1442 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _OPEN_BR_in_logic_expr_arg1446 = new BitSet(new ulong[]{0x220800501004400UL});
+		public static readonly BitSet _or_expr_in_logic_expr_arg1449 = new BitSet(new ulong[]{0x1000UL});
+		public static readonly BitSet _CLOSE_BR_in_logic_expr_arg1451 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _func_call_expr_in_logic_expr_arg1456 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _ID_in_logic_expr_arg1460 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _logic_expr_arg_in_and_expr1470 = new BitSet(new ulong[]{0x12UL});
+		public static readonly BitSet _AND_in_and_expr1473 = new BitSet(new ulong[]{0x220800501004400UL});
+		public static readonly BitSet _logic_expr_arg_in_and_expr1476 = new BitSet(new ulong[]{0x12UL});
+		public static readonly BitSet _and_expr_in_or_expr1489 = new BitSet(new ulong[]{0x1000000000002UL});
+		public static readonly BitSet _OR_in_or_expr1492 = new BitSet(new ulong[]{0x220800501004400UL});
+		public static readonly BitSet _and_expr_in_or_expr1495 = new BitSet(new ulong[]{0x1000000000002UL});
+		public static readonly BitSet _or_expr_in_logic_expr1511 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _ID_in_func_call_expr1524 = new BitSet(new ulong[]{0x800000000000UL});
+		public static readonly BitSet _OPEN_BR_in_func_call_expr1527 = new BitSet(new ulong[]{0x220800703005400UL});
+		public static readonly BitSet _returning_expr_in_func_call_expr1529 = new BitSet(new ulong[]{0x220800703005400UL});
+		public static readonly BitSet _CLOSE_BR_in_func_call_expr1532 = new BitSet(new ulong[]{0x800000000002UL});
+		public static readonly BitSet _BEGIN_in_expr_block1567 = new BitSet(new ulong[]{0x220802703044400UL});
+		public static readonly BitSet _expr_list_in_expr_block1570 = new BitSet(new ulong[]{0x40000UL});
+		public static readonly BitSet _END_in_expr_block1572 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _OPEN_BR_in_returning_expr1585 = new BitSet(new ulong[]{0x220800703004400UL});
+		public static readonly BitSet _returning_expr_in_returning_expr1588 = new BitSet(new ulong[]{0x1000UL});
+		public static readonly BitSet _CLOSE_BR_in_returning_expr1590 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _FUN_in_returning_expr1596 = new BitSet(new ulong[]{0x800100000000UL});
+		public static readonly BitSet _function_args_in_returning_expr1598 = new BitSet(new ulong[]{0x10000000UL});
+		public static readonly BitSet _FUN_DEF_in_returning_expr1600 = new BitSet(new ulong[]{0x80UL});
+		public static readonly BitSet _body_expr_in_returning_expr1602 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _if_expr_in_returning_expr1623 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _alg_expr_in_returning_expr1628 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _logic_expr_in_returning_expr1633 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _const_in_returning_expr1638 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _ID_in_returning_expr1643 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _returning_expr_in_expr1655 = new BitSet(new ulong[]{0x0UL,0x1UL});
+		public static readonly BitSet _64_in_expr1657 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _LET_in_expr1669 = new BitSet(new ulong[]{0x10000100000000UL});
+		public static readonly BitSet _function_defn_in_expr1672 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _LET_in_expr1678 = new BitSet(new ulong[]{0x80100000000UL});
+		public static readonly BitSet _value_defn_in_expr1681 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _expr_in_expr_list1694 = new BitSet(new ulong[]{0x220802703004402UL});
+		public static readonly BitSet _expr_list_in_execute1709 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _func_call_expr_in_synpred21_fsharp_ss1212 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _ID_in_synpred22_fsharp_ss1216 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _eq_neq_expr_in_synpred28_fsharp_ss1298 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _INT_in_synpred32_fsharp_ss1346 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _DOUBLE_in_synpred33_fsharp_ss1350 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _alg_expr_in_synpred34_fsharp_ss1354 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _STRING_in_synpred37_fsharp_ss1398 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _CHAR_in_synpred38_fsharp_ss1402 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _INT_in_synpred39_fsharp_ss1406 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _DOUBLE_in_synpred40_fsharp_ss1410 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _alg_expr_in_synpred41_fsharp_ss1414 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _TRUE_in_synpred43_fsharp_ss1434 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _FALSE_in_synpred44_fsharp_ss1438 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _comp_expr_in_synpred45_fsharp_ss1442 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _OPEN_BR_in_synpred46_fsharp_ss1446 = new BitSet(new ulong[]{0x220800501004400UL});
+		public static readonly BitSet _or_expr_in_synpred46_fsharp_ss1449 = new BitSet(new ulong[]{0x1000UL});
+		public static readonly BitSet _CLOSE_BR_in_synpred46_fsharp_ss1451 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _func_call_expr_in_synpred47_fsharp_ss1456 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _OPEN_BR_in_synpred51_fsharp_ss1527 = new BitSet(new ulong[]{0x220800703005400UL});
+		public static readonly BitSet _returning_expr_in_synpred51_fsharp_ss1529 = new BitSet(new ulong[]{0x220800703005400UL});
+		public static readonly BitSet _CLOSE_BR_in_synpred51_fsharp_ss1532 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _OPEN_BR_in_synpred52_fsharp_ss1585 = new BitSet(new ulong[]{0x220800703004400UL});
+		public static readonly BitSet _returning_expr_in_synpred52_fsharp_ss1588 = new BitSet(new ulong[]{0x1000UL});
+		public static readonly BitSet _CLOSE_BR_in_synpred52_fsharp_ss1590 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _alg_expr_in_synpred55_fsharp_ss1628 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _logic_expr_in_synpred56_fsharp_ss1633 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _const_in_synpred57_fsharp_ss1638 = new BitSet(new ulong[]{0x2UL});
 	}
 	#endregion Follow sets
 }

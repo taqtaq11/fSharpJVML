@@ -1,10 +1,17 @@
 let rec factorial s n =
+    begin
     if n > 0 then
-        factorial (s * n) (n - 1)
+        begin
+        factorial(s * n)(n - 1);
+        end
     else
-        s
+        begin
+        s;
+        end
+    end
 
-[<EntryPoint>]
 let main argv =
-    printf "%d\n" (factorial 1 4)
-    0
+    begin
+    printf ("%d\n") (factorial (1) (4));
+    0;
+    end

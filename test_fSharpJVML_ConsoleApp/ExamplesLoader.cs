@@ -11,7 +11,8 @@ namespace test_fSharpJVML_ConsoleApp
     {
         public static string LoadExample(byte num)
         {
-            return File.ReadAllText($@"../examples\{num}.fs");
+            string src = File.ReadAllText($@"../../../examples\{num}.fs");
+            return src;
         }
     }
 }

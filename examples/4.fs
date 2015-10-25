@@ -1,8 +1,11 @@
 let f x y =
-    x + y
+    begin
+    x + y;
+    end
 
-[<EntryPoint>]
 let main argv =
-    let g = f 5
-    printf "%d" (g 6)
-    0
+    begin
+    let g = begin f (5); end
+    printf ("%d") (g (6));
+    0;
+    end

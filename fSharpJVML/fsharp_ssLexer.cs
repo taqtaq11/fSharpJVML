@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.5.1 D:\\fsharp_compiler\\fsharp_ss.g 2015-10-19 01:09:30
+// $ANTLR 3.5.1 D:\\fsharp_compiler\\fsharp_ss.g 2015-10-25 23:05:25
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -31,60 +31,67 @@ namespace  fsharp_ss
 public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 {
 	public const int EOF=-1;
-	public const int T__55=55;
-	public const int T__56=56;
-	public const int T__57=57;
+	public const int T__63=63;
+	public const int T__64=64;
 	public const int AND=4;
 	public const int ARGS=5;
 	public const int ASSIGN=6;
-	public const int BODY=7;
-	public const int BOOL_KW=8;
-	public const int CHAR=9;
-	public const int CHAR_KW=10;
-	public const int DIV=11;
-	public const int DOUBLE=12;
-	public const int DOUBLE_KW=13;
-	public const int ELIF=14;
-	public const int ELSE=15;
-	public const int EQ=16;
-	public const int ESC_SEQ=17;
-	public const int EXPONENT=18;
-	public const int FALSE=19;
-	public const int FUN=20;
-	public const int FUNCTION_CALL=21;
-	public const int FUNCTION_DEFN=22;
-	public const int FUN_DEF=23;
-	public const int GE=24;
-	public const int GT=25;
-	public const int HEX_DIGIT=26;
-	public const int ID=27;
-	public const int IF=28;
-	public const int INT=29;
-	public const int INT_KW=30;
-	public const int LE=31;
-	public const int LET=32;
-	public const int LT=33;
-	public const int MATCH=34;
-	public const int MINUS=35;
-	public const int MOD=36;
-	public const int MULT=37;
-	public const int MUTABLE=38;
-	public const int NEQ=39;
-	public const int OCTAL_ESC=40;
-	public const int OR=41;
-	public const int PIPE=42;
-	public const int PLUS=43;
-	public const int PRINTF=44;
-	public const int REC=45;
-	public const int STRING=46;
-	public const int STRING_KW=47;
-	public const int THEN=48;
-	public const int TRUE=49;
-	public const int TYPE=50;
-	public const int UNICODE_ESC=51;
-	public const int UNKNOWN=52;
-	public const int VALUE_DEFN=53;
-	public const int WHEN=54;
+	public const int BEGIN=7;
+	public const int BODY=8;
+	public const int BOOL_KW=9;
+	public const int CHAR=10;
+	public const int CHAR_KW=11;
+	public const int CLOSE_BR=12;
+	public const int DIV=13;
+	public const int DOUBLE=14;
+	public const int DOUBLE_KW=15;
+	public const int ELIF=16;
+	public const int ELSE=17;
+	public const int END=18;
+	public const int ENTRY_POINT=19;
+	public const int EQ=20;
+	public const int ESC_SEQ=21;
+	public const int EXPONENT=22;
+	public const int EXPR=23;
+	public const int FALSE=24;
+	public const int FUN=25;
+	public const int FUNCTION_CALL=26;
+	public const int FUNCTION_DEFN=27;
+	public const int FUN_DEF=28;
+	public const int GE=29;
+	public const int GT=30;
+	public const int HEX_DIGIT=31;
+	public const int ID=32;
+	public const int IF=33;
+	public const int INT=34;
+	public const int INT_KW=35;
+	public const int LE=36;
+	public const int LET=37;
+	public const int LT=38;
+	public const int MATCH=39;
+	public const int MINUS=40;
+	public const int MOD=41;
+	public const int MULT=42;
+	public const int MUTABLE=43;
+	public const int NAME=44;
+	public const int NEQ=45;
+	public const int OCTAL_ESC=46;
+	public const int OPEN_BR=47;
+	public const int OR=48;
+	public const int PIPE=49;
+	public const int PLUS=50;
+	public const int PROGRAM=51;
+	public const int REC=52;
+	public const int STRING=53;
+	public const int STRING_KW=54;
+	public const int TAB=55;
+	public const int THEN=56;
+	public const int TRUE=57;
+	public const int TYPE=58;
+	public const int UNICODE_ESC=59;
+	public const int UNKNOWN=60;
+	public const int VALUE_DEFN=61;
+	public const int WHEN=62;
 	const int HIDDEN = Hidden;
 
 	// delegates
@@ -221,6 +228,42 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	}
 	// $ANTLR end "ASSIGN"
 
+	partial void EnterRule_BEGIN();
+	partial void LeaveRule_BEGIN();
+
+	// $ANTLR start "BEGIN"
+	[GrammarRule("BEGIN")]
+	private void mBEGIN()
+	{
+		EnterRule_BEGIN();
+		EnterRule("BEGIN", 4);
+		TraceIn("BEGIN", 4);
+		try
+		{
+			int _type = BEGIN;
+			int _channel = DefaultTokenChannel;
+			// D:\\fsharp_compiler\\fsharp_ss.g:13:7: ( 'begin' )
+			DebugEnterAlt(1);
+			// D:\\fsharp_compiler\\fsharp_ss.g:13:9: 'begin'
+			{
+			DebugLocation(13, 9);
+			Match("begin"); 
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("BEGIN", 4);
+			LeaveRule("BEGIN", 4);
+			LeaveRule_BEGIN();
+		}
+	}
+	// $ANTLR end "BEGIN"
+
 	partial void EnterRule_BODY();
 	partial void LeaveRule_BODY();
 
@@ -229,17 +272,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mBODY()
 	{
 		EnterRule_BODY();
-		EnterRule("BODY", 4);
-		TraceIn("BODY", 4);
+		EnterRule("BODY", 5);
+		TraceIn("BODY", 5);
 		try
 		{
 			int _type = BODY;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:13:6: ( 'BODY' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:14:6: ( 'BODY' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:13:8: 'BODY'
+			// D:\\fsharp_compiler\\fsharp_ss.g:14:8: 'BODY'
 			{
-			DebugLocation(13, 8);
+			DebugLocation(14, 8);
 			Match("BODY"); 
 
 
@@ -250,8 +293,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("BODY", 4);
-			LeaveRule("BODY", 4);
+			TraceOut("BODY", 5);
+			LeaveRule("BODY", 5);
 			LeaveRule_BODY();
 		}
 	}
@@ -265,17 +308,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mBOOL_KW()
 	{
 		EnterRule_BOOL_KW();
-		EnterRule("BOOL_KW", 5);
-		TraceIn("BOOL_KW", 5);
+		EnterRule("BOOL_KW", 6);
+		TraceIn("BOOL_KW", 6);
 		try
 		{
 			int _type = BOOL_KW;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:14:9: ( 'bool' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:15:9: ( 'bool' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:14:11: 'bool'
+			// D:\\fsharp_compiler\\fsharp_ss.g:15:11: 'bool'
 			{
-			DebugLocation(14, 11);
+			DebugLocation(15, 11);
 			Match("bool"); 
 
 
@@ -286,8 +329,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("BOOL_KW", 5);
-			LeaveRule("BOOL_KW", 5);
+			TraceOut("BOOL_KW", 6);
+			LeaveRule("BOOL_KW", 6);
 			LeaveRule_BOOL_KW();
 		}
 	}
@@ -301,17 +344,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mCHAR_KW()
 	{
 		EnterRule_CHAR_KW();
-		EnterRule("CHAR_KW", 6);
-		TraceIn("CHAR_KW", 6);
+		EnterRule("CHAR_KW", 7);
+		TraceIn("CHAR_KW", 7);
 		try
 		{
 			int _type = CHAR_KW;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:15:9: ( 'char' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:16:9: ( 'char' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:15:11: 'char'
+			// D:\\fsharp_compiler\\fsharp_ss.g:16:11: 'char'
 			{
-			DebugLocation(15, 11);
+			DebugLocation(16, 11);
 			Match("char"); 
 
 
@@ -322,12 +365,47 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("CHAR_KW", 6);
-			LeaveRule("CHAR_KW", 6);
+			TraceOut("CHAR_KW", 7);
+			LeaveRule("CHAR_KW", 7);
 			LeaveRule_CHAR_KW();
 		}
 	}
 	// $ANTLR end "CHAR_KW"
+
+	partial void EnterRule_CLOSE_BR();
+	partial void LeaveRule_CLOSE_BR();
+
+	// $ANTLR start "CLOSE_BR"
+	[GrammarRule("CLOSE_BR")]
+	private void mCLOSE_BR()
+	{
+		EnterRule_CLOSE_BR();
+		EnterRule("CLOSE_BR", 8);
+		TraceIn("CLOSE_BR", 8);
+		try
+		{
+			int _type = CLOSE_BR;
+			int _channel = DefaultTokenChannel;
+			// D:\\fsharp_compiler\\fsharp_ss.g:17:10: ( ')' )
+			DebugEnterAlt(1);
+			// D:\\fsharp_compiler\\fsharp_ss.g:17:12: ')'
+			{
+			DebugLocation(17, 12);
+			Match(')'); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("CLOSE_BR", 8);
+			LeaveRule("CLOSE_BR", 8);
+			LeaveRule_CLOSE_BR();
+		}
+	}
+	// $ANTLR end "CLOSE_BR"
 
 	partial void EnterRule_DIV();
 	partial void LeaveRule_DIV();
@@ -337,17 +415,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mDIV()
 	{
 		EnterRule_DIV();
-		EnterRule("DIV", 7);
-		TraceIn("DIV", 7);
+		EnterRule("DIV", 9);
+		TraceIn("DIV", 9);
 		try
 		{
 			int _type = DIV;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:16:5: ( '/' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:18:5: ( '/' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:16:7: '/'
+			// D:\\fsharp_compiler\\fsharp_ss.g:18:7: '/'
 			{
-			DebugLocation(16, 7);
+			DebugLocation(18, 7);
 			Match('/'); 
 
 			}
@@ -357,8 +435,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("DIV", 7);
-			LeaveRule("DIV", 7);
+			TraceOut("DIV", 9);
+			LeaveRule("DIV", 9);
 			LeaveRule_DIV();
 		}
 	}
@@ -372,17 +450,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mDOUBLE_KW()
 	{
 		EnterRule_DOUBLE_KW();
-		EnterRule("DOUBLE_KW", 8);
-		TraceIn("DOUBLE_KW", 8);
+		EnterRule("DOUBLE_KW", 10);
+		TraceIn("DOUBLE_KW", 10);
 		try
 		{
 			int _type = DOUBLE_KW;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:17:11: ( 'double' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:19:11: ( 'double' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:17:13: 'double'
+			// D:\\fsharp_compiler\\fsharp_ss.g:19:13: 'double'
 			{
-			DebugLocation(17, 13);
+			DebugLocation(19, 13);
 			Match("double"); 
 
 
@@ -393,8 +471,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("DOUBLE_KW", 8);
-			LeaveRule("DOUBLE_KW", 8);
+			TraceOut("DOUBLE_KW", 10);
+			LeaveRule("DOUBLE_KW", 10);
 			LeaveRule_DOUBLE_KW();
 		}
 	}
@@ -408,17 +486,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mELIF()
 	{
 		EnterRule_ELIF();
-		EnterRule("ELIF", 9);
-		TraceIn("ELIF", 9);
+		EnterRule("ELIF", 11);
+		TraceIn("ELIF", 11);
 		try
 		{
 			int _type = ELIF;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:18:6: ( 'elif' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:20:6: ( 'elif' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:18:8: 'elif'
+			// D:\\fsharp_compiler\\fsharp_ss.g:20:8: 'elif'
 			{
-			DebugLocation(18, 8);
+			DebugLocation(20, 8);
 			Match("elif"); 
 
 
@@ -429,8 +507,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("ELIF", 9);
-			LeaveRule("ELIF", 9);
+			TraceOut("ELIF", 11);
+			LeaveRule("ELIF", 11);
 			LeaveRule_ELIF();
 		}
 	}
@@ -444,17 +522,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mELSE()
 	{
 		EnterRule_ELSE();
-		EnterRule("ELSE", 10);
-		TraceIn("ELSE", 10);
+		EnterRule("ELSE", 12);
+		TraceIn("ELSE", 12);
 		try
 		{
 			int _type = ELSE;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:19:6: ( 'else' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:21:6: ( 'else' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:19:8: 'else'
+			// D:\\fsharp_compiler\\fsharp_ss.g:21:8: 'else'
 			{
-			DebugLocation(19, 8);
+			DebugLocation(21, 8);
 			Match("else"); 
 
 
@@ -465,12 +543,84 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("ELSE", 10);
-			LeaveRule("ELSE", 10);
+			TraceOut("ELSE", 12);
+			LeaveRule("ELSE", 12);
 			LeaveRule_ELSE();
 		}
 	}
 	// $ANTLR end "ELSE"
+
+	partial void EnterRule_END();
+	partial void LeaveRule_END();
+
+	// $ANTLR start "END"
+	[GrammarRule("END")]
+	private void mEND()
+	{
+		EnterRule_END();
+		EnterRule("END", 13);
+		TraceIn("END", 13);
+		try
+		{
+			int _type = END;
+			int _channel = DefaultTokenChannel;
+			// D:\\fsharp_compiler\\fsharp_ss.g:22:5: ( 'end' )
+			DebugEnterAlt(1);
+			// D:\\fsharp_compiler\\fsharp_ss.g:22:7: 'end'
+			{
+			DebugLocation(22, 7);
+			Match("end"); 
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("END", 13);
+			LeaveRule("END", 13);
+			LeaveRule_END();
+		}
+	}
+	// $ANTLR end "END"
+
+	partial void EnterRule_ENTRY_POINT();
+	partial void LeaveRule_ENTRY_POINT();
+
+	// $ANTLR start "ENTRY_POINT"
+	[GrammarRule("ENTRY_POINT")]
+	private void mENTRY_POINT()
+	{
+		EnterRule_ENTRY_POINT();
+		EnterRule("ENTRY_POINT", 14);
+		TraceIn("ENTRY_POINT", 14);
+		try
+		{
+			int _type = ENTRY_POINT;
+			int _channel = DefaultTokenChannel;
+			// D:\\fsharp_compiler\\fsharp_ss.g:23:13: ( '[<EntryPoint>]' )
+			DebugEnterAlt(1);
+			// D:\\fsharp_compiler\\fsharp_ss.g:23:15: '[<EntryPoint>]'
+			{
+			DebugLocation(23, 15);
+			Match("[<EntryPoint>]"); 
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("ENTRY_POINT", 14);
+			LeaveRule("ENTRY_POINT", 14);
+			LeaveRule_ENTRY_POINT();
+		}
+	}
+	// $ANTLR end "ENTRY_POINT"
 
 	partial void EnterRule_EQ();
 	partial void LeaveRule_EQ();
@@ -480,17 +630,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mEQ()
 	{
 		EnterRule_EQ();
-		EnterRule("EQ", 11);
-		TraceIn("EQ", 11);
+		EnterRule("EQ", 15);
+		TraceIn("EQ", 15);
 		try
 		{
 			int _type = EQ;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:20:4: ( '=' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:24:4: ( '=' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:20:6: '='
+			// D:\\fsharp_compiler\\fsharp_ss.g:24:6: '='
 			{
-			DebugLocation(20, 6);
+			DebugLocation(24, 6);
 			Match('='); 
 
 			}
@@ -500,12 +650,48 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("EQ", 11);
-			LeaveRule("EQ", 11);
+			TraceOut("EQ", 15);
+			LeaveRule("EQ", 15);
 			LeaveRule_EQ();
 		}
 	}
 	// $ANTLR end "EQ"
+
+	partial void EnterRule_EXPR();
+	partial void LeaveRule_EXPR();
+
+	// $ANTLR start "EXPR"
+	[GrammarRule("EXPR")]
+	private void mEXPR()
+	{
+		EnterRule_EXPR();
+		EnterRule("EXPR", 16);
+		TraceIn("EXPR", 16);
+		try
+		{
+			int _type = EXPR;
+			int _channel = DefaultTokenChannel;
+			// D:\\fsharp_compiler\\fsharp_ss.g:25:6: ( 'EXPR' )
+			DebugEnterAlt(1);
+			// D:\\fsharp_compiler\\fsharp_ss.g:25:8: 'EXPR'
+			{
+			DebugLocation(25, 8);
+			Match("EXPR"); 
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("EXPR", 16);
+			LeaveRule("EXPR", 16);
+			LeaveRule_EXPR();
+		}
+	}
+	// $ANTLR end "EXPR"
 
 	partial void EnterRule_FALSE();
 	partial void LeaveRule_FALSE();
@@ -515,17 +701,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mFALSE()
 	{
 		EnterRule_FALSE();
-		EnterRule("FALSE", 12);
-		TraceIn("FALSE", 12);
+		EnterRule("FALSE", 17);
+		TraceIn("FALSE", 17);
 		try
 		{
 			int _type = FALSE;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:21:7: ( 'false' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:26:7: ( 'false' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:21:9: 'false'
+			// D:\\fsharp_compiler\\fsharp_ss.g:26:9: 'false'
 			{
-			DebugLocation(21, 9);
+			DebugLocation(26, 9);
 			Match("false"); 
 
 
@@ -536,8 +722,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("FALSE", 12);
-			LeaveRule("FALSE", 12);
+			TraceOut("FALSE", 17);
+			LeaveRule("FALSE", 17);
 			LeaveRule_FALSE();
 		}
 	}
@@ -551,17 +737,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mFUN()
 	{
 		EnterRule_FUN();
-		EnterRule("FUN", 13);
-		TraceIn("FUN", 13);
+		EnterRule("FUN", 18);
+		TraceIn("FUN", 18);
 		try
 		{
 			int _type = FUN;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:22:5: ( 'fun' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:27:5: ( 'fun' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:22:7: 'fun'
+			// D:\\fsharp_compiler\\fsharp_ss.g:27:7: 'fun'
 			{
-			DebugLocation(22, 7);
+			DebugLocation(27, 7);
 			Match("fun"); 
 
 
@@ -572,8 +758,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("FUN", 13);
-			LeaveRule("FUN", 13);
+			TraceOut("FUN", 18);
+			LeaveRule("FUN", 18);
 			LeaveRule_FUN();
 		}
 	}
@@ -587,17 +773,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mFUNCTION_CALL()
 	{
 		EnterRule_FUNCTION_CALL();
-		EnterRule("FUNCTION_CALL", 14);
-		TraceIn("FUNCTION_CALL", 14);
+		EnterRule("FUNCTION_CALL", 19);
+		TraceIn("FUNCTION_CALL", 19);
 		try
 		{
 			int _type = FUNCTION_CALL;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:23:15: ( 'FUNCTION_CALL' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:28:15: ( 'FUNCTION_CALL' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:23:17: 'FUNCTION_CALL'
+			// D:\\fsharp_compiler\\fsharp_ss.g:28:17: 'FUNCTION_CALL'
 			{
-			DebugLocation(23, 17);
+			DebugLocation(28, 17);
 			Match("FUNCTION_CALL"); 
 
 
@@ -608,8 +794,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("FUNCTION_CALL", 14);
-			LeaveRule("FUNCTION_CALL", 14);
+			TraceOut("FUNCTION_CALL", 19);
+			LeaveRule("FUNCTION_CALL", 19);
 			LeaveRule_FUNCTION_CALL();
 		}
 	}
@@ -623,17 +809,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mFUNCTION_DEFN()
 	{
 		EnterRule_FUNCTION_DEFN();
-		EnterRule("FUNCTION_DEFN", 15);
-		TraceIn("FUNCTION_DEFN", 15);
+		EnterRule("FUNCTION_DEFN", 20);
+		TraceIn("FUNCTION_DEFN", 20);
 		try
 		{
 			int _type = FUNCTION_DEFN;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:24:15: ( 'FUNCTION_DEFN' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:29:15: ( 'FUNCTION_DEFN' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:24:17: 'FUNCTION_DEFN'
+			// D:\\fsharp_compiler\\fsharp_ss.g:29:17: 'FUNCTION_DEFN'
 			{
-			DebugLocation(24, 17);
+			DebugLocation(29, 17);
 			Match("FUNCTION_DEFN"); 
 
 
@@ -644,8 +830,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("FUNCTION_DEFN", 15);
-			LeaveRule("FUNCTION_DEFN", 15);
+			TraceOut("FUNCTION_DEFN", 20);
+			LeaveRule("FUNCTION_DEFN", 20);
 			LeaveRule_FUNCTION_DEFN();
 		}
 	}
@@ -659,17 +845,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mFUN_DEF()
 	{
 		EnterRule_FUN_DEF();
-		EnterRule("FUN_DEF", 16);
-		TraceIn("FUN_DEF", 16);
+		EnterRule("FUN_DEF", 21);
+		TraceIn("FUN_DEF", 21);
 		try
 		{
 			int _type = FUN_DEF;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:25:9: ( '->' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:30:9: ( '->' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:25:11: '->'
+			// D:\\fsharp_compiler\\fsharp_ss.g:30:11: '->'
 			{
-			DebugLocation(25, 11);
+			DebugLocation(30, 11);
 			Match("->"); 
 
 
@@ -680,8 +866,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("FUN_DEF", 16);
-			LeaveRule("FUN_DEF", 16);
+			TraceOut("FUN_DEF", 21);
+			LeaveRule("FUN_DEF", 21);
 			LeaveRule_FUN_DEF();
 		}
 	}
@@ -695,17 +881,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mGE()
 	{
 		EnterRule_GE();
-		EnterRule("GE", 17);
-		TraceIn("GE", 17);
+		EnterRule("GE", 22);
+		TraceIn("GE", 22);
 		try
 		{
 			int _type = GE;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:26:4: ( '>=' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:31:4: ( '>=' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:26:6: '>='
+			// D:\\fsharp_compiler\\fsharp_ss.g:31:6: '>='
 			{
-			DebugLocation(26, 6);
+			DebugLocation(31, 6);
 			Match(">="); 
 
 
@@ -716,8 +902,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("GE", 17);
-			LeaveRule("GE", 17);
+			TraceOut("GE", 22);
+			LeaveRule("GE", 22);
 			LeaveRule_GE();
 		}
 	}
@@ -731,17 +917,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mGT()
 	{
 		EnterRule_GT();
-		EnterRule("GT", 18);
-		TraceIn("GT", 18);
+		EnterRule("GT", 23);
+		TraceIn("GT", 23);
 		try
 		{
 			int _type = GT;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:27:4: ( '>' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:32:4: ( '>' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:27:6: '>'
+			// D:\\fsharp_compiler\\fsharp_ss.g:32:6: '>'
 			{
-			DebugLocation(27, 6);
+			DebugLocation(32, 6);
 			Match('>'); 
 
 			}
@@ -751,8 +937,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("GT", 18);
-			LeaveRule("GT", 18);
+			TraceOut("GT", 23);
+			LeaveRule("GT", 23);
 			LeaveRule_GT();
 		}
 	}
@@ -766,17 +952,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mIF()
 	{
 		EnterRule_IF();
-		EnterRule("IF", 19);
-		TraceIn("IF", 19);
+		EnterRule("IF", 24);
+		TraceIn("IF", 24);
 		try
 		{
 			int _type = IF;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:28:4: ( 'if' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:33:4: ( 'if' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:28:6: 'if'
+			// D:\\fsharp_compiler\\fsharp_ss.g:33:6: 'if'
 			{
-			DebugLocation(28, 6);
+			DebugLocation(33, 6);
 			Match("if"); 
 
 
@@ -787,8 +973,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("IF", 19);
-			LeaveRule("IF", 19);
+			TraceOut("IF", 24);
+			LeaveRule("IF", 24);
 			LeaveRule_IF();
 		}
 	}
@@ -802,17 +988,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mINT_KW()
 	{
 		EnterRule_INT_KW();
-		EnterRule("INT_KW", 20);
-		TraceIn("INT_KW", 20);
+		EnterRule("INT_KW", 25);
+		TraceIn("INT_KW", 25);
 		try
 		{
 			int _type = INT_KW;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:29:8: ( 'int' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:34:8: ( 'int' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:29:10: 'int'
+			// D:\\fsharp_compiler\\fsharp_ss.g:34:10: 'int'
 			{
-			DebugLocation(29, 10);
+			DebugLocation(34, 10);
 			Match("int"); 
 
 
@@ -823,8 +1009,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("INT_KW", 20);
-			LeaveRule("INT_KW", 20);
+			TraceOut("INT_KW", 25);
+			LeaveRule("INT_KW", 25);
 			LeaveRule_INT_KW();
 		}
 	}
@@ -838,17 +1024,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mLE()
 	{
 		EnterRule_LE();
-		EnterRule("LE", 21);
-		TraceIn("LE", 21);
+		EnterRule("LE", 26);
+		TraceIn("LE", 26);
 		try
 		{
 			int _type = LE;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:30:4: ( '<=' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:35:4: ( '<=' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:30:6: '<='
+			// D:\\fsharp_compiler\\fsharp_ss.g:35:6: '<='
 			{
-			DebugLocation(30, 6);
+			DebugLocation(35, 6);
 			Match("<="); 
 
 
@@ -859,8 +1045,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("LE", 21);
-			LeaveRule("LE", 21);
+			TraceOut("LE", 26);
+			LeaveRule("LE", 26);
 			LeaveRule_LE();
 		}
 	}
@@ -874,17 +1060,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mLET()
 	{
 		EnterRule_LET();
-		EnterRule("LET", 22);
-		TraceIn("LET", 22);
+		EnterRule("LET", 27);
+		TraceIn("LET", 27);
 		try
 		{
 			int _type = LET;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:31:5: ( 'let' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:36:5: ( 'let' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:31:7: 'let'
+			// D:\\fsharp_compiler\\fsharp_ss.g:36:7: 'let'
 			{
-			DebugLocation(31, 7);
+			DebugLocation(36, 7);
 			Match("let"); 
 
 
@@ -895,8 +1081,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("LET", 22);
-			LeaveRule("LET", 22);
+			TraceOut("LET", 27);
+			LeaveRule("LET", 27);
 			LeaveRule_LET();
 		}
 	}
@@ -910,17 +1096,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mLT()
 	{
 		EnterRule_LT();
-		EnterRule("LT", 23);
-		TraceIn("LT", 23);
+		EnterRule("LT", 28);
+		TraceIn("LT", 28);
 		try
 		{
 			int _type = LT;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:32:4: ( '<' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:37:4: ( '<' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:32:6: '<'
+			// D:\\fsharp_compiler\\fsharp_ss.g:37:6: '<'
 			{
-			DebugLocation(32, 6);
+			DebugLocation(37, 6);
 			Match('<'); 
 
 			}
@@ -930,8 +1116,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("LT", 23);
-			LeaveRule("LT", 23);
+			TraceOut("LT", 28);
+			LeaveRule("LT", 28);
 			LeaveRule_LT();
 		}
 	}
@@ -945,17 +1131,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mMATCH()
 	{
 		EnterRule_MATCH();
-		EnterRule("MATCH", 24);
-		TraceIn("MATCH", 24);
+		EnterRule("MATCH", 29);
+		TraceIn("MATCH", 29);
 		try
 		{
 			int _type = MATCH;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:33:7: ( 'match' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:38:7: ( 'match' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:33:9: 'match'
+			// D:\\fsharp_compiler\\fsharp_ss.g:38:9: 'match'
 			{
-			DebugLocation(33, 9);
+			DebugLocation(38, 9);
 			Match("match"); 
 
 
@@ -966,8 +1152,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("MATCH", 24);
-			LeaveRule("MATCH", 24);
+			TraceOut("MATCH", 29);
+			LeaveRule("MATCH", 29);
 			LeaveRule_MATCH();
 		}
 	}
@@ -981,17 +1167,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mMINUS()
 	{
 		EnterRule_MINUS();
-		EnterRule("MINUS", 25);
-		TraceIn("MINUS", 25);
+		EnterRule("MINUS", 30);
+		TraceIn("MINUS", 30);
 		try
 		{
 			int _type = MINUS;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:34:7: ( '-' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:39:7: ( '-' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:34:9: '-'
+			// D:\\fsharp_compiler\\fsharp_ss.g:39:9: '-'
 			{
-			DebugLocation(34, 9);
+			DebugLocation(39, 9);
 			Match('-'); 
 
 			}
@@ -1001,8 +1187,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("MINUS", 25);
-			LeaveRule("MINUS", 25);
+			TraceOut("MINUS", 30);
+			LeaveRule("MINUS", 30);
 			LeaveRule_MINUS();
 		}
 	}
@@ -1016,17 +1202,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mMOD()
 	{
 		EnterRule_MOD();
-		EnterRule("MOD", 26);
-		TraceIn("MOD", 26);
+		EnterRule("MOD", 31);
+		TraceIn("MOD", 31);
 		try
 		{
 			int _type = MOD;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:35:5: ( '%' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:40:5: ( '%' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:35:7: '%'
+			// D:\\fsharp_compiler\\fsharp_ss.g:40:7: '%'
 			{
-			DebugLocation(35, 7);
+			DebugLocation(40, 7);
 			Match('%'); 
 
 			}
@@ -1036,8 +1222,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("MOD", 26);
-			LeaveRule("MOD", 26);
+			TraceOut("MOD", 31);
+			LeaveRule("MOD", 31);
 			LeaveRule_MOD();
 		}
 	}
@@ -1051,17 +1237,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mMULT()
 	{
 		EnterRule_MULT();
-		EnterRule("MULT", 27);
-		TraceIn("MULT", 27);
+		EnterRule("MULT", 32);
+		TraceIn("MULT", 32);
 		try
 		{
 			int _type = MULT;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:36:6: ( '*' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:41:6: ( '*' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:36:8: '*'
+			// D:\\fsharp_compiler\\fsharp_ss.g:41:8: '*'
 			{
-			DebugLocation(36, 8);
+			DebugLocation(41, 8);
 			Match('*'); 
 
 			}
@@ -1071,8 +1257,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("MULT", 27);
-			LeaveRule("MULT", 27);
+			TraceOut("MULT", 32);
+			LeaveRule("MULT", 32);
 			LeaveRule_MULT();
 		}
 	}
@@ -1086,17 +1272,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mMUTABLE()
 	{
 		EnterRule_MUTABLE();
-		EnterRule("MUTABLE", 28);
-		TraceIn("MUTABLE", 28);
+		EnterRule("MUTABLE", 33);
+		TraceIn("MUTABLE", 33);
 		try
 		{
 			int _type = MUTABLE;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:37:9: ( 'mutable' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:42:9: ( 'mutable' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:37:11: 'mutable'
+			// D:\\fsharp_compiler\\fsharp_ss.g:42:11: 'mutable'
 			{
-			DebugLocation(37, 11);
+			DebugLocation(42, 11);
 			Match("mutable"); 
 
 
@@ -1107,12 +1293,48 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("MUTABLE", 28);
-			LeaveRule("MUTABLE", 28);
+			TraceOut("MUTABLE", 33);
+			LeaveRule("MUTABLE", 33);
 			LeaveRule_MUTABLE();
 		}
 	}
 	// $ANTLR end "MUTABLE"
+
+	partial void EnterRule_NAME();
+	partial void LeaveRule_NAME();
+
+	// $ANTLR start "NAME"
+	[GrammarRule("NAME")]
+	private void mNAME()
+	{
+		EnterRule_NAME();
+		EnterRule("NAME", 34);
+		TraceIn("NAME", 34);
+		try
+		{
+			int _type = NAME;
+			int _channel = DefaultTokenChannel;
+			// D:\\fsharp_compiler\\fsharp_ss.g:43:6: ( 'NAME' )
+			DebugEnterAlt(1);
+			// D:\\fsharp_compiler\\fsharp_ss.g:43:8: 'NAME'
+			{
+			DebugLocation(43, 8);
+			Match("NAME"); 
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("NAME", 34);
+			LeaveRule("NAME", 34);
+			LeaveRule_NAME();
+		}
+	}
+	// $ANTLR end "NAME"
 
 	partial void EnterRule_NEQ();
 	partial void LeaveRule_NEQ();
@@ -1122,17 +1344,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mNEQ()
 	{
 		EnterRule_NEQ();
-		EnterRule("NEQ", 29);
-		TraceIn("NEQ", 29);
+		EnterRule("NEQ", 35);
+		TraceIn("NEQ", 35);
 		try
 		{
 			int _type = NEQ;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:38:5: ( '!=' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:44:5: ( '!=' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:38:7: '!='
+			// D:\\fsharp_compiler\\fsharp_ss.g:44:7: '!='
 			{
-			DebugLocation(38, 7);
+			DebugLocation(44, 7);
 			Match("!="); 
 
 
@@ -1143,12 +1365,47 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("NEQ", 29);
-			LeaveRule("NEQ", 29);
+			TraceOut("NEQ", 35);
+			LeaveRule("NEQ", 35);
 			LeaveRule_NEQ();
 		}
 	}
 	// $ANTLR end "NEQ"
+
+	partial void EnterRule_OPEN_BR();
+	partial void LeaveRule_OPEN_BR();
+
+	// $ANTLR start "OPEN_BR"
+	[GrammarRule("OPEN_BR")]
+	private void mOPEN_BR()
+	{
+		EnterRule_OPEN_BR();
+		EnterRule("OPEN_BR", 36);
+		TraceIn("OPEN_BR", 36);
+		try
+		{
+			int _type = OPEN_BR;
+			int _channel = DefaultTokenChannel;
+			// D:\\fsharp_compiler\\fsharp_ss.g:45:9: ( '(' )
+			DebugEnterAlt(1);
+			// D:\\fsharp_compiler\\fsharp_ss.g:45:11: '('
+			{
+			DebugLocation(45, 11);
+			Match('('); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("OPEN_BR", 36);
+			LeaveRule("OPEN_BR", 36);
+			LeaveRule_OPEN_BR();
+		}
+	}
+	// $ANTLR end "OPEN_BR"
 
 	partial void EnterRule_OR();
 	partial void LeaveRule_OR();
@@ -1158,17 +1415,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mOR()
 	{
 		EnterRule_OR();
-		EnterRule("OR", 30);
-		TraceIn("OR", 30);
+		EnterRule("OR", 37);
+		TraceIn("OR", 37);
 		try
 		{
 			int _type = OR;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:39:4: ( '||' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:46:4: ( '||' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:39:6: '||'
+			// D:\\fsharp_compiler\\fsharp_ss.g:46:6: '||'
 			{
-			DebugLocation(39, 6);
+			DebugLocation(46, 6);
 			Match("||"); 
 
 
@@ -1179,8 +1436,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("OR", 30);
-			LeaveRule("OR", 30);
+			TraceOut("OR", 37);
+			LeaveRule("OR", 37);
 			LeaveRule_OR();
 		}
 	}
@@ -1194,17 +1451,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mPIPE()
 	{
 		EnterRule_PIPE();
-		EnterRule("PIPE", 31);
-		TraceIn("PIPE", 31);
+		EnterRule("PIPE", 38);
+		TraceIn("PIPE", 38);
 		try
 		{
 			int _type = PIPE;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:40:6: ( '|>' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:47:6: ( '|>' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:40:8: '|>'
+			// D:\\fsharp_compiler\\fsharp_ss.g:47:8: '|>'
 			{
-			DebugLocation(40, 8);
+			DebugLocation(47, 8);
 			Match("|>"); 
 
 
@@ -1215,8 +1472,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("PIPE", 31);
-			LeaveRule("PIPE", 31);
+			TraceOut("PIPE", 38);
+			LeaveRule("PIPE", 38);
 			LeaveRule_PIPE();
 		}
 	}
@@ -1230,17 +1487,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mPLUS()
 	{
 		EnterRule_PLUS();
-		EnterRule("PLUS", 32);
-		TraceIn("PLUS", 32);
+		EnterRule("PLUS", 39);
+		TraceIn("PLUS", 39);
 		try
 		{
 			int _type = PLUS;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:41:6: ( '+' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:48:6: ( '+' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:41:8: '+'
+			// D:\\fsharp_compiler\\fsharp_ss.g:48:8: '+'
 			{
-			DebugLocation(41, 8);
+			DebugLocation(48, 8);
 			Match('+'); 
 
 			}
@@ -1250,33 +1507,33 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("PLUS", 32);
-			LeaveRule("PLUS", 32);
+			TraceOut("PLUS", 39);
+			LeaveRule("PLUS", 39);
 			LeaveRule_PLUS();
 		}
 	}
 	// $ANTLR end "PLUS"
 
-	partial void EnterRule_PRINTF();
-	partial void LeaveRule_PRINTF();
+	partial void EnterRule_PROGRAM();
+	partial void LeaveRule_PROGRAM();
 
-	// $ANTLR start "PRINTF"
-	[GrammarRule("PRINTF")]
-	private void mPRINTF()
+	// $ANTLR start "PROGRAM"
+	[GrammarRule("PROGRAM")]
+	private void mPROGRAM()
 	{
-		EnterRule_PRINTF();
-		EnterRule("PRINTF", 33);
-		TraceIn("PRINTF", 33);
+		EnterRule_PROGRAM();
+		EnterRule("PROGRAM", 40);
+		TraceIn("PROGRAM", 40);
 		try
 		{
-			int _type = PRINTF;
+			int _type = PROGRAM;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:42:8: ( 'printf' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:49:9: ( 'PROGRAM' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:42:10: 'printf'
+			// D:\\fsharp_compiler\\fsharp_ss.g:49:11: 'PROGRAM'
 			{
-			DebugLocation(42, 10);
-			Match("printf"); 
+			DebugLocation(49, 11);
+			Match("PROGRAM"); 
 
 
 			}
@@ -1286,12 +1543,12 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("PRINTF", 33);
-			LeaveRule("PRINTF", 33);
-			LeaveRule_PRINTF();
+			TraceOut("PROGRAM", 40);
+			LeaveRule("PROGRAM", 40);
+			LeaveRule_PROGRAM();
 		}
 	}
-	// $ANTLR end "PRINTF"
+	// $ANTLR end "PROGRAM"
 
 	partial void EnterRule_REC();
 	partial void LeaveRule_REC();
@@ -1301,17 +1558,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mREC()
 	{
 		EnterRule_REC();
-		EnterRule("REC", 34);
-		TraceIn("REC", 34);
+		EnterRule("REC", 41);
+		TraceIn("REC", 41);
 		try
 		{
 			int _type = REC;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:43:5: ( 'rec' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:50:5: ( 'rec' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:43:7: 'rec'
+			// D:\\fsharp_compiler\\fsharp_ss.g:50:7: 'rec'
 			{
-			DebugLocation(43, 7);
+			DebugLocation(50, 7);
 			Match("rec"); 
 
 
@@ -1322,8 +1579,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("REC", 34);
-			LeaveRule("REC", 34);
+			TraceOut("REC", 41);
+			LeaveRule("REC", 41);
 			LeaveRule_REC();
 		}
 	}
@@ -1337,17 +1594,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mSTRING_KW()
 	{
 		EnterRule_STRING_KW();
-		EnterRule("STRING_KW", 35);
-		TraceIn("STRING_KW", 35);
+		EnterRule("STRING_KW", 42);
+		TraceIn("STRING_KW", 42);
 		try
 		{
 			int _type = STRING_KW;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:44:11: ( 'string' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:51:11: ( 'string' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:44:13: 'string'
+			// D:\\fsharp_compiler\\fsharp_ss.g:51:13: 'string'
 			{
-			DebugLocation(44, 13);
+			DebugLocation(51, 13);
 			Match("string"); 
 
 
@@ -1358,12 +1615,47 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("STRING_KW", 35);
-			LeaveRule("STRING_KW", 35);
+			TraceOut("STRING_KW", 42);
+			LeaveRule("STRING_KW", 42);
 			LeaveRule_STRING_KW();
 		}
 	}
 	// $ANTLR end "STRING_KW"
+
+	partial void EnterRule_TAB();
+	partial void LeaveRule_TAB();
+
+	// $ANTLR start "TAB"
+	[GrammarRule("TAB")]
+	private void mTAB()
+	{
+		EnterRule_TAB();
+		EnterRule("TAB", 43);
+		TraceIn("TAB", 43);
+		try
+		{
+			int _type = TAB;
+			int _channel = DefaultTokenChannel;
+			// D:\\fsharp_compiler\\fsharp_ss.g:52:5: ( '\\t' )
+			DebugEnterAlt(1);
+			// D:\\fsharp_compiler\\fsharp_ss.g:52:7: '\\t'
+			{
+			DebugLocation(52, 7);
+			Match('\t'); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("TAB", 43);
+			LeaveRule("TAB", 43);
+			LeaveRule_TAB();
+		}
+	}
+	// $ANTLR end "TAB"
 
 	partial void EnterRule_THEN();
 	partial void LeaveRule_THEN();
@@ -1373,17 +1665,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mTHEN()
 	{
 		EnterRule_THEN();
-		EnterRule("THEN", 36);
-		TraceIn("THEN", 36);
+		EnterRule("THEN", 44);
+		TraceIn("THEN", 44);
 		try
 		{
 			int _type = THEN;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:45:6: ( 'then' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:53:6: ( 'then' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:45:8: 'then'
+			// D:\\fsharp_compiler\\fsharp_ss.g:53:8: 'then'
 			{
-			DebugLocation(45, 8);
+			DebugLocation(53, 8);
 			Match("then"); 
 
 
@@ -1394,8 +1686,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("THEN", 36);
-			LeaveRule("THEN", 36);
+			TraceOut("THEN", 44);
+			LeaveRule("THEN", 44);
 			LeaveRule_THEN();
 		}
 	}
@@ -1409,17 +1701,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mTRUE()
 	{
 		EnterRule_TRUE();
-		EnterRule("TRUE", 37);
-		TraceIn("TRUE", 37);
+		EnterRule("TRUE", 45);
+		TraceIn("TRUE", 45);
 		try
 		{
 			int _type = TRUE;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:46:6: ( 'true' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:54:6: ( 'true' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:46:8: 'true'
+			// D:\\fsharp_compiler\\fsharp_ss.g:54:8: 'true'
 			{
-			DebugLocation(46, 8);
+			DebugLocation(54, 8);
 			Match("true"); 
 
 
@@ -1430,8 +1722,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("TRUE", 37);
-			LeaveRule("TRUE", 37);
+			TraceOut("TRUE", 45);
+			LeaveRule("TRUE", 45);
 			LeaveRule_TRUE();
 		}
 	}
@@ -1445,17 +1737,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mTYPE()
 	{
 		EnterRule_TYPE();
-		EnterRule("TYPE", 38);
-		TraceIn("TYPE", 38);
+		EnterRule("TYPE", 46);
+		TraceIn("TYPE", 46);
 		try
 		{
 			int _type = TYPE;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:47:6: ( 'TYPE' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:55:6: ( 'TYPE' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:47:8: 'TYPE'
+			// D:\\fsharp_compiler\\fsharp_ss.g:55:8: 'TYPE'
 			{
-			DebugLocation(47, 8);
+			DebugLocation(55, 8);
 			Match("TYPE"); 
 
 
@@ -1466,8 +1758,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("TYPE", 38);
-			LeaveRule("TYPE", 38);
+			TraceOut("TYPE", 46);
+			LeaveRule("TYPE", 46);
 			LeaveRule_TYPE();
 		}
 	}
@@ -1481,17 +1773,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mVALUE_DEFN()
 	{
 		EnterRule_VALUE_DEFN();
-		EnterRule("VALUE_DEFN", 39);
-		TraceIn("VALUE_DEFN", 39);
+		EnterRule("VALUE_DEFN", 47);
+		TraceIn("VALUE_DEFN", 47);
 		try
 		{
 			int _type = VALUE_DEFN;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:48:12: ( 'VALUE_DEFN' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:56:12: ( 'VALUE_DEFN' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:48:14: 'VALUE_DEFN'
+			// D:\\fsharp_compiler\\fsharp_ss.g:56:14: 'VALUE_DEFN'
 			{
-			DebugLocation(48, 14);
+			DebugLocation(56, 14);
 			Match("VALUE_DEFN"); 
 
 
@@ -1502,8 +1794,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("VALUE_DEFN", 39);
-			LeaveRule("VALUE_DEFN", 39);
+			TraceOut("VALUE_DEFN", 47);
+			LeaveRule("VALUE_DEFN", 47);
 			LeaveRule_VALUE_DEFN();
 		}
 	}
@@ -1517,17 +1809,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mWHEN()
 	{
 		EnterRule_WHEN();
-		EnterRule("WHEN", 40);
-		TraceIn("WHEN", 40);
+		EnterRule("WHEN", 48);
+		TraceIn("WHEN", 48);
 		try
 		{
 			int _type = WHEN;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:49:6: ( 'when' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:57:6: ( 'when' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:49:8: 'when'
+			// D:\\fsharp_compiler\\fsharp_ss.g:57:8: 'when'
 			{
-			DebugLocation(49, 8);
+			DebugLocation(57, 8);
 			Match("when"); 
 
 
@@ -1538,102 +1830,32 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("WHEN", 40);
-			LeaveRule("WHEN", 40);
+			TraceOut("WHEN", 48);
+			LeaveRule("WHEN", 48);
 			LeaveRule_WHEN();
 		}
 	}
 	// $ANTLR end "WHEN"
 
-	partial void EnterRule_T__55();
-	partial void LeaveRule_T__55();
+	partial void EnterRule_T__63();
+	partial void LeaveRule_T__63();
 
-	// $ANTLR start "T__55"
-	[GrammarRule("T__55")]
-	private void mT__55()
+	// $ANTLR start "T__63"
+	[GrammarRule("T__63")]
+	private void mT__63()
 	{
-		EnterRule_T__55();
-		EnterRule("T__55", 41);
-		TraceIn("T__55", 41);
+		EnterRule_T__63();
+		EnterRule("T__63", 49);
+		TraceIn("T__63", 49);
 		try
 		{
-			int _type = T__55;
+			int _type = T__63;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:50:7: ( '(' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:58:7: ( ':' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:50:9: '('
+			// D:\\fsharp_compiler\\fsharp_ss.g:58:9: ':'
 			{
-			DebugLocation(50, 9);
-			Match('('); 
-
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally
-		{
-			TraceOut("T__55", 41);
-			LeaveRule("T__55", 41);
-			LeaveRule_T__55();
-		}
-	}
-	// $ANTLR end "T__55"
-
-	partial void EnterRule_T__56();
-	partial void LeaveRule_T__56();
-
-	// $ANTLR start "T__56"
-	[GrammarRule("T__56")]
-	private void mT__56()
-	{
-		EnterRule_T__56();
-		EnterRule("T__56", 42);
-		TraceIn("T__56", 42);
-		try
-		{
-			int _type = T__56;
-			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:51:7: ( ')' )
-			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:51:9: ')'
-			{
-			DebugLocation(51, 9);
-			Match(')'); 
-
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally
-		{
-			TraceOut("T__56", 42);
-			LeaveRule("T__56", 42);
-			LeaveRule_T__56();
-		}
-	}
-	// $ANTLR end "T__56"
-
-	partial void EnterRule_T__57();
-	partial void LeaveRule_T__57();
-
-	// $ANTLR start "T__57"
-	[GrammarRule("T__57")]
-	private void mT__57()
-	{
-		EnterRule_T__57();
-		EnterRule("T__57", 43);
-		TraceIn("T__57", 43);
-		try
-		{
-			int _type = T__57;
-			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:52:7: ( ':' )
-			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:52:9: ':'
-			{
-			DebugLocation(52, 9);
+			DebugLocation(58, 9);
 			Match(':'); 
 
 			}
@@ -1643,12 +1865,47 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__57", 43);
-			LeaveRule("T__57", 43);
-			LeaveRule_T__57();
+			TraceOut("T__63", 49);
+			LeaveRule("T__63", 49);
+			LeaveRule_T__63();
 		}
 	}
-	// $ANTLR end "T__57"
+	// $ANTLR end "T__63"
+
+	partial void EnterRule_T__64();
+	partial void LeaveRule_T__64();
+
+	// $ANTLR start "T__64"
+	[GrammarRule("T__64")]
+	private void mT__64()
+	{
+		EnterRule_T__64();
+		EnterRule("T__64", 50);
+		TraceIn("T__64", 50);
+		try
+		{
+			int _type = T__64;
+			int _channel = DefaultTokenChannel;
+			// D:\\fsharp_compiler\\fsharp_ss.g:59:7: ( ';' )
+			DebugEnterAlt(1);
+			// D:\\fsharp_compiler\\fsharp_ss.g:59:9: ';'
+			{
+			DebugLocation(59, 9);
+			Match(';'); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("T__64", 50);
+			LeaveRule("T__64", 50);
+			LeaveRule_T__64();
+		}
+	}
+	// $ANTLR end "T__64"
 
 	partial void EnterRule_ID();
 	partial void LeaveRule_ID();
@@ -1658,17 +1915,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mID()
 	{
 		EnterRule_ID();
-		EnterRule("ID", 44);
-		TraceIn("ID", 44);
+		EnterRule("ID", 51);
+		TraceIn("ID", 51);
 		try
 		{
 			int _type = ID;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:58:5: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )* )
+			// D:\\fsharp_compiler\\fsharp_ss.g:69:5: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )* )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:58:7: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
+			// D:\\fsharp_compiler\\fsharp_ss.g:69:7: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
 			{
-			DebugLocation(58, 7);
+			DebugLocation(69, 7);
 			if ((input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z'))
 			{
 				input.Consume();
@@ -1681,8 +1938,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 				throw mse;
 			}
 
-			DebugLocation(58, 31);
-			// D:\\fsharp_compiler\\fsharp_ss.g:58:31: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
+			DebugLocation(69, 31);
+			// D:\\fsharp_compiler\\fsharp_ss.g:69:31: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
 			try { DebugEnterSubRule(1);
 			while (true)
 			{
@@ -1703,7 +1960,7 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 					DebugEnterAlt(1);
 					// D:\\fsharp_compiler\\fsharp_ss.g:
 					{
-					DebugLocation(58, 31);
+					DebugLocation(69, 31);
 					input.Consume();
 
 
@@ -1728,8 +1985,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("ID", 44);
-			LeaveRule("ID", 44);
+			TraceOut("ID", 51);
+			LeaveRule("ID", 51);
 			LeaveRule_ID();
 		}
 	}
@@ -1743,18 +2000,18 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mINT()
 	{
 		EnterRule_INT();
-		EnterRule("INT", 45);
-		TraceIn("INT", 45);
+		EnterRule("INT", 52);
+		TraceIn("INT", 52);
 		try
 		{
 			int _type = INT;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:61:5: ( ( '0' .. '9' )+ )
+			// D:\\fsharp_compiler\\fsharp_ss.g:72:5: ( ( '0' .. '9' )+ )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:61:7: ( '0' .. '9' )+
+			// D:\\fsharp_compiler\\fsharp_ss.g:72:7: ( '0' .. '9' )+
 			{
-			DebugLocation(61, 7);
-			// D:\\fsharp_compiler\\fsharp_ss.g:61:7: ( '0' .. '9' )+
+			DebugLocation(72, 7);
+			// D:\\fsharp_compiler\\fsharp_ss.g:72:7: ( '0' .. '9' )+
 			int cnt2=0;
 			try { DebugEnterSubRule(2);
 			while (true)
@@ -1776,7 +2033,7 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 					DebugEnterAlt(1);
 					// D:\\fsharp_compiler\\fsharp_ss.g:
 					{
-					DebugLocation(61, 7);
+					DebugLocation(72, 7);
 					input.Consume();
 
 
@@ -1806,8 +2063,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("INT", 45);
-			LeaveRule("INT", 45);
+			TraceOut("INT", 52);
+			LeaveRule("INT", 52);
 			LeaveRule_INT();
 		}
 	}
@@ -1821,13 +2078,13 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mDOUBLE()
 	{
 		EnterRule_DOUBLE();
-		EnterRule("DOUBLE", 46);
-		TraceIn("DOUBLE", 46);
+		EnterRule("DOUBLE", 53);
+		TraceIn("DOUBLE", 53);
 		try
 		{
 			int _type = DOUBLE;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:64:8: ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( EXPONENT )? | '.' ( '0' .. '9' )+ ( EXPONENT )? | ( '0' .. '9' )+ EXPONENT )
+			// D:\\fsharp_compiler\\fsharp_ss.g:75:8: ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( EXPONENT )? | '.' ( '0' .. '9' )+ ( EXPONENT )? | ( '0' .. '9' )+ EXPONENT )
 			int alt9=3;
 			try { DebugEnterDecision(9, false);
 			try
@@ -1844,10 +2101,10 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// D:\\fsharp_compiler\\fsharp_ss.g:64:12: ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( EXPONENT )?
+				// D:\\fsharp_compiler\\fsharp_ss.g:75:12: ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( EXPONENT )?
 				{
-				DebugLocation(64, 12);
-				// D:\\fsharp_compiler\\fsharp_ss.g:64:12: ( '0' .. '9' )+
+				DebugLocation(75, 12);
+				// D:\\fsharp_compiler\\fsharp_ss.g:75:12: ( '0' .. '9' )+
 				int cnt3=0;
 				try { DebugEnterSubRule(3);
 				while (true)
@@ -1869,7 +2126,7 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 						DebugEnterAlt(1);
 						// D:\\fsharp_compiler\\fsharp_ss.g:
 						{
-						DebugLocation(64, 12);
+						DebugLocation(75, 12);
 						input.Consume();
 
 
@@ -1891,10 +2148,10 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 
 				} finally { DebugExitSubRule(3); }
 
-				DebugLocation(64, 24);
+				DebugLocation(75, 24);
 				Match('.'); 
-				DebugLocation(64, 28);
-				// D:\\fsharp_compiler\\fsharp_ss.g:64:28: ( '0' .. '9' )*
+				DebugLocation(75, 28);
+				// D:\\fsharp_compiler\\fsharp_ss.g:75:28: ( '0' .. '9' )*
 				try { DebugEnterSubRule(4);
 				while (true)
 				{
@@ -1915,7 +2172,7 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 						DebugEnterAlt(1);
 						// D:\\fsharp_compiler\\fsharp_ss.g:
 						{
-						DebugLocation(64, 28);
+						DebugLocation(75, 28);
 						input.Consume();
 
 
@@ -1932,8 +2189,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 
 				} finally { DebugExitSubRule(4); }
 
-				DebugLocation(64, 40);
-				// D:\\fsharp_compiler\\fsharp_ss.g:64:40: ( EXPONENT )?
+				DebugLocation(75, 40);
+				// D:\\fsharp_compiler\\fsharp_ss.g:75:40: ( EXPONENT )?
 				int alt5=2;
 				try { DebugEnterSubRule(5);
 				try { DebugEnterDecision(5, false);
@@ -1948,9 +2205,9 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// D:\\fsharp_compiler\\fsharp_ss.g:64:40: EXPONENT
+					// D:\\fsharp_compiler\\fsharp_ss.g:75:40: EXPONENT
 					{
-					DebugLocation(64, 40);
+					DebugLocation(75, 40);
 					mEXPONENT(); 
 
 					}
@@ -1964,12 +2221,12 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// D:\\fsharp_compiler\\fsharp_ss.g:65:6: '.' ( '0' .. '9' )+ ( EXPONENT )?
+				// D:\\fsharp_compiler\\fsharp_ss.g:76:6: '.' ( '0' .. '9' )+ ( EXPONENT )?
 				{
-				DebugLocation(65, 6);
+				DebugLocation(76, 6);
 				Match('.'); 
-				DebugLocation(65, 10);
-				// D:\\fsharp_compiler\\fsharp_ss.g:65:10: ( '0' .. '9' )+
+				DebugLocation(76, 10);
+				// D:\\fsharp_compiler\\fsharp_ss.g:76:10: ( '0' .. '9' )+
 				int cnt6=0;
 				try { DebugEnterSubRule(6);
 				while (true)
@@ -1991,7 +2248,7 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 						DebugEnterAlt(1);
 						// D:\\fsharp_compiler\\fsharp_ss.g:
 						{
-						DebugLocation(65, 10);
+						DebugLocation(76, 10);
 						input.Consume();
 
 
@@ -2013,8 +2270,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 
 				} finally { DebugExitSubRule(6); }
 
-				DebugLocation(65, 22);
-				// D:\\fsharp_compiler\\fsharp_ss.g:65:22: ( EXPONENT )?
+				DebugLocation(76, 22);
+				// D:\\fsharp_compiler\\fsharp_ss.g:76:22: ( EXPONENT )?
 				int alt7=2;
 				try { DebugEnterSubRule(7);
 				try { DebugEnterDecision(7, false);
@@ -2029,9 +2286,9 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// D:\\fsharp_compiler\\fsharp_ss.g:65:22: EXPONENT
+					// D:\\fsharp_compiler\\fsharp_ss.g:76:22: EXPONENT
 					{
-					DebugLocation(65, 22);
+					DebugLocation(76, 22);
 					mEXPONENT(); 
 
 					}
@@ -2045,10 +2302,10 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// D:\\fsharp_compiler\\fsharp_ss.g:66:13: ( '0' .. '9' )+ EXPONENT
+				// D:\\fsharp_compiler\\fsharp_ss.g:77:13: ( '0' .. '9' )+ EXPONENT
 				{
-				DebugLocation(66, 13);
-				// D:\\fsharp_compiler\\fsharp_ss.g:66:13: ( '0' .. '9' )+
+				DebugLocation(77, 13);
+				// D:\\fsharp_compiler\\fsharp_ss.g:77:13: ( '0' .. '9' )+
 				int cnt8=0;
 				try { DebugEnterSubRule(8);
 				while (true)
@@ -2070,7 +2327,7 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 						DebugEnterAlt(1);
 						// D:\\fsharp_compiler\\fsharp_ss.g:
 						{
-						DebugLocation(66, 13);
+						DebugLocation(77, 13);
 						input.Consume();
 
 
@@ -2092,7 +2349,7 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 
 				} finally { DebugExitSubRule(8); }
 
-				DebugLocation(66, 25);
+				DebugLocation(77, 25);
 				mEXPONENT(); 
 
 				}
@@ -2104,8 +2361,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("DOUBLE", 46);
-			LeaveRule("DOUBLE", 46);
+			TraceOut("DOUBLE", 53);
+			LeaveRule("DOUBLE", 53);
 			LeaveRule_DOUBLE();
 		}
 	}
@@ -2119,17 +2376,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mEXPONENT()
 	{
 		EnterRule_EXPONENT();
-		EnterRule("EXPONENT", 47);
-		TraceIn("EXPONENT", 47);
+		EnterRule("EXPONENT", 54);
+		TraceIn("EXPONENT", 54);
 		try
 		{
 			int _type = EXPONENT;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:69:10: ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )
+			// D:\\fsharp_compiler\\fsharp_ss.g:80:10: ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:69:12: ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+
+			// D:\\fsharp_compiler\\fsharp_ss.g:80:12: ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+
 			{
-			DebugLocation(69, 12);
+			DebugLocation(80, 12);
 			if (input.LA(1)=='E'||input.LA(1)=='e')
 			{
 				input.Consume();
@@ -2142,8 +2399,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 				throw mse;
 			}
 
-			DebugLocation(69, 22);
-			// D:\\fsharp_compiler\\fsharp_ss.g:69:22: ( '+' | '-' )?
+			DebugLocation(80, 22);
+			// D:\\fsharp_compiler\\fsharp_ss.g:80:22: ( '+' | '-' )?
 			int alt10=2;
 			try { DebugEnterSubRule(10);
 			try { DebugEnterDecision(10, false);
@@ -2160,7 +2417,7 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 				DebugEnterAlt(1);
 				// D:\\fsharp_compiler\\fsharp_ss.g:
 				{
-				DebugLocation(69, 22);
+				DebugLocation(80, 22);
 				input.Consume();
 
 
@@ -2170,8 +2427,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 			}
 			} finally { DebugExitSubRule(10); }
 
-			DebugLocation(69, 33);
-			// D:\\fsharp_compiler\\fsharp_ss.g:69:33: ( '0' .. '9' )+
+			DebugLocation(80, 33);
+			// D:\\fsharp_compiler\\fsharp_ss.g:80:33: ( '0' .. '9' )+
 			int cnt11=0;
 			try { DebugEnterSubRule(11);
 			while (true)
@@ -2193,7 +2450,7 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 					DebugEnterAlt(1);
 					// D:\\fsharp_compiler\\fsharp_ss.g:
 					{
-					DebugLocation(69, 33);
+					DebugLocation(80, 33);
 					input.Consume();
 
 
@@ -2223,8 +2480,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("EXPONENT", 47);
-			LeaveRule("EXPONENT", 47);
+			TraceOut("EXPONENT", 54);
+			LeaveRule("EXPONENT", 54);
 			LeaveRule_EXPONENT();
 		}
 	}
@@ -2238,20 +2495,20 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mSTRING()
 	{
 		EnterRule_STRING();
-		EnterRule("STRING", 48);
-		TraceIn("STRING", 48);
+		EnterRule("STRING", 55);
+		TraceIn("STRING", 55);
 		try
 		{
 			int _type = STRING;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:72:5: ( '\"' ( ESC_SEQ |~ ( '\\\\' | '\"' ) )* '\"' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:83:5: ( '\"' ( ESC_SEQ |~ ( '\\\\' | '\"' ) )* '\"' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:72:8: '\"' ( ESC_SEQ |~ ( '\\\\' | '\"' ) )* '\"'
+			// D:\\fsharp_compiler\\fsharp_ss.g:83:8: '\"' ( ESC_SEQ |~ ( '\\\\' | '\"' ) )* '\"'
 			{
-			DebugLocation(72, 8);
+			DebugLocation(83, 8);
 			Match('\"'); 
-			DebugLocation(72, 12);
-			// D:\\fsharp_compiler\\fsharp_ss.g:72:12: ( ESC_SEQ |~ ( '\\\\' | '\"' ) )*
+			DebugLocation(83, 12);
+			// D:\\fsharp_compiler\\fsharp_ss.g:83:12: ( ESC_SEQ |~ ( '\\\\' | '\"' ) )*
 			try { DebugEnterSubRule(12);
 			while (true)
 			{
@@ -2274,18 +2531,18 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// D:\\fsharp_compiler\\fsharp_ss.g:72:14: ESC_SEQ
+					// D:\\fsharp_compiler\\fsharp_ss.g:83:14: ESC_SEQ
 					{
-					DebugLocation(72, 14);
+					DebugLocation(83, 14);
 					mESC_SEQ(); 
 
 					}
 					break;
 				case 2:
 					DebugEnterAlt(2);
-					// D:\\fsharp_compiler\\fsharp_ss.g:72:24: ~ ( '\\\\' | '\"' )
+					// D:\\fsharp_compiler\\fsharp_ss.g:83:24: ~ ( '\\\\' | '\"' )
 					{
-					DebugLocation(72, 24);
+					DebugLocation(83, 24);
 					input.Consume();
 
 
@@ -2302,7 +2559,7 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 
 			} finally { DebugExitSubRule(12); }
 
-			DebugLocation(72, 39);
+			DebugLocation(83, 39);
 			Match('\"'); 
 
 			}
@@ -2312,8 +2569,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("STRING", 48);
-			LeaveRule("STRING", 48);
+			TraceOut("STRING", 55);
+			LeaveRule("STRING", 55);
 			LeaveRule_STRING();
 		}
 	}
@@ -2327,20 +2584,20 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mCHAR()
 	{
 		EnterRule_CHAR();
-		EnterRule("CHAR", 49);
-		TraceIn("CHAR", 49);
+		EnterRule("CHAR", 56);
+		TraceIn("CHAR", 56);
 		try
 		{
 			int _type = CHAR;
 			int _channel = DefaultTokenChannel;
-			// D:\\fsharp_compiler\\fsharp_ss.g:75:5: ( '\\'' ( ESC_SEQ |~ ( '\\'' | '\\\\' ) ) '\\'' )
+			// D:\\fsharp_compiler\\fsharp_ss.g:86:5: ( '\\'' ( ESC_SEQ |~ ( '\\'' | '\\\\' ) ) '\\'' )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:75:8: '\\'' ( ESC_SEQ |~ ( '\\'' | '\\\\' ) ) '\\''
+			// D:\\fsharp_compiler\\fsharp_ss.g:86:8: '\\'' ( ESC_SEQ |~ ( '\\'' | '\\\\' ) ) '\\''
 			{
-			DebugLocation(75, 8);
+			DebugLocation(86, 8);
 			Match('\''); 
-			DebugLocation(75, 13);
-			// D:\\fsharp_compiler\\fsharp_ss.g:75:13: ( ESC_SEQ |~ ( '\\'' | '\\\\' ) )
+			DebugLocation(86, 13);
+			// D:\\fsharp_compiler\\fsharp_ss.g:86:13: ( ESC_SEQ |~ ( '\\'' | '\\\\' ) )
 			int alt13=2;
 			try { DebugEnterSubRule(13);
 			try { DebugEnterDecision(13, false);
@@ -2365,18 +2622,18 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// D:\\fsharp_compiler\\fsharp_ss.g:75:15: ESC_SEQ
+				// D:\\fsharp_compiler\\fsharp_ss.g:86:15: ESC_SEQ
 				{
-				DebugLocation(75, 15);
+				DebugLocation(86, 15);
 				mESC_SEQ(); 
 
 				}
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// D:\\fsharp_compiler\\fsharp_ss.g:75:25: ~ ( '\\'' | '\\\\' )
+				// D:\\fsharp_compiler\\fsharp_ss.g:86:25: ~ ( '\\'' | '\\\\' )
 				{
-				DebugLocation(75, 25);
+				DebugLocation(86, 25);
 				input.Consume();
 
 
@@ -2386,7 +2643,7 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 			}
 			} finally { DebugExitSubRule(13); }
 
-			DebugLocation(75, 40);
+			DebugLocation(86, 40);
 			Match('\''); 
 
 			}
@@ -2396,8 +2653,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("CHAR", 49);
-			LeaveRule("CHAR", 49);
+			TraceOut("CHAR", 56);
+			LeaveRule("CHAR", 56);
 			LeaveRule_CHAR();
 		}
 	}
@@ -2411,15 +2668,15 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mHEX_DIGIT()
 	{
 		EnterRule_HEX_DIGIT();
-		EnterRule("HEX_DIGIT", 50);
-		TraceIn("HEX_DIGIT", 50);
+		EnterRule("HEX_DIGIT", 57);
+		TraceIn("HEX_DIGIT", 57);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:80:11: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
+			// D:\\fsharp_compiler\\fsharp_ss.g:91:11: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
 			DebugEnterAlt(1);
 			// D:\\fsharp_compiler\\fsharp_ss.g:
 			{
-			DebugLocation(80, 11);
+			DebugLocation(91, 11);
 			if ((input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='F')||(input.LA(1)>='a' && input.LA(1)<='f'))
 			{
 				input.Consume();
@@ -2438,8 +2695,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("HEX_DIGIT", 50);
-			LeaveRule("HEX_DIGIT", 50);
+			TraceOut("HEX_DIGIT", 57);
+			LeaveRule("HEX_DIGIT", 57);
 			LeaveRule_HEX_DIGIT();
 		}
 	}
@@ -2453,11 +2710,11 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mESC_SEQ()
 	{
 		EnterRule_ESC_SEQ();
-		EnterRule("ESC_SEQ", 51);
-		TraceIn("ESC_SEQ", 51);
+		EnterRule("ESC_SEQ", 58);
+		TraceIn("ESC_SEQ", 58);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:84:5: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' ) | UNICODE_ESC | OCTAL_ESC )
+			// D:\\fsharp_compiler\\fsharp_ss.g:95:5: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' ) | UNICODE_ESC | OCTAL_ESC )
 			int alt14=3;
 			try { DebugEnterDecision(14, false);
 			int LA14_1 = input.LA(1);
@@ -2515,11 +2772,11 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// D:\\fsharp_compiler\\fsharp_ss.g:84:9: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' )
+				// D:\\fsharp_compiler\\fsharp_ss.g:95:9: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' )
 				{
-				DebugLocation(84, 9);
+				DebugLocation(95, 9);
 				Match('\\'); 
-				DebugLocation(84, 14);
+				DebugLocation(95, 14);
 				input.Consume();
 
 
@@ -2527,18 +2784,18 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// D:\\fsharp_compiler\\fsharp_ss.g:85:9: UNICODE_ESC
+				// D:\\fsharp_compiler\\fsharp_ss.g:96:9: UNICODE_ESC
 				{
-				DebugLocation(85, 9);
+				DebugLocation(96, 9);
 				mUNICODE_ESC(); 
 
 				}
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// D:\\fsharp_compiler\\fsharp_ss.g:86:9: OCTAL_ESC
+				// D:\\fsharp_compiler\\fsharp_ss.g:97:9: OCTAL_ESC
 				{
-				DebugLocation(86, 9);
+				DebugLocation(97, 9);
 				mOCTAL_ESC(); 
 
 				}
@@ -2548,8 +2805,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("ESC_SEQ", 51);
-			LeaveRule("ESC_SEQ", 51);
+			TraceOut("ESC_SEQ", 58);
+			LeaveRule("ESC_SEQ", 58);
 			LeaveRule_ESC_SEQ();
 		}
 	}
@@ -2563,11 +2820,11 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mOCTAL_ESC()
 	{
 		EnterRule_OCTAL_ESC();
-		EnterRule("OCTAL_ESC", 52);
-		TraceIn("OCTAL_ESC", 52);
+		EnterRule("OCTAL_ESC", 59);
+		TraceIn("OCTAL_ESC", 59);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:91:5: ( '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) )
+			// D:\\fsharp_compiler\\fsharp_ss.g:102:5: ( '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) )
 			int alt15=3;
 			try { DebugEnterDecision(15, false);
 			int LA15_1 = input.LA(1);
@@ -2629,17 +2886,17 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// D:\\fsharp_compiler\\fsharp_ss.g:91:9: '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' )
+				// D:\\fsharp_compiler\\fsharp_ss.g:102:9: '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' )
 				{
-				DebugLocation(91, 9);
+				DebugLocation(102, 9);
 				Match('\\'); 
-				DebugLocation(91, 14);
+				DebugLocation(102, 14);
 				input.Consume();
 
-				DebugLocation(91, 25);
+				DebugLocation(102, 25);
 				input.Consume();
 
-				DebugLocation(91, 36);
+				DebugLocation(102, 36);
 				input.Consume();
 
 
@@ -2647,14 +2904,14 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// D:\\fsharp_compiler\\fsharp_ss.g:92:9: '\\\\' ( '0' .. '7' ) ( '0' .. '7' )
+				// D:\\fsharp_compiler\\fsharp_ss.g:103:9: '\\\\' ( '0' .. '7' ) ( '0' .. '7' )
 				{
-				DebugLocation(92, 9);
+				DebugLocation(103, 9);
 				Match('\\'); 
-				DebugLocation(92, 14);
+				DebugLocation(103, 14);
 				input.Consume();
 
-				DebugLocation(92, 25);
+				DebugLocation(103, 25);
 				input.Consume();
 
 
@@ -2662,11 +2919,11 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// D:\\fsharp_compiler\\fsharp_ss.g:93:9: '\\\\' ( '0' .. '7' )
+				// D:\\fsharp_compiler\\fsharp_ss.g:104:9: '\\\\' ( '0' .. '7' )
 				{
-				DebugLocation(93, 9);
+				DebugLocation(104, 9);
 				Match('\\'); 
-				DebugLocation(93, 14);
+				DebugLocation(104, 14);
 				input.Consume();
 
 
@@ -2677,8 +2934,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("OCTAL_ESC", 52);
-			LeaveRule("OCTAL_ESC", 52);
+			TraceOut("OCTAL_ESC", 59);
+			LeaveRule("OCTAL_ESC", 59);
 			LeaveRule_OCTAL_ESC();
 		}
 	}
@@ -2692,25 +2949,25 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private void mUNICODE_ESC()
 	{
 		EnterRule_UNICODE_ESC();
-		EnterRule("UNICODE_ESC", 53);
-		TraceIn("UNICODE_ESC", 53);
+		EnterRule("UNICODE_ESC", 60);
+		TraceIn("UNICODE_ESC", 60);
 		try
 		{
-			// D:\\fsharp_compiler\\fsharp_ss.g:98:5: ( '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT )
+			// D:\\fsharp_compiler\\fsharp_ss.g:109:5: ( '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT )
 			DebugEnterAlt(1);
-			// D:\\fsharp_compiler\\fsharp_ss.g:98:9: '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
+			// D:\\fsharp_compiler\\fsharp_ss.g:109:9: '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
 			{
-			DebugLocation(98, 9);
+			DebugLocation(109, 9);
 			Match('\\'); 
-			DebugLocation(98, 14);
+			DebugLocation(109, 14);
 			Match('u'); 
-			DebugLocation(98, 18);
+			DebugLocation(109, 18);
 			mHEX_DIGIT(); 
-			DebugLocation(98, 28);
+			DebugLocation(109, 28);
 			mHEX_DIGIT(); 
-			DebugLocation(98, 38);
+			DebugLocation(109, 38);
 			mHEX_DIGIT(); 
-			DebugLocation(98, 48);
+			DebugLocation(109, 48);
 			mHEX_DIGIT(); 
 
 			}
@@ -2718,8 +2975,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("UNICODE_ESC", 53);
-			LeaveRule("UNICODE_ESC", 53);
+			TraceOut("UNICODE_ESC", 60);
+			LeaveRule("UNICODE_ESC", 60);
 			LeaveRule_UNICODE_ESC();
 		}
 	}
@@ -2727,8 +2984,8 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 
 	public override void mTokens()
 	{
-		// D:\\fsharp_compiler\\fsharp_ss.g:1:8: ( AND | ARGS | ASSIGN | BODY | BOOL_KW | CHAR_KW | DIV | DOUBLE_KW | ELIF | ELSE | EQ | FALSE | FUN | FUNCTION_CALL | FUNCTION_DEFN | FUN_DEF | GE | GT | IF | INT_KW | LE | LET | LT | MATCH | MINUS | MOD | MULT | MUTABLE | NEQ | OR | PIPE | PLUS | PRINTF | REC | STRING_KW | THEN | TRUE | TYPE | VALUE_DEFN | WHEN | T__55 | T__56 | T__57 | ID | INT | DOUBLE | EXPONENT | STRING | CHAR )
-		int alt16=49;
+		// D:\\fsharp_compiler\\fsharp_ss.g:1:8: ( AND | ARGS | ASSIGN | BEGIN | BODY | BOOL_KW | CHAR_KW | CLOSE_BR | DIV | DOUBLE_KW | ELIF | ELSE | END | ENTRY_POINT | EQ | EXPR | FALSE | FUN | FUNCTION_CALL | FUNCTION_DEFN | FUN_DEF | GE | GT | IF | INT_KW | LE | LET | LT | MATCH | MINUS | MOD | MULT | MUTABLE | NAME | NEQ | OPEN_BR | OR | PIPE | PLUS | PROGRAM | REC | STRING_KW | TAB | THEN | TRUE | TYPE | VALUE_DEFN | WHEN | T__63 | T__64 | ID | INT | DOUBLE | EXPONENT | STRING | CHAR )
+		int alt16=56;
 		try { DebugEnterDecision(16, false);
 		try
 		{
@@ -2771,414 +3028,477 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 			break;
 		case 4:
 			DebugEnterAlt(4);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:26: BODY
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:26: BEGIN
 			{
 			DebugLocation(1, 26);
-			mBODY(); 
+			mBEGIN(); 
 
 			}
 			break;
 		case 5:
 			DebugEnterAlt(5);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:31: BOOL_KW
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:32: BODY
 			{
-			DebugLocation(1, 31);
-			mBOOL_KW(); 
+			DebugLocation(1, 32);
+			mBODY(); 
 
 			}
 			break;
 		case 6:
 			DebugEnterAlt(6);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:39: CHAR_KW
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:37: BOOL_KW
 			{
-			DebugLocation(1, 39);
-			mCHAR_KW(); 
+			DebugLocation(1, 37);
+			mBOOL_KW(); 
 
 			}
 			break;
 		case 7:
 			DebugEnterAlt(7);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:47: DIV
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:45: CHAR_KW
 			{
-			DebugLocation(1, 47);
-			mDIV(); 
+			DebugLocation(1, 45);
+			mCHAR_KW(); 
 
 			}
 			break;
 		case 8:
 			DebugEnterAlt(8);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:51: DOUBLE_KW
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:53: CLOSE_BR
 			{
-			DebugLocation(1, 51);
-			mDOUBLE_KW(); 
+			DebugLocation(1, 53);
+			mCLOSE_BR(); 
 
 			}
 			break;
 		case 9:
 			DebugEnterAlt(9);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:61: ELIF
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:62: DIV
 			{
-			DebugLocation(1, 61);
-			mELIF(); 
+			DebugLocation(1, 62);
+			mDIV(); 
 
 			}
 			break;
 		case 10:
 			DebugEnterAlt(10);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:66: ELSE
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:66: DOUBLE_KW
 			{
 			DebugLocation(1, 66);
-			mELSE(); 
+			mDOUBLE_KW(); 
 
 			}
 			break;
 		case 11:
 			DebugEnterAlt(11);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:71: EQ
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:76: ELIF
 			{
-			DebugLocation(1, 71);
-			mEQ(); 
+			DebugLocation(1, 76);
+			mELIF(); 
 
 			}
 			break;
 		case 12:
 			DebugEnterAlt(12);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:74: FALSE
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:81: ELSE
 			{
-			DebugLocation(1, 74);
-			mFALSE(); 
+			DebugLocation(1, 81);
+			mELSE(); 
 
 			}
 			break;
 		case 13:
 			DebugEnterAlt(13);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:80: FUN
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:86: END
 			{
-			DebugLocation(1, 80);
-			mFUN(); 
+			DebugLocation(1, 86);
+			mEND(); 
 
 			}
 			break;
 		case 14:
 			DebugEnterAlt(14);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:84: FUNCTION_CALL
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:90: ENTRY_POINT
 			{
-			DebugLocation(1, 84);
-			mFUNCTION_CALL(); 
+			DebugLocation(1, 90);
+			mENTRY_POINT(); 
 
 			}
 			break;
 		case 15:
 			DebugEnterAlt(15);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:98: FUNCTION_DEFN
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:102: EQ
 			{
-			DebugLocation(1, 98);
-			mFUNCTION_DEFN(); 
+			DebugLocation(1, 102);
+			mEQ(); 
 
 			}
 			break;
 		case 16:
 			DebugEnterAlt(16);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:112: FUN_DEF
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:105: EXPR
 			{
-			DebugLocation(1, 112);
-			mFUN_DEF(); 
+			DebugLocation(1, 105);
+			mEXPR(); 
 
 			}
 			break;
 		case 17:
 			DebugEnterAlt(17);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:120: GE
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:110: FALSE
 			{
-			DebugLocation(1, 120);
-			mGE(); 
+			DebugLocation(1, 110);
+			mFALSE(); 
 
 			}
 			break;
 		case 18:
 			DebugEnterAlt(18);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:123: GT
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:116: FUN
 			{
-			DebugLocation(1, 123);
-			mGT(); 
+			DebugLocation(1, 116);
+			mFUN(); 
 
 			}
 			break;
 		case 19:
 			DebugEnterAlt(19);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:126: IF
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:120: FUNCTION_CALL
 			{
-			DebugLocation(1, 126);
-			mIF(); 
+			DebugLocation(1, 120);
+			mFUNCTION_CALL(); 
 
 			}
 			break;
 		case 20:
 			DebugEnterAlt(20);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:129: INT_KW
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:134: FUNCTION_DEFN
 			{
-			DebugLocation(1, 129);
-			mINT_KW(); 
+			DebugLocation(1, 134);
+			mFUNCTION_DEFN(); 
 
 			}
 			break;
 		case 21:
 			DebugEnterAlt(21);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:136: LE
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:148: FUN_DEF
 			{
-			DebugLocation(1, 136);
-			mLE(); 
+			DebugLocation(1, 148);
+			mFUN_DEF(); 
 
 			}
 			break;
 		case 22:
 			DebugEnterAlt(22);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:139: LET
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:156: GE
 			{
-			DebugLocation(1, 139);
-			mLET(); 
+			DebugLocation(1, 156);
+			mGE(); 
 
 			}
 			break;
 		case 23:
 			DebugEnterAlt(23);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:143: LT
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:159: GT
 			{
-			DebugLocation(1, 143);
-			mLT(); 
+			DebugLocation(1, 159);
+			mGT(); 
 
 			}
 			break;
 		case 24:
 			DebugEnterAlt(24);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:146: MATCH
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:162: IF
 			{
-			DebugLocation(1, 146);
-			mMATCH(); 
+			DebugLocation(1, 162);
+			mIF(); 
 
 			}
 			break;
 		case 25:
 			DebugEnterAlt(25);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:152: MINUS
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:165: INT_KW
 			{
-			DebugLocation(1, 152);
-			mMINUS(); 
+			DebugLocation(1, 165);
+			mINT_KW(); 
 
 			}
 			break;
 		case 26:
 			DebugEnterAlt(26);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:158: MOD
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:172: LE
 			{
-			DebugLocation(1, 158);
-			mMOD(); 
+			DebugLocation(1, 172);
+			mLE(); 
 
 			}
 			break;
 		case 27:
 			DebugEnterAlt(27);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:162: MULT
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:175: LET
 			{
-			DebugLocation(1, 162);
-			mMULT(); 
+			DebugLocation(1, 175);
+			mLET(); 
 
 			}
 			break;
 		case 28:
 			DebugEnterAlt(28);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:167: MUTABLE
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:179: LT
 			{
-			DebugLocation(1, 167);
-			mMUTABLE(); 
+			DebugLocation(1, 179);
+			mLT(); 
 
 			}
 			break;
 		case 29:
 			DebugEnterAlt(29);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:175: NEQ
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:182: MATCH
 			{
-			DebugLocation(1, 175);
-			mNEQ(); 
+			DebugLocation(1, 182);
+			mMATCH(); 
 
 			}
 			break;
 		case 30:
 			DebugEnterAlt(30);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:179: OR
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:188: MINUS
 			{
-			DebugLocation(1, 179);
-			mOR(); 
+			DebugLocation(1, 188);
+			mMINUS(); 
 
 			}
 			break;
 		case 31:
 			DebugEnterAlt(31);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:182: PIPE
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:194: MOD
 			{
-			DebugLocation(1, 182);
-			mPIPE(); 
+			DebugLocation(1, 194);
+			mMOD(); 
 
 			}
 			break;
 		case 32:
 			DebugEnterAlt(32);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:187: PLUS
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:198: MULT
 			{
-			DebugLocation(1, 187);
-			mPLUS(); 
+			DebugLocation(1, 198);
+			mMULT(); 
 
 			}
 			break;
 		case 33:
 			DebugEnterAlt(33);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:192: PRINTF
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:203: MUTABLE
 			{
-			DebugLocation(1, 192);
-			mPRINTF(); 
+			DebugLocation(1, 203);
+			mMUTABLE(); 
 
 			}
 			break;
 		case 34:
 			DebugEnterAlt(34);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:199: REC
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:211: NAME
 			{
-			DebugLocation(1, 199);
-			mREC(); 
+			DebugLocation(1, 211);
+			mNAME(); 
 
 			}
 			break;
 		case 35:
 			DebugEnterAlt(35);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:203: STRING_KW
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:216: NEQ
 			{
-			DebugLocation(1, 203);
-			mSTRING_KW(); 
+			DebugLocation(1, 216);
+			mNEQ(); 
 
 			}
 			break;
 		case 36:
 			DebugEnterAlt(36);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:213: THEN
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:220: OPEN_BR
 			{
-			DebugLocation(1, 213);
-			mTHEN(); 
+			DebugLocation(1, 220);
+			mOPEN_BR(); 
 
 			}
 			break;
 		case 37:
 			DebugEnterAlt(37);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:218: TRUE
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:228: OR
 			{
-			DebugLocation(1, 218);
-			mTRUE(); 
+			DebugLocation(1, 228);
+			mOR(); 
 
 			}
 			break;
 		case 38:
 			DebugEnterAlt(38);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:223: TYPE
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:231: PIPE
 			{
-			DebugLocation(1, 223);
-			mTYPE(); 
+			DebugLocation(1, 231);
+			mPIPE(); 
 
 			}
 			break;
 		case 39:
 			DebugEnterAlt(39);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:228: VALUE_DEFN
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:236: PLUS
 			{
-			DebugLocation(1, 228);
-			mVALUE_DEFN(); 
+			DebugLocation(1, 236);
+			mPLUS(); 
 
 			}
 			break;
 		case 40:
 			DebugEnterAlt(40);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:239: WHEN
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:241: PROGRAM
 			{
-			DebugLocation(1, 239);
-			mWHEN(); 
+			DebugLocation(1, 241);
+			mPROGRAM(); 
 
 			}
 			break;
 		case 41:
 			DebugEnterAlt(41);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:244: T__55
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:249: REC
 			{
-			DebugLocation(1, 244);
-			mT__55(); 
+			DebugLocation(1, 249);
+			mREC(); 
 
 			}
 			break;
 		case 42:
 			DebugEnterAlt(42);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:250: T__56
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:253: STRING_KW
 			{
-			DebugLocation(1, 250);
-			mT__56(); 
+			DebugLocation(1, 253);
+			mSTRING_KW(); 
 
 			}
 			break;
 		case 43:
 			DebugEnterAlt(43);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:256: T__57
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:263: TAB
 			{
-			DebugLocation(1, 256);
-			mT__57(); 
+			DebugLocation(1, 263);
+			mTAB(); 
 
 			}
 			break;
 		case 44:
 			DebugEnterAlt(44);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:262: ID
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:267: THEN
 			{
-			DebugLocation(1, 262);
-			mID(); 
+			DebugLocation(1, 267);
+			mTHEN(); 
 
 			}
 			break;
 		case 45:
 			DebugEnterAlt(45);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:265: INT
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:272: TRUE
 			{
-			DebugLocation(1, 265);
-			mINT(); 
+			DebugLocation(1, 272);
+			mTRUE(); 
 
 			}
 			break;
 		case 46:
 			DebugEnterAlt(46);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:269: DOUBLE
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:277: TYPE
 			{
-			DebugLocation(1, 269);
-			mDOUBLE(); 
+			DebugLocation(1, 277);
+			mTYPE(); 
 
 			}
 			break;
 		case 47:
 			DebugEnterAlt(47);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:276: EXPONENT
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:282: VALUE_DEFN
 			{
-			DebugLocation(1, 276);
-			mEXPONENT(); 
+			DebugLocation(1, 282);
+			mVALUE_DEFN(); 
 
 			}
 			break;
 		case 48:
 			DebugEnterAlt(48);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:285: STRING
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:293: WHEN
 			{
-			DebugLocation(1, 285);
-			mSTRING(); 
+			DebugLocation(1, 293);
+			mWHEN(); 
 
 			}
 			break;
 		case 49:
 			DebugEnterAlt(49);
-			// D:\\fsharp_compiler\\fsharp_ss.g:1:292: CHAR
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:298: T__63
 			{
-			DebugLocation(1, 292);
+			DebugLocation(1, 298);
+			mT__63(); 
+
+			}
+			break;
+		case 50:
+			DebugEnterAlt(50);
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:304: T__64
+			{
+			DebugLocation(1, 304);
+			mT__64(); 
+
+			}
+			break;
+		case 51:
+			DebugEnterAlt(51);
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:310: ID
+			{
+			DebugLocation(1, 310);
+			mID(); 
+
+			}
+			break;
+		case 52:
+			DebugEnterAlt(52);
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:313: INT
+			{
+			DebugLocation(1, 313);
+			mINT(); 
+
+			}
+			break;
+		case 53:
+			DebugEnterAlt(53);
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:317: DOUBLE
+			{
+			DebugLocation(1, 317);
+			mDOUBLE(); 
+
+			}
+			break;
+		case 54:
+			DebugEnterAlt(54);
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:324: EXPONENT
+			{
+			DebugLocation(1, 324);
+			mEXPONENT(); 
+
+			}
+			break;
+		case 55:
+			DebugEnterAlt(55);
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:333: STRING
+			{
+			DebugLocation(1, 333);
+			mSTRING(); 
+
+			}
+			break;
+		case 56:
+			DebugEnterAlt(56);
+			// D:\\fsharp_compiler\\fsharp_ss.g:1:340: CHAR
+			{
+			DebugLocation(1, 340);
 			mCHAR(); 
 
 			}
@@ -3254,7 +3574,7 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 			this.transition = DFA9_transition;
 		}
 
-		public override string Description { get { return "64:1: DOUBLE : ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( EXPONENT )? | '.' ( '0' .. '9' )+ ( EXPONENT )? | ( '0' .. '9' )+ EXPONENT );"; } }
+		public override string Description { get { return "75:1: DOUBLE : ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( EXPONENT )? | '.' ( '0' .. '9' )+ ( EXPONENT )? | ( '0' .. '9' )+ EXPONENT );"; } }
 
 		public override void Error(NoViableAltException nvae)
 		{
@@ -3265,234 +3585,264 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 	private class DFA16 : DFA
 	{
 		private const string DFA16_eotS =
-			"\x2\xFFFF\x1\x24\x1\x2A\x3\x24\x1\xFFFF\x2\x24\x1\xFFFF\x2\x24\x1\x36"+
-			"\x1\x38\x3\x24\x5\xFFFF\x7\x24\x3\xFFFF\x1\x24\x1\x48\x4\xFFFF\x1\x24"+
-			"\x3\xFFFF\x6\x24\x1\xFFFF\x3\x24\x4\xFFFF\x1\x53\x4\x24\x2\xFFFF\x8\x24"+
-			"\x1\xFFFF\x8\x24\x1\x68\x1\x24\x1\xFFFF\x1\x6A\x1\x6B\x3\x24\x1\x6F\x6"+
-			"\x24\x1\x76\x1\x77\x1\x78\x1\x79\x1\x24\x1\x7B\x1\x7C\x1\x24\x1\xFFFF"+
-			"\x1\x24\x2\xFFFF\x3\x24\x1\xFFFF\x1\x24\x1\x83\x1\x84\x1\x85\x1\x24\x1"+
-			"\x87\x4\xFFFF\x1\x24\x2\xFFFF\x1\x89\x1\x24\x1\x8B\x3\x24\x3\xFFFF\x1"+
-			"\x24\x1\xFFFF\x1\x90\x1\xFFFF\x1\x24\x1\xFFFF\x1\x24\x1\x93\x1\x94\x1"+
-			"\x24\x1\xFFFF\x1\x24\x1\x97\x2\xFFFF\x2\x24\x1\xFFFF\x5\x24\x1\xA0\x2"+
-			"\x24\x1\xFFFF\x2\x24\x1\xA5\x1\xA6\x2\xFFFF";
+			"\x2\xFFFF\x1\x26\x1\x2E\x3\x26\x2\xFFFF\x2\x26\x2\xFFFF\x3\x26\x1\x3D"+
+			"\x1\x3F\x3\x26\x2\xFFFF\x1\x26\x4\xFFFF\x3\x26\x1\xFFFF\x4\x26\x3\xFFFF"+
+			"\x1\x50\x3\xFFFF\x1\x26\x3\xFFFF\x8\x26\x1\xFFFF\x4\x26\x4\xFFFF\x1\x5E"+
+			"\x5\x26\x2\xFFFF\x8\x26\x1\xFFFF\x8\x26\x1\x74\x2\x26\x1\x77\x1\x26\x1"+
+			"\xFFFF\x1\x79\x1\x7A\x4\x26\x1\x7F\x6\x26\x1\x86\x1\x26\x1\x88\x1\x89"+
+			"\x1\x8A\x1\x26\x1\x8C\x1\x8D\x1\xFFFF\x1\x8E\x1\x26\x1\xFFFF\x1\x26\x2"+
+			"\xFFFF\x2\x26\x1\x93\x1\x26\x1\xFFFF\x1\x26\x1\x96\x1\x97\x1\x98\x1\x26"+
+			"\x1\x9A\x1\xFFFF\x1\x9B\x3\xFFFF\x1\x26\x3\xFFFF\x1\x9D\x1\x26\x1\x9F"+
+			"\x1\x26\x1\xFFFF\x2\x26\x3\xFFFF\x1\x26\x2\xFFFF\x1\xA4\x1\xFFFF\x1\x26"+
+			"\x1\xFFFF\x2\x26\x1\xA8\x1\x26\x1\xFFFF\x1\x26\x1\xAB\x1\xAC\x1\xFFFF"+
+			"\x2\x26\x2\xFFFF\x5\x26\x1\xB5\x2\x26\x1\xFFFF\x2\x26\x1\xBA\x1\xBB\x2"+
+			"\xFFFF";
 		private const string DFA16_eofS =
-			"\xA7\xFFFF";
+			"\xBC\xFFFF";
 		private const string DFA16_minS =
-			"\x1\x21\x1\xFFFF\x1\x52\x1\x2D\x1\x4F\x1\x6F\x1\x68\x1\xFFFF\x1\x6F\x1"+
-			"\x2B\x1\xFFFF\x1\x61\x1\x55\x1\x3E\x1\x3D\x1\x66\x1\x65\x1\x61\x3\xFFFF"+
-			"\x1\x3E\x1\xFFFF\x1\x72\x1\x65\x1\x74\x1\x68\x1\x59\x1\x41\x1\x68\x3"+
-			"\xFFFF\x1\x2B\x1\x2E\x4\xFFFF\x1\x47\x3\xFFFF\x1\x44\x1\x6F\x1\x61\x1"+
-			"\x75\x1\x69\x1\x30\x1\xFFFF\x1\x6C\x1\x6E\x1\x4E\x4\xFFFF\x1\x30\x4\x74"+
-			"\x2\xFFFF\x1\x69\x1\x63\x1\x72\x1\x65\x1\x75\x1\x50\x1\x4C\x1\x65\x1"+
-			"\xFFFF\x1\x53\x1\x59\x1\x6C\x1\x72\x1\x62\x1\x66\x1\x65\x1\x73\x1\x30"+
-			"\x1\x43\x1\xFFFF\x2\x30\x1\x63\x1\x61\x1\x6E\x1\x30\x1\x69\x1\x6E\x1"+
-			"\x65\x1\x45\x1\x55\x1\x6E\x4\x30\x1\x6C\x2\x30\x1\x65\x1\xFFFF\x1\x54"+
-			"\x2\xFFFF\x1\x68\x1\x62\x1\x74\x1\xFFFF\x1\x6E\x3\x30\x1\x45\x1\x30\x4"+
-			"\xFFFF\x1\x65\x2\xFFFF\x1\x30\x1\x49\x1\x30\x1\x6C\x1\x66\x1\x67\x3\xFFFF"+
-			"\x1\x5F\x1\xFFFF\x1\x30\x1\xFFFF\x1\x4F\x1\xFFFF\x1\x65\x2\x30\x1\x44"+
-			"\x1\xFFFF\x1\x4E\x1\x30\x2\xFFFF\x1\x45\x1\x5F\x1\xFFFF\x1\x46\x1\x43"+
-			"\x1\x4E\x1\x41\x1\x45\x1\x30\x1\x4C\x1\x46\x1\xFFFF\x1\x4C\x1\x4E\x2"+
-			"\x30\x2\xFFFF";
+			"\x1\x9\x1\xFFFF\x1\x52\x1\x2D\x1\x65\x1\x4F\x1\x68\x2\xFFFF\x1\x6F\x1"+
+			"\x2B\x2\xFFFF\x1\x2B\x1\x61\x1\x55\x1\x3E\x1\x3D\x1\x66\x1\x65\x1\x61"+
+			"\x2\xFFFF\x1\x41\x2\xFFFF\x1\x3E\x1\xFFFF\x1\x52\x1\x65\x1\x74\x1\xFFFF"+
+			"\x1\x68\x1\x59\x1\x41\x1\x68\x3\xFFFF\x1\x2E\x3\xFFFF\x1\x47\x3\xFFFF"+
+			"\x1\x67\x1\x6F\x1\x44\x1\x61\x1\x75\x1\x69\x1\x64\x1\x30\x1\xFFFF\x1"+
+			"\x50\x1\x6C\x1\x6E\x1\x4E\x4\xFFFF\x1\x30\x4\x74\x1\x4D\x2\xFFFF\x1\x4F"+
+			"\x1\x63\x1\x72\x1\x65\x1\x75\x1\x50\x1\x4C\x1\x65\x1\xFFFF\x1\x53\x1"+
+			"\x69\x1\x6C\x1\x59\x1\x72\x1\x62\x1\x66\x1\x65\x1\x30\x1\x52\x1\x73\x1"+
+			"\x30\x1\x43\x1\xFFFF\x2\x30\x1\x63\x1\x61\x1\x45\x1\x47\x1\x30\x1\x69"+
+			"\x1\x6E\x1\x65\x1\x45\x1\x55\x1\x6E\x1\x30\x1\x6E\x3\x30\x1\x6C\x2\x30"+
+			"\x1\xFFFF\x1\x30\x1\x65\x1\xFFFF\x1\x54\x2\xFFFF\x1\x68\x1\x62\x1\x30"+
+			"\x1\x52\x1\xFFFF\x1\x6E\x3\x30\x1\x45\x1\x30\x1\xFFFF\x1\x30\x3\xFFFF"+
+			"\x1\x65\x3\xFFFF\x1\x30\x1\x49\x1\x30\x1\x6C\x1\xFFFF\x1\x41\x1\x67\x3"+
+			"\xFFFF\x1\x5F\x2\xFFFF\x1\x30\x1\xFFFF\x1\x4F\x1\xFFFF\x1\x65\x1\x4D"+
+			"\x1\x30\x1\x44\x1\xFFFF\x1\x4E\x2\x30\x1\xFFFF\x1\x45\x1\x5F\x2\xFFFF"+
+			"\x1\x46\x1\x43\x1\x4E\x1\x41\x1\x45\x1\x30\x1\x4C\x1\x46\x1\xFFFF\x1"+
+			"\x4C\x1\x4E\x2\x30\x2\xFFFF";
 		private const string DFA16_maxS =
-			"\x1\x7C\x1\xFFFF\x1\x52\x1\x3D\x1\x4F\x1\x6F\x1\x68\x1\xFFFF\x1\x6F\x1"+
-			"\x6C\x1\xFFFF\x1\x75\x1\x55\x1\x3E\x1\x3D\x1\x6E\x1\x65\x1\x75\x3\xFFFF"+
-			"\x1\x7C\x1\xFFFF\x1\x72\x1\x65\x1\x74\x1\x72\x1\x59\x1\x41\x1\x68\x3"+
-			"\xFFFF\x1\x39\x1\x65\x4\xFFFF\x1\x47\x3\xFFFF\x1\x44\x1\x6F\x1\x61\x1"+
-			"\x75\x1\x73\x1\x39\x1\xFFFF\x1\x6C\x1\x6E\x1\x4E\x4\xFFFF\x1\x7A\x4\x74"+
-			"\x2\xFFFF\x1\x69\x1\x63\x1\x72\x1\x65\x1\x75\x1\x50\x1\x4C\x1\x65\x1"+
-			"\xFFFF\x1\x53\x1\x59\x1\x6C\x1\x72\x1\x62\x1\x66\x1\x65\x1\x73\x1\x7A"+
-			"\x1\x43\x1\xFFFF\x2\x7A\x1\x63\x1\x61\x1\x6E\x1\x7A\x1\x69\x1\x6E\x1"+
-			"\x65\x1\x45\x1\x55\x1\x6E\x4\x7A\x1\x6C\x2\x7A\x1\x65\x1\xFFFF\x1\x54"+
-			"\x2\xFFFF\x1\x68\x1\x62\x1\x74\x1\xFFFF\x1\x6E\x3\x7A\x1\x45\x1\x7A\x4"+
-			"\xFFFF\x1\x65\x2\xFFFF\x1\x7A\x1\x49\x1\x7A\x1\x6C\x1\x66\x1\x67\x3\xFFFF"+
-			"\x1\x5F\x1\xFFFF\x1\x7A\x1\xFFFF\x1\x4F\x1\xFFFF\x1\x65\x2\x7A\x1\x44"+
-			"\x1\xFFFF\x1\x4E\x1\x7A\x2\xFFFF\x1\x45\x1\x5F\x1\xFFFF\x1\x46\x1\x44"+
-			"\x1\x4E\x1\x41\x1\x45\x1\x7A\x1\x4C\x1\x46\x1\xFFFF\x1\x4C\x1\x4E\x2"+
-			"\x7A\x2\xFFFF";
+			"\x1\x7C\x1\xFFFF\x1\x52\x1\x3D\x1\x6F\x1\x4F\x1\x68\x2\xFFFF\x1\x6F\x1"+
+			"\x6E\x2\xFFFF\x1\x58\x1\x75\x1\x55\x1\x3E\x1\x3D\x1\x6E\x1\x65\x1\x75"+
+			"\x2\xFFFF\x1\x41\x2\xFFFF\x1\x7C\x1\xFFFF\x1\x52\x1\x65\x1\x74\x1\xFFFF"+
+			"\x1\x72\x1\x59\x1\x41\x1\x68\x3\xFFFF\x1\x65\x3\xFFFF\x1\x47\x3\xFFFF"+
+			"\x1\x67\x1\x6F\x1\x44\x1\x61\x1\x75\x1\x73\x1\x64\x1\x39\x1\xFFFF\x1"+
+			"\x50\x1\x6C\x1\x6E\x1\x4E\x4\xFFFF\x1\x7A\x4\x74\x1\x4D\x2\xFFFF\x1\x4F"+
+			"\x1\x63\x1\x72\x1\x65\x1\x75\x1\x50\x1\x4C\x1\x65\x1\xFFFF\x1\x53\x1"+
+			"\x69\x1\x6C\x1\x59\x1\x72\x1\x62\x1\x66\x1\x65\x1\x7A\x1\x52\x1\x73\x1"+
+			"\x7A\x1\x43\x1\xFFFF\x2\x7A\x1\x63\x1\x61\x1\x45\x1\x47\x1\x7A\x1\x69"+
+			"\x1\x6E\x1\x65\x1\x45\x1\x55\x1\x6E\x1\x7A\x1\x6E\x3\x7A\x1\x6C\x2\x7A"+
+			"\x1\xFFFF\x1\x7A\x1\x65\x1\xFFFF\x1\x54\x2\xFFFF\x1\x68\x1\x62\x1\x7A"+
+			"\x1\x52\x1\xFFFF\x1\x6E\x3\x7A\x1\x45\x1\x7A\x1\xFFFF\x1\x7A\x3\xFFFF"+
+			"\x1\x65\x3\xFFFF\x1\x7A\x1\x49\x1\x7A\x1\x6C\x1\xFFFF\x1\x41\x1\x67\x3"+
+			"\xFFFF\x1\x5F\x2\xFFFF\x1\x7A\x1\xFFFF\x1\x4F\x1\xFFFF\x1\x65\x1\x4D"+
+			"\x1\x7A\x1\x44\x1\xFFFF\x1\x4E\x2\x7A\x1\xFFFF\x1\x45\x1\x5F\x2\xFFFF"+
+			"\x1\x46\x1\x44\x1\x4E\x1\x41\x1\x45\x1\x7A\x1\x4C\x1\x46\x1\xFFFF\x1"+
+			"\x4C\x1\x4E\x2\x7A\x2\xFFFF";
 		private const string DFA16_acceptS =
-			"\x1\xFFFF\x1\x1\x5\xFFFF\x1\x7\x2\xFFFF\x1\xB\x7\xFFFF\x1\x1A\x1\x1B"+
-			"\x1\x1D\x1\xFFFF\x1\x20\x7\xFFFF\x1\x29\x1\x2A\x1\x2B\x2\xFFFF\x1\x2E"+
-			"\x1\x2C\x1\x30\x1\x31\x1\xFFFF\x1\x3\x1\x15\x1\x17\x6\xFFFF\x1\x2F\x3"+
-			"\xFFFF\x1\x10\x1\x19\x1\x11\x1\x12\x5\xFFFF\x1\x1E\x1\x1F\x8\xFFFF\x1"+
-			"\x2D\xA\xFFFF\x1\x13\x14\xFFFF\x1\xD\x1\xFFFF\x1\x14\x1\x16\x3\xFFFF"+
-			"\x1\x22\x6\xFFFF\x1\x2\x1\x4\x1\x5\x1\x6\x1\xFFFF\x1\x9\x1\xA\x6\xFFFF"+
-			"\x1\x24\x1\x25\x1\x26\x1\xFFFF\x1\x28\x1\xFFFF\x1\xC\x1\xFFFF\x1\x18"+
-			"\x4\xFFFF\x1\x8\x2\xFFFF\x1\x21\x1\x23\x2\xFFFF\x1\x1C\x8\xFFFF\x1\x27"+
-			"\x4\xFFFF\x1\xE\x1\xF";
+			"\x1\xFFFF\x1\x1\x5\xFFFF\x1\x8\x1\x9\x2\xFFFF\x1\xE\x1\xF\x8\xFFFF\x1"+
+			"\x1F\x1\x20\x1\xFFFF\x1\x23\x1\x24\x1\xFFFF\x1\x27\x3\xFFFF\x1\x2B\x4"+
+			"\xFFFF\x1\x31\x1\x32\x1\x33\x1\xFFFF\x1\x35\x1\x37\x1\x38\x1\xFFFF\x1"+
+			"\x3\x1\x1A\x1\x1C\x8\xFFFF\x1\x36\x4\xFFFF\x1\x15\x1\x1E\x1\x16\x1\x17"+
+			"\x6\xFFFF\x1\x25\x1\x26\x8\xFFFF\x1\x34\xD\xFFFF\x1\x18\x15\xFFFF\x1"+
+			"\xD\x2\xFFFF\x1\x12\x1\xFFFF\x1\x19\x1\x1B\x4\xFFFF\x1\x29\x6\xFFFF\x1"+
+			"\x2\x1\xFFFF\x1\x6\x1\x5\x1\x7\x1\xFFFF\x1\xB\x1\xC\x1\x10\x4\xFFFF\x1"+
+			"\x22\x2\xFFFF\x1\x2C\x1\x2D\x1\x2E\x1\xFFFF\x1\x30\x1\x4\x1\xFFFF\x1"+
+			"\x11\x1\xFFFF\x1\x1D\x4\xFFFF\x1\xA\x3\xFFFF\x1\x2A\x2\xFFFF\x1\x21\x1"+
+			"\x28\x8\xFFFF\x1\x2F\x4\xFFFF\x1\x13\x1\x14";
 		private const string DFA16_specialS =
-			"\xA7\xFFFF}>";
+			"\xBC\xFFFF}>";
 		private static readonly string[] DFA16_transitionS =
 			{
-				"\x1\x14\x1\x25\x2\xFFFF\x1\x12\x1\x1\x1\x26\x1\x1E\x1\x1F\x1\x13\x1"+
-				"\x16\x1\xFFFF\x1\xD\x1\x23\x1\x7\xA\x22\x1\x20\x1\xFFFF\x1\x3\x1\xA"+
-				"\x1\xE\x2\xFFFF\x1\x2\x1\x4\x2\x24\x1\x21\x1\xC\xD\x24\x1\x1B\x1\x24"+
-				"\x1\x1C\x4\x24\x4\xFFFF\x1\x24\x1\xFFFF\x1\x24\x1\x5\x1\x6\x1\x8\x1"+
-				"\x9\x1\xB\x2\x24\x1\xF\x2\x24\x1\x10\x1\x11\x2\x24\x1\x17\x1\x24\x1"+
-				"\x18\x1\x19\x1\x1A\x2\x24\x1\x1D\x3\x24\x1\xFFFF\x1\x15",
+				"\x1\x1F\x17\xFFFF\x1\x18\x1\x29\x2\xFFFF\x1\x15\x1\x1\x1\x2A\x1\x19"+
+				"\x1\x7\x1\x16\x1\x1B\x1\xFFFF\x1\x10\x1\x28\x1\x8\xA\x27\x1\x24\x1\x25"+
+				"\x1\x3\x1\xC\x1\x11\x2\xFFFF\x1\x2\x1\x5\x2\x26\x1\xD\x1\xF\x7\x26\x1"+
+				"\x17\x1\x26\x1\x1C\x3\x26\x1\x21\x1\x26\x1\x22\x4\x26\x1\xB\x3\xFFFF"+
+				"\x1\x26\x1\xFFFF\x1\x26\x1\x4\x1\x6\x1\x9\x1\xA\x1\xE\x2\x26\x1\x12"+
+				"\x2\x26\x1\x13\x1\x14\x4\x26\x1\x1D\x1\x1E\x1\x20\x2\x26\x1\x23\x3\x26"+
+				"\x1\xFFFF\x1\x1A",
 				"",
-				"\x1\x27",
-				"\x1\x28\xF\xFFFF\x1\x29",
 				"\x1\x2B",
-				"\x1\x2C",
-				"\x1\x2D",
+				"\x1\x2C\xF\xFFFF\x1\x2D",
+				"\x1\x2F\x9\xFFFF\x1\x30",
+				"\x1\x31",
+				"\x1\x32",
 				"",
-				"\x1\x2E",
-				"\x1\x31\x1\xFFFF\x1\x31\x2\xFFFF\xA\x30\x32\xFFFF\x1\x2F",
 				"",
-				"\x1\x32\x13\xFFFF\x1\x33",
-				"\x1\x34",
-				"\x1\x35",
-				"\x1\x37",
-				"\x1\x39\x7\xFFFF\x1\x3A",
+				"\x1\x33",
+				"\x1\x37\x1\xFFFF\x1\x37\x2\xFFFF\xA\x36\x32\xFFFF\x1\x34\x1\xFFFF\x1"+
+				"\x35",
+				"",
+				"",
+				"\x1\x37\x1\xFFFF\x1\x37\x2\xFFFF\xA\x36\x1E\xFFFF\x1\x38",
+				"\x1\x39\x13\xFFFF\x1\x3A",
 				"\x1\x3B",
-				"\x1\x3C\x13\xFFFF\x1\x3D",
-				"",
-				"",
-				"",
-				"\x1\x3F\x3D\xFFFF\x1\x3E",
-				"",
-				"\x1\x40",
-				"\x1\x41",
+				"\x1\x3C",
+				"\x1\x3E",
+				"\x1\x40\x7\xFFFF\x1\x41",
 				"\x1\x42",
-				"\x1\x43\x9\xFFFF\x1\x44",
+				"\x1\x43\x13\xFFFF\x1\x44",
+				"",
+				"",
 				"\x1\x45",
-				"\x1\x46",
-				"\x1\x47",
 				"",
 				"",
+				"\x1\x47\x3D\xFFFF\x1\x46",
 				"",
-				"\x1\x31\x1\xFFFF\x1\x31\x2\xFFFF\xA\x30",
-				"\x1\x23\x1\xFFFF\xA\x22\xB\xFFFF\x1\x23\x1F\xFFFF\x1\x23",
-				"",
-				"",
-				"",
-				"",
+				"\x1\x48",
 				"\x1\x49",
-				"",
-				"",
-				"",
 				"\x1\x4A",
-				"\x1\x4B",
-				"\x1\x4C",
+				"",
+				"\x1\x4B\x9\xFFFF\x1\x4C",
 				"\x1\x4D",
-				"\x1\x4E\x9\xFFFF\x1\x4F",
-				"\xA\x30",
+				"\x1\x4E",
+				"\x1\x4F",
 				"",
-				"\x1\x50",
+				"",
+				"",
+				"\x1\x28\x1\xFFFF\xA\x27\xB\xFFFF\x1\x28\x1F\xFFFF\x1\x28",
+				"",
+				"",
+				"",
 				"\x1\x51",
+				"",
+				"",
+				"",
 				"\x1\x52",
-				"",
-				"",
-				"",
-				"",
-				"\xA\x24\x7\xFFFF\x1A\x24\x4\xFFFF\x1\x24\x1\xFFFF\x1A\x24",
+				"\x1\x53",
 				"\x1\x54",
 				"\x1\x55",
 				"\x1\x56",
-				"\x1\x57",
-				"",
-				"",
-				"\x1\x58",
+				"\x1\x57\x9\xFFFF\x1\x58",
 				"\x1\x59",
+				"\xA\x36",
+				"",
 				"\x1\x5A",
 				"\x1\x5B",
 				"\x1\x5C",
 				"\x1\x5D",
-				"\x1\x5E",
-				"\x1\x5F",
 				"",
+				"",
+				"",
+				"",
+				"\xA\x26\x7\xFFFF\x1A\x26\x4\xFFFF\x1\x26\x1\xFFFF\x1A\x26",
+				"\x1\x5F",
 				"\x1\x60",
 				"\x1\x61",
 				"\x1\x62",
 				"\x1\x63",
+				"",
+				"",
 				"\x1\x64",
 				"\x1\x65",
 				"\x1\x66",
 				"\x1\x67",
-				"\xA\x24\x7\xFFFF\x1A\x24\x4\xFFFF\x1\x24\x1\xFFFF\x1A\x24",
+				"\x1\x68",
 				"\x1\x69",
+				"\x1\x6A",
+				"\x1\x6B",
 				"",
-				"\xA\x24\x7\xFFFF\x1A\x24\x4\xFFFF\x1\x24\x1\xFFFF\x1A\x24",
-				"\xA\x24\x7\xFFFF\x1A\x24\x4\xFFFF\x1\x24\x1\xFFFF\x1A\x24",
 				"\x1\x6C",
 				"\x1\x6D",
 				"\x1\x6E",
-				"\xA\x24\x7\xFFFF\x1A\x24\x4\xFFFF\x1\x24\x1\xFFFF\x1A\x24",
+				"\x1\x6F",
 				"\x1\x70",
 				"\x1\x71",
 				"\x1\x72",
 				"\x1\x73",
-				"\x1\x74",
+				"\xA\x26\x7\xFFFF\x1A\x26\x4\xFFFF\x1\x26\x1\xFFFF\x1A\x26",
 				"\x1\x75",
-				"\xA\x24\x7\xFFFF\x1A\x24\x4\xFFFF\x1\x24\x1\xFFFF\x1A\x24",
-				"\xA\x24\x7\xFFFF\x1A\x24\x4\xFFFF\x1\x24\x1\xFFFF\x1A\x24",
-				"\xA\x24\x7\xFFFF\x1A\x24\x4\xFFFF\x1\x24\x1\xFFFF\x1A\x24",
-				"\xA\x24\x7\xFFFF\x1A\x24\x4\xFFFF\x1\x24\x1\xFFFF\x1A\x24",
-				"\x1\x7A",
-				"\xA\x24\x7\xFFFF\x1A\x24\x4\xFFFF\x1\x24\x1\xFFFF\x1A\x24",
-				"\xA\x24\x7\xFFFF\x1A\x24\x4\xFFFF\x1\x24\x1\xFFFF\x1A\x24",
+				"\x1\x76",
+				"\xA\x26\x7\xFFFF\x1A\x26\x4\xFFFF\x1\x26\x1\xFFFF\x1A\x26",
+				"\x1\x78",
+				"",
+				"\xA\x26\x7\xFFFF\x1A\x26\x4\xFFFF\x1\x26\x1\xFFFF\x1A\x26",
+				"\xA\x26\x7\xFFFF\x1A\x26\x4\xFFFF\x1\x26\x1\xFFFF\x1A\x26",
+				"\x1\x7B",
+				"\x1\x7C",
 				"\x1\x7D",
-				"",
 				"\x1\x7E",
-				"",
-				"",
-				"\x1\x7F",
+				"\xA\x26\x7\xFFFF\x1A\x26\x4\xFFFF\x1\x26\x1\xFFFF\x1A\x26",
 				"\x1\x80",
 				"\x1\x81",
-				"",
 				"\x1\x82",
-				"\xA\x24\x7\xFFFF\x1A\x24\x4\xFFFF\x1\x24\x1\xFFFF\x1A\x24",
-				"\xA\x24\x7\xFFFF\x1A\x24\x4\xFFFF\x1\x24\x1\xFFFF\x1A\x24",
-				"\xA\x24\x7\xFFFF\x1A\x24\x4\xFFFF\x1\x24\x1\xFFFF\x1A\x24",
-				"\x1\x86",
-				"\xA\x24\x7\xFFFF\x1A\x24\x4\xFFFF\x1\x24\x1\xFFFF\x1A\x24",
+				"\x1\x83",
+				"\x1\x84",
+				"\x1\x85",
+				"\xA\x26\x7\xFFFF\x1A\x26\x4\xFFFF\x1\x26\x1\xFFFF\x1A\x26",
+				"\x1\x87",
+				"\xA\x26\x7\xFFFF\x1A\x26\x4\xFFFF\x1\x26\x1\xFFFF\x1A\x26",
+				"\xA\x26\x7\xFFFF\x1A\x26\x4\xFFFF\x1\x26\x1\xFFFF\x1A\x26",
+				"\xA\x26\x7\xFFFF\x1A\x26\x4\xFFFF\x1\x26\x1\xFFFF\x1A\x26",
+				"\x1\x8B",
+				"\xA\x26\x7\xFFFF\x1A\x26\x4\xFFFF\x1\x26\x1\xFFFF\x1A\x26",
+				"\xA\x26\x7\xFFFF\x1A\x26\x4\xFFFF\x1\x26\x1\xFFFF\x1A\x26",
 				"",
-				"",
-				"",
-				"",
-				"\x1\x88",
-				"",
-				"",
-				"\xA\x24\x7\xFFFF\x1A\x24\x4\xFFFF\x1\x24\x1\xFFFF\x1A\x24",
-				"\x1\x8A",
-				"\xA\x24\x7\xFFFF\x1A\x24\x4\xFFFF\x1\x24\x1\xFFFF\x1A\x24",
-				"\x1\x8C",
-				"\x1\x8D",
-				"\x1\x8E",
-				"",
-				"",
-				"",
+				"\xA\x26\x7\xFFFF\x1A\x26\x4\xFFFF\x1\x26\x1\xFFFF\x1A\x26",
 				"\x1\x8F",
 				"",
-				"\xA\x24\x7\xFFFF\x1A\x24\x4\xFFFF\x1\x24\x1\xFFFF\x1A\x24",
+				"\x1\x90",
+				"",
 				"",
 				"\x1\x91",
-				"",
 				"\x1\x92",
-				"\xA\x24\x7\xFFFF\x1A\x24\x4\xFFFF\x1\x24\x1\xFFFF\x1A\x24",
-				"\xA\x24\x7\xFFFF\x1A\x24\x4\xFFFF\x1\x24\x1\xFFFF\x1A\x24",
+				"\xA\x26\x7\xFFFF\x1A\x26\x4\xFFFF\x1\x26\x1\xFFFF\x1A\x26",
+				"\x1\x94",
+				"",
 				"\x1\x95",
-				"",
-				"\x1\x96",
-				"\xA\x24\x7\xFFFF\x1A\x24\x4\xFFFF\x1\x24\x1\xFFFF\x1A\x24",
-				"",
-				"",
-				"\x1\x98",
+				"\xA\x26\x7\xFFFF\x1A\x26\x4\xFFFF\x1\x26\x1\xFFFF\x1A\x26",
+				"\xA\x26\x7\xFFFF\x1A\x26\x4\xFFFF\x1\x26\x1\xFFFF\x1A\x26",
+				"\xA\x26\x7\xFFFF\x1A\x26\x4\xFFFF\x1\x26\x1\xFFFF\x1A\x26",
 				"\x1\x99",
+				"\xA\x26\x7\xFFFF\x1A\x26\x4\xFFFF\x1\x26\x1\xFFFF\x1A\x26",
 				"",
-				"\x1\x9A",
-				"\x1\x9B\x1\x9C",
-				"\x1\x9D",
+				"\xA\x26\x7\xFFFF\x1A\x26\x4\xFFFF\x1\x26\x1\xFFFF\x1A\x26",
+				"",
+				"",
+				"",
+				"\x1\x9C",
+				"",
+				"",
+				"",
+				"\xA\x26\x7\xFFFF\x1A\x26\x4\xFFFF\x1\x26\x1\xFFFF\x1A\x26",
 				"\x1\x9E",
-				"\x1\x9F",
-				"\xA\x24\x7\xFFFF\x1A\x24\x4\xFFFF\x1\x24\x1\xFFFF\x1A\x24",
+				"\xA\x26\x7\xFFFF\x1A\x26\x4\xFFFF\x1\x26\x1\xFFFF\x1A\x26",
+				"\x1\xA0",
+				"",
 				"\x1\xA1",
 				"\x1\xA2",
 				"",
+				"",
+				"",
 				"\x1\xA3",
-				"\x1\xA4",
-				"\xA\x24\x7\xFFFF\x1A\x24\x4\xFFFF\x1\x24\x1\xFFFF\x1A\x24",
-				"\xA\x24\x7\xFFFF\x1A\x24\x4\xFFFF\x1\x24\x1\xFFFF\x1A\x24",
+				"",
+				"",
+				"\xA\x26\x7\xFFFF\x1A\x26\x4\xFFFF\x1\x26\x1\xFFFF\x1A\x26",
+				"",
+				"\x1\xA5",
+				"",
+				"\x1\xA6",
+				"\x1\xA7",
+				"\xA\x26\x7\xFFFF\x1A\x26\x4\xFFFF\x1\x26\x1\xFFFF\x1A\x26",
+				"\x1\xA9",
+				"",
+				"\x1\xAA",
+				"\xA\x26\x7\xFFFF\x1A\x26\x4\xFFFF\x1\x26\x1\xFFFF\x1A\x26",
+				"\xA\x26\x7\xFFFF\x1A\x26\x4\xFFFF\x1\x26\x1\xFFFF\x1A\x26",
+				"",
+				"\x1\xAD",
+				"\x1\xAE",
+				"",
+				"",
+				"\x1\xAF",
+				"\x1\xB0\x1\xB1",
+				"\x1\xB2",
+				"\x1\xB3",
+				"\x1\xB4",
+				"\xA\x26\x7\xFFFF\x1A\x26\x4\xFFFF\x1\x26\x1\xFFFF\x1A\x26",
+				"\x1\xB6",
+				"\x1\xB7",
+				"",
+				"\x1\xB8",
+				"\x1\xB9",
+				"\xA\x26\x7\xFFFF\x1A\x26\x4\xFFFF\x1\x26\x1\xFFFF\x1A\x26",
+				"\xA\x26\x7\xFFFF\x1A\x26\x4\xFFFF\x1\x26\x1\xFFFF\x1A\x26",
 				"",
 				""
 			};
@@ -3528,7 +3878,7 @@ public partial class fsharp_ssLexer : Antlr.Runtime.Lexer
 			this.transition = DFA16_transition;
 		}
 
-		public override string Description { get { return "1:1: Tokens : ( AND | ARGS | ASSIGN | BODY | BOOL_KW | CHAR_KW | DIV | DOUBLE_KW | ELIF | ELSE | EQ | FALSE | FUN | FUNCTION_CALL | FUNCTION_DEFN | FUN_DEF | GE | GT | IF | INT_KW | LE | LET | LT | MATCH | MINUS | MOD | MULT | MUTABLE | NEQ | OR | PIPE | PLUS | PRINTF | REC | STRING_KW | THEN | TRUE | TYPE | VALUE_DEFN | WHEN | T__55 | T__56 | T__57 | ID | INT | DOUBLE | EXPONENT | STRING | CHAR );"; } }
+		public override string Description { get { return "1:1: Tokens : ( AND | ARGS | ASSIGN | BEGIN | BODY | BOOL_KW | CHAR_KW | CLOSE_BR | DIV | DOUBLE_KW | ELIF | ELSE | END | ENTRY_POINT | EQ | EXPR | FALSE | FUN | FUNCTION_CALL | FUNCTION_DEFN | FUN_DEF | GE | GT | IF | INT_KW | LE | LET | LT | MATCH | MINUS | MOD | MULT | MUTABLE | NAME | NEQ | OPEN_BR | OR | PIPE | PLUS | PROGRAM | REC | STRING_KW | TAB | THEN | TRUE | TYPE | VALUE_DEFN | WHEN | T__63 | T__64 | ID | INT | DOUBLE | EXPONENT | STRING | CHAR );"; } }
 
 		public override void Error(NoViableAltException nvae)
 		{

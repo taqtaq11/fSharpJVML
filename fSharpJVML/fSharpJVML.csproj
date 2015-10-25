@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AstNodePrinter.cs" />
     <Compile Include="fsCompiler.cs" />
     <Compile Include="fsharp_ssLexer.cs" />
     <Compile Include="fsharp_ssParser.cs" />

@@ -1,8 +1,21 @@
 let abs a =
-    let c = if a > 0 then a else -a
-    c
+    begin
+    let c = 
+        begin 
+            if a > 0 then 
+                begin 
+                    a; 
+                end 
+            else 
+                begin 
+                    0-a;
+                end 
+        end
+    c;
+    end
 
-[<EntryPoint>]
 let main argv =
-    printf "%d\n" (abs 6)
-    0
+    begin
+    printf ("%d\n") (abs (6));
+    0;
+    end;
