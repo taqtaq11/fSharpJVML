@@ -18,4 +18,4 @@ let main argv =
     begin
     printf ("%d\n") (abs (6));
     0;
-    end;
+    end

@@ -16,7 +16,7 @@ namespace test_fSharpJVML_ConsoleApp
         static void Main(string[] args)
         {            
             fsCompiler compiler = new fsCompiler(ExamplesLoader.LoadExample(EXAMPLE_NUM));
-            compiler.Compile();
+            compiler.CreateTree();
             var tree = compiler.SourceTree;
             AstNodePrinter.Print(tree);
         }
