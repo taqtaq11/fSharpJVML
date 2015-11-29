@@ -1,4 +1,4 @@
-let rec factorial s n =
+let rec factorial s n:int =
     begin
     if n > 0 then
         begin

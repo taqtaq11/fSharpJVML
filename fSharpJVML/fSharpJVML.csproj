@@ -52,7 +52,7 @@
     <Compile Include="fsTypesHierarchy\fsTypeVar.cs" />
     <Compile Include="fsTypesHierarchy\IfsType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Scope.cs" />
+    <Compile Include="TypesScope.cs" />
     <Compile Include="TypeNode.cs" />
   </ItemGroup>
   <ItemGroup />

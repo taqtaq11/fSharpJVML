@@ -29,17 +29,12 @@ namespace fSharpJVML
         public override bool Equals(object obj)
         {
             fsType type = obj as fsType;
-            if (obj == null)
+            if (type == null)
             {
                 return false;
             }
 
-            if (this.Name == type.Name)
-            {
-                return true;
-            }
-
-            return false;
+            return this.Name == type.Name;
         }
 
         static public fsType GetStringType()
@@ -70,6 +65,16 @@ namespace fSharpJVML
         static public fsType GetFunctionType(List<IfsType> types)
         {
             return new fsType("function", types);
+        }
+
+        static public fsType GetCompositeType(List<IfsType> types)
+        {
+            return new fsType("composite", types);
+        }
+
+        static public fsType GetProgramType()
+        {
+            return new fsType("program", null);
         }
     }
 }
