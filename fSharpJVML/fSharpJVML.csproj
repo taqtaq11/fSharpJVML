@@ -47,6 +47,7 @@
     <Compile Include="fsCompiler.cs" />
     <Compile Include="fsharp_ssLexer.cs" />
     <Compile Include="fsharp_ssParser.cs" />
+    <Compile Include="fsTypesHierarchy\fsIdentityType.cs" />
     <Compile Include="fsTypesHierarchy\fsType.cs" />
     <Compile Include="fsTypeInferer.cs" />
     <Compile Include="fsTypesHierarchy\fsTypeVar.cs" />

@@ -14,7 +14,7 @@ namespace fSharpJVML
             Name = name;
         }
 
-        public List<IfsType> Types
+        public virtual List<IfsType> Types
         {
             get;
             private set;
@@ -75,6 +75,11 @@ namespace fSharpJVML
         static public fsType GetProgramType()
         {
             return new fsType("program", null);
+        }
+
+        static public fsIdentityType GetIdentityType(TypesScope scope, List<string> argsNames)
+        {
+            return new fsIdentityType(scope, argsNames);
         }
     }
 }

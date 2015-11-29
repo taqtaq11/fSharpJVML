@@ -19,12 +19,19 @@ namespace fSharpJVML
         public fsTypeInferer(ITree tree)
         {
             this.tree = tree;
+
             inferenceFunctions = new Dictionary<int, InferNodeTypeDelegate>();
             inferenceFunctions.Add(fsharp_ssParser.PROGRAM, InferProgramType);
             inferenceFunctions.Add(fsharp_ssParser.PLUS, InferPlusType);
             inferenceFunctions.Add(fsharp_ssParser.MINUS, InferMinusType);
             inferenceFunctions.Add(fsharp_ssParser.MULT, InferMultType);
             inferenceFunctions.Add(fsharp_ssParser.DIV, InferDivideType);
+            inferenceFunctions.Add(fsharp_ssParser.EQ, InferEqNeqOperType);
+            inferenceFunctions.Add(fsharp_ssParser.NEQ, InferEqNeqOperType);
+            inferenceFunctions.Add(fsharp_ssParser.GT, InferCompareOperType);
+            inferenceFunctions.Add(fsharp_ssParser.GE, InferCompareOperType);
+            inferenceFunctions.Add(fsharp_ssParser.LT, InferCompareOperType);
+            inferenceFunctions.Add(fsharp_ssParser.LE, InferCompareOperType);
             inferenceFunctions.Add(fsharp_ssParser.ID, InferIDType);
             inferenceFunctions.Add(fsharp_ssParser.INT, InferIntType);
             inferenceFunctions.Add(fsharp_ssParser.DOUBLE, InferDoubleType);
@@ -33,13 +40,21 @@ namespace fSharpJVML
             inferenceFunctions.Add(fsharp_ssParser.FALSE, InferBoolType);
             inferenceFunctions.Add(fsharp_ssParser.STRING, InferStringType);
             inferenceFunctions.Add(fsharp_ssParser.BODY, InferBodyType);
+            inferenceFunctions.Add(fsharp_ssParser.IF, InferIfClauseType);
             inferenceFunctions.Add(fsharp_ssParser.FUNCTION_DEFN, InferFunctionDefnType);
             inferenceFunctions.Add(fsharp_ssParser.FUNCTION_CALL, InferFuncCallType);
+            inferenceFunctions.Add(fsharp_ssParser.VALUE_DEFN, InferValueDefnType);
         }
 
         public ITree Infer()
         {
-            Analyse(tree, new TypesScope(null));
+            TypesScope defaultScope = new TypesScope(null);
+            defaultScope.AddFunction("printf", fsType.GetFunctionType(new List<IfsType>() {
+                                                                                            fsType.GetStringType(),
+                                                                                            new fsTypeVar(),
+                                                                                            new fsTypeVar()
+                                                                                          }));
+            Analyse(tree, defaultScope);
             return tree;
         }
 
@@ -56,6 +71,13 @@ namespace fSharpJVML
                 {
                     childTypeNode = new TypeNode("TYPE");
                     node.AddChild(childTypeNode);
+                }
+                else
+                {
+                    if (childTypeNode.ChildCount > 0)
+                    {
+                        childTypeNode.DeleteChild(0);
+                    }
                 }
 
                 childTypeNode.AddChild(new TypeNode(nodeType));
@@ -143,6 +165,18 @@ namespace fSharpJVML
 
         private void Unify(ref IfsType t1, ref IfsType t2)
         {
+            if (t1.Name == "identity")
+            {
+                t1 = t2;
+                return;
+            }
+
+            if (t2.Name == "identity")
+            {
+                t2 = t1;
+                return;
+            }
+
             t1 = Prune(t1);
             t2 = Prune(t2);
 
@@ -155,7 +189,14 @@ namespace fSharpJVML
                         throw new Exception("Recursive unification");
                     }
 
-                    (t1 as fsTypeVar).Instance = t2;
+                    if (t2.Name == "composite")
+                    {
+                        (t1 as fsTypeVar).Instance = t2;
+                    }
+                    else
+                    {
+                        t1 = t2;
+                    }                    
                 }
             }
             else if(t1 is fsType && t2 is fsTypeVar)
@@ -299,6 +340,12 @@ namespace fSharpJVML
                 innerScope.AddVar(arg.Text, argType);
             }
 
+            if (GetChildByType(node, fsharp_ssParser.REC) != null)
+            {
+                innerScope.AddFunction(GetChildByType(node, fsharp_ssParser.NAME).GetChild(0).Text, 
+                                        fsType.GetIdentityType(innerScope, argsNames));
+            }
+
             IfsType bodyType = Analyse(GetChildByType(node, fsharp_ssParser.BODY), innerScope);
 
             ITree annotatedReturningTypeNode = GetChildByType(node, fsharp_ssParser.TYPE);
@@ -317,11 +364,27 @@ namespace fSharpJVML
             return functionType;
         }
 
+        private IfsType InferValueDefnType(ITree node, TypesScope scope)
+        {
+            TypesScope innerScope = new TypesScope(scope);
+
+            IfsType bodyType = Analyse(GetChildByType(node, fsharp_ssParser.BODY), innerScope);
+
+            ITree annotatedReturningTypeNode = GetChildByType(node, fsharp_ssParser.TYPE);
+            if (annotatedReturningTypeNode != null && annotatedReturningTypeNode.ChildCount > 0)
+            {
+                IfsType annotatedReturningType = new fsType(annotatedReturningTypeNode.GetChild(0).Text, null);
+                Unify(ref bodyType, ref annotatedReturningType, innerScope);
+            }
+
+            return bodyType;
+        }
+
         private IfsType InferBodyType(ITree node, TypesScope scope)
         {
             IfsType exprType = null;
 
-            for (int i = 0; i < node.ChildCount; i++)
+            for (int i = 0; i < node.GetChild(0).ChildCount; i++)
             {
                 ITree childNode = node.GetChild(0).GetChild(i);
                 exprType = Analyse(childNode, scope);
@@ -363,17 +426,28 @@ namespace fSharpJVML
                 throw new Exception($"Undeclared function: {callFunctionName}");
             }
 
-            factualArgsTypes.Add((formalFunctionType as fsType).Types[(formalFunctionType as fsType).Types.Count - 1]);
+            IfsType returningType = (formalFunctionType as fsType).Types[(formalFunctionType as fsType).Types.Count - 1];
+            factualArgsTypes.Add(returningType);
             IfsType factualFunctionType = fsType.GetFunctionType(factualArgsTypes);
 
-            Unify(ref factualFunctionType, ref formalFunctionType);
+            Unify(ref factualFunctionType, ref formalFunctionType, scope);
 
-            return factualFunctionType;
+            return returningType;
         }
 
         private IfsType InferIfClauseType(ITree node, TypesScope scope)
         {
+            ITree logicExprNode = node.GetChild(0);
+            Analyse(logicExprNode, scope);
 
+            IfsType previousExprBlockType = Analyse(node.GetChild(1), scope);
+            for (int i = 2; i < logicExprNode.ChildCount; i++)
+            {
+                IfsType currentExprBlockType = Analyse(node.GetChild(i), scope);
+                Unify(ref previousExprBlockType, ref currentExprBlockType, scope);
+            }
+
+            return previousExprBlockType;
         }
 
         private IfsType InferBinaryOpType(ITree node, TypesScope scope, IfsType availableType)
@@ -438,23 +512,32 @@ namespace fSharpJVML
             return InferBinaryOpType(node, scope, availableDivideType);
         }
 
-        private IfsType InferLogicOperType(ITree node, TypesScope scope)
+        private IfsType InferEqNeqOperType(ITree node, TypesScope scope)
         {
-            IfsType availableLogicType = fsType.GetCompositeType(
+            IfsType availableEqNeqType = fsType.GetCompositeType(
+                new List<IfsType>() {
+                                        fsType.GetIntType(),
+                                        fsType.GetDoubleType(),
+                                        fsType.GetStringType(),
+                                        fsType.GetCharType()
+                                    }
+                                                               );
+
+            InferBinaryOpType(node, scope, availableEqNeqType);
+            return fsType.GetBoolType();
+        }
+
+        private IfsType InferCompareOperType(ITree node, TypesScope scope)
+        {
+            IfsType availableEqNeqType = fsType.GetCompositeType(
                 new List<IfsType>() {
                                         fsType.GetIntType(),
                                         fsType.GetDoubleType()
                                     }
                                                                );
 
-            IfsType leftOperandType = Analyse(node.GetChild(0), scope);
-            IfsType rightOperandType = Analyse(node.GetChild(1), scope);
-
-            Unify(ref leftOperandType, ref availableLogicType, scope);
-            Unify(ref rightOperandType, ref availableLogicType, scope);
-            Unify(ref leftOperandType, ref rightOperandType, scope);
-
-            return leftOperandType;
+            InferBinaryOpType(node, scope, availableEqNeqType);
+            return fsType.GetBoolType();
         }
 
         private IfsType InferIDType(ITree node, TypesScope scope)
@@ -508,6 +591,19 @@ namespace fSharpJVML
             }
 
             return null;
+        }
+
+        private int GetChildIndexByType(ITree parent, int type)
+        {
+            for (int i = 0; i < parent.ChildCount; i++)
+            {
+                if (parent.GetChild(i).Type == type)
+                {
+                    return i;
+                }
+            }
+
+            return -1;
         }
     }
 }

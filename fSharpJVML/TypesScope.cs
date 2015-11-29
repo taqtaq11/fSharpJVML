@@ -64,7 +64,14 @@ namespace fSharpJVML
 
         public void ChangeVarType(string varName, IfsType varType)
         {
-            varsTypes[varName] = varType;
+            if (varsTypes.ContainsKey(varName))
+            {
+                varsTypes[varName] = varType;
+            }
+            else if(parent != null)
+            {
+                parent.ChangeVarType(varName, varType);
+            }
         }
 
         public int VarsTypesCount

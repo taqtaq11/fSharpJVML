@@ -11,13 +11,13 @@ namespace test_fSharpJVML_ConsoleApp
 {
     class Program
     {
-        const int EXAMPLE_NUM = 1;
+        const int EXAMPLE_NUM = 4;
 
         static void Main(string[] args)
         {            
             fsCompiler compiler = new fsCompiler(ExamplesLoader.LoadExample(EXAMPLE_NUM));
             compiler.CreateTree();
-            //compiler.InferTypes();
+            compiler.InferTypes();
             var tree = compiler.SourceTree;
             AstNodePrinter.Print(tree);
         }
