@@ -14,7 +14,7 @@ namespace fSharpJVML
         public TypeNode(string text)
             : base(new CommonToken(fsharp_ssParser.TYPE, text))
         {
-
+            this.Text = text;
         }
 
         public TypeNode(IfsType type)
@@ -30,6 +30,29 @@ namespace fSharpJVML
                     AddChild(new TypeNode(t.Types[i]));
                 }
             }
+        }
+        
+        public void ScopeVarOrFuncTypeChangedHandler(IfsType oldType, IfsType newType)
+        {
+            if (oldType.Name != this.Text)
+                return;
+
+            this.Text = newType.Name;
+
+            fsType t;
+            if ((t = newType as fsType)?.Types != null)
+            {
+                for (int i = 0; i < t.Types.Count; i++)
+                {
+                    AddChild(new TypeNode(t.Types[i]));
+                }
+            }
+        }
+
+        public override string Text
+        {
+            get;
+            set;
         }
 
         public override string ToString()

@@ -39,6 +39,19 @@ namespace fSharpJVML
             set;
         }
 
+        public IfsType Prune
+        {
+            get
+            {
+                IfsType pruned = this;
+                while ((pruned as fsTypeVar)?.Instance != null)
+                {
+                    pruned = (pruned as fsTypeVar).Instance;
+                }
+                return pruned;
+            }
+        }
+
         static private string GenerateNewName()
         {
             string name = nameChar.ToString() + '\'';

@@ -3,11 +3,15 @@ using System;
 
 namespace fSharpJVML
 {
+    delegate void ScopeVarOrFuncTypeChangedDelegate(IfsType oldType, IfsType newType);
+
     class TypesScope
     {
         private Dictionary<string, IfsType> varsTypes;
         private Dictionary<string, IfsType> functionsTypes;
         private TypesScope parent;
+
+        static public event ScopeVarOrFuncTypeChangedDelegate ScopeVarOrFuncTypeChanged;
 
         public TypesScope(TypesScope parent)
         {
@@ -44,6 +48,16 @@ namespace fSharpJVML
 
         public void AddVar(string varName, IfsType varType)
         {
+            if (varType.Name == "function")
+            {
+                if (functionsTypes.ContainsKey(varName))
+                {
+                    throw new Exception($"Function {varName} already exists in current scope");
+                }
+
+                functionsTypes.Add(varName, varType);
+            }
+
             if (varsTypes.ContainsKey(varName))
             {
                 throw new Exception($"Variable {varName} already exists in current scope");
@@ -66,11 +80,34 @@ namespace fSharpJVML
         {
             if (varsTypes.ContainsKey(varName))
             {
+                if (varsTypes[varName] is fsTypeVar || varsTypes[varName].Name == "composite")
+                {
+                    if (varType is fsTypeVar)
+                    {
+                        IfsType pruned = (varType as fsTypeVar).Prune;
+                        if (pruned.Name != "composite")
+                        {
+                            ScopeVarOrFuncTypeChanged(varsTypes[varName], pruned);
+                        }
+                    }
+                    else
+                    {
+                        if (varType.Name != "composite")
+                        {
+                            ScopeVarOrFuncTypeChanged(varsTypes[varName], varType);
+                        }
+                    }
+                }
+                
                 varsTypes[varName] = varType;
             }
             else if(parent != null)
             {
                 parent.ChangeVarType(varName, varType);
+            }
+            else
+            {
+                throw new Exception($"Undeclared variable {varName}");
             }
         }
 

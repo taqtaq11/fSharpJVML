@@ -80,7 +80,9 @@ namespace fSharpJVML
                     }
                 }
 
-                childTypeNode.AddChild(new TypeNode(nodeType));
+                TypeNode typeNameNode = new TypeNode(nodeType);
+                TypesScope.ScopeVarOrFuncTypeChanged += typeNameNode.ScopeVarOrFuncTypeChangedHandler;
+                childTypeNode.AddChild(typeNameNode);
             }
             else
             {
@@ -177,8 +179,18 @@ namespace fSharpJVML
                 return;
             }
 
-            t1 = Prune(t1);
-            t2 = Prune(t2);
+            IfsType t1Pruned = Prune(t1);
+            IfsType t2Pruned = Prune(t2);
+
+            if (t1Pruned.Name != "composite")
+            {
+                t1 = t1Pruned;
+            }
+
+            if (t2Pruned.Name != "composite")
+            {
+                t2 = t2Pruned;
+            }
 
             if (t1 is fsTypeVar)
             {
@@ -267,16 +279,28 @@ namespace fSharpJVML
 
                 if (type1.Name == "function")
                 {
-                    if (type1.Types.Count != type2.Types.Count)
+                    if (type1.Types.Count <= type2.Types.Count)
+                    {
+                        for (int i = 0; i < type1.Types.Count; i++)
+                        {
+                            IfsType t1Child = type1.Types[i];
+                            IfsType t2Child = type2.Types[i];
+                            Unify(ref t1Child, ref t2Child);
+                            type1.Types[i] = t1Child;
+                            type2.Types[i] = t2Child;
+                        }
+
+                        if (type1.Types.Count < type2.Types.Count)
+                        {
+                            int difference = type2.Types.Count - type1.Types.Count;
+                            List<IfsType> rest = type2.Types.GetRange(type1.Types.Count - 1, difference + 1);
+                            type1.Types[type1.Types.Count - 1] = fsType.GetFunctionType(rest);
+                            t1 = t2 = type1;
+                        }
+                    }
+                    else
                     {
                         throw new Exception($"Cannot unify types {type1.Name} and {type2.Name}");
-                    }
-
-                    for (int i = 0; i < type1.Types.Count; i++)
-                    {
-                        IfsType t1Child = type1.Types[i];
-                        IfsType t2Child = type2.Types[i];
-                        Unify(ref t1Child, ref t2Child);
                     }
                 }                
             }
@@ -431,6 +455,7 @@ namespace fSharpJVML
             IfsType factualFunctionType = fsType.GetFunctionType(factualArgsTypes);
 
             Unify(ref factualFunctionType, ref formalFunctionType, scope);
+            returningType = (formalFunctionType as fsType).Types[(formalFunctionType as fsType).Types.Count - 1];
 
             return returningType;
         }
