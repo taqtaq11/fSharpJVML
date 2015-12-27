@@ -69,5 +69,24 @@ namespace fSharpJVML
 
             return this.Name == typeVar.Name;
         }
+
+        public override string ToString()
+        {
+            string outputString = Name;
+
+            IfsType prunedType = Prune;
+
+            if (prunedType is fsType && (prunedType as fsType).Name == "composite")
+            {
+                outputString += " case of {";
+                foreach (var type in (prunedType as fsType).Types)
+                {
+                    outputString += " " + type.ToString() + "; ";
+                }
+                outputString += "}";
+            }
+
+            return outputString;
+        }
     }
 }

@@ -77,9 +77,30 @@ namespace fSharpJVML
             return new fsType("program", null);
         }
 
-        static public fsIdentityType GetIdentityType(TypesScope scope, List<string> argsNames)
+        static public fsIdentityType GetIdentityType(fsScope scope, List<string> argsNames)
         {
             return new fsIdentityType(scope, argsNames);
+        }
+
+        public override string ToString()
+        {
+            string outputString = Name;
+
+            if (Types != null && Types.Count > 0)
+            {
+                outputString += ": ";
+                for (int i = 0; i < Types.Count; i++)
+                {
+                    if (i > 0)
+                    {
+                        outputString += "->";
+                    }
+
+                    outputString += Types[i].ToString();
+                }
+            }
+
+            return outputString;
         }
     }
 }

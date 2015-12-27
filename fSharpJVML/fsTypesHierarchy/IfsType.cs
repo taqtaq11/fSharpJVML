@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace fSharpJVML
 {
-    interface IfsType
+    public interface IfsType
     {
         string Name { get; }
     }

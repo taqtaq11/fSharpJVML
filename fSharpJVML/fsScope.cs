@@ -5,19 +5,24 @@ namespace fSharpJVML
 {
     delegate void ScopeVarOrFuncTypeChangedDelegate(IfsType oldType, IfsType newType);
 
-    class TypesScope
+    class fsScope
     {
         private Dictionary<string, IfsType> varsTypes;
         private Dictionary<string, IfsType> functionsTypes;
-        private TypesScope parent;
+        private Dictionary<string, fsVariableInfo> varsInfo;
+        private fsScope parent;
+        private int argNum = 0;
+        private int localNum = 0;
+        static private int scopeNestingIndexer = 0;
 
         static public event ScopeVarOrFuncTypeChangedDelegate ScopeVarOrFuncTypeChanged;
 
-        public TypesScope(TypesScope parent)
+        public fsScope(fsScope parent)
         {
             this.parent = parent;
             varsTypes = new Dictionary<string, IfsType>();
             functionsTypes = new Dictionary<string, IfsType>();
+            varsInfo = new Dictionary<string, fsVariableInfo>();
         }
 
         public IfsType GetVarType(string varName)
@@ -76,15 +81,15 @@ namespace fSharpJVML
             functionsTypes.Add(functionName, functionType);
         }
 
-        public void ChangeVarType(string varName, IfsType varType)
+        public void ChangeVarOrFuncType(string varName, string oldTypeName, IfsType newType)
         {
             if (varsTypes.ContainsKey(varName))
             {
                 if (varsTypes[varName] is fsTypeVar || varsTypes[varName].Name == "composite")
                 {
-                    if (varType is fsTypeVar)
+                    if (newType is fsTypeVar)
                     {
-                        IfsType pruned = (varType as fsTypeVar).Prune;
+                        IfsType pruned = (newType as fsTypeVar).Prune;
                         if (pruned.Name != "composite")
                         {
                             ScopeVarOrFuncTypeChanged(varsTypes[varName], pruned);
@@ -92,23 +97,57 @@ namespace fSharpJVML
                     }
                     else
                     {
-                        if (varType.Name != "composite")
+                        if (newType.Name != "composite")
                         {
-                            ScopeVarOrFuncTypeChanged(varsTypes[varName], varType);
+                            ScopeVarOrFuncTypeChanged(varsTypes[varName], newType);
                         }
                     }
                 }
                 
-                varsTypes[varName] = varType;
+                varsTypes[varName] = newType;
             }
             else if(parent != null)
             {
-                parent.ChangeVarType(varName, varType);
+                parent.ChangeVarOrFuncType(varName, oldTypeName, newType);
             }
             else
             {
                 throw new Exception($"Undeclared variable {varName}");
             }
+        }
+
+        public void SetVarInfo(string varName, ScopePositionType spt)
+        {
+            varsInfo.Add(varName, new fsVariableInfo(spt, spt == ScopePositionType.functionArg ? argNum++ : localNum++));
+        }
+
+        public fsVariableInfo GetVarInfo(string varName, bool isFromInnerScope)
+        {
+            if (isFromInnerScope)
+                scopeNestingIndexer++;
+
+            if (varsInfo.ContainsKey(varName))
+            {
+                return varsInfo[varName];
+            }
+
+            if (parent != null)
+            {
+                if (isFromInnerScope)
+                {
+                    return parent.GetVarInfo(varName, true);
+                }
+                else
+                {
+                    fsVariableInfo vi = parent.GetVarInfo(varName, true);
+                    int nestingIndBuf = scopeNestingIndexer;
+                    scopeNestingIndexer = 0;
+                    return new fsVariableInfo(ScopePositionType.outer, vi.NumberInScopePositionTypes,
+                        vi.PositionInScopeType, nestingIndBuf);
+                }               
+            }
+
+            throw new Exception($"Info for variable {varName} not found!");
         }
 
         public int VarsTypesCount

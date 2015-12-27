@@ -8,10 +8,10 @@ namespace fSharpJVML
 {
     class fsIdentityType : fsType
     {
-        protected TypesScope scope;
+        protected fsScope scope;
         protected List<string> argsNames;
 
-        public fsIdentityType(TypesScope scope, List<string> argsNames)
+        public fsIdentityType(fsScope scope, List<string> argsNames)
             : base("identity", null)
         {
             this.scope = scope;

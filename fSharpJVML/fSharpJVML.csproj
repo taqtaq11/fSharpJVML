@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AstNodePrinter.cs" />
+    <Compile Include="fsCodeGenerator.cs" />
     <Compile Include="fsCompiler.cs" />
     <Compile Include="fsharp_ssLexer.cs" />
     <Compile Include="fsharp_ssParser.cs" />
@@ -53,8 +54,9 @@
     <Compile Include="fsTypesHierarchy\fsTypeVar.cs" />
     <Compile Include="fsTypesHierarchy\IfsType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TypesScope.cs" />
-    <Compile Include="TypeNode.cs" />
+    <Compile Include="fsScope.cs" />
+    <Compile Include="fsTreeNode.cs" />
+    <Compile Include="fsVariableInfo.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

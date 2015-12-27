@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.5.1 D:\\fsharp_compiler\\fsharp_ss.g 2015-11-30 00:31:40
+// $ANTLR 3.5.1 D:\\fsharp_compiler\\fsharp_ss.g 2015-12-26 16:53:52
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -404,7 +404,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 
 			{
 			// AST REWRITE
-			// elements: ID, return_type, MUTABLE, body_expr
+			// elements: MUTABLE, body_expr, return_type, ID
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -813,7 +813,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 
 			{
 			// AST REWRITE
-			// elements: REC, body_expr, ID, return_type, function_args
+			// elements: body_expr, function_args, REC, return_type, ID
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -1401,7 +1401,7 @@ public partial class fsharp_ssParser : Antlr.Runtime.Parser
 
 			{
 			// AST REWRITE
-			// elements: expr_block, IF, logic_expr, elif_expr, else_expr
+			// elements: elif_expr, else_expr, expr_block, IF, logic_expr
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 

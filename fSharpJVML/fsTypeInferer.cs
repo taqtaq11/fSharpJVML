@@ -8,12 +8,13 @@ using fsharp_ss;
 
 namespace fSharpJVML
 {
-    delegate IfsType InferNodeTypeDelegate(ITree node, TypesScope scope);
+    delegate IfsType InferNodeTypeDelegate(ITree node, fsScope scope);
 
     class fsTypeInferer
     {
         private ITree tree;
         private Dictionary<int, InferNodeTypeDelegate> inferenceFunctions;
+        private int uniqueFuctionId = 0;
 
 
         public fsTypeInferer(ITree tree)
@@ -48,7 +49,7 @@ namespace fSharpJVML
 
         public ITree Infer()
         {
-            TypesScope defaultScope = new TypesScope(null);
+            fsScope defaultScope = new fsScope(null);
             defaultScope.AddFunction("printf", fsType.GetFunctionType(new List<IfsType>() {
                                                                                             fsType.GetStringType(),
                                                                                             new fsTypeVar(),
@@ -58,7 +59,7 @@ namespace fSharpJVML
             return tree;
         }
 
-        private IfsType Analyse(ITree node, TypesScope scope)
+        private IfsType Analyse(ITree node, fsScope scope)
         {
             IfsType nodeType = null;
 
@@ -67,22 +68,14 @@ namespace fSharpJVML
                 nodeType = inferenceFunctions[node.Type](node, scope);
                 ITree childTypeNode = GetChildByType(node, fsharp_ssParser.TYPE);
 
-                if (childTypeNode == null)
+                if (childTypeNode != null && childTypeNode.ChildCount > 0)
                 {
-                    childTypeNode = new TypeNode("TYPE");
-                    node.AddChild(childTypeNode);
-                }
-                else
-                {
-                    if (childTypeNode.ChildCount > 0)
-                    {
-                        childTypeNode.DeleteChild(0);
-                    }
+                    node.DeleteChild(GetChildIndexByType(node, fsharp_ssParser.TYPE));
                 }
 
-                TypeNode typeNameNode = new TypeNode(nodeType);
-                TypesScope.ScopeVarOrFuncTypeChanged += typeNameNode.ScopeVarOrFuncTypeChangedHandler;
-                childTypeNode.AddChild(typeNameNode);
+                fsTreeNode typeNameNode = new fsTreeNode(nodeType);
+                fsScope.ScopeVarOrFuncTypeChanged += typeNameNode.ScopeVarOrFuncTypeChangedHandler;
+                node.AddChild(typeNameNode);
             }
             else
             {
@@ -133,12 +126,14 @@ namespace fSharpJVML
             return false;
         }
 
-        private void Unify(ref IfsType t1, ref IfsType t2, TypesScope scope)
+        private void Unify(ref IfsType t1, ref IfsType t2, fsScope scope)
         {
             bool isT1FromScope = false;
             bool isT2FromScope = false;
             string t1ScopeName = "";
+            string t1NameBeforeUnification = t1.Name;
             string t2ScopeName = "";
+            string t2NameBeforeUnification = t2.Name;
 
             if (t1 is fsTypeVar)
             {
@@ -156,12 +151,12 @@ namespace fSharpJVML
 
             if (isT1FromScope)
             {
-                scope.ChangeVarType(t1ScopeName, t1);
+                scope.ChangeVarOrFuncType(t1ScopeName, t1NameBeforeUnification, t1);
             }
 
             if (isT2FromScope)
             {
-                scope.ChangeVarType(t2ScopeName, t2);
+                scope.ChangeVarOrFuncType(t2ScopeName, t2NameBeforeUnification, t2);
             }
         }
 
@@ -279,7 +274,7 @@ namespace fSharpJVML
 
                 if (type1.Name == "function")
                 {
-                    if (type1.Types.Count <= type2.Types.Count)
+                    if (type1.Types.Count == type2.Types.Count)
                     {
                         for (int i = 0; i < type1.Types.Count; i++)
                         {
@@ -288,15 +283,33 @@ namespace fSharpJVML
                             Unify(ref t1Child, ref t2Child);
                             type1.Types[i] = t1Child;
                             type2.Types[i] = t2Child;
+                        }                        
+                    }
+                    else if (type1.Types.Count < type2.Types.Count)
+                    {
+                        int difference = type2.Types.Count - type1.Types.Count;
+
+                        for (int i = 0; i < type1.Types.Count; i++)
+                        {
+                            IfsType t1Child = type1.Types[i];
+                            IfsType t2Child = type2.Types[i];
+                            string t2NameBeforeUnification = t2Child.Name;
+                            Unify(ref t1Child, ref t2Child);
+                            type1.Types[i] = t1Child;
+                            type2.Types[i] = t2Child;
+
+                            for (int j = difference; j < type2.Types.Count; j++)
+                            {
+                                IfsType bufType = type2.Types[j];
+                                Unify(ref t1Child, ref bufType);
+                                type1.Types[i] = bufType;
+                                type2.Types[j] = t2Child;
+                            }
                         }
 
-                        if (type1.Types.Count < type2.Types.Count)
-                        {
-                            int difference = type2.Types.Count - type1.Types.Count;
-                            List<IfsType> rest = type2.Types.GetRange(type1.Types.Count - 1, difference + 1);
-                            type1.Types[type1.Types.Count - 1] = fsType.GetFunctionType(rest);
-                            t1 = t2 = type1;
-                        }
+                        List<IfsType> rest = type2.Types.GetRange(type1.Types.Count - 1, difference + 1);
+                        type1.Types[type1.Types.Count - 1] = fsType.GetFunctionType(rest);
+                        t1 = t2 = type1;
                     }
                     else
                     {
@@ -310,11 +323,11 @@ namespace fSharpJVML
             }
         }
 
-        private IfsType InferProgramType(ITree node, TypesScope scope)
+        private IfsType InferProgramType(ITree node, fsScope scope)
         {
             if (scope == null)
             {
-                scope = new TypesScope(null);
+                scope = new fsScope(null);
             }
 
             IfsType exprType;
@@ -336,9 +349,9 @@ namespace fSharpJVML
             return fsType.GetProgramType();
         }
 
-        private IfsType InferFunctionDefnType(ITree node, TypesScope scope)
+        private IfsType InferFunctionDefnType(ITree node, fsScope scope)
         {
-            TypesScope innerScope = new TypesScope(scope);
+            fsScope innerScope = new fsScope(scope);
 
             List<IfsType> functionTypes = new List<IfsType>();
 
@@ -362,6 +375,7 @@ namespace fSharpJVML
 
                 argsNames.Add(arg.Text);
                 innerScope.AddVar(arg.Text, argType);
+                innerScope.SetVarInfo(arg.Text, ScopePositionType.functionArg);
             }
 
             if (GetChildByType(node, fsharp_ssParser.REC) != null)
@@ -388,23 +402,21 @@ namespace fSharpJVML
             return functionType;
         }
 
-        private IfsType InferValueDefnType(ITree node, TypesScope scope)
+        private IfsType InferValueDefnType(ITree node, fsScope scope)
         {
-            TypesScope innerScope = new TypesScope(scope);
-
-            IfsType bodyType = Analyse(GetChildByType(node, fsharp_ssParser.BODY), innerScope);
+            IfsType bodyType = Analyse(GetChildByType(node, fsharp_ssParser.BODY), scope);
 
             ITree annotatedReturningTypeNode = GetChildByType(node, fsharp_ssParser.TYPE);
             if (annotatedReturningTypeNode != null && annotatedReturningTypeNode.ChildCount > 0)
             {
                 IfsType annotatedReturningType = new fsType(annotatedReturningTypeNode.GetChild(0).Text, null);
-                Unify(ref bodyType, ref annotatedReturningType, innerScope);
+                Unify(ref bodyType, ref annotatedReturningType, scope);
             }
 
             return bodyType;
         }
 
-        private IfsType InferBodyType(ITree node, TypesScope scope)
+        private IfsType InferBodyType(ITree node, fsScope scope)
         {
             IfsType exprType = null;
 
@@ -415,11 +427,21 @@ namespace fSharpJVML
 
                 if (childNode.Type == fsharp_ssParser.FUNCTION_DEFN)
                 {
-                    scope.AddFunction(GetChildByType(childNode, fsharp_ssParser.NAME).GetChild(0).Text, exprType);
+                    ITree funcNameNode = GetChildByType(childNode, fsharp_ssParser.NAME);
+                    if (funcNameNode == null)
+                    {
+                        funcNameNode = new fsTreeNode("NAME");
+                        funcNameNode.AddChild(new fsTreeNode(GetUniqueFunctionName()));
+                        childNode.AddChild(funcNameNode);
+                    }
+
+                    scope.AddFunction(funcNameNode.GetChild(0).Text, exprType);
                 }
                 else if (childNode.Type == fsharp_ssParser.VALUE_DEFN)
                 {
-                    scope.AddVar(GetChildByType(childNode, fsharp_ssParser.NAME).GetChild(0).Text, exprType);
+                    string varName = GetChildByType(childNode, fsharp_ssParser.NAME).GetChild(0).Text;
+                    scope.AddVar(varName, exprType);
+                    scope.SetVarInfo(varName, ScopePositionType.local);
                 }
             }
 
@@ -431,7 +453,7 @@ namespace fSharpJVML
             return exprType;
         }
 
-        private IfsType InferFuncCallType(ITree node, TypesScope scope)
+        private IfsType InferFuncCallType(ITree node, fsScope scope)
         {
             List<IfsType> factualArgsTypes = new List<IfsType>();
 
@@ -460,7 +482,7 @@ namespace fSharpJVML
             return returningType;
         }
 
-        private IfsType InferIfClauseType(ITree node, TypesScope scope)
+        private IfsType InferIfClauseType(ITree node, fsScope scope)
         {
             ITree logicExprNode = node.GetChild(0);
             Analyse(logicExprNode, scope);
@@ -475,7 +497,7 @@ namespace fSharpJVML
             return previousExprBlockType;
         }
 
-        private IfsType InferBinaryOpType(ITree node, TypesScope scope, IfsType availableType)
+        private IfsType InferBinaryOpType(ITree node, fsScope scope, IfsType availableType)
         {
             IfsType leftOperandType = Analyse(node.GetChild(0), scope);
             IfsType rightOperandType = Analyse(node.GetChild(1), scope);
@@ -487,7 +509,7 @@ namespace fSharpJVML
             return leftOperandType;
         }
 
-        private IfsType InferPlusType(ITree node, TypesScope scope)
+        private IfsType InferPlusType(ITree node, fsScope scope)
         {
             IfsType availablePlusType = fsType.GetCompositeType(
                 new List<IfsType>() {
@@ -501,7 +523,7 @@ namespace fSharpJVML
             return InferBinaryOpType(node, scope, availablePlusType);
         }
 
-        private IfsType InferMinusType(ITree node, TypesScope scope)
+        private IfsType InferMinusType(ITree node, fsScope scope)
         {
             IfsType availableMinusType = fsType.GetCompositeType(
                 new List<IfsType>() {
@@ -513,7 +535,7 @@ namespace fSharpJVML
             return InferBinaryOpType(node, scope, availableMinusType);
         }
 
-        private IfsType InferMultType(ITree node, TypesScope scope)
+        private IfsType InferMultType(ITree node, fsScope scope)
         {
             IfsType availableMultType = fsType.GetCompositeType(
                 new List<IfsType>() {
@@ -525,7 +547,7 @@ namespace fSharpJVML
             return InferBinaryOpType(node, scope, availableMultType);
         }
 
-        private IfsType InferDivideType(ITree node, TypesScope scope)
+        private IfsType InferDivideType(ITree node, fsScope scope)
         {
             IfsType availableDivideType = fsType.GetCompositeType(
                 new List<IfsType>() {
@@ -537,7 +559,7 @@ namespace fSharpJVML
             return InferBinaryOpType(node, scope, availableDivideType);
         }
 
-        private IfsType InferEqNeqOperType(ITree node, TypesScope scope)
+        private IfsType InferEqNeqOperType(ITree node, fsScope scope)
         {
             IfsType availableEqNeqType = fsType.GetCompositeType(
                 new List<IfsType>() {
@@ -552,7 +574,7 @@ namespace fSharpJVML
             return fsType.GetBoolType();
         }
 
-        private IfsType InferCompareOperType(ITree node, TypesScope scope)
+        private IfsType InferCompareOperType(ITree node, fsScope scope)
         {
             IfsType availableEqNeqType = fsType.GetCompositeType(
                 new List<IfsType>() {
@@ -565,42 +587,46 @@ namespace fSharpJVML
             return fsType.GetBoolType();
         }
 
-        private IfsType InferIDType(ITree node, TypesScope scope)
+        private IfsType InferIDType(ITree node, fsScope scope)
         {
             IfsType type = scope.GetFunctionType(node.Text) ?? scope.GetVarType(node.Text);
             if (type == null)
             {
                 throw new Exception($"Undeclared variable: {node.Text}");
             }
+
             if (type is fsTypeVar)
             {
                 (type as fsTypeVar).IsFromScope = true;
                 (type as fsTypeVar).ScopeVarName = node.Text;
             }
+
+            node.AddChild(new fsTreeNode(scope.GetVarInfo(node.Text, false)));
+
             return type;
         }
 
-        private IfsType InferIntType(ITree node, TypesScope scope)
+        private IfsType InferIntType(ITree node, fsScope scope)
         {
             return fsType.GetIntType();
         }
 
-        private IfsType InferDoubleType(ITree node, TypesScope scope)
+        private IfsType InferDoubleType(ITree node, fsScope scope)
         {
             return fsType.GetDoubleType();
         }
 
-        private IfsType InferStringType(ITree node, TypesScope scope)
+        private IfsType InferStringType(ITree node, fsScope scope)
         {
             return fsType.GetStringType();
         }
 
-        private IfsType InferCharType(ITree node, TypesScope scope)
+        private IfsType InferCharType(ITree node, fsScope scope)
         {
             return fsType.GetCharType();
         }
 
-        private IfsType InferBoolType(ITree node, TypesScope scope)
+        private IfsType InferBoolType(ITree node, fsScope scope)
         {
             return fsType.GetBoolType();
         }
@@ -629,6 +655,11 @@ namespace fSharpJVML
             }
 
             return -1;
+        }
+
+        private string GetUniqueFunctionName()
+        {
+            return $"$lambda_{this.uniqueFuctionId}";
         }
     }
 }
