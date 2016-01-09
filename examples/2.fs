@@ -12,6 +12,6 @@ let rec fib n =
 
 let main argv =
     begin
-    printf ("%d\n") (fib (5));
+    printf ("%d") (fib (5));
     0;
     end

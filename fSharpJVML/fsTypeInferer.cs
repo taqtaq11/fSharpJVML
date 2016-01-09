@@ -55,6 +55,7 @@ namespace fSharpJVML
                                                                                             new fsTypeVar(),
                                                                                             new fsTypeVar()
                                                                                           }));
+            defaultScope.SetVarInfo("printf", ScopePositionType.functionClass);
             Analyse(tree, defaultScope);
             return tree;
         }
@@ -68,7 +69,7 @@ namespace fSharpJVML
                 nodeType = inferenceFunctions[node.Type](node, scope);
                 ITree childTypeNode = GetChildByType(node, fsharp_ssParser.TYPE);
 
-                if (childTypeNode != null && childTypeNode.ChildCount > 0)
+                if (childTypeNode != null)
                 {
                     node.DeleteChild(GetChildIndexByType(node, fsharp_ssParser.TYPE));
                 }
@@ -126,7 +127,7 @@ namespace fSharpJVML
             return false;
         }
 
-        private void Unify(ref IfsType t1, ref IfsType t2, fsScope scope)
+        private void UnifyWrapper(ref IfsType t1, ref IfsType t2, fsScope scope)
         {
             bool isT1FromScope = false;
             bool isT2FromScope = false;
@@ -147,7 +148,7 @@ namespace fSharpJVML
                 t2ScopeName = (t2 as fsTypeVar).ScopeVarName;
             }
 
-            Unify(ref t1, ref t2);
+            Unify(ref t1, ref t2, scope);
 
             if (isT1FromScope)
             {
@@ -160,7 +161,7 @@ namespace fSharpJVML
             }
         }
 
-        private void Unify(ref IfsType t1, ref IfsType t2)
+        private void Unify(ref IfsType t1, ref IfsType t2, fsScope scope)
         {
             if (t1.Name == "identity")
             {
@@ -208,7 +209,7 @@ namespace fSharpJVML
             }
             else if(t1 is fsType && t2 is fsTypeVar)
             {
-                Unify(ref t2, ref t1);
+                UnifyWrapper(ref t2, ref t1, scope);
             }
             else if (t1 is fsType && t2 is fsType)
             {                
@@ -219,7 +220,7 @@ namespace fSharpJVML
                 {
                     if (type2.Name != "composite")
                     {
-                        Unify(ref t2, ref t1);
+                        UnifyWrapper(ref t2, ref t1, scope);
                         return;
                     }
 
@@ -276,34 +277,46 @@ namespace fSharpJVML
                 {
                     if (type1.Types.Count == type2.Types.Count)
                     {
-                        for (int i = 0; i < type1.Types.Count; i++)
+                        IfsType returningType = type2.Types[type2.Types.Count - 1];
+                        for (int i = 0; i < type1.Types.Count - 1; i++)
                         {
                             IfsType t1Child = type1.Types[i];
                             IfsType t2Child = type2.Types[i];
-                            Unify(ref t1Child, ref t2Child);
+                            string t2NameBeforeUnification = t2Child.Name;
+                            UnifyWrapper(ref t1Child, ref t2Child, scope);
                             type1.Types[i] = t1Child;
                             type2.Types[i] = t2Child;
+
+                            if (returningType.Name == t2NameBeforeUnification)
+                            {
+                                UnifyWrapper(ref returningType, ref t1Child, scope);
+                                type1.Types[i] = returningType;
+                                type2.Types[type2.Types.Count - 1] = t2Child;
+                            }
                         }                        
                     }
                     else if (type1.Types.Count < type2.Types.Count)
                     {
                         int difference = type2.Types.Count - type1.Types.Count;
 
-                        for (int i = 0; i < type1.Types.Count; i++)
+                        for (int i = 0; i < type1.Types.Count - 1; i++)
                         {
                             IfsType t1Child = type1.Types[i];
                             IfsType t2Child = type2.Types[i];
                             string t2NameBeforeUnification = t2Child.Name;
-                            Unify(ref t1Child, ref t2Child);
+                            UnifyWrapper(ref t1Child, ref t2Child, scope);
                             type1.Types[i] = t1Child;
                             type2.Types[i] = t2Child;
 
                             for (int j = difference; j < type2.Types.Count; j++)
                             {
                                 IfsType bufType = type2.Types[j];
-                                Unify(ref t1Child, ref bufType);
-                                type1.Types[i] = bufType;
-                                type2.Types[j] = t2Child;
+                                if (bufType.Name == t2NameBeforeUnification)
+                                {
+                                    UnifyWrapper(ref t1Child, ref bufType, scope);
+                                    type1.Types[i] = bufType;
+                                    type2.Types[j] = t2Child;
+                                }                               
                             }
                         }
 
@@ -339,6 +352,7 @@ namespace fSharpJVML
                 if (childNode.Type == fsharp_ssParser.FUNCTION_DEFN)
                 {
                     scope.AddFunction(GetChildByType(childNode, fsharp_ssParser.NAME).GetChild(0).Text, exprType);
+                    scope.SetVarInfo(GetChildByType(childNode, fsharp_ssParser.NAME).GetChild(0).Text, ScopePositionType.functionClass);
                 }
                 else if (childNode.Type == fsharp_ssParser.VALUE_DEFN)
                 {
@@ -382,6 +396,8 @@ namespace fSharpJVML
             {
                 innerScope.AddFunction(GetChildByType(node, fsharp_ssParser.NAME).GetChild(0).Text, 
                                         fsType.GetIdentityType(innerScope, argsNames));
+                innerScope.SetVarInfo(GetChildByType(node, fsharp_ssParser.NAME).GetChild(0).Text, 
+                    ScopePositionType.functionClass);
             }
 
             IfsType bodyType = Analyse(GetChildByType(node, fsharp_ssParser.BODY), innerScope);
@@ -390,7 +406,7 @@ namespace fSharpJVML
             if (annotatedReturningTypeNode != null && annotatedReturningTypeNode.ChildCount > 0)
             {
                 IfsType annotatedReturningType = new fsType(annotatedReturningTypeNode.GetChild(0).Text, null);
-                Unify(ref bodyType, ref annotatedReturningType, innerScope);
+                UnifyWrapper(ref bodyType, ref annotatedReturningType, innerScope);
             }
 
             for (int i = 0; i < argsNames.Count; i++)
@@ -410,7 +426,7 @@ namespace fSharpJVML
             if (annotatedReturningTypeNode != null && annotatedReturningTypeNode.ChildCount > 0)
             {
                 IfsType annotatedReturningType = new fsType(annotatedReturningTypeNode.GetChild(0).Text, null);
-                Unify(ref bodyType, ref annotatedReturningType, scope);
+                UnifyWrapper(ref bodyType, ref annotatedReturningType, scope);
             }
 
             return bodyType;
@@ -476,8 +492,11 @@ namespace fSharpJVML
             factualArgsTypes.Add(returningType);
             IfsType factualFunctionType = fsType.GetFunctionType(factualArgsTypes);
 
-            Unify(ref factualFunctionType, ref formalFunctionType, scope);
+            UnifyWrapper(ref factualFunctionType, ref formalFunctionType, scope);
             returningType = (formalFunctionType as fsType).Types[(formalFunctionType as fsType).Types.Count - 1];
+
+            fsTreeNode typeNode = new fsTreeNode(scope.GetVarInfo(callFunctionName, false));
+            node.AddChild(typeNode);
 
             return returningType;
         }
@@ -491,7 +510,7 @@ namespace fSharpJVML
             for (int i = 2; i < logicExprNode.ChildCount; i++)
             {
                 IfsType currentExprBlockType = Analyse(node.GetChild(i), scope);
-                Unify(ref previousExprBlockType, ref currentExprBlockType, scope);
+                UnifyWrapper(ref previousExprBlockType, ref currentExprBlockType, scope);
             }
 
             return previousExprBlockType;
@@ -502,9 +521,9 @@ namespace fSharpJVML
             IfsType leftOperandType = Analyse(node.GetChild(0), scope);
             IfsType rightOperandType = Analyse(node.GetChild(1), scope);
 
-            Unify(ref leftOperandType, ref availableType, scope);
-            Unify(ref rightOperandType, ref availableType, scope);
-            Unify(ref leftOperandType, ref rightOperandType, scope);
+            UnifyWrapper(ref leftOperandType, ref availableType, scope);
+            UnifyWrapper(ref rightOperandType, ref availableType, scope);
+            UnifyWrapper(ref leftOperandType, ref rightOperandType, scope);
 
             return leftOperandType;
         }
@@ -601,7 +620,8 @@ namespace fSharpJVML
                 (type as fsTypeVar).ScopeVarName = node.Text;
             }
 
-            node.AddChild(new fsTreeNode(scope.GetVarInfo(node.Text, false)));
+            fsTreeNode typeNode = new fsTreeNode(scope.GetVarInfo(node.Text, false));
+            node.AddChild(typeNode);
 
             return type;
         }

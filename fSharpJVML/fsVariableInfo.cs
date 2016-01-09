@@ -9,6 +9,7 @@ namespace fSharpJVML
     public enum ScopePositionType
     {
         nil,
+        functionClass,
         functionArg,
         local,
         outer

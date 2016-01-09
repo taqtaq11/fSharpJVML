@@ -34,33 +34,12 @@ namespace fSharpJVML
             VarInfo = vi;
         }
         
-        public void ScopeVarOrFuncTypeChangedHandler(IfsType oldType, IfsType newType)
+        public void ScopeVarOrFuncTypeChangedHandler(string oldTypeName, IfsType newType)
         {
-            if (oldType.Name != this.Text)
+            if (this.Text != "TYPE" || oldTypeName != NodeType.Name)
                 return;
 
-            this.Text = newType.Name;
-
-            if (!(newType is fsTypeVar))
-            {
-                for (int i = 0; i < ChildCount; i++)
-                {
-                    if (Children[i].Text == "GENERIC")
-                    {
-                        DeleteChild(i);
-                        break;
-                    }
-                }
-            }
-
-            fsType t;
-            if ((t = newType as fsType)?.Types != null)
-            {
-                for (int i = 0; i < t.Types.Count; i++)
-                {
-                    AddChild(new fsTreeNode(t.Types[i]));
-                }
-            }
+            NodeType = newType;
         }
 
         public override string Text

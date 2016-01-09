@@ -11,7 +11,7 @@ namespace test_fSharpJVML_ConsoleApp
 {
     class Program
     {
-        const int EXAMPLE_NUM = 6;
+        const int EXAMPLE_NUM = 1;
 
         static void Main(string[] args)
         {            

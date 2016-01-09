@@ -3,7 +3,7 @@ using System;
 
 namespace fSharpJVML
 {
-    delegate void ScopeVarOrFuncTypeChangedDelegate(IfsType oldType, IfsType newType);
+    delegate void ScopeVarOrFuncTypeChangedDelegate(string oldTypeName, IfsType newType);
 
     class fsScope
     {
@@ -83,37 +83,7 @@ namespace fSharpJVML
 
         public void ChangeVarOrFuncType(string varName, string oldTypeName, IfsType newType)
         {
-            if (varsTypes.ContainsKey(varName))
-            {
-                if (varsTypes[varName] is fsTypeVar || varsTypes[varName].Name == "composite")
-                {
-                    if (newType is fsTypeVar)
-                    {
-                        IfsType pruned = (newType as fsTypeVar).Prune;
-                        if (pruned.Name != "composite")
-                        {
-                            ScopeVarOrFuncTypeChanged(varsTypes[varName], pruned);
-                        }
-                    }
-                    else
-                    {
-                        if (newType.Name != "composite")
-                        {
-                            ScopeVarOrFuncTypeChanged(varsTypes[varName], newType);
-                        }
-                    }
-                }
-                
-                varsTypes[varName] = newType;
-            }
-            else if(parent != null)
-            {
-                parent.ChangeVarOrFuncType(varName, oldTypeName, newType);
-            }
-            else
-            {
-                throw new Exception($"Undeclared variable {varName}");
-            }
+            ScopeVarOrFuncTypeChanged(oldTypeName, newType);
         }
 
         public void SetVarInfo(string varName, ScopePositionType spt)

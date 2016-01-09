@@ -16,6 +16,6 @@ let abs a =
 
 let main argv =
     begin
-    printf ("%d\n") (abs (6));
+    printf ("%d") (abs (6));
     0;
     end
