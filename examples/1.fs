@@ -4,10 +4,6 @@ let rec factorial s n:int =
         begin
         factorial(s * n)(n - 1);
         end
-    elif n = 0 then
-        begin
-        0;
-        end
     else
         begin
         s;
@@ -16,6 +12,6 @@ let rec factorial s n:int =
 
 let main argv =
     begin
-    printf ("%d") (factorial (1) (4));
+    printf ("%i") (factorial (1) (6));
     0;
     end

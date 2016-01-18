@@ -1,16 +1,11 @@
 let f x y = 
     begin
-    if x > y then
-        begin
-        2
-        end
-    else
-        begin
-        3
-        end
+    x + y
+    x
     end
 
 let main args =
     begin
-    f(1)
+    f(1)(2)
+    0
     end

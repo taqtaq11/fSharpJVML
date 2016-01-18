@@ -14,6 +14,7 @@ namespace fSharpJVML
     class fsCodeGenerator
     {
         private const int VAR_INFO = 65;
+        private const int DER_FUNC_INFO = 66;
 
         private string outputFilesPath;
         private string outputFileName;
@@ -21,6 +22,7 @@ namespace fSharpJVML
         private int localVarsCounter = 0;
         private int maxStackCounter = 0;
         private int stackCounter = 0;
+        private int labelNum = 0;
         private List<string> enteredFunctionsNames;
         private Stack<int> currentArgsPosition;
 
@@ -37,25 +39,26 @@ namespace fSharpJVML
             generationFunctions.Add(fsharp_ssParser.MINUS, GenerateMinus);
             generationFunctions.Add(fsharp_ssParser.MULT, GenerateMult);
             generationFunctions.Add(fsharp_ssParser.DIV, GenerateDivide);
-            //inferenceFunctions.Add(fsharp_ssParser.EQ, InferEqNeqOperType);
-            //inferenceFunctions.Add(fsharp_ssParser.NEQ, InferEqNeqOperType);
-            //inferenceFunctions.Add(fsharp_ssParser.GT, InferCompareOperType);
-            //inferenceFunctions.Add(fsharp_ssParser.GE, InferCompareOperType);
-            //inferenceFunctions.Add(fsharp_ssParser.LT, InferCompareOperType);
-            //inferenceFunctions.Add(fsharp_ssParser.LE, InferCompareOperType);
             generationFunctions.Add(fsharp_ssParser.ID, GenerateID);
             generationFunctions.Add(fsharp_ssParser.INT, GenerateInt);
             generationFunctions.Add(fsharp_ssParser.DOUBLE, GenerateDouble);
             //inferenceFunctions.Add(fsharp_ssParser.CHAR, InferCharType);
             //inferenceFunctions.Add(fsharp_ssParser.TRUE, InferBoolType);
             //inferenceFunctions.Add(fsharp_ssParser.FALSE, InferBoolType);
-            //inferenceFunctions.Add(fsharp_ssParser.STRING, InferStringType);
+            generationFunctions.Add(fsharp_ssParser.STRING, GenerateString);
             generationFunctions.Add(fsharp_ssParser.BODY, GenerateBody);
             generationFunctions.Add(fsharp_ssParser.IF, GenerateIfClause);
+            generationFunctions.Add(fsharp_ssParser.ELIF, GenerateElifClause);
+            generationFunctions.Add(fsharp_ssParser.EQ, GenerateEqOper);
+            generationFunctions.Add(fsharp_ssParser.NEQ, GenerateNeqOper);
+            generationFunctions.Add(fsharp_ssParser.GT, GenerateGTOper);
+            generationFunctions.Add(fsharp_ssParser.GE, GenerateGEOper);
+            generationFunctions.Add(fsharp_ssParser.LT, GenerateLTOper);
+            generationFunctions.Add(fsharp_ssParser.LE, GenerateLEOper);
             generationFunctions.Add(fsharp_ssParser.FUNCTION_DEFN, GenerateFunctionDefn);
             generationFunctions.Add(fsharp_ssParser.FUNCTION_CALL, GenerateFuncCall);
             generationFunctions.Add(fsharp_ssParser.VALUE_DEFN, GenerateValueDefn);
-        }        
+        }
 
         public void GenerateClassFiles(ITree sourceAST)
         {
@@ -94,7 +97,7 @@ namespace fSharpJVML
                     RecalculateStack(false);
                     break;
                 case "double":
-                    outputFile.Add("dadd");
+                    outputFile.Add("fadd");
                     RecalculateStack(false);
                     break;
                 case "string":
@@ -137,7 +140,7 @@ namespace fSharpJVML
                     RecalculateStack(false);
                     break;
                 case "double":
-                    outputFile.Add("dsub");
+                    outputFile.Add("fsub");
                     RecalculateStack(false);
                     break;
                 case "char":
@@ -160,7 +163,7 @@ namespace fSharpJVML
                     RecalculateStack(false);
                     break;
                 case "double":
-                    outputFile.Add("dmul");
+                    outputFile.Add("fmul");
                     RecalculateStack(false);
                     break;
                 case "char":
@@ -183,7 +186,7 @@ namespace fSharpJVML
                     RecalculateStack(false);
                     break;
                 case "double":
-                    outputFile.Add("ddiv");
+                    outputFile.Add("fdiv");
                     RecalculateStack(false);
                     break;
                 case "char":
@@ -205,20 +208,175 @@ namespace fSharpJVML
             RecalculateStack(true);
         }
 
+        private void GenerateString(ITree node, List<string> outputFile)
+        {
+            outputFile.Add($"ldc {node.Text}");
+            RecalculateStack(true);
+        }
+
         private void GenerateBody(ITree node, List<string> outputFile)
         {
-            for (int i = 0; i < node.GetChild(0).ChildCount; i++)
+            if (node.GetChild(0).Text == "elif")
             {
-                Generate(node.GetChild(0).GetChild(i), outputFile);
+                Generate(node.GetChild(0), outputFile);
+            }
+            else
+            {
+                for (int i = 0; i < node.GetChild(0).ChildCount; i++)
+                {
+                    Generate(node.GetChild(0).GetChild(i), outputFile);
+                }
             }
         }
 
         private void GenerateIfClause(ITree node, List<string> outputFile)
         {
             ITree conditionStatement = node.GetChild(0);
+            Generate(conditionStatement, outputFile);
+
+            int escapeLabelNum = labelNum + node.ChildCount - 3;
+            bool isElseBlockExists = node.GetChild(node.ChildCount - 2).GetChild(0).Text != "elif";
+
             for (int i = 1; i < node.ChildCount; i++)
             {
-                //outputFile.Add();
+                if (node.GetChild(i).Type == fsharp_ssParser.BODY)
+                {
+                    if (i > 1)
+                        outputFile.Add($"label_{labelNum++}:");
+
+                    Generate(node.GetChild(i), outputFile);
+
+                    if (i < node.ChildCount - 2)
+                    {
+                        outputFile.Add($"goto label_{escapeLabelNum}");
+                    }
+                }
+            }
+
+            outputFile.Add($"label_{labelNum++}:");
+        }
+
+        private void GenerateElifClause(ITree node, List<string> outputFile)
+        {
+            Generate(node.GetChild(0), outputFile);
+
+            for (int i = 0; i < node.GetChild(1).ChildCount; i++)
+            {
+                Generate(node.GetChild(1).GetChild(i), outputFile);
+            }
+        }
+
+        private void GenerateEqOper(ITree node, List<string> outputFile)
+        {
+            Generate(node.GetChild(0), outputFile);
+            Generate(node.GetChild(1), outputFile);
+
+            switch ((GetChildByType(node.GetChild(0), fsharp_ssParser.TYPE) as fsTreeNode).NodeType.Name)
+            {
+                case "int":
+                    outputFile.Add($"if_icmpne label_{labelNum}");
+                    break;
+                case "double":
+                    outputFile.Add($"dcmpl");
+                    outputFile.Add($"ifne label_{labelNum}");
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void GenerateNeqOper(ITree node, List<string> outputFile)
+        {
+            Generate(node.GetChild(0), outputFile);
+            Generate(node.GetChild(1), outputFile);
+
+            switch ((GetChildByType(node.GetChild(0), fsharp_ssParser.TYPE) as fsTreeNode).NodeType.Name)
+            {
+                case "int":
+                    outputFile.Add($"if_icmpeq label_{labelNum}");
+                    break;
+                case "double":
+                    outputFile.Add($"dcmpl");
+                    outputFile.Add($"ifeq label_{labelNum}");
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void GenerateGEOper(ITree node, List<string> outputFile)
+        {
+            Generate(node.GetChild(0), outputFile);
+            Generate(node.GetChild(1), outputFile);
+
+            switch ((GetChildByType(node.GetChild(0), fsharp_ssParser.TYPE) as fsTreeNode).NodeType.Name)
+            {
+                case "int":
+                    outputFile.Add($"if_icmplt label_{labelNum}");
+                    break;
+                case "double":
+                    outputFile.Add($"dcmpl");
+                    outputFile.Add($"iflt label_{labelNum}");
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void GenerateGTOper(ITree node, List<string> outputFile)
+        {
+            Generate(node.GetChild(0), outputFile);
+            Generate(node.GetChild(1), outputFile);
+
+            switch ((GetChildByType(node.GetChild(0), fsharp_ssParser.TYPE) as fsTreeNode).NodeType.Name)
+            {
+                case "int":
+                    outputFile.Add($"if_icmple label_{labelNum}");
+                    break;
+                case "double":
+                    outputFile.Add($"dcmpl");
+                    outputFile.Add($"ifle label_{labelNum}");
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void GenerateLEOper(ITree node, List<string> outputFile)
+        {
+            Generate(node.GetChild(0), outputFile);
+            Generate(node.GetChild(1), outputFile);
+
+            switch ((GetChildByType(node.GetChild(0), fsharp_ssParser.TYPE) as fsTreeNode).NodeType.Name)
+            {
+                case "int":
+                    outputFile.Add($"if_icmpgt label_{labelNum}");
+                    break;
+                case "double":
+                    outputFile.Add($"dcmpl");
+                    outputFile.Add($"ifgt label_{labelNum}");
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void GenerateLTOper(ITree node, List<string> outputFile)
+        {
+            Generate(node.GetChild(0), outputFile);
+            Generate(node.GetChild(1), outputFile);
+
+            switch ((GetChildByType(node.GetChild(0), fsharp_ssParser.TYPE) as fsTreeNode).NodeType.Name)
+            {
+                case "int":
+                    outputFile.Add($"if_icmpge label_{labelNum}");
+                    break;
+                case "double":
+                    outputFile.Add($"dcmpl");
+                    outputFile.Add($"ifge label_{labelNum}");
+                    break;
+                default:
+                    break;
             }
         }
 
@@ -231,9 +389,17 @@ namespace fSharpJVML
 
             if (funcName == "main")
             {
+                outputFile.Add(".method public <init>()V");
+                outputFile.Add(".limit stack 1");
+                outputFile.Add("aload_0");
+                RecalculateStack(true);
+                outputFile.Add("invokespecial java/lang/Object/<init>()V");
+                outputFile.Add("return");
+                outputFile.Add(".end method");
                 outputFile.Add(".method public static main([Ljava/lang/String;)V");
                 outputFile.Add(".limit stack ");
-                currentArgsPosition.Push(outputFile.Count - 2);
+                outputFile.Add(".limit locals 2");
+                currentArgsPosition.Push(outputFile.Count - 9);
                 Generate(GetChildByType(node, fsharp_ssParser.BODY), outputFile);
                 for (int i = 0; i < outputFile.Count; i++)
                 {
@@ -242,6 +408,7 @@ namespace fSharpJVML
                         outputFile[i] += maxStackCounter;
                     }
                 }
+                outputFile.Add("pop");
                 outputFile.Add("return");
                 outputFile.Add(".end method");
                 currentArgsPosition.Pop();
@@ -254,18 +421,21 @@ namespace fSharpJVML
                 GenerateFileHeader(funcClassFile, funcName);
 
                 ITree argsNode = GetChildByType(node, fsharp_ssParser.ARGS);
+                ITree typeNode = GetChildByType(node, fsharp_ssParser.TYPE);
+                List<IfsType> argTypes = ((typeNode as fsTreeNode).NodeType as fsType).Types;
+                fsDerFuncInfo funcInfo = (GetChildByType(node, DER_FUNC_INFO) as fsTreeNode).DerFuncInfo;
 
                 for (int i = 0; i < argsNode.ChildCount; i++)
-                {
-                    ITree typeNode = GetChildByType(node, fsharp_ssParser.TYPE);
-                    List <IfsType> argTypes = ((typeNode as fsTreeNode).NodeType as fsType).Types;
+                {                    
                     string argTypeFuncName = argTypes[i].Name == "function" ? argsNode.GetChild(i).Text : null;
-                    funcClassFile.Add($".field public _{argsNode.GetChild(i).Text} {GetLowLevelTypeName(argTypes[i].Name, argTypeFuncName)};");
+                    string staticSpec = enteredFunctionsNames[enteredFunctionsNames.Count - 1] == outputFileName ? "static" : "";
+                    funcClassFile.Add($".field public {staticSpec} _{funcInfo.ArgsNames[i]} {GetLowLevelTypeName(argTypes[i].Name, argTypeFuncName)}");
                 }
 
                 if (enteredFunctionsNames.Count > 1)
-                { 
-                    funcClassFile.Add($"field public ___context {enteredFunctionsNames[enteredFunctionsNames.Count - 2]};");
+                {
+                    string staticSpec = enteredFunctionsNames[enteredFunctionsNames.Count - 1] == outputFileName ? "static" : "";
+                    funcClassFile.Add($".field public {staticSpec} ___context L{enteredFunctionsNames[enteredFunctionsNames.Count - 2]};");
                 }
 
                 currentArgsPosition.Push(funcClassFile.Count - 1);
@@ -273,20 +443,28 @@ namespace fSharpJVML
                 funcClassFile.Add(".method public <init>()V");
                 funcClassFile.Add(".limit stack 1");
                 funcClassFile.Add("aload_0");
+                RecalculateStack(true);
                 funcClassFile.Add("invokespecial java/lang/Object/<init>()V");
                 funcClassFile.Add("return");
                 funcClassFile.Add(".end method");                
 
-                IfsType returningNode = (GetChildByType(node, fsharp_ssParser.TYPE) as fsTreeNode).NodeType;
-                string returningStatement = GetReturningStatementByType(returningNode.Name);
-                funcClassFile.Add(".method public invoke()V");
+                fsType returningNode = (GetChildByType(node, fsharp_ssParser.TYPE) as fsTreeNode).NodeType as fsType;
+                string returningStatement = GetReturningStatementByType(returningNode.Types[returningNode.Types.Count - 1].Name);
+                funcClassFile.Add($".method public invoke(){GetLowLevelTypeName(argTypes[argTypes.Count - 1].Name, null)}");
                 funcClassFile.Add(".limit stack ");
+                funcClassFile.Add(".limit locals 2");
                 Generate(GetChildByType(node, fsharp_ssParser.BODY), funcClassFile);
                 funcClassFile.Add(returningStatement);
+                for (int i = 0; i < funcClassFile.Count; i++)
+                {
+                    if (funcClassFile[i] == ".limit stack ")
+                    {
+                        funcClassFile[i] += maxStackCounter;
+                    }
+                }
                 funcClassFile.Add(".end method");
 
                 SaveToFile(funcClassFile, funcName);
-                //outputFile.Add($".field public __f_{funcName} {funcName};");
                 currentArgsPosition.Pop();
             }
 
@@ -298,61 +476,89 @@ namespace fSharpJVML
             string funcName = GetChildByType(node, fsharp_ssParser.NAME).GetChild(0).Text;
             ITree args = GetChildByType(node, fsharp_ssParser.ARGS);
 
-            if (funcName == "printf")
+            if (funcName.Substring(0, "printf".Length) == "printf")
             {
                 ITree firstArg = args.GetChild(0);
-                ITree secondArg = args.GetChild(1);
                 IfsType argType = (GetChildByType(args.GetChild(1), fsharp_ssParser.TYPE) as fsTreeNode).NodeType;
 
-                string printfType = GetTypeByPrintfArg(firstArg.Text);
-                string loadConstInstruction = "ldc";
-                if (printfType == "D")
-                {
-                    loadConstInstruction += "_w";
-                }
-
                 outputFile.Add("getstatic java/lang/System/out Ljava/io/PrintStream;");
-                outputFile.Add($"{loadConstInstruction} {secondArg.Text}");
-                outputFile.Add($"invokevirtual java/io/PrintStream/println({printfType};)V");
+                Generate(args.GetChild(1), outputFile);
+                string printfType = GetTypeByPrintfArg(firstArg.Text);
+                outputFile.Add($"invokevirtual java/io/PrintStream/println({printfType})V");
+                RecalculateStack(false);
+                RecalculateStack(false);
+                return;
             }
 
             IfsType returningType = (GetChildByType(node, fsharp_ssParser.TYPE) as fsTreeNode).NodeType;
             fsVariableInfo varInfo = (GetChildByType(node, VAR_INFO) as fsTreeNode).VarInfo;
             IfsType varType = (GetChildByType(node, fsharp_ssParser.TYPE) as fsTreeNode).NodeType;
+            fsDerFuncInfo funcInfo = (GetChildByType(node, DER_FUNC_INFO) as fsTreeNode).DerFuncInfo;
+            string argTypeFuncName = funcInfo.Name;
 
             if (varInfo.PositionInParentScopeType == ScopePositionType.functionClass)
             {
                 outputFile.Add($"new {funcName}");
+                RecalculateStack(true);
                 outputFile.Add("dup");
+                RecalculateStack(true);
                 outputFile.Add($"invokespecial {funcName}/<init>()V");
             }
             else
             {
                 switch (varInfo.PositionInScopeType)
                 {
+                    //recursive function defenition
+                    case ScopePositionType.functionClass:
+                        outputFile.Add($"new {funcName}");
+                        RecalculateStack(true);
+                        outputFile.Add("dup");
+                        RecalculateStack(true);
+                        outputFile.Add($"invokespecial {funcName}/<init>()V");
+                        break;
                     case ScopePositionType.functionArg:
-                        outputFile.Add("aload_0");
-                        outputFile.Add($"getfield {enteredFunctionsNames[enteredFunctionsNames.Count - 1]}/_{node.Text} {varType.Name};");
+                        if (enteredFunctionsNames[enteredFunctionsNames.Count - 1] != outputFileName)
+                        {
+                            outputFile.Add("aload_0");
+                            RecalculateStack(true);
+                            outputFile.Add($"getfield {enteredFunctionsNames[enteredFunctionsNames.Count - 1]}/_{funcName} {GetLowLevelTypeName("function", argTypeFuncName)}");
+                        }
+                        else
+                        {
+                            outputFile.Add($"getstatic {enteredFunctionsNames[enteredFunctionsNames.Count - 1]}/_{funcName} {GetLowLevelTypeName("function", argTypeFuncName)}");
+                        }
                         break;
                     case ScopePositionType.local:
-                        outputFile.Add("aload_0");
-                        outputFile.Add($"getfield {enteredFunctionsNames[enteredFunctionsNames.Count - 1]}/__{node.Text} {varType.Name};");
+                        if (enteredFunctionsNames[enteredFunctionsNames.Count - 1] != outputFileName)
+                        {
+                            outputFile.Add("aload_0");
+                            RecalculateStack(true);
+                            outputFile.Add($"getfield {enteredFunctionsNames[enteredFunctionsNames.Count - 1]}/__{funcName} {GetLowLevelTypeName("function", argTypeFuncName)}");
+                        }
+                        else
+                        {
+                            outputFile.Add($"getstatic {enteredFunctionsNames[enteredFunctionsNames.Count - 1]}/__{funcName} {GetLowLevelTypeName("function", argTypeFuncName)}");
+                        }
                         break;
                     case ScopePositionType.outer:
-                        outputFile.Add("aload_0");
+                        if (enteredFunctionsNames[enteredFunctionsNames.Count - 1] != outputFileName)
+                        {
+                            outputFile.Add("aload_0");
+                        }
+                        RecalculateStack(true);
                         int i;
                         for (i = 1; i <= varInfo.ScopeNestingDepth; i++)
                         {
-                            outputFile.Add($"getfield {enteredFunctionsNames[enteredFunctionsNames.Count - i]}/___context {enteredFunctionsNames[enteredFunctionsNames.Count - i - 1]};");
+                            outputFile.Add($"getfield {enteredFunctionsNames[enteredFunctionsNames.Count - i]}/___context L{enteredFunctionsNames[enteredFunctionsNames.Count - i - 1]};");
                         }
 
                         switch (varInfo.PositionInParentScopeType)
                         {
                             case ScopePositionType.functionArg:
-                                outputFile.Add($"getfield {enteredFunctionsNames[enteredFunctionsNames.Count - i]}/_{node.Text} {varType.Name};");
+                                outputFile.Add($"getfield {enteredFunctionsNames[enteredFunctionsNames.Count - i]}/_{funcName} {GetLowLevelTypeName("function", argTypeFuncName)}");
                                 break;
                             case ScopePositionType.local:
-                                outputFile.Add($"getfield {enteredFunctionsNames[enteredFunctionsNames.Count - i]}/__{node.Text} {varType.Name};");
+                                outputFile.Add($"getfield {enteredFunctionsNames[enteredFunctionsNames.Count - i]}/__{funcName} {GetLowLevelTypeName("function", argTypeFuncName)}");
                                 break;
                             default:
                                 break;
@@ -369,28 +575,31 @@ namespace fSharpJVML
             {
                 IfsType argType = (GetChildByType(args.GetChild(i), fsharp_ssParser.TYPE) as fsTreeNode).NodeType;
                 outputFile.Add($"aload_1");
+                RecalculateStack(true);
                 Generate(args.GetChild(i), outputFile);
-                outputFile.Add($"putfield {funcName}/{args.GetChild(i).Text} {GetLowLevelTypeName(argType.Name, null)};");
+                outputFile.Add($"putfield {funcInfo.Name}/_{funcInfo.ArgsNames[funcInfo.BeforePassedArgsNum + i]} {GetLowLevelTypeName(argType.Name, null)}");
             }
 
             outputFile.Add($"aload_1");
 
             if (returningType.Name != "function")
             {
-                outputFile.Add($"invokevirtual {funcName}/invoke()V");
+                outputFile.Add($"invokevirtual {funcInfo.Name}/invoke(){GetLowLevelTypeName(returningType.Name, null)}");
+                RecalculateStack(true);
             }
         }
 
         private string GetTypeByPrintfArg(string arg)
         {
+            arg = arg.Substring(1, 2);
             switch (arg)
             {
                 case "%d":
-                    return "D";
+                    return "F";
                 case "%i":
                     return "I";
                 case "%s":
-                    return "Ljava/lang/String";
+                    return "Ljava/lang/String;";
                 default:
                     throw new Exception("Invalid printf type");
             }
@@ -400,11 +609,29 @@ namespace fSharpJVML
         {
             string varName = GetChildByType(node, fsharp_ssParser.NAME).GetChild(0).Text;
             string varType = (GetChildByType(node, fsharp_ssParser.TYPE) as fsTreeNode).NodeType.Name;
-            outputFile.Insert(currentArgsPosition.Peek(), $".field public __{varName} {GetLowLevelTypeName(varType, null)};");
+
+            string argTypeFuncName = null;
+            if (varType == "function")
+            {
+                fsDerFuncInfo funcInfo = (GetChildByType(node, DER_FUNC_INFO) as fsTreeNode).DerFuncInfo;
+                argTypeFuncName = funcInfo.Name;
+            }
+
+            string staticSpec = enteredFunctionsNames[enteredFunctionsNames.Count - 1] == outputFileName ? "static" : "";
+            outputFile.Insert(currentArgsPosition.Peek(), $".field {staticSpec} public __{varName} {GetLowLevelTypeName(varType, argTypeFuncName)}");
             ITree bodyNode = GetChildByType(node, fsharp_ssParser.BODY);
-            outputFile.Add($"aload_0");
-            Generate(bodyNode, outputFile);
-            outputFile.Add($"putfield {enteredFunctionsNames[enteredFunctionsNames.Count - 1]}/__{varName} {GetLowLevelTypeName(varType, null)};");
+            if (enteredFunctionsNames[enteredFunctionsNames.Count - 1] != outputFileName)
+            {
+                outputFile.Add("aload_0");
+                RecalculateStack(true);
+                Generate(bodyNode, outputFile);
+                outputFile.Add($"putfield {enteredFunctionsNames[enteredFunctionsNames.Count - 1]}/__{varName} {GetLowLevelTypeName(varType, argTypeFuncName)}");
+            }
+            else
+            {
+                Generate(bodyNode, outputFile);
+                outputFile.Add($"putstatic {enteredFunctionsNames[enteredFunctionsNames.Count - 1]}/__{varName} {GetLowLevelTypeName(varType, argTypeFuncName)}");
+            }
         }
 
         private void GenerateID(ITree node, List<string> outputFile)
@@ -418,19 +645,39 @@ namespace fSharpJVML
                     outputFile.Add($"new {node.Text}");
                     break;
                 case ScopePositionType.functionArg:
-                    outputFile.Add("aload_0");
-                    outputFile.Add($"getfield {enteredFunctionsNames[enteredFunctionsNames.Count - 1]}/_{node.Text} {varType.Name};");
+                    if (enteredFunctionsNames[enteredFunctionsNames.Count - 1] != outputFileName)
+                    {
+                        outputFile.Add("aload_0");
+                        RecalculateStack(true);
+                        outputFile.Add($"getfield {enteredFunctionsNames[enteredFunctionsNames.Count - 1]}/_{node.Text} {GetLowLevelTypeName(varType.Name, null)}");
+                    }
+                    else
+                    {
+                        outputFile.Add($"getstatic {enteredFunctionsNames[enteredFunctionsNames.Count - 1]}/_{node.Text} {GetLowLevelTypeName(varType.Name, null)}");
+                    }
                     break;
                 case ScopePositionType.local:
-                    outputFile.Add("aload_0");
-                    outputFile.Add($"getfield {enteredFunctionsNames[enteredFunctionsNames.Count - 1]}/__{node.Text} {varType.Name};");
+                    if (enteredFunctionsNames[enteredFunctionsNames.Count - 1] != outputFileName)
+                    {
+                        outputFile.Add("aload_0");
+                        RecalculateStack(true);
+                        outputFile.Add($"getfield {enteredFunctionsNames[enteredFunctionsNames.Count - 1]}/__{node.Text} {GetLowLevelTypeName(varType.Name, null)}");
+                    }
+                    else
+                    {
+                        outputFile.Add($"getstatic {enteredFunctionsNames[enteredFunctionsNames.Count - 1]}/__{node.Text} {GetLowLevelTypeName(varType.Name, null)}");
+                    }
                     break;
                 case ScopePositionType.outer:
-                    outputFile.Add("aload_0");
+                    if (enteredFunctionsNames[enteredFunctionsNames.Count - 1] != outputFileName)
+                    {
+                        outputFile.Add("aload_0");
+                    }
+                    RecalculateStack(true);
                     int i;
                     for (i = 1; i <= varInfo.ScopeNestingDepth; i++)
                     {
-                        outputFile.Add($"getfield {enteredFunctionsNames[enteredFunctionsNames.Count - i]}/___context {enteredFunctionsNames[enteredFunctionsNames.Count - i - 1]};");
+                        outputFile.Add($"getfield {enteredFunctionsNames[enteredFunctionsNames.Count - i]}/___context L{enteredFunctionsNames[enteredFunctionsNames.Count - i - 1]}");
                     }
 
                     switch (varInfo.PositionInParentScopeType)
@@ -439,10 +686,10 @@ namespace fSharpJVML
                             //TODO
                             break;
                         case ScopePositionType.functionArg:
-                            outputFile.Add($"getfield {enteredFunctionsNames[enteredFunctionsNames.Count - i]}/_{node.Text} {varType.Name};");
+                            outputFile.Add($"getfield {enteredFunctionsNames[enteredFunctionsNames.Count - i]}/_{node.Text} {GetLowLevelTypeName(varType.Name, null)}");
                             break;
                         case ScopePositionType.local:
-                            outputFile.Add($"getfield {enteredFunctionsNames[enteredFunctionsNames.Count - i]}/__{node.Text} {varType.Name};");
+                            outputFile.Add($"getfield {enteredFunctionsNames[enteredFunctionsNames.Count - i]}/__{node.Text} {GetLowLevelTypeName(varType.Name, null)}");
                             break;
                         default:
                             break;
@@ -457,7 +704,7 @@ namespace fSharpJVML
         {
             outputFile.Add($".source {fileName}.j");
             outputFile.Add($".class {fileName}");
-            outputFile.Add($".super java/lang/Object");
+            outputFile.Add($".super Ljava/lang/Object;");
         }
 
         private ITree GetChildByType(ITree parent, int type)
@@ -496,7 +743,7 @@ namespace fSharpJVML
                 case "int":
                     return "ireturn";
                 case "double":
-                    return "dreturn";
+                    return "freturn";
                 default:
                     return "areturn";
             }
@@ -509,14 +756,14 @@ namespace fSharpJVML
                 case "int":
                     return "I";
                 case "double":
-                    return "D";
+                    return "F";
                 case "string":
-                    return "Ljava/lang/String";
+                    return "Ljava/lang/String;";
                 case "function":
-                    return funcName;
+                    return $"L{funcName};";
                 default:
                     if (inputName[inputName.Length - 1] == '\'')
-                        return "java/lang/Object";
+                        return "Ljava/lang/Object;";
                     else
                         throw new Exception($"Type {inputName} not presented in JVM");
             }
@@ -524,12 +771,16 @@ namespace fSharpJVML
 
         private void SaveToFile(List<string> code, string fileName)
         {
+            TextWriter file = null;
             if (!File.Exists($"{outputFilesPath}/{fileName}.j"))
             {
-                File.Create($"{outputFilesPath}/{fileName}.j");
+                file = new StreamWriter(File.Create($"{outputFilesPath}/{fileName}.j"));
             }
-            
-            TextWriter file = new StreamWriter($"{outputFilesPath}/{fileName}.j");
+            else
+            {
+                file = new StreamWriter($"{outputFilesPath}/{fileName}.j");
+            }
+
             foreach (var line in code)
             {
                 file.WriteLine(line);

@@ -46,6 +46,7 @@
     <Compile Include="AstNodePrinter.cs" />
     <Compile Include="fsCodeGenerator.cs" />
     <Compile Include="fsCompiler.cs" />
+    <Compile Include="fsDerFuncInfo.cs" />
     <Compile Include="fsharp_ssLexer.cs" />
     <Compile Include="fsharp_ssParser.cs" />
     <Compile Include="fsTypesHierarchy\fsIdentityType.cs" />
