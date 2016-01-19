@@ -6,6 +6,7 @@ let f x y =
 let main argv =
     begin
     let g = begin f (5); end
-    printf ("%d") (g (6));
+    printf ("%i") (g (6));
+    printf ("%i") (g (19));
     0;
     end

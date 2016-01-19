@@ -15,6 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		examples\4.fs = examples\4.fs
 		examples\5.fs = examples\5.fs
 		examples\6.fs = examples\6.fs
+		examples\7.fs = examples\7.fs
 		grammar\fsharp_ss.g = grammar\fsharp_ss.g
 	EndProjectSection
 EndProject

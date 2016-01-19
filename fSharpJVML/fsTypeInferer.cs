@@ -17,6 +17,8 @@ namespace fSharpJVML
         private ITree tree;
         private Dictionary<int, InferNodeTypeDelegate> inferenceFunctions;
 
+        private List<string> enteredFunctionsNames;
+
         //info of last called function
         private fsDerFuncInfo derFunction;
         //infos for all defined functions
@@ -26,11 +28,13 @@ namespace fSharpJVML
         private int uniqueFuctionId = 0;
 
 
-        public fsTypeInferer(ITree tree)
+        public fsTypeInferer(ITree tree, string outFileName)
         {
             this.tree = tree;
             functionsInfos = new Dictionary<string, fsDerFuncInfo>();
             varDerFuncTable = new Dictionary<string, fsDerFuncInfo>();
+            enteredFunctionsNames = new List<string>();
+            enteredFunctionsNames.Add(outFileName);
 
             inferenceFunctions = new Dictionary<int, InferNodeTypeDelegate>();
             inferenceFunctions.Add(fsharp_ssParser.PROGRAM, InferProgramType);
@@ -68,7 +72,7 @@ namespace fSharpJVML
                                                                                             fsType.GetFunctionType(null)
                                                                                           }));
             defaultScope.SetVarInfo("printf", ScopePositionType.functionClass);
-            functionsInfos.Add("printf", new fsDerFuncInfo("printf", new List<string>(), 0, 0));
+            functionsInfos.Add("printf", new fsDerFuncInfo("printf", new List<string>(), 0, 0, ""));
             Analyse(tree, defaultScope);
             return tree;
         }
@@ -296,7 +300,8 @@ namespace fSharpJVML
                             IfsType t1Child = type1.Types[i];
                             IfsType t2Child = type2.Types[i];
                             string t2NameBeforeUnification = t2Child.Name;
-                            UnifyWrapper(ref t1Child, ref t2Child, scope);
+                            //Changed !!!!!!!
+                            UnifyWrapper(ref t2Child, ref t1Child, scope);
                             type1.Types[i] = t1Child;
                             type2.Types[i] = t2Child;
 
@@ -317,7 +322,8 @@ namespace fSharpJVML
                             IfsType t1Child = type1.Types[i];
                             IfsType t2Child = type2.Types[i];
                             string t2NameBeforeUnification = t2Child.Name;
-                            UnifyWrapper(ref t1Child, ref t2Child, scope);
+                            //Changed !!!!!!!
+                            UnifyWrapper(ref t2Child, ref t1Child, scope);
                             type1.Types[i] = t1Child;
                             type2.Types[i] = t2Child;
 
@@ -369,7 +375,9 @@ namespace fSharpJVML
                 }
                 else if (childNode.Type == fsharp_ssParser.VALUE_DEFN)
                 {
-                    scope.AddVar(GetChildByType(childNode, fsharp_ssParser.NAME).GetChild(0).Text, exprType);
+                    string varName = GetChildByType(childNode, fsharp_ssParser.NAME).GetChild(0).Text;
+                    scope.AddVar(varName, exprType);
+                    scope.SetVarInfo(varName, ScopePositionType.local);
                 }
             }
 
@@ -407,7 +415,12 @@ namespace fSharpJVML
                 innerScope.SetVarInfo(arg.Text, ScopePositionType.functionArg);
             }
 
-            fsDerFuncInfo funcInfo = new fsDerFuncInfo(funcName, argsNames, 0, 0);
+            fsDerFuncInfo funcInfo = new fsDerFuncInfo(funcName, argsNames, 0, 0, 
+                enteredFunctionsNames[enteredFunctionsNames.Count - 1]);
+            if (funcName != "main")
+            {
+                enteredFunctionsNames.Add(funcName);
+            }
             functionsInfos.Add(funcName, funcInfo);
             node.AddChild(new fsTreeNode(funcInfo));
             if (GetChildByType(node, fsharp_ssParser.REC) != null)
@@ -432,6 +445,7 @@ namespace fSharpJVML
             functionTypes.Add(bodyType);
             fsType functionType = fsType.GetFunctionType(functionTypes);
 
+            enteredFunctionsNames.RemoveAt(enteredFunctionsNames.Count - 1);
             return functionType;
         }
 
@@ -463,19 +477,36 @@ namespace fSharpJVML
             for (int i = 0; i < node.GetChild(0).ChildCount; i++)
             {
                 ITree childNode = node.GetChild(0).Text == "elif" ? node.GetChild(0) : node.GetChild(0).GetChild(i);
+                ITree funcNameNode = null;
+                bool isLambda = false;
+
+                if (childNode.Type == fsharp_ssParser.FUNCTION_DEFN)
+                {
+                    funcNameNode = GetChildByType(childNode, fsharp_ssParser.NAME);
+                    if (funcNameNode == null)
+                    {
+                        isLambda = true;
+                        funcNameNode = new fsTreeNode("NAME", fsharp_ssParser.NAME);
+                        funcNameNode.AddChild(new fsTreeNode(GetUniqueFunctionName()));
+                        childNode.AddChild(funcNameNode);
+                    }
+                }
+
                 exprType = Analyse(childNode, scope);
 
                 if (childNode.Type == fsharp_ssParser.FUNCTION_DEFN)
                 {
-                    ITree funcNameNode = GetChildByType(childNode, fsharp_ssParser.NAME);
-                    if (funcNameNode == null)
-                    {
-                        funcNameNode = new fsTreeNode("NAME");
-                        funcNameNode.AddChild(new fsTreeNode(GetUniqueFunctionName()));
-                        childNode.AddChild(funcNameNode);
-                    }
-
                     scope.AddFunction(funcNameNode.GetChild(0).Text, exprType);
+                    scope.SetVarInfo(funcNameNode.GetChild(0).Text, ScopePositionType.functionClass);
+
+                    if (isLambda)
+                    {
+                        fsTreeNode lambdaCall = new fsTreeNode("FUNCTION_CALL", fsharp_ssParser.FUNCTION_CALL);
+                        fsTreeNode lambdaCallArgs = new fsTreeNode("ARGS", fsharp_ssParser.ARGS);
+                        lambdaCall.AddChild(funcNameNode);
+                        lambdaCall.AddChild(lambdaCallArgs);
+                        node.GetChild(0).AddChild(lambdaCall);
+                    }
                 }
                 else if (childNode.Type == fsharp_ssParser.VALUE_DEFN)
                 {
@@ -495,6 +526,7 @@ namespace fSharpJVML
 
         private IfsType InferFuncCallType(ITree node, fsScope scope)
         {
+
             List<IfsType> factualArgsTypes = new List<IfsType>();
 
             string callFunctionName = GetChildByType(node, fsharp_ssParser.NAME).GetChild(0).Text;
@@ -502,10 +534,38 @@ namespace fSharpJVML
 
             for (int i = 0; i < args.ChildCount; i++)
             {
-                factualArgsTypes.Add(Analyse(args.GetChild(i), scope));
+                ITree currentArg = args.GetChild(i);
+                IfsType argType = Analyse(currentArg, scope);
+
+                //if (argType is fsTypeVar)
+                //{
+                //    if (!(currentArg is fsTreeNode))
+                //    {
+                //        currentArg = new fsTreeNode(argType);
+                //    }
+                //    fsScope.ScopeVarOrFuncTypeChanged += (args.GetChild(i) as fsTreeNode).ScopeVarOrFuncTypeChangedHandler;
+                //}
+
+                factualArgsTypes.Add(argType);
             }
 
-            if (callFunctionName.Substring(0, "printf".Length) == "printf")
+            if (scope.GetVarInfo(callFunctionName, false).PositionInScopeType == ScopePositionType.functionArg)
+            {
+                fsTreeNode typeFANode = new fsTreeNode(scope.GetVarInfo(callFunctionName, false));
+                node.AddChild(typeFANode);
+                List<string> argsNames = new List<string>();
+                for (int i = 0; i < args.ChildCount; i++)
+                {
+                    argsNames.Add(args.GetChild(i).Text);
+                }
+                fsDerFuncInfo faDerFuncInfo = new fsDerFuncInfo(callFunctionName, argsNames, 
+                    0, argsNames.Count, null);
+                node.AddChild(new fsTreeNode(faDerFuncInfo));
+                return scope.GetVarType(callFunctionName);
+            }
+
+            if (callFunctionName.Length >= "printf".Length &&
+                callFunctionName.Substring(0, "printf".Length) == "printf")
             {
                 callFunctionName += $"_{uniqueFuctionId++}";
                 functionsInfos.Add(callFunctionName, functionsInfos["printf"]);
@@ -513,7 +573,11 @@ namespace fSharpJVML
                 scope.SetVarInfo(callFunctionName, ScopePositionType.functionClass);
             }
 
-            IfsType formalFunctionType = scope.GetFunctionType(callFunctionName);            
+            IfsType formalFunctionType = scope.GetFunctionType(callFunctionName);
+            if (formalFunctionType == null)
+            {
+                formalFunctionType = scope.GetVarType(callFunctionName);
+            }
 
             if (formalFunctionType == null)
             {
@@ -540,9 +604,11 @@ namespace fSharpJVML
             derFunction = new fsDerFuncInfo(oldFuncInfo.Name,
                                             new List<string>(oldFuncInfo.ArgsNames),
                                             oldFuncInfo.BeforePassedArgsNum,
-                                            oldFuncInfo.AfterPassedArgsNum);
+                                            oldFuncInfo.AfterPassedArgsNum,
+                                            oldFuncInfo.ContextFuncName);
 
-            if (callFunctionName.Substring(0, "printf".Length) != "printf")
+            if (callFunctionName.Length < "printf".Length ||
+                callFunctionName.Substring(0, "printf".Length) != "printf")
             {
                 derFunction.BeforePassedArgsNum = derFunction.AfterPassedArgsNum;
                 derFunction.AfterPassedArgsNum += args.ChildCount;

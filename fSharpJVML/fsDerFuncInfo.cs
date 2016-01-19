@@ -12,13 +12,16 @@ namespace fSharpJVML
         public List<string> ArgsNames { get; set; }
         public int BeforePassedArgsNum { get; set; }
         public int AfterPassedArgsNum { get; set; }
+        public string ContextFuncName { get; set; }
 
-        public fsDerFuncInfo(string name, List<string> argsNames, int beforePassedArgsNum, int afterPassedArgsNum)
+        public fsDerFuncInfo(string name, List<string> argsNames, int beforePassedArgsNum, int afterPassedArgsNum,
+            string contextFuncName)
         {
             Name = name;
             ArgsNames = argsNames;
             BeforePassedArgsNum = beforePassedArgsNum;
             AfterPassedArgsNum = afterPassedArgsNum;
+            ContextFuncName = contextFuncName;
         }
     }
 }

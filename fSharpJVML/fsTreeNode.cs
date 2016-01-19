@@ -21,6 +21,13 @@ namespace fSharpJVML
             this.Text = text;
         }
 
+        public fsTreeNode(string text, int type)
+            : base(new CommonToken(type, text))
+        {
+            this.Text = text;
+            this.Type = type;
+        }
+
         public fsTreeNode(IfsType type)
             :base(new CommonToken(fsharp_ssParser.TYPE, type.Name))
         {
@@ -71,7 +78,7 @@ namespace fSharpJVML
 
         public override string ToString()
         {
-            string outStr = string.Empty;
+            string outStr = Text + " ";
 
             if (NodeType != null)
             {
@@ -92,6 +99,7 @@ namespace fSharpJVML
                 }
                 outStr += " before:" + DerFuncInfo.BeforePassedArgsNum;
                 outStr += " after:" + DerFuncInfo.AfterPassedArgsNum;
+                outStr += " contextFuncName:" + DerFuncInfo.ContextFuncName;
             }
 
             return outStr;

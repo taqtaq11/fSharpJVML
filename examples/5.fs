@@ -1,13 +1,14 @@
-﻿let f1 = 
+﻿let main argv =
     begin
-        fun (a:int) -> 
-            begin
-            5;
-            end
-    end
+    let f1 = 
+        begin
+            fun (a:int) -> 
+                begin
+                a * 2;
+                end
+        end
 
-let main argv =
-    begin
     let res = begin f1(5); end
+    printf ("%i") (res);
     0;
     end

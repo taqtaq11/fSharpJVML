@@ -31,6 +31,7 @@ namespace fSharpJVML
             this.outputFilesPath = outputFilesPath;
             this.outputFileName = outputFileName;
             this.enteredFunctionsNames = new List<string>();
+            enteredFunctionsNames.Add(outputFileName);
             currentArgsPosition = new Stack<int>();
 
             generationFunctions = new Dictionary<int, CodeGenDelegate>();
@@ -382,7 +383,6 @@ namespace fSharpJVML
 
         private void GenerateFunctionDefn(ITree node, List<string> outputFile)
         {
-            enteredFunctionsNames.Add(outputFileName);
             maxStackCounter = 0;
             stackCounter = 0;
             string funcName = GetChildByType(node, fsharp_ssParser.NAME).GetChild(0).Text;
@@ -476,7 +476,8 @@ namespace fSharpJVML
             string funcName = GetChildByType(node, fsharp_ssParser.NAME).GetChild(0).Text;
             ITree args = GetChildByType(node, fsharp_ssParser.ARGS);
 
-            if (funcName.Substring(0, "printf".Length) == "printf")
+            if (funcName.Length >= "printf".Length &&
+                funcName.Substring(0, "printf".Length) == "printf")
             {
                 ITree firstArg = args.GetChild(0);
                 IfsType argType = (GetChildByType(args.GetChild(1), fsharp_ssParser.TYPE) as fsTreeNode).NodeType;
@@ -581,6 +582,33 @@ namespace fSharpJVML
             }
 
             outputFile.Add($"aload_1");
+            //Context generating
+            if (enteredFunctionsNames[enteredFunctionsNames.Count - 1] == funcInfo.ContextFuncName)
+            {
+                if (funcInfo.ContextFuncName == outputFileName)
+                {
+                    outputFile.Add($"new {outputFileName}");
+                    outputFile.Add("dup");
+                    outputFile.Add($"invokespecial {outputFileName}/<init>()V");
+                }
+                else
+                {
+                    outputFile.Add($"aload_0");
+                }
+            }
+            else
+            {
+                int i = enteredFunctionsNames.Count - 1;
+                outputFile.Add($"aload_0");
+                outputFile.Add($"getfield {enteredFunctionsNames[i]}/___context L{enteredFunctionsNames[i - 1]};");
+                i--;
+                while (enteredFunctionsNames[i] != funcInfo.ContextFuncName)
+                {
+                    outputFile.Add($"getfield {enteredFunctionsNames[i - 1]}/___context L{enteredFunctionsNames[i]};");
+                }
+            }
+            outputFile.Add($"putfield {funcInfo.Name}/___context L{funcInfo.ContextFuncName};");
+            outputFile.Add($"aload_1");
 
             if (returningType.Name != "function")
             {
@@ -677,7 +705,7 @@ namespace fSharpJVML
                     int i;
                     for (i = 1; i <= varInfo.ScopeNestingDepth; i++)
                     {
-                        outputFile.Add($"getfield {enteredFunctionsNames[enteredFunctionsNames.Count - i]}/___context L{enteredFunctionsNames[enteredFunctionsNames.Count - i - 1]}");
+                        outputFile.Add($"getfield {enteredFunctionsNames[enteredFunctionsNames.Count - i]}/___context L{enteredFunctionsNames[enteredFunctionsNames.Count - i - 1]};");
                     }
 
                     switch (varInfo.PositionInParentScopeType)

@@ -4,14 +4,18 @@ let rec fib n =
         begin
         fib(n - 2) + fib(n - 1);
         end
+    elif n = 1 then
+        begin
+        1
+        end
     else
         begin
-        1;
+        0
         end
     end
 
 let main argv =
     begin
-    printf ("%d") (fib (5));
+    printf ("%i") (fib (5));
     0;
     end

@@ -39,7 +39,7 @@ namespace fSharpJVML
         public void Compile(string outputFilesPath, string outputFileName)
         {
             CreateTree();
-            InferTypes();
+            InferTypes(outputFileName);
             GenerateCode(outputFilesPath, outputFileName);
             CreateJar(outputFilesPath, outputFileName);
         }
@@ -52,9 +52,9 @@ namespace fSharpJVML
             sourceTree = (ITree)parser.execute().Tree;
         }
 
-        private void InferTypes()
+        private void InferTypes(string outputFileName)
         {
-            fsTypeInferer ti = new fsTypeInferer(SourceTree);
+            fsTypeInferer ti = new fsTypeInferer(SourceTree, outputFileName);
             sourceTree = ti.Infer();
         }
 
