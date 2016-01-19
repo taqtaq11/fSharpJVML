@@ -19,7 +19,7 @@ namespace fSharpJVML
         private string outputFilesPath;
         private string outputFileName;
         private Dictionary<int, CodeGenDelegate> generationFunctions;
-        private int localVarsCounter = 0;
+        private List<int> localVarsCounter;
         private int maxStackCounter = 0;
         private int stackCounter = 0;
         private int labelNum = 0;
@@ -33,6 +33,7 @@ namespace fSharpJVML
             this.enteredFunctionsNames = new List<string>();
             enteredFunctionsNames.Add(outputFileName);
             currentArgsPosition = new Stack<int>();
+            localVarsCounter = new List<int>();
 
             generationFunctions = new Dictionary<int, CodeGenDelegate>();
             generationFunctions.Add(fsharp_ssParser.PROGRAM, GenerateProgram);
@@ -64,6 +65,7 @@ namespace fSharpJVML
         public void GenerateClassFiles(ITree sourceAST)
         {
             List<string> mainFile = new List<string>();
+            GenerateManifest();
             Generate(sourceAST, mainFile);
             SaveToFile(mainFile, outputFileName);
         }
@@ -102,23 +104,23 @@ namespace fSharpJVML
                     RecalculateStack(false);
                     break;
                 case "string":
-                    outputFile.Add($"astore {localVarsCounter++}");
+                    outputFile.Add($"astore {++localVarsCounter[localVarsCounter.Count - 1]}");
                     RecalculateStack(false);
-                    outputFile.Add($"astore {localVarsCounter++}");
+                    outputFile.Add($"astore {++localVarsCounter[localVarsCounter.Count - 1]}");
                     RecalculateStack(false);
-                    outputFile.Add("new java/lang/StringBuilder");
+                    outputFile.Add("new java/lang/String");
                     RecalculateStack(true);
                     outputFile.Add("dup");
                     RecalculateStack(true);
-                    outputFile.Add("invokespecial java/lang/StringBuilder/<init>()V");
+                    outputFile.Add("invokespecial java/lang/String/<init>()V");
                     RecalculateStack(false);
-                    outputFile.Add($"aload {localVarsCounter--}");
+                    outputFile.Add($"aload {localVarsCounter[localVarsCounter.Count - 1]--}");
                     RecalculateStack(true);
-                    outputFile.Add("invokevirtual java/lang/StringBuilder/append(Ljava/lang/String;)Ljava/lang/StringBuilder");
+                    outputFile.Add("invokevirtual java/lang/String/concat(Ljava/lang/String;)Ljava/lang/String;");
                     RecalculateStack(false);
-                    outputFile.Add($"aload {localVarsCounter--}");
+                    outputFile.Add($"aload {localVarsCounter[localVarsCounter.Count - 1]--}");
                     RecalculateStack(true);
-                    outputFile.Add("invokevirtual java/lang/StringBuilder/append(Ljava/lang/String;)Ljava/lang/StringBuilder");
+                    outputFile.Add("invokevirtual java/lang/String/concat(Ljava/lang/String;)Ljava/lang/String;");
                     RecalculateStack(false);
                     break;
                 case "char":
@@ -278,7 +280,7 @@ namespace fSharpJVML
                     outputFile.Add($"if_icmpne label_{labelNum}");
                     break;
                 case "double":
-                    outputFile.Add($"dcmpl");
+                    outputFile.Add($"fcmpl");
                     outputFile.Add($"ifne label_{labelNum}");
                     break;
                 default:
@@ -297,7 +299,7 @@ namespace fSharpJVML
                     outputFile.Add($"if_icmpeq label_{labelNum}");
                     break;
                 case "double":
-                    outputFile.Add($"dcmpl");
+                    outputFile.Add($"fcmpl");
                     outputFile.Add($"ifeq label_{labelNum}");
                     break;
                 default:
@@ -316,7 +318,7 @@ namespace fSharpJVML
                     outputFile.Add($"if_icmplt label_{labelNum}");
                     break;
                 case "double":
-                    outputFile.Add($"dcmpl");
+                    outputFile.Add($"fcmpl");
                     outputFile.Add($"iflt label_{labelNum}");
                     break;
                 default:
@@ -335,7 +337,7 @@ namespace fSharpJVML
                     outputFile.Add($"if_icmple label_{labelNum}");
                     break;
                 case "double":
-                    outputFile.Add($"dcmpl");
+                    outputFile.Add($"fcmpl");
                     outputFile.Add($"ifle label_{labelNum}");
                     break;
                 default:
@@ -354,7 +356,7 @@ namespace fSharpJVML
                     outputFile.Add($"if_icmpgt label_{labelNum}");
                     break;
                 case "double":
-                    outputFile.Add($"dcmpl");
+                    outputFile.Add($"fcmpl");
                     outputFile.Add($"ifgt label_{labelNum}");
                     break;
                 default:
@@ -373,7 +375,7 @@ namespace fSharpJVML
                     outputFile.Add($"if_icmpge label_{labelNum}");
                     break;
                 case "double":
-                    outputFile.Add($"dcmpl");
+                    outputFile.Add($"fcmpl");
                     outputFile.Add($"ifge label_{labelNum}");
                     break;
                 default:
@@ -383,6 +385,7 @@ namespace fSharpJVML
 
         private void GenerateFunctionDefn(ITree node, List<string> outputFile)
         {
+            localVarsCounter.Add(0);
             maxStackCounter = 0;
             stackCounter = 0;
             string funcName = GetChildByType(node, fsharp_ssParser.NAME).GetChild(0).Text;
@@ -398,7 +401,7 @@ namespace fSharpJVML
                 outputFile.Add(".end method");
                 outputFile.Add(".method public static main([Ljava/lang/String;)V");
                 outputFile.Add(".limit stack ");
-                outputFile.Add(".limit locals 2");
+                outputFile.Add(".limit locals 15");
                 currentArgsPosition.Push(outputFile.Count - 9);
                 Generate(GetChildByType(node, fsharp_ssParser.BODY), outputFile);
                 for (int i = 0; i < outputFile.Count; i++)
@@ -452,7 +455,7 @@ namespace fSharpJVML
                 string returningStatement = GetReturningStatementByType(returningNode.Types[returningNode.Types.Count - 1].Name);
                 funcClassFile.Add($".method public invoke(){GetLowLevelTypeName(argTypes[argTypes.Count - 1].Name, null)}");
                 funcClassFile.Add(".limit stack ");
-                funcClassFile.Add(".limit locals 2");
+                funcClassFile.Add(".limit locals 15");
                 Generate(GetChildByType(node, fsharp_ssParser.BODY), funcClassFile);
                 funcClassFile.Add(returningStatement);
                 for (int i = 0; i < funcClassFile.Count; i++)
@@ -469,6 +472,7 @@ namespace fSharpJVML
             }
 
             enteredFunctionsNames.RemoveAt(enteredFunctionsNames.Count - 1);
+            localVarsCounter.RemoveAt(localVarsCounter.Count - 1);
         }
 
         private void GenerateFuncCall(ITree node, List<string> outputFile)
@@ -570,18 +574,18 @@ namespace fSharpJVML
                 }
             }
             
-            outputFile.Add($"astore_1");
+            outputFile.Add($"astore_{++localVarsCounter[localVarsCounter.Count - 1]}");
 
             for (int i = 0; i < args.ChildCount; i++)
             {
                 IfsType argType = (GetChildByType(args.GetChild(i), fsharp_ssParser.TYPE) as fsTreeNode).NodeType;
-                outputFile.Add($"aload_1");
+                outputFile.Add($"aload_{localVarsCounter[localVarsCounter.Count - 1]}");
                 RecalculateStack(true);
                 Generate(args.GetChild(i), outputFile);
                 outputFile.Add($"putfield {funcInfo.Name}/_{funcInfo.ArgsNames[funcInfo.BeforePassedArgsNum + i]} {GetLowLevelTypeName(argType.Name, null)}");
             }
 
-            outputFile.Add($"aload_1");
+            outputFile.Add($"aload_{localVarsCounter[localVarsCounter.Count - 1]}");
             //Context generating
             if (enteredFunctionsNames[enteredFunctionsNames.Count - 1] == funcInfo.ContextFuncName)
             {
@@ -604,11 +608,12 @@ namespace fSharpJVML
                 i--;
                 while (enteredFunctionsNames[i] != funcInfo.ContextFuncName)
                 {
-                    outputFile.Add($"getfield {enteredFunctionsNames[i - 1]}/___context L{enteredFunctionsNames[i]};");
+                    outputFile.Add($"getfield {enteredFunctionsNames[i]}/___context L{enteredFunctionsNames[i - 1]};");
+                    i--;
                 }
             }
             outputFile.Add($"putfield {funcInfo.Name}/___context L{funcInfo.ContextFuncName};");
-            outputFile.Add($"aload_1");
+            outputFile.Add($"aload_{localVarsCounter[localVarsCounter.Count - 1]--}");
 
             if (returningType.Name != "function")
             {
@@ -795,6 +800,20 @@ namespace fSharpJVML
                     else
                         throw new Exception($"Type {inputName} not presented in JVM");
             }
+        }
+
+        private void GenerateManifest()
+        {
+            List<string> str = new List<string>();
+            str.Add("Manifest-Version: 1.0");
+            str.Add("Created-By: 1.8.0_60(Oracle Corporation)");
+            str.Add("Main-Class: test_1");
+            TextWriter file = new StreamWriter($"{outputFilesPath}/manifest.txt");
+            foreach (var line in str)
+            {
+                file.WriteLine(line);
+            }
+            file.Close();
         }
 
         private void SaveToFile(List<string> code, string fileName)

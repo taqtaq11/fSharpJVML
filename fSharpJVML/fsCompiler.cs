@@ -60,6 +60,11 @@ namespace fSharpJVML
 
         private void GenerateCode(string outputFilesPath, string outputFileName)
         {
+            if (Directory.Exists(outputFilesPath))
+            {
+                Directory.Delete(outputFilesPath, true);
+            }
+            Directory.CreateDirectory(outputFilesPath);
             fsCodeGenerator cg = new fsCodeGenerator(outputFilesPath, outputFileName);
             cg.GenerateClassFiles(SourceTree);
         }

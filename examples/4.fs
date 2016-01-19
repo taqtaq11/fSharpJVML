@@ -5,8 +5,8 @@ let f x y =
 
 let main argv =
     begin
-    let g = begin f (5); end
-    printf ("%i") (g (6));
-    printf ("%i") (g (19));
+    let g = begin f ("1"); end
+    printf ("%s") (g ("2"));
+    printf ("%s") (g ("5"));
     0;
     end
